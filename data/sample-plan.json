@@ -1,0 +1,28 @@
+{
+  "seed": 20260924,
+  "method": "Two apps per assignment category selected before the review dataset was written. This is a diagnostic sample, not a population accuracy estimate.",
+  "sample_ids": [
+    1,
+    9,
+    13,
+    19,
+    21,
+    30,
+    35,
+    37,
+    46,
+    48,
+    56,
+    59,
+    66,
+    68,
+    74,
+    79,
+    81,
+    85,
+    94,
+    95
+  ],
+  "human_review": "pending",
+  "reviewer": "Codex agent"
+}

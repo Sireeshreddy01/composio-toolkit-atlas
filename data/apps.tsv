@@ -1,0 +1,101 @@
+id	category	app	url
+1	CRM & Sales	Salesforce	https://developer.salesforce.com/docs/platform/api-rest/guide/quickstart-dev-org.html
+2	CRM & Sales	HubSpot	https://developers.hubspot.com/blog/harnessing-the-power-of-hubspots-public-apis-with-postman
+3	CRM & Sales	Pipedrive	https://pipedrive.readme.io/docs/core-api-concepts-authentication
+4	CRM & Sales	Attio	https://attio.com/platform/developers
+5	CRM & Sales	Twenty	https://twenty.com
+6	CRM & Sales	Podio	https://developers.podio.com/authentication
+7	CRM & Sales	Zoho CRM	https://www.zoho.com/crm/developer/docs/api/v8/auth-request.html
+8	CRM & Sales	Close	https://developer.close.com/integrations
+9	CRM & Sales	Copper	https://developer.copper.com/introduction/authentication.html
+10	CRM & Sales	DealCloud	https://api.docs.dealcloud.com/docs/apikeys
+11	Support & Helpdesk	Zendesk	https://developer.zendesk.com/api-reference/introduction/security-and-auth/
+12	Support & Helpdesk	Intercom	https://developers.intercom.com
+13	Support & Helpdesk	Freshdesk	https://developers.freshdesk.com/api/
+14	Support & Helpdesk	Front	https://dev.frontapp.com
+15	Support & Helpdesk	Pylon	https://usepylon.com
+16	Support & Helpdesk	LiveAgent	https://liveagent.com
+17	Support & Helpdesk	Plain	https://plain.com
+18	Support & Helpdesk	Help Scout	https://helpscout.com
+19	Support & Helpdesk	Gorgias	https://gorgias.com
+20	Support & Helpdesk	Gladly	https://gladly.com
+21	Communications	Slack	https://slack.com
+22	Communications	Twilio	https://twilio.com
+23	Communications	Zoho Cliq	https://zoho.com/cliq
+24	Communications	Lark (Larksuite)	https://open.larksuite.com
+25	Communications	Pumble	https://pumble.com
+26	Communications	Discord	https://discord.com
+27	Communications	Telegram	https://core.telegram.org
+28	Communications	WhatsApp Business	https://developers.facebook.com/docs/whatsapp
+29	Communications	Aircall	https://aircall.io
+30	Communications	Vonage	https://developer.vonage.com
+31	Marketing & Social	Google Ads	https://developers.google.com/google-ads
+32	Marketing & Social	Meta Ads	https://developers.facebook.com/docs/marketing-apis
+33	Marketing & Social	LinkedIn Ads	https://learn.microsoft.com/linkedin/marketing
+34	Marketing & Social	GoHighLevel	https://highlevel.stoplight.io
+35	Marketing & Social	Mailchimp	https://mailchimp.com/developer
+36	Marketing & Social	Klaviyo	https://developers.klaviyo.com
+37	Marketing & Social	systeme.io	https://systeme.io
+38	Marketing & Social	Pinterest	https://developers.pinterest.com
+39	Marketing & Social	Threads (Meta)	https://developers.facebook.com/docs/threads
+40	Marketing & Social	SendGrid	https://sendgrid.com
+41	Ecommerce	Shopify	https://shopify.dev
+42	Ecommerce	WooCommerce	https://woocommerce.com/document/woocommerce-rest-api
+43	Ecommerce	BigCommerce	https://developer.bigcommerce.com
+44	Ecommerce	Salesforce Commerce Cloud	https://developer.salesforce.com/docs/commerce
+45	Ecommerce	Magento (Adobe Commerce)	https://developer.adobe.com/commerce
+46	Ecommerce	Squarespace	https://developers.squarespace.com
+47	Ecommerce	Ecwid	https://api-docs.ecwid.com
+48	Ecommerce	Gumroad	https://gumroad.com/api
+49	Ecommerce	Amazon Selling Partner	https://developer-docs.amazon.com/sp-api
+50	Ecommerce	fanbasis	https://fanbasis.com
+51	Data & SEO	DataForSEO	https://docs.dataforseo.com
+52	Data & SEO	SE Ranking	https://seranking.com/api
+53	Data & SEO	Ahrefs	https://ahrefs.com/api
+54	Data & SEO	MrScraper	https://docs.mrscraper.com
+55	Data & SEO	Apify	https://docs.apify.com
+56	Data & SEO	Firecrawl	https://firecrawl.dev
+57	Data & SEO	Bright Data	https://brightdata.com
+58	Data & SEO	Sherlock	https://github.com/sherlock-project/sherlock
+59	Data & SEO	Waterfall.io	https://waterfall.io
+60	Data & SEO	Clay	https://clay.com
+61	Developer & Infra	GitHub	https://docs.github.com/rest
+62	Developer & Infra	Vercel	https://vercel.com/docs/rest-api
+63	Developer & Infra	Netlify	https://docs.netlify.com/api
+64	Developer & Infra	Cloudflare	https://developers.cloudflare.com/api
+65	Developer & Infra	Supabase	https://supabase.com/docs
+66	Developer & Infra	Neo4j	https://neo4j.com/docs/api
+67	Developer & Infra	Snowflake	https://docs.snowflake.com
+68	Developer & Infra	MongoDB Atlas	https://mongodb.com/docs/atlas/api
+69	Developer & Infra	Datadog	https://docs.datadoghq.com/api
+70	Developer & Infra	Sentry	https://docs.sentry.io/api
+71	Productivity	Notion	https://developers.notion.com
+72	Productivity	Airtable	https://airtable.com/developers
+73	Productivity	Linear	https://developers.linear.app
+74	Productivity	Jira	https://developer.atlassian.com
+75	Productivity	Asana	https://developers.asana.com
+76	Productivity	Monday.com	https://developer.monday.com
+77	Productivity	ClickUp	https://clickup.com/api
+78	Productivity	Coda	https://coda.io/developers
+79	Productivity	Smartsheet	https://smartsheet.com/developers
+80	Productivity	Harvest	https://help.getharvest.com/api-v2
+81	Finance & Fintech	Stripe	https://stripe.com/docs/api
+82	Finance & Fintech	Plaid	https://plaid.com/docs
+83	Finance & Fintech	Binance	https://binance-docs.github.io
+84	Finance & Fintech	Paygent Connect	
+85	Finance & Fintech	iPayX	https://ipayx.ai/docs
+86	Finance & Fintech	QuickBooks	https://developer.intuit.com
+87	Finance & Fintech	Xero	https://developer.xero.com
+88	Finance & Fintech	Brex	https://developer.brex.com
+89	Finance & Fintech	Ramp	https://docs.ramp.com
+90	Finance & Fintech	PitchBook	https://pitchbook.com
+91	AI & Media	NotebookLM	https://cloud.google.com/gemini
+92	AI & Media	Otter AI	https://help.otter.ai
+93	AI & Media	Fathom	https://fathom.video
+94	AI & Media	Consensus	https://consensus.app
+95	AI & Media	Reducto	https://reducto.ai
+96	AI & Media	Devin	https://docs.devin.ai
+97	AI & Media	higgsfield	https://higgsfield.ai/cli
+98	AI & Media	Mermaid CLI	https://github.com/mermaid-js/mermaid-cli
+99	AI & Media	YouTube Transcript	https://transcriptapi.com
+100	AI & Media	Grain	https://grain.com

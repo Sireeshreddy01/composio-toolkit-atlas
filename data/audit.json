@@ -1,0 +1,231 @@
+{
+  "reviewer": "Codex agent, same session; no independent human verification claimed",
+  "date": "2026-09-24",
+  "rubric": "20 apps, 3 fields each. A baseline auth prediction is supported if it is a documented method for the scoped app; API protocol must match the scoped surface; access distinguishes a free/trial/local development path from a paid/admin/approval gate. Unknown or unverified access remains incomplete. This is documentation agreement and coverage, not an independent population accuracy estimate.",
+  "checks": [
+    {
+      "id": 1,
+      "auth": [
+        "OAuth2"
+      ],
+      "surface": "REST",
+      "access": "Self-serve",
+      "method": "Official docs",
+      "finding": "Developer Edition is free; API Enabled permission remains necessary."
+    },
+    {
+      "id": 9,
+      "auth": [
+        "OAuth2",
+        "API key"
+      ],
+      "surface": "REST",
+      "access": "Self-serve",
+      "method": "Official docs",
+      "finding": "Trial supports API; Professional/Business gate applies after trial."
+    },
+    {
+      "id": 13,
+      "auth": [
+        "API key",
+        "Basic"
+      ],
+      "surface": "REST",
+      "access": "Self-serve",
+      "method": "Direct HTTP + official docs",
+      "finding": "API key via Basic auth; trial limit is explicitly documented. Enterprise keyword caused false gate."
+    },
+    {
+      "id": 19,
+      "auth": [
+        "OAuth2",
+        "API key"
+      ],
+      "surface": "REST",
+      "access": "Unknown",
+      "method": "Direct HTTP + official docs",
+      "finding": "Private keys are documented; public apps need OAuth and approval. Free/trial eligibility for the private path remains unresolved, so a generic gated label is too broad."
+    },
+    {
+      "id": 21,
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "surface": "REST",
+      "access": "Self-serve",
+      "method": "Official docs",
+      "finding": "Developer sandbox available; organization installation can still require approval."
+    },
+    {
+      "id": 30,
+      "auth": [
+        "Basic",
+        "API key",
+        "JWT"
+      ],
+      "surface": "REST",
+      "access": "Self-serve",
+      "method": "Direct HTTP + official docs",
+      "finding": "Multiple product-specific auth methods; defaulting to one generic token is insufficient."
+    },
+    {
+      "id": 35,
+      "auth": [
+        "API key",
+        "OAuth2",
+        "Basic"
+      ],
+      "surface": "REST",
+      "access": "Unknown",
+      "method": "Direct HTTP + official docs",
+      "finding": "Marketing API is REST. Initial GraphQL classification came from unrelated landing-page content; free entitlement remains open."
+    },
+    {
+      "id": 37,
+      "auth": [
+        "API key"
+      ],
+      "surface": "REST",
+      "access": "Unknown",
+      "method": "Direct HTTP + official docs",
+      "finding": "Key creation supported; free product signup alone does not prove all API features are free."
+    },
+    {
+      "id": 46,
+      "auth": [
+        "API key",
+        "OAuth2"
+      ],
+      "surface": "REST",
+      "access": "Gated",
+      "method": "Browser",
+      "finding": "Commerce Advanced gate applies to custom apps; OAuth Extensions can support customers on any plan."
+    },
+    {
+      "id": 48,
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "surface": "REST",
+      "access": "Unknown",
+      "method": "Browser",
+      "finding": "Browser recovered full API/CLI documentation from a page that HTTP treated as a shell; free entitlement unverified."
+    },
+    {
+      "id": 56,
+      "auth": [
+        "API key"
+      ],
+      "surface": "REST",
+      "access": "Self-serve",
+      "method": "Official docs + vendor pricing",
+      "finding": "Current homepage confirms 1,000 free credits monthly, no card; initial fetch failed."
+    },
+    {
+      "id": 59,
+      "auth": [
+        "API key"
+      ],
+      "surface": "REST",
+      "access": "Unknown",
+      "method": "Direct HTTP",
+      "finding": "Contact-search example documents x-api-key. Header differs from homepage example; free access unresolved."
+    },
+    {
+      "id": 66,
+      "auth": [
+        "Basic",
+        "Token",
+        "OAuth2"
+      ],
+      "surface": "REST",
+      "access": "Self-serve",
+      "method": "Direct HTTP + official docs",
+      "finding": "HTTP Query API uses Basic/Bearer; Aura management OAuth is separate. Local path avoids hosted-plan gate."
+    },
+    {
+      "id": 68,
+      "auth": [
+        "OAuth2",
+        "Digest"
+      ],
+      "surface": "REST",
+      "access": "Gated",
+      "method": "Direct HTTP + official docs",
+      "finding": "Admin API has service-account OAuth2 or Digest; initial GraphQL hit was unrelated navigation."
+    },
+    {
+      "id": 74,
+      "auth": [
+        "OAuth2",
+        "Basic",
+        "API key"
+      ],
+      "surface": "REST",
+      "access": "Unknown",
+      "method": "Direct HTTP + official docs",
+      "finding": "Scoped to Jira Cloud. Account permissions verified; free API entitlement not separately checked."
+    },
+    {
+      "id": 79,
+      "auth": [
+        "Token",
+        "OAuth2"
+      ],
+      "surface": "REST",
+      "access": "Gated",
+      "method": "Browser + official docs",
+      "finding": "Business/Enterprise plan restriction; HTTP 200 shell alone did not establish it."
+    },
+    {
+      "id": 81,
+      "auth": [
+        "API key"
+      ],
+      "surface": "REST",
+      "access": "Self-serve",
+      "method": "Official docs",
+      "finding": "Test keys enable sandbox development; real-payment activation is a separate gate."
+    },
+    {
+      "id": 85,
+      "auth": [
+        "API key",
+        "Token"
+      ],
+      "surface": "REST",
+      "access": "Self-serve",
+      "method": "Browser",
+      "finding": "REST pages conflict and sandbox-labeled page uses live keys. Linked MCP documentation resolves a free 10-audit/day path; REST contract still unverified."
+    },
+    {
+      "id": 94,
+      "auth": [
+        "API key",
+        "OAuth2"
+      ],
+      "surface": "REST",
+      "access": "Self-serve",
+      "method": "Browser + WebMCP",
+      "finding": "Stale source 404 recovered via documentation index; current free API tier has 30 calls shared with MCP."
+    },
+    {
+      "id": 95,
+      "auth": [
+        "API key"
+      ],
+      "surface": "REST",
+      "access": "Unknown",
+      "method": "Direct HTTP + official vendor repository",
+      "finding": "API key and hosted MCP verified; contact-sales navigation is not evidence of a universal gate."
+    }
+  ],
+  "human_review": {
+    "status": "pending",
+    "completed_checks": 0,
+    "required_checks": 5,
+    "instructions": "Open primary sources for Salesforce, Squarespace, iPayX, Consensus and Mermaid CLI; confirm the claims and explain the distinctions. Record actual date and reviewer only after a person does this."
+  }
+}

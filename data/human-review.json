@@ -1,0 +1,8 @@
+{
+  "status": "pending",
+  "reviewer": null,
+  "reviewed_at": null,
+  "required_app_ids": [1, 46, 85, 94, 98],
+  "checks": [],
+  "note": "Prepared checklist only. Record actual human observations before marking complete."
+}

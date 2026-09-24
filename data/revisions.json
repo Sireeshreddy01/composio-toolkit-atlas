@@ -1,0 +1,384 @@
+[
+  {
+    "id": 46,
+    "method": "Browser",
+    "reason": "Browser confirms the paid custom-app gate but explicitly says Extensions work for customers on any plan.",
+    "before": {
+      "note": "A regular website subscription is not proof of API entitlement."
+    },
+    "after": {
+      "note": "Custom API-key applications require Commerce Advanced; OAuth Extensions can serve customers on any plan. This row classifies the custom-app path."
+    },
+    "source": null
+  },
+  {
+    "id": 48,
+    "method": "Browser",
+    "reason": "Browser rendering recovered the full REST/OAuth docs and CLI after the HTTP scraper returned an empty shell.",
+    "before": {
+      "note": "The supplied gumroad.com/api page rendered poorly in the fetch; treat credential entitlement as unverified.",
+      "surface": "REST; products, sales, licenses and subscriptions",
+      "sources": "https://app.gumroad.com/api"
+    },
+    "after": {
+      "note": "Browser verified OAuth2, scoped tokens and a broad REST API plus official CLI; license verification has a separate unauthenticated path.",
+      "surface": "REST + CLI; products, sales, files, subscriptions and licenses",
+      "sources": "https://gumroad.com/api"
+    },
+    "source": null
+  },
+  {
+    "id": 56,
+    "method": "Official documentation follow-up",
+    "reason": "Current vendor homepage explicitly includes a monthly free credit allowance.",
+    "before": {
+      "access": "Account check",
+      "access_detail": "Dashboard API key; free-credit amount and current signup terms need confirmation.",
+      "verdict": "Conditional",
+      "blocker": "Plan check"
+    },
+    "after": {
+      "access": "Free",
+      "access_detail": "Self-serve API key with 1,000 monthly free credits stated on current homepage; no card required.",
+      "verdict": "Build",
+      "blocker": "None"
+    },
+    "source": "https://www.firecrawl.dev/"
+  },
+  {
+    "id": 75,
+    "method": "Official documentation follow-up",
+    "reason": "Developer overview explicitly allows testing with a free account.",
+    "before": {
+      "access": "Account check",
+      "access_detail": "PAT creation or OAuth application; organization policy and paid feature entitlements may apply.",
+      "verdict": "Conditional",
+      "blocker": "Plan check"
+    },
+    "after": {
+      "access": "Free",
+      "access_detail": "Free account or developer sandbox; PAT for initial API calls; paid resource entitlements remain separate.",
+      "verdict": "Build",
+      "blocker": "None"
+    },
+    "source": "https://developers.asana.com/docs/overview"
+  },
+  {
+    "id": 76,
+    "method": "Official documentation follow-up",
+    "reason": "Official developer sandbox provides free API-integration testing.",
+    "before": {
+      "access": "Account check",
+      "access_detail": "Personal API token or app OAuth; plan complexity/rate limits require confirmation.",
+      "verdict": "Conditional",
+      "blocker": "Plan check"
+    },
+    "after": {
+      "access": "Sandbox",
+      "access_detail": "Free developer account for isolated API/app testing; production plan limits remain separate.",
+      "verdict": "Build",
+      "blocker": "None"
+    },
+    "source": "https://developer.monday.com/api-reference/docs/developer-sandbox-account"
+  },
+  {
+    "id": 77,
+    "method": "Official documentation follow-up",
+    "reason": "Official MCP guide explicitly gives Free Forever call limits.",
+    "before": {
+      "access": "Account check",
+      "access_detail": "Personal token for own use; OAuth for apps authorized by other workspaces.",
+      "verdict": "Conditional",
+      "blocker": "Plan check"
+    },
+    "after": {
+      "access": "Free",
+      "access_detail": "MCP supports Free Forever with 50 calls per 24 hours; REST uses its own rate limits.",
+      "verdict": "Build",
+      "blocker": "None"
+    },
+    "source": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server"
+  },
+  {
+    "id": 80,
+    "method": "Official documentation follow-up",
+    "reason": "Official support article includes API access on free and trial accounts.",
+    "before": {
+      "access": "Account check",
+      "access_detail": "Personal access token or OAuth; account identifier also needed; free entitlement not separately verified.",
+      "verdict": "Conditional",
+      "blocker": "Plan check"
+    },
+    "after": {
+      "access": "Free",
+      "access_detail": "API access included for all accounts, including free and trial; send account ID with token.",
+      "verdict": "Build",
+      "blocker": "None"
+    },
+    "source": "https://support.getharvest.com/hc/en-us/articles/360048180732-The-Harvest-API"
+  },
+  {
+    "id": 85,
+    "method": "Browser",
+    "reason": "The sandbox-titled page uses live keys and a different base URL/schema than the API page. A free sandbox cannot be inferred.",
+    "before": {
+      "access": "Sandbox",
+      "access_detail": "Vendor publishes sandbox reference; production-key issuance and commercial terms need confirmation.",
+      "verdict": "Build",
+      "blocker": "Production entitlement",
+      "note": "Treat vendor sandbox claims as documented, not as an authenticated test completed here."
+    },
+    "after": {
+      "access": "Account check",
+      "access_detail": "Self-generated live keys documented; sandbox availability unproven. Published pages disagree on base URL and request schema.",
+      "verdict": "Conditional",
+      "blocker": "Conflicting docs",
+      "note": "Resolve the two documented API contracts with the vendor before implementation; no authenticated requests were made."
+    },
+    "source": null
+  },
+  {
+    "id": 94,
+    "method": "Browser + WebMCP",
+    "reason": "Cached /docs/mcp returned 404. Browser WebMCP recovered the current plan/auth documentation.",
+    "before": {
+      "access": "Account check",
+      "access_detail": "OAuth MCP for users; enterprise bearer-key option; quotas differ by subscription.",
+      "surface": "Search API + MCP; scholarly search and evidence answers",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "A functioning documented MCP path resolves the assignment's OAuth question; verify the chosen plan quota.",
+      "sources": "https://docs.consensus.app/docs/mcp;https://help.consensus.app/en/articles/10087865-subscription-plans"
+    },
+    "after": {
+      "access": "Free",
+      "access_detail": "Self-serve keys on every plan; Free includes 30 shared API/MCP calls monthly. API keys use x-api-key.",
+      "surface": "REST search + MCP; scholarly search and evidence",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "Use current docs; API and MCP share quotas. Enterprise also supports bearer keys; no broad paid-only API gate.",
+      "sources": "https://docs.consensus.app/api-plans-and-access;https://docs.consensus.app/consensus-mcp"
+    },
+    "source": null
+  },
+  {
+    "id": 100,
+    "method": "Official documentation follow-up",
+    "reason": "Official developer reference verifies OAuth2 authorization code and PKCE.",
+    "before": {},
+    "after": {},
+    "source": "https://developers.grain.com/"
+  },
+  {
+    "id": 26,
+    "method": "Official documentation follow-up",
+    "reason": "Official OAuth2 reference confirms bot-user authorization.",
+    "before": {},
+    "after": {},
+    "source": "https://discord.com/developers/docs/topics/oauth2"
+  },
+  {
+    "id": 61,
+    "method": "Official documentation follow-up",
+    "reason": "Official OpenAPI guide explicitly includes GitHub Free.",
+    "before": {},
+    "after": {},
+    "source": "https://docs.github.com/en/rest/about-the-rest-api/about-the-openapi-description-for-the-rest-api"
+  },
+  {
+    "id": 85,
+    "method": "Browser",
+    "reason": "Following the vendor MCP link resolved free access for the MCP scope, while REST contract differences remain. Keep conditional verdict.",
+    "before": {
+      "access": "Account check",
+      "access_detail": "Self-generated live keys documented; sandbox availability unproven. Published pages disagree on base URL and request schema.",
+      "note": "Resolve the two documented API contracts with the vendor before implementation; no authenticated requests were made.",
+      "sources": "https://www.ipayx.ai/docs/api;https://www.ipayx.ai/developers/sandbox;https://www.ipayx.ai/developers"
+    },
+    "after": {
+      "access": "Free",
+      "access_detail": "MCP docs offer 10 free audits/day and dashboard API keys; free REST entitlement remains unclear.",
+      "note": "Browser found conflicting REST base URLs and schemas; separate MCP docs explicitly document a free tier and test/live keys. Conditional until contract is reconciled.",
+      "sources": "https://www.ipayx.ai/docs/api;https://www.ipayx.ai/developers/sandbox;https://www.ipayx.ai/developers;https://www.ipayx.ai/docs/mcp-server"
+    },
+    "source": "https://www.ipayx.ai/docs/mcp-server"
+  },
+  {
+    "id": 79,
+    "method": "Browser",
+    "reason": "Smartsheet navigation exposed official MCP documentation with paid-plan requirement.",
+    "before": {
+      "mcp": "Not established in checked sources"
+    },
+    "after": {
+      "mcp": {
+        "kind": "Official",
+        "scope": "Sheets, rows, workflow and portfolio tools; Business/Enterprise/Advanced Work Management required",
+        "url": "https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server"
+      }
+    },
+    "source": "https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server"
+  },
+  {
+    "id": 66,
+    "method": "Targeted primary-source search",
+    "reason": "A focused vendor documentation check established an official MCP implementation.",
+    "before": {
+      "mcp": "Not established in checked sources"
+    },
+    "after": {
+      "mcp": {
+        "kind": "Official",
+        "scope": "Schema introspection and Cypher read/write; database credentials and optional read-only mode",
+        "url": "https://neo4j.com/docs/mcp/current/tools/"
+      }
+    },
+    "source": "https://neo4j.com/docs/mcp/current/tools/"
+  },
+  {
+    "id": 67,
+    "method": "Targeted primary-source search",
+    "reason": "A focused vendor documentation check established an official MCP implementation.",
+    "before": {
+      "mcp": "Not established in checked sources"
+    },
+    "after": {
+      "mcp": {
+        "kind": "Official",
+        "scope": "Managed Cortex Analyst/Search/Agents and configured SQL/custom tools; OAuth and RBAC",
+        "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp"
+      }
+    },
+    "source": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp"
+  },
+  {
+    "id": 68,
+    "method": "Targeted primary-source search",
+    "reason": "A focused vendor documentation check established an official MCP implementation.",
+    "before": {
+      "mcp": "Not established in checked sources"
+    },
+    "after": {
+      "mcp": {
+        "kind": "Official",
+        "scope": "Local or Atlas-managed data and cluster operations; setup and roles differ",
+        "url": "https://www.mongodb.com/docs/mcp-server/overview/"
+      }
+    },
+    "source": "https://www.mongodb.com/docs/mcp-server/overview/"
+  },
+  {
+    "id": 69,
+    "method": "Targeted primary-source search",
+    "reason": "A focused vendor documentation check established an official MCP implementation.",
+    "before": {
+      "mcp": "Not established in checked sources"
+    },
+    "after": {
+      "mcp": {
+        "kind": "Official",
+        "scope": "Remote observability tools; separate local Code Security MCP and site restrictions",
+        "url": "https://docs.datadoghq.com/mcp_server/"
+      }
+    },
+    "source": "https://docs.datadoghq.com/mcp_server/"
+  },
+  {
+    "id": 70,
+    "method": "Targeted primary-source search",
+    "reason": "A focused vendor documentation check established an official MCP implementation.",
+    "before": {
+      "mcp": "Not established in checked sources"
+    },
+    "after": {
+      "mcp": {
+        "kind": "Official",
+        "scope": "OAuth-scoped errors, performance, issue triage and project tools",
+        "url": "https://mcp.sentry.dev/"
+      }
+    },
+    "source": "https://mcp.sentry.dev/"
+  },
+  {
+    "id": 74,
+    "method": "Targeted primary-source search",
+    "reason": "A focused vendor documentation check established an official MCP implementation.",
+    "before": {
+      "mcp": "Not established in checked sources"
+    },
+    "after": {
+      "mcp": {
+        "kind": "Official",
+        "scope": "Rovo MCP with Jira work-item search and updates; OAuth 2.1, permissions and credit limits",
+        "url": "https://developer.atlassian.com/cloud/rovo-mcp/guides/getting-started/"
+      }
+    },
+    "source": "https://developer.atlassian.com/cloud/rovo-mcp/guides/getting-started/"
+  },
+  {
+    "id": 73,
+    "method": "Combined primary-source review",
+    "reason": "Combined documented account/plan rules with API credential requirements; scoped development inference is now explicit.",
+    "before": {
+      "access": "Account check",
+      "access_detail": "Personal keys or OAuth app; workspace policy and permissions apply; free API entitlement not separately verified.",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "GraphQL and webhooks are the canonical integration surface; official MCP is a useful accelerator.",
+      "sources": "https://linear.app/developers/graphql;https://linear.app/developers/oauth-2-0-authentication"
+    },
+    "after": {
+      "access": "Free",
+      "access_detail": "Free plan plus always-available admin API keys establish a scoped prototype path; Free workspace members are admins.",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "API access inferred by combining pricing, Free-plan roles and API key policy; production workspace controls remain.",
+      "sources": "https://linear.app/developers/graphql;https://linear.app/developers/oauth-2-0-authentication;https://linear.app/pricing;https://linear.app/docs/api-and-webhooks;https://linear.app/docs/invite-members"
+    },
+    "source": "https://linear.app/pricing;https://linear.app/docs/api-and-webhooks;https://linear.app/docs/invite-members"
+  },
+  {
+    "id": 65,
+    "method": "Combined primary-source review",
+    "reason": "Combined documented account/plan rules with API credential requirements; scoped development inference is now explicit.",
+    "before": {
+      "access": "Account check",
+      "access_detail": "Management PATs/OAuth require an organization role; project APIs use a different auth plane.",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "Do not mix management credentials with database/project keys or bypass row-level security.",
+      "sources": "https://supabase.com/docs/reference/api/introduction;https://supabase.com/docs/guides/platform/personal-access-tokens;https://supabase.com/docs"
+    },
+    "after": {
+      "access": "Free",
+      "access_detail": "Two free projects plus project API credentials support a scoped database prototype; management roles and quotas still apply.",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "Free project route is inferred from billing and project API docs; keep project keys separate from management tokens and enforce row-level security.",
+      "sources": "https://supabase.com/docs/reference/api/introduction;https://supabase.com/docs/guides/platform/personal-access-tokens;https://supabase.com/docs;https://supabase.com/docs/guides/platform/billing-on-supabase"
+    },
+    "source": "https://supabase.com/docs/guides/platform/billing-on-supabase"
+  },
+  {
+    "id": 78,
+    "method": "Combined primary-source review",
+    "reason": "Combined documented account/plan rules with API credential requirements; scoped development inference is now explicit.",
+    "before": {
+      "access": "Account check",
+      "access_detail": "Generate a Coda API token; document access and admin-only API restrictions apply.",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "Coda Packs authentication documentation describes outbound integrations, not Coda's own data API.",
+      "sources": "https://coda.io/developers/apis/v1"
+    },
+    "after": {
+      "access": "Free",
+      "access_detail": "API doc-size limits explicitly apply across all plan types, including Free; generate an account token.",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "Free document API route is inferred from all-plan API limits and token docs; oversized documents and admin-only APIs are separate constraints.",
+      "sources": "https://coda.io/developers/apis/v1;https://help.coda.io/hc/en-us/articles/39555760015757-Overview-Doc-limits"
+    },
+    "source": "https://help.coda.io/hc/en-us/articles/39555760015757-Overview-Doc-limits"
+  }
+]
