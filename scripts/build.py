@@ -11,6 +11,30 @@ def normalized_surface(value):
     # Diagnostic rubric accepts documented HTTP resource APIs as REST-family.
     return 'GraphQL' if value.startswith('GraphQL') else 'REST' if ('REST' in value or 'HTTP' in value) else 'Unknown'
 def access_group(value):return 'Self-serve' if value in SELF else 'Gated' if value in GATED else 'Unknown'
+def next_action(row):
+    """Planning recommendations derived from findings, never completed tests."""
+    special={
+        46:'Compare custom-app plan requirements with the OAuth Extensions route for the intended workflow.',
+        84:'Obtain the exact vendor URL and product identity before choosing an integration route.',
+        85:'Evaluate the documented MCP path; ask the vendor to reconcile the conflicting REST contracts.',
+        90:'Request the licensed API contract, authentication details and a test-access option.',
+        98:'Wrap local rendering as a bounded agent tool, then test a small diagram.'}
+    if row['id'] in special:return special[row['id']]
+    if row['verdict']=='Build':
+        if row['access']=='Local':return 'Run a small local test, then define input, timeout and output limits.'
+        if row['access']=='Sandbox':return 'Use an authorized sandbox and test one scoped workflow with test data.'
+        if row['mcp']:return 'Compare the documented MCP tools with the target workflow, then test with authorized access.'
+        return 'Use the documented development path and test one small, scoped API workflow.'
+    actions={
+        'Plan check':'Confirm the exact API allowance for a free or trial account; ask the vendor if the docs do not settle it.',
+        'Admin':'Work with an authorized administrator to confirm tenant permissions and credential setup.',
+        'Subscription':'Confirm the required plan and ask whether a developer sandbox or trial is available.',
+        'Approval':'Map the app-review requirements and request approved developer or partner access.',
+        'Customer access':'Obtain an authorized customer test tenant and confirm its API permissions.',
+        'Production entitlement':'Separate sandbox testing from production approval and confirm the production requirements.',
+        'Commercial access':'Request a scoped API agreement and a test-access option.',
+        'Conflicting docs':'Ask the vendor to confirm the supported endpoint and request schema.'}
+    return actions.get(row['blocker'],'Resolve the documented prerequisite, then compare supported API, MCP, CLI or export routes.')
 def build():
     seeds=read_tsv('apps.tsv'); reviewed=read_tsv('reviewed.tsv');mcp=read_json('mcp.json')
     baseline=read_json('first-pass.json');audit=read_json('audit.json');plan=read_json('sample-plan.json')
@@ -25,7 +49,7 @@ def build():
         assert all(x.startswith('https://') for x in item['sources'])
         assert row['verdict'] in {'Build','Conditional','Investigate'}
         assert row['access'] in SELF|GATED|{'Account check','Unresolved'}
-        item['access_group']=access_group(row['access']);item['mcp']=mcp.get(row['id']);rows.append(item)
+        item['access_group']=access_group(row['access']);item['mcp']=mcp.get(row['id']);item['next_action']=next_action(item);rows.append(item)
     byid={x['id']:x for x in rows};first={x['id']:x for x in baseline['results']}
     evaluations=[]
     for check in audit['checks']:
@@ -48,9 +72,9 @@ def build():
     template=(ROOT/'site/template.html').read_text();assert template.count('@@DATA@@')==1
     (ROOT/'index.html').write_text(template.replace('@@DATA@@',data))
     (ROOT/'data/atlas.json').write_text(json.dumps(payload,indent=2,ensure_ascii=False))
-    fields=['id','app','category','description','auth','access','access_detail','surface','verdict','blocker','note','sources','mcp_kind','mcp_scope','mcp_url']
+    fields=['id','app','category','description','auth','access','access_detail','surface','verdict','blocker','next_action','note','sources','mcp_kind','mcp_scope','mcp_url']
     with (ROOT/'data/atlas.csv').open('w',newline='') as f:
-        writer=csv.DictWriter(f,fieldnames=fields);writer.writeheader()
+        writer=csv.DictWriter(f,fieldnames=fields,lineterminator='\n');writer.writeheader()
         for row in rows:
             out={k:row.get(k,'') for k in fields};out['auth']='; '.join(row['auth']);out['sources']='; '.join(row['sources'])
             for k in ['kind','scope','url']:out['mcp_'+k]=(row['mcp'] or {}).get(k,'')

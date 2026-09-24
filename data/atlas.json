@@ -26,7 +26,8 @@
         "kind": "Official",
         "scope": "Hosted Salesforce resource servers; org/client setup required",
         "url": "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/postman.html"
-      }
+      },
+      "next_action": "Use an authorized sandbox and test one scoped workflow with test data."
     },
     {
       "id": 2,
@@ -52,7 +53,8 @@
         "kind": "Official",
         "scope": "HubSpot user-level app scopes",
         "url": "https://developers.hubspot.com/ai-tools/mcp"
-      }
+      },
+      "next_action": "Use an authorized sandbox and test one scoped workflow with test data."
     },
     {
       "id": 3,
@@ -80,7 +82,8 @@
         "kind": "Official",
         "scope": "Native CRM workflows",
         "url": "https://www.pipedrive.com/en/features/mcp-server"
-      }
+      },
+      "next_action": "Compare the documented MCP tools with the target workflow, then test with authorized access."
     },
     {
       "id": 4,
@@ -108,7 +111,8 @@
         "kind": "Official",
         "scope": "Workspace records and CRM workflows",
         "url": "https://attio.com/apps/mcp"
-      }
+      },
+      "next_action": "Compare the documented MCP tools with the target workflow, then test with authorized access."
     },
     {
       "id": 5,
@@ -130,7 +134,8 @@
         "https://twentyhq-twenty.mintlify.app/"
       ],
       "access_group": "Self-serve",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Run a small local test, then define input, timeout and output limits."
     },
     {
       "id": 6,
@@ -152,7 +157,8 @@
         "https://developers.podio.com/index/faq"
       ],
       "access_group": "Self-serve",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Use the documented development path and test one small, scoped API workflow."
     },
     {
       "id": 7,
@@ -174,7 +180,8 @@
         "https://www.zoho.com/crm/developer/docs/api/v8/api-limits.html"
       ],
       "access_group": "Unknown",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Confirm the exact API allowance for a free or trial account; ask the vendor if the docs do not settle it."
     },
     {
       "id": 8,
@@ -202,7 +209,8 @@
         "kind": "Official",
         "scope": "Read, safe-write and destructive-write scope groups",
         "url": "https://developer.close.com/mcp"
-      }
+      },
+      "next_action": "Confirm the exact API allowance for a free or trial account; ask the vendor if the docs do not settle it."
     },
     {
       "id": 9,
@@ -225,7 +233,8 @@
         "https://support.copper.com/en/articles/8823462-api-docs-and-tips"
       ],
       "access_group": "Self-serve",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Use the documented development path and test one small, scoped API workflow."
     },
     {
       "id": 10,
@@ -249,7 +258,8 @@
         "https://api.docs.dealcloud.com/docs"
       ],
       "access_group": "Gated",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Work with an authorized administrator to confirm tenant permissions and credential setup."
     },
     {
       "id": 11,
@@ -271,7 +281,8 @@
         "https://developer.zendesk.com/documentation/authentication/oauth-migration/"
       ],
       "access_group": "Gated",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Work with an authorized administrator to confirm tenant permissions and credential setup."
     },
     {
       "id": 12,
@@ -298,7 +309,8 @@
         "kind": "Official",
         "scope": "US-hosted workspaces only per checked docs",
         "url": "https://developers.intercom.com/docs/guides/mcp"
-      }
+      },
+      "next_action": "Use an authorized sandbox and test one scoped workflow with test data."
     },
     {
       "id": 13,
@@ -320,7 +332,8 @@
         "https://developers.freshdesk.com/api/"
       ],
       "access_group": "Self-serve",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Use the documented development path and test one small, scoped API workflow."
     },
     {
       "id": 14,
@@ -348,7 +361,8 @@
         "kind": "Official beta",
         "scope": "Inbox workflows; workspace admin/private app path",
         "url": "https://help.front.com/en/articles/4883136"
-      }
+      },
+      "next_action": "Work with an authorized administrator to confirm tenant permissions and credential setup."
     },
     {
       "id": 15,
@@ -375,7 +389,8 @@
         "kind": "Official",
         "scope": "Pylon support workspace",
         "url": "https://support.usepylon.com/articles/2407390554-connecting-to-the-pylon-mcp-server"
-      }
+      },
+      "next_action": "Work with an authorized administrator to confirm tenant permissions and credential setup."
     },
     {
       "id": 16,
@@ -397,7 +412,8 @@
         "https://support.liveagent.com/741982-API-key"
       ],
       "access_group": "Gated",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Work with an authorized administrator to confirm tenant permissions and credential setup."
     },
     {
       "id": 17,
@@ -424,7 +440,8 @@
         "kind": "Official",
         "scope": "Support workflow tools; vendor describes its server",
         "url": "https://www.plain.com/blog/mcp-customer-support-2026"
-      }
+      },
+      "next_action": "Compare the documented MCP tools with the target workflow, then test with authorized access."
     },
     {
       "id": 18,
@@ -447,7 +464,8 @@
         "https://docs.helpscout.com/article/1140-mailbox-api"
       ],
       "access_group": "Gated",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Confirm the required plan and ask whether a developer sandbox or trial is available."
     },
     {
       "id": 19,
@@ -470,7 +488,8 @@
         "https://developers.gorgias.com/docs/oauth2-authentication-for-creating-apps-with-gorgias"
       ],
       "access_group": "Unknown",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Map the app-review requirements and request approved developer or partner access."
     },
     {
       "id": 20,
@@ -492,7 +511,8 @@
         "https://developer.gladly.com/rest/"
       ],
       "access_group": "Unknown",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Obtain an authorized customer test tenant and confirm its API permissions."
     },
     {
       "id": 21,
@@ -519,7 +539,8 @@
         "kind": "Official",
         "scope": "Slack account access; distinct from Slackbot as MCP client",
         "url": "https://slack.com/help/articles/48855576908307-Guide-to-Model-Context-Protocol-in-Slack"
-      }
+      },
+      "next_action": "Use an authorized sandbox and test one scoped workflow with test data."
     },
     {
       "id": 22,
@@ -543,7 +564,8 @@
         "https://www.twilio.com/docs/iam/api-keys"
       ],
       "access_group": "Self-serve",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Use the documented development path and test one small, scoped API workflow."
     },
     {
       "id": 23,
@@ -565,7 +587,8 @@
         "https://www.zoho.com/cliq/help/restapi/v3/oauth/"
       ],
       "access_group": "Unknown",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Confirm the exact API allowance for a free or trial account; ask the vendor if the docs do not settle it."
     },
     {
       "id": 24,
@@ -592,7 +615,8 @@
         "kind": "Official",
         "scope": "User/tenant token modes and selected OpenAPI tools",
         "url": "https://github.com/larksuite/lark-openapi-mcp/blob/main/docs/usage/configuration/configuration.md"
-      }
+      },
+      "next_action": "Work with an authorized administrator to confirm tenant permissions and credential setup."
     },
     {
       "id": 25,
@@ -619,7 +643,8 @@
         "kind": "Official",
         "scope": "Messaging and workspace actions",
         "url": "https://pumble.com/help/integrations/automation-workflow-integrations/how-to-use-the-pumble-mcp-server/"
-      }
+      },
+      "next_action": "Compare the documented MCP tools with the target workflow, then test with authorized access."
     },
     {
       "id": 26,
@@ -642,7 +667,8 @@
         "https://discord.com/developers/docs/topics/oauth2"
       ],
       "access_group": "Unknown",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Map the app-review requirements and request approved developer or partner access."
     },
     {
       "id": 27,
@@ -664,7 +690,8 @@
         "https://core.telegram.org/bots/features"
       ],
       "access_group": "Self-serve",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Use the documented development path and test one small, scoped API workflow."
     },
     {
       "id": 28,
@@ -686,7 +713,8 @@
         "https://whatsapp.github.io/WhatsApp-Nodejs-SDK/"
       ],
       "access_group": "Self-serve",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Use an authorized sandbox and test one scoped workflow with test data."
     },
     {
       "id": 29,
@@ -710,7 +738,8 @@
         "https://developer.aircall.io/tutorials/"
       ],
       "access_group": "Unknown",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Obtain an authorized customer test tenant and confirm its API permissions."
     },
     {
       "id": 30,
@@ -735,7 +764,8 @@
         "https://developer.vonage.com"
       ],
       "access_group": "Self-serve",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Use the documented development path and test one small, scoped API workflow."
     },
     {
       "id": 31,
@@ -758,7 +788,8 @@
         "https://developers.google.com/google-ads/api/docs/api-policy/developer-token"
       ],
       "access_group": "Gated",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Map the app-review requirements and request approved developer or partner access."
     },
     {
       "id": 32,
@@ -781,7 +812,8 @@
         "https://github.com/facebook/facebook-nodejs-business-sdk/blob/main/README.md"
       ],
       "access_group": "Gated",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Map the app-review requirements and request approved developer or partner access."
     },
     {
       "id": 33,
@@ -803,7 +835,8 @@
         "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access?view=li-lms-2026-03"
       ],
       "access_group": "Gated",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Map the app-review requirements and request approved developer or partner access."
     },
     {
       "id": 34,
@@ -826,7 +859,8 @@
         "https://marketplace.gohighlevel.com/docs/oauth/SandboxPIT/"
       ],
       "access_group": "Self-serve",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Use an authorized sandbox and test one scoped workflow with test data."
     },
     {
       "id": 35,
@@ -850,7 +884,8 @@
         "https://mailchimp.com/developer/marketing/docs/fundamentals/"
       ],
       "access_group": "Unknown",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Confirm the exact API allowance for a free or trial account; ask the vendor if the docs do not settle it."
     },
     {
       "id": 36,
@@ -873,7 +908,8 @@
         "https://developers.klaviyo.com/en/v2026-01-15/docs/authenticate_"
       ],
       "access_group": "Unknown",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Confirm the exact API allowance for a free or trial account; ask the vendor if the docs do not settle it."
     },
     {
       "id": 37,
@@ -894,7 +930,8 @@
         "https://help.systeme.io/article/2323-how-to-use-systeme-io-public-api"
       ],
       "access_group": "Unknown",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Confirm the exact API allowance for a free or trial account; ask the vendor if the docs do not settle it."
     },
     {
       "id": 38,
@@ -916,7 +953,8 @@
         "https://developers.pinterest.com/docs/developer-tools/sandbox/"
       ],
       "access_group": "Gated",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Map the app-review requirements and request approved developer or partner access."
     },
     {
       "id": 39,
@@ -939,7 +977,8 @@
         "https://www.postman.com/meta/threads/documentation/dht3nzz/threads-api"
       ],
       "access_group": "Unknown",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Map the app-review requirements and request approved developer or partner access."
     },
     {
       "id": 40,
@@ -961,7 +1000,8 @@
         "https://www.twilio.com/docs/sendgrid/ui/account-and-settings/api-keys"
       ],
       "access_group": "Unknown",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Obtain an authorized customer test tenant and confirm its API permissions."
     },
     {
       "id": 41,
@@ -988,7 +1028,8 @@
         "kind": "Official; partial",
         "scope": "Storefront shopping, catalog and cart; not full Admin API",
         "url": "https://shopify.dev/docs/apps/build/storefront-mcp/servers/storefront"
-      }
+      },
+      "next_action": "Use an authorized sandbox and test one scoped workflow with test data."
     },
     {
       "id": 42,
@@ -1011,7 +1052,8 @@
         "https://developer.woocommerce.com/docs/apis/rest-api/"
       ],
       "access_group": "Self-serve",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Run a small local test, then define input, timeout and output limits."
     },
     {
       "id": 43,
@@ -1038,7 +1080,8 @@
         "kind": "Official beta; partial",
         "scope": "Storefront commerce; not full management API",
         "url": "https://docs.bigcommerce.com/developer/api-reference/mcp/overview"
-      }
+      },
+      "next_action": "Obtain an authorized customer test tenant and confirm its API permissions."
     },
     {
       "id": 44,
@@ -1061,7 +1104,8 @@
         "https://developer.salesforce.com/docs/commerce/commerce-api/guide/security.html"
       ],
       "access_group": "Gated",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Work with an authorized administrator to confirm tenant permissions and credential setup."
     },
     {
       "id": 45,
@@ -1086,7 +1130,8 @@
         "https://developer.adobe.com/commerce/webapi/graphql/usage/authorization-tokens"
       ],
       "access_group": "Self-serve",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Run a small local test, then define input, timeout and output limits."
     },
     {
       "id": 46,
@@ -1109,7 +1154,8 @@
         "https://developers.squarespace.com/commerce-apis/making-requests"
       ],
       "access_group": "Gated",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Compare custom-app plan requirements with the OAuth Extensions route for the intended workflow."
     },
     {
       "id": 47,
@@ -1132,7 +1178,8 @@
         "https://docs.ecwid.com/develop-apps/app-settings"
       ],
       "access_group": "Gated",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Confirm the required plan and ask whether a developer sandbox or trial is available."
     },
     {
       "id": 48,
@@ -1154,7 +1201,8 @@
         "https://gumroad.com/api"
       ],
       "access_group": "Unknown",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Confirm the exact API allowance for a free or trial account; ask the vendor if the docs do not settle it."
     },
     {
       "id": 49,
@@ -1177,7 +1225,8 @@
         "https://developer-docs.amazon.com/sp-api/lang-en_EN/docs/sp-api-registration-overview"
       ],
       "access_group": "Gated",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Map the app-review requirements and request approved developer or partner access."
     },
     {
       "id": 50,
@@ -1199,7 +1248,8 @@
         "https://demo.embedded.fanbasis.io/docs/getting-started"
       ],
       "access_group": "Unknown",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Obtain an authorized customer test tenant and confirm its API permissions."
     },
     {
       "id": 51,
@@ -1225,7 +1275,8 @@
         "kind": "Official",
         "scope": "SEO and data tools",
         "url": "https://dataforseo.com/help-center/setting-up-the-official-dataforseo-mcp-server-simple-guide"
-      }
+      },
+      "next_action": "Confirm the exact API allowance for a free or trial account; ask the vendor if the docs do not settle it."
     },
     {
       "id": 52,
@@ -1247,7 +1298,8 @@
         "https://seranking.com/api/project/getting-started/"
       ],
       "access_group": "Gated",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Confirm the required plan and ask whether a developer sandbox or trial is available."
     },
     {
       "id": 53,
@@ -1274,7 +1326,8 @@
         "kind": "Official",
         "scope": "SEO research; Lite plan or higher",
         "url": "https://docs.ahrefs.com/en/mcp/docs/introduction"
-      }
+      },
+      "next_action": "Confirm the required plan and ask whether a developer sandbox or trial is available."
     },
     {
       "id": 54,
@@ -1301,7 +1354,8 @@
         "kind": "Official",
         "scope": "Scrape, search, status and results",
         "url": "https://docs.mrscraper.com/docs/getting-started/mcp-server"
-      }
+      },
+      "next_action": "Confirm the exact API allowance for a free or trial account; ask the vendor if the docs do not settle it."
     },
     {
       "id": 55,
@@ -1328,7 +1382,8 @@
         "kind": "Official",
         "scope": "Run Apify Actors and access results",
         "url": "https://github.com/apify/apify-mcp-server"
-      }
+      },
+      "next_action": "Confirm the exact API allowance for a free or trial account; ask the vendor if the docs do not settle it."
     },
     {
       "id": 56,
@@ -1355,7 +1410,8 @@
         "kind": "Official",
         "scope": "Web scrape and crawl tools",
         "url": "https://github.com/firecrawl/firecrawl-mcp-server"
-      }
+      },
+      "next_action": "Compare the documented MCP tools with the target workflow, then test with authorized access."
     },
     {
       "id": 57,
@@ -1380,7 +1436,8 @@
         "kind": "Official",
         "scope": "Free and paid web data tools; quotas differ",
         "url": "https://docs.brightdata.com/ai/mcp-server/overview"
-      }
+      },
+      "next_action": "Compare the documented MCP tools with the target workflow, then test with authorized access."
     },
     {
       "id": 58,
@@ -1401,7 +1458,8 @@
         "https://github.com/sherlock-project/sherlock"
       ],
       "access_group": "Self-serve",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Run a small local test, then define input, timeout and output limits."
     },
     {
       "id": 59,
@@ -1423,7 +1481,8 @@
         "https://www.waterfall.io/product/contact-search"
       ],
       "access_group": "Unknown",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Obtain an authorized customer test tenant and confirm its API permissions."
     },
     {
       "id": 60,
@@ -1447,7 +1506,8 @@
         "https://www.clay.com/pricing"
       ],
       "access_group": "Unknown",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Confirm the exact API allowance for a free or trial account; ask the vendor if the docs do not settle it."
     },
     {
       "id": 61,
@@ -1476,7 +1536,8 @@
         "kind": "Official",
         "scope": "GitHub repository and collaboration resources",
         "url": "https://github.com/github/github-mcp-server"
-      }
+      },
+      "next_action": "Compare the documented MCP tools with the target workflow, then test with authorized access."
     },
     {
       "id": 62,
@@ -1502,7 +1563,8 @@
         "kind": "Official",
         "scope": "Vercel deployment/project workflows",
         "url": "https://vercel.com/docs/agent-resources/vercel-mcp"
-      }
+      },
+      "next_action": "Confirm the exact API allowance for a free or trial account; ask the vendor if the docs do not settle it."
     },
     {
       "id": 63,
@@ -1529,7 +1591,8 @@
         "kind": "Official",
         "scope": "Build, deploy and manage Netlify resources",
         "url": "https://github.com/netlify/netlify-mcp"
-      }
+      },
+      "next_action": "Confirm the exact API allowance for a free or trial account; ask the vendor if the docs do not settle it."
     },
     {
       "id": 64,
@@ -1556,7 +1619,8 @@
         "kind": "Official",
         "scope": "Cloudflare API plus product-specific servers",
         "url": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare/"
-      }
+      },
+      "next_action": "Confirm the exact API allowance for a free or trial account; ask the vendor if the docs do not settle it."
     },
     {
       "id": 65,
@@ -1586,7 +1650,8 @@
         "kind": "Official",
         "scope": "Management/project capabilities; PAT permissions apply",
         "url": "https://supabase.com/docs/guides/platform/personal-access-tokens"
-      }
+      },
+      "next_action": "Compare the documented MCP tools with the target workflow, then test with authorized access."
     },
     {
       "id": 66,
@@ -1614,7 +1679,8 @@
         "kind": "Official",
         "scope": "Schema introspection and Cypher read/write; database credentials and optional read-only mode",
         "url": "https://neo4j.com/docs/mcp/current/tools/"
-      }
+      },
+      "next_action": "Run a small local test, then define input, timeout and output limits."
     },
     {
       "id": 67,
@@ -1642,7 +1708,8 @@
         "kind": "Official",
         "scope": "Managed Cortex Analyst/Search/Agents and configured SQL/custom tools; OAuth and RBAC",
         "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp"
-      }
+      },
+      "next_action": "Obtain an authorized customer test tenant and confirm its API permissions."
     },
     {
       "id": 68,
@@ -1669,7 +1736,8 @@
         "kind": "Official",
         "scope": "Local or Atlas-managed data and cluster operations; setup and roles differ",
         "url": "https://www.mongodb.com/docs/mcp-server/overview/"
-      }
+      },
+      "next_action": "Work with an authorized administrator to confirm tenant permissions and credential setup."
     },
     {
       "id": 69,
@@ -1695,7 +1763,8 @@
         "kind": "Official",
         "scope": "Remote observability tools; separate local Code Security MCP and site restrictions",
         "url": "https://docs.datadoghq.com/mcp_server/"
-      }
+      },
+      "next_action": "Obtain an authorized customer test tenant and confirm its API permissions."
     },
     {
       "id": 70,
@@ -1723,7 +1792,8 @@
         "kind": "Official",
         "scope": "OAuth-scoped errors, performance, issue triage and project tools",
         "url": "https://mcp.sentry.dev/"
-      }
+      },
+      "next_action": "Confirm the exact API allowance for a free or trial account; ask the vendor if the docs do not settle it."
     },
     {
       "id": 71,
@@ -1750,7 +1820,8 @@
         "kind": "Official",
         "scope": "User-authorized Notion content",
         "url": "https://www.notion.com/help/notion-mcp"
-      }
+      },
+      "next_action": "Confirm the exact API allowance for a free or trial account; ask the vendor if the docs do not settle it."
     },
     {
       "id": 72,
@@ -1777,7 +1848,8 @@
         "kind": "Official",
         "scope": "Authorized Airtable bases/resources",
         "url": "https://support.airtable.com/articles/9897799762-using-the-airtable-mcp-server"
-      }
+      },
+      "next_action": "Compare the documented MCP tools with the target workflow, then test with authorized access."
     },
     {
       "id": 73,
@@ -1807,7 +1879,8 @@
         "kind": "Official",
         "scope": "Linear issues and workspace actions",
         "url": "https://linear.app/docs/mcp"
-      }
+      },
+      "next_action": "Compare the documented MCP tools with the target workflow, then test with authorized access."
     },
     {
       "id": 74,
@@ -1835,7 +1908,8 @@
         "kind": "Official",
         "scope": "Rovo MCP with Jira work-item search and updates; OAuth 2.1, permissions and credit limits",
         "url": "https://developer.atlassian.com/cloud/rovo-mcp/guides/getting-started/"
-      }
+      },
+      "next_action": "Work with an authorized administrator to confirm tenant permissions and credential setup."
     },
     {
       "id": 75,
@@ -1863,7 +1937,8 @@
         "kind": "Official",
         "scope": "Asana work resources through OAuth",
         "url": "https://developers.asana.com/docs/integrating-with-asanas-mcp-server"
-      }
+      },
+      "next_action": "Compare the documented MCP tools with the target workflow, then test with authorized access."
     },
     {
       "id": 76,
@@ -1891,7 +1966,8 @@
         "kind": "Official",
         "scope": "GraphQL tools and separate app-development mode",
         "url": "https://developer.monday.com/api-reference/docs/integrate-with-monday-mcp"
-      }
+      },
+      "next_action": "Use an authorized sandbox and test one scoped workflow with test data."
     },
     {
       "id": 77,
@@ -1919,7 +1995,8 @@
         "kind": "Official",
         "scope": "Workspace tools; Free Forever has 50 daily calls",
         "url": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server"
-      }
+      },
+      "next_action": "Compare the documented MCP tools with the target workflow, then test with authorized access."
     },
     {
       "id": 78,
@@ -1941,7 +2018,8 @@
         "https://help.coda.io/hc/en-us/articles/39555760015757-Overview-Doc-limits"
       ],
       "access_group": "Self-serve",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Use the documented development path and test one small, scoped API workflow."
     },
     {
       "id": 79,
@@ -1967,7 +2045,8 @@
         "kind": "Official",
         "scope": "Sheets, rows, workflow and portfolio tools; Business/Enterprise/Advanced Work Management required",
         "url": "https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server"
-      }
+      },
+      "next_action": "Confirm the required plan and ask whether a developer sandbox or trial is available."
     },
     {
       "id": 80,
@@ -1991,7 +2070,8 @@
         "https://support.getharvest.com/hc/en-us/articles/360048180732-The-Harvest-API"
       ],
       "access_group": "Self-serve",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Use the documented development path and test one small, scoped API workflow."
     },
     {
       "id": 81,
@@ -2018,7 +2098,8 @@
         "kind": "Official",
         "scope": "Customers, products and payment-related tools",
         "url": "https://github.com/mcp/com.stripe/mcp"
-      }
+      },
+      "next_action": "Use an authorized sandbox and test one scoped workflow with test data."
     },
     {
       "id": 82,
@@ -2046,7 +2127,8 @@
         "kind": "Official; partial",
         "scope": "Dashboard developer tools; not blanket bank-data access",
         "url": "https://plaid.com/docs/resources/mcp/"
-      }
+      },
+      "next_action": "Use an authorized sandbox and test one scoped workflow with test data."
     },
     {
       "id": 83,
@@ -2068,7 +2150,8 @@
         "https://developers.binance.com/en/docs/products/spot/rest-api"
       ],
       "access_group": "Unknown",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Separate sandbox testing from production approval and confirm the production requirements."
     },
     {
       "id": 84,
@@ -2087,7 +2170,8 @@
       "note": "Request the exact vendor URL and API contact. NMI-powered is a hint, not evidence of Paygent's auth or access.",
       "sources": [],
       "access_group": "Unknown",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Obtain the exact vendor URL and product identity before choosing an integration route."
     },
     {
       "id": 85,
@@ -2116,7 +2200,8 @@
         "kind": "Official",
         "scope": "Free MCP: 10 FX audits/day; paid forensic report. Contract inconsistencies across REST pages remain.",
         "url": "https://www.ipayx.ai/docs/mcp-server"
-      }
+      },
+      "next_action": "Evaluate the documented MCP path; ask the vendor to reconcile the conflicting REST contracts."
     },
     {
       "id": 86,
@@ -2138,7 +2223,8 @@
         "https://static.developer.intuit.com/resources/Intuit_App_Partner_Program_Guide.pdf"
       ],
       "access_group": "Self-serve",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Use an authorized sandbox and test one scoped workflow with test data."
     },
     {
       "id": 87,
@@ -2161,7 +2247,8 @@
         "https://developer.xero.com/pricing"
       ],
       "access_group": "Self-serve",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Use the documented development path and test one small, scoped API workflow."
     },
     {
       "id": 88,
@@ -2188,7 +2275,8 @@
         "kind": "Official",
         "scope": "Role-controlled Brex account data",
         "url": "https://www.brex.com/support/using-brex-in-ai-apps"
-      }
+      },
+      "next_action": "Obtain an authorized customer test tenant and confirm its API permissions."
     },
     {
       "id": 89,
@@ -2216,7 +2304,8 @@
         "kind": "Official",
         "scope": "Account MCP distinct from unauthenticated developer-docs MCP",
         "url": "https://support.ramp.com/ramp-mcp"
-      }
+      },
+      "next_action": "Use an authorized sandbox and test one scoped workflow with test data."
     },
     {
       "id": 90,
@@ -2238,7 +2327,8 @@
         "https://pitchbook.com/data"
       ],
       "access_group": "Gated",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Request the licensed API contract, authentication details and a test-access option."
     },
     {
       "id": 91,
@@ -2261,7 +2351,8 @@
         "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks"
       ],
       "access_group": "Gated",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Work with an authorized administrator to confirm tenant permissions and credential setup."
     },
     {
       "id": 92,
@@ -2288,7 +2379,8 @@
         "kind": "Official",
         "scope": "OAuth meeting access; API and MCP entitlements differ",
         "url": "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server"
-      }
+      },
+      "next_action": "Confirm the required plan and ask whether a developer sandbox or trial is available."
     },
     {
       "id": 93,
@@ -2310,7 +2402,8 @@
         "https://developers.fathom.ai/index"
       ],
       "access_group": "Unknown",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Confirm the exact API allowance for a free or trial account; ask the vendor if the docs do not settle it."
     },
     {
       "id": 94,
@@ -2337,7 +2430,8 @@
         "kind": "Official",
         "scope": "Scientific search; OAuth or enterprise bearer key",
         "url": "https://docs.consensus.app/consensus-mcp"
-      }
+      },
+      "next_action": "Compare the documented MCP tools with the target workflow, then test with authorized access."
     },
     {
       "id": 95,
@@ -2363,7 +2457,8 @@
         "kind": "Official",
         "scope": "Document processing via hosted server or local wrapper",
         "url": "https://github.com/reductoai/mcp-server-reducto"
-      }
+      },
+      "next_action": "Confirm the exact API allowance for a free or trial account; ask the vendor if the docs do not settle it."
     },
     {
       "id": 96,
@@ -2389,7 +2484,8 @@
         "kind": "Official",
         "scope": "New cog_ credentials; legacy API keys unsupported for MCP",
         "url": "https://docs.devin.ai/es/api-reference/authentication"
-      }
+      },
+      "next_action": "Confirm the exact API allowance for a free or trial account; ask the vendor if the docs do not settle it."
     },
     {
       "id": 97,
@@ -2416,7 +2512,8 @@
         "kind": "Official",
         "scope": "Creative generation using account credits",
         "url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-higgsfield-mcp"
-      }
+      },
+      "next_action": "Confirm the required plan and ask whether a developer sandbox or trial is available."
     },
     {
       "id": 98,
@@ -2437,7 +2534,8 @@
         "https://github.com/mermaid-js/mermaid-cli"
       ],
       "access_group": "Self-serve",
-      "mcp": null
+      "mcp": null,
+      "next_action": "Wrap local rendering as a bounded agent tool, then test a small diagram."
     },
     {
       "id": 99,
@@ -2465,7 +2563,8 @@
         "kind": "Official (TranscriptAPI)",
         "scope": "Third-party YouTube transcript/discovery tools",
         "url": "https://transcriptapi.com/docs/mcp/"
-      }
+      },
+      "next_action": "Confirm the required plan and ask whether a developer sandbox or trial is available."
     },
     {
       "id": 100,
@@ -2493,7 +2592,8 @@
         "kind": "Official",
         "scope": "Meeting data; basic/advanced access depends on plan",
         "url": "https://developers.grain.com/mcp"
-      }
+      },
+      "next_action": "Compare the documented MCP tools with the target workflow, then test with authorized access."
     }
   ],
   "stats": {

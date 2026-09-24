@@ -7,6 +7,14 @@ A single-page case study covering all 100 apps in the assignment: what they do, 
 - **Scope:** public documentation research, not authenticated integration testing.
 - **AI disclosure:** Codex performed research, semantic review, implementation and browser checks. Independent human checks remain pending and are explicitly shown on the page.
 
+## Read or present the case study
+
+The redesigned page has six chapters: takeaway, patterns, next moves, proof, all 100 apps and handoff. Use **Present** to switch to a chapter-at-a-time presentation; use the buttons or arrow keys to advance. The app grid and library open focused evidence records. Search, category, verdict and MCP filters work together; exports include the selected records.
+
+Every app includes a `next_action` recommendation derived from its existing research. These recommendations are not completed tests or confirmed workarounds. The original Build / Conditional / Investigate classifications are preserved in the data; the interface explains them as prototype candidates, prerequisites to resolve and further investigation. Reverse engineering and vendor outreach are possible future investigation routes, not established outcomes.
+
+Visual references: [Pentagram's SSG editorial design](https://www.pentagram.com/work/sustainability-solutions-group) and [Stripe's 2025 annual letter](https://stripe.com/annual-updates/2025). The typography, chapter structure and visual hierarchy are original adaptations; no reference artwork or brand assets are copied.
+
 ## Run in under a minute
 
 Python 3.9+; standard library only. No package installation, model subscription or API keys are required to reproduce the frozen output.
