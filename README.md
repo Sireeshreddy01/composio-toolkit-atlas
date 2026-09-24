@@ -142,8 +142,10 @@ Submission requires the live-page URL and this repository URL. The form also ask
 
 ## Interface validation
 
-Run `node tests/reviewer-tools.test.cjs` to check the exact functions embedded in the HTML template: corrupted dataset inputs, request/parameter validation, host restriction, full response retention, headers, schema mismatches, empty lists, HTTP/network failures and cancellation. Run `python3 -m unittest discover -s tests -p 'test_*.py'` for fabricated citations, wrong-app sources, failed HTTP evidence, missing/duplicate verification, semantic rejection and the long-index regression. Failure-path unit tests use fixtures, not vendor requests.
+Run `node tests/reviewer-tools.test.cjs` to check the exact functions embedded in the HTML template: corrupted dataset inputs, request/parameter validation, host restriction, full response retention, headers, schema mismatches, HTTP/network failures and cancellation. Run `python3 -m unittest discover -s tests -p 'test_*.py'` for fabricated citations, wrong-app sources, failed HTTP evidence, missing/duplicate verification, semantic rejection and the long-index regression. Failure-path unit tests use fixtures, not vendor requests.
 
 The earlier browser demo also made a real public GitHub request during UI verification on 24 September 2026: HTTP 200, expected repository response, 446 ms. The sanitized result is saved in `evidence/github-public-read.json`. This is one unauthenticated public read, separate from the 100-app documentation study and its unchanged authenticated-test count.
 
 The final console replaces generic repository metadata requests with assessment-specific JSON endpoints generated under `api/`. They serve the same versioned research as the HTML. Request parameters choose actual app/category resource paths. The public-data demo is explicitly distinct from authenticated tests of vendor integrations.
+
+All six final assessment-resource requests returned HTTP 200 in a real browser, including cross-origin reads from the local single-file preview. See `evidence/assessment-console-browser-checks.json`.

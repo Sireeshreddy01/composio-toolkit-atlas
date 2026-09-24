@@ -1,0 +1,50 @@
+{
+  "checked_at": "2026-09-24T13:51:26.287735+00:00",
+  "method": "Actual browser UI requests from localhost to the published GitHub Pages assessment data resources; confirms cross-origin reads.",
+  "authentication": "None",
+  "checks": [
+    {
+      "endpoint": "app",
+      "http_status": 200,
+      "elapsed_ms": 1029,
+      "response_bytes": 1390,
+      "resource_shape_confirmed": true
+    },
+    {
+      "endpoint": "all",
+      "http_status": 200,
+      "elapsed_ms": 444,
+      "response_bytes": 149076,
+      "resource_shape_confirmed": true
+    },
+    {
+      "endpoint": "category",
+      "http_status": 200,
+      "elapsed_ms": 289,
+      "response_bytes": 14749,
+      "resource_shape_confirmed": true
+    },
+    {
+      "endpoint": "priorities",
+      "http_status": 200,
+      "elapsed_ms": 377,
+      "response_bytes": 63853,
+      "resource_shape_confirmed": true
+    },
+    {
+      "endpoint": "evidence",
+      "http_status": 200,
+      "elapsed_ms": 280,
+      "response_bytes": 7880,
+      "resource_shape_confirmed": true
+    },
+    {
+      "endpoint": "verification",
+      "http_status": 200,
+      "elapsed_ms": 349,
+      "response_bytes": 373025,
+      "resource_shape_confirmed": true
+    }
+  ],
+  "scope": "Published assessment snapshots, not authenticated vendor API calls or a fresh research run."
+}
