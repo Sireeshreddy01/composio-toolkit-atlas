@@ -23,7 +23,9 @@ The first two tools work offline. Fresh research across arbitrary vendor documen
 
 Every app includes a `next_action` derived from its research. Conditional apps with an established product identity also include an `alternative_action`: capture and reproduce a read workflow from an authorized account, document the endpoint and schema, and assess session requirements and repeatability. These are proposed endpoint reverse-engineering tasks, not completed tests or a guarantee of access to restricted features. The original classifications are preserved.
 
-The interface uses restrained system typography, descriptive headings and explicit review controls. Earlier layout exploration referenced [Pentagram's SSG report](https://www.pentagram.com/work/sustainability-solutions-group) and [Stripe's annual update](https://stripe.com/annual-updates/2025); no artwork or brand assets are copied.
+The visual design pairs a warm paper landing page with a charcoal presentation stage, orange accents, embedded Geist / Geist Mono typography and a clickable 100-app integration map. Research references: [Composio’s current homepage](https://composio.dev/) for its technical typography and dark product presentation, and [Y Combinator](https://www.ycombinator.com/) for its restrained orange and warm neutral palette. This is an original assessment presentation, not an official Composio or YC site; their logos and artwork are not reproduced.
+
+`site/report.css` contains the design system. The build embeds that CSS and local WOFF2 fonts into the single HTML deliverable so the design works offline. Font files were obtained through Google Fonts; SIL Open Font License notices are included in `site/fonts/` and in the generated HTML.
 
 ## Run in under a minute
 
@@ -94,7 +96,8 @@ Some development-access judgments combine multiple sources. Linear combines Free
 ## Files
 
 - `index.html`: self-contained deliverable.
-- `site/template.html`: editable page template.
+- `site/template.html`: editable page structure and reviewer tools.
+- `site/report.css`, `site/fonts/`: visual system and embedded, licensed typography.
 - `data/apps.tsv`: frozen app set and seed URLs.
 - `data/first-pass.json`: frozen real collector output, with copyrighted snippets omitted; guesses, hashes and timings preserved.
 - `data/review-pass1.tsv`: first enriched draft, before later corrections.

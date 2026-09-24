@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Validate reviewed evidence and build the self-contained case study offline."""
-import collections,csv,html,json,pathlib
+import base64,collections,csv,html,json,pathlib
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 SELF={'Free','Sandbox','Trial','Local'}
 GATED={'Paid','Admin / paid','Approval'}
@@ -78,7 +78,13 @@ def build():
     payload={'as_of':'2026-09-24','scope':'100 assignment apps; documentation review, not authenticated integration tests','rows':rows,'stats':stats,'audit':{**audit,'checks':evaluations},'sample_plan':plan,'revisions':read_json('revisions.json'),'source_checks':source_checks}
     data=json.dumps(payload,ensure_ascii=False).replace('</','<\\/')
     template=(ROOT/'site/template.html').read_text();assert template.count('@@DATA@@')==1
-    (ROOT/'index.html').write_text(template.replace('@@DATA@@',data))
+    font_css=[]
+    for family,file,weight in [('Geist','geist-latin.woff2','400 700'),('Geist Mono','geist-mono-latin.woff2','400 500')]:
+        encoded=base64.b64encode((ROOT/'site/fonts'/file).read_bytes()).decode()
+        font_css.append("@font-face{font-family:'"+family+"';font-style:normal;font-weight:"+weight+";font-display:swap;src:url(data:font/woff2;base64,"+encoded+") format('woff2')}")
+    font_license='<script type="text/plain" id="font-licenses">'+ '\n\n'.join((ROOT/'site/fonts'/name).read_text() for name in ('Geist-OFL.txt','Geist-Mono-OFL.txt'))+'</script>'
+    page=template.replace('@@DATA@@',data).replace('@@CSS@@',(ROOT/'site/report.css').read_text()).replace('@@FONTS@@','\n'.join(font_css))
+    (ROOT/'index.html').write_text(page.replace('<head>','<head>\n'+font_license))
     (ROOT/'data/atlas.json').write_text(json.dumps(payload,indent=2,ensure_ascii=False))
     fields=['id','app','category','description','auth','access','access_detail','surface','verdict','blocker','next_action','alternative_action','note','sources','mcp_kind','mcp_scope','mcp_url']
     with (ROOT/'data/atlas.csv').open('w',newline='') as f:
