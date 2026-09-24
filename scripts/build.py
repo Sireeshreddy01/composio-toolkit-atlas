@@ -35,6 +35,14 @@ def next_action(row):
         'Commercial access':'Request a scoped API agreement and a test-access option.',
         'Conflicting docs':'Ask the vendor to confirm the supported endpoint and request schema.'}
     return actions.get(row['blocker'],'Resolve the documented prerequisite, then compare supported API, MCP, CLI or export routes.')
+def alternative_action(row):
+    """Proposed authorized endpoint investigation, never a completed result."""
+    if row['id']==84 or row['access']=='Local':return ''
+    if row['verdict']=='Build':return ''
+    return (f"In an authorized {row['app']} account, capture the browser requests for one read workflow. "
+            "Identify the endpoint, HTTP method, parameters and response schema; reproduce the request with authorized access. "
+            "Record session dependencies, pagination, limits and repeatability before implementing a tool wrapper. "
+            "Use this route for features already available to that account.")
 def build():
     seeds=read_tsv('apps.tsv'); reviewed=read_tsv('reviewed.tsv');mcp=read_json('mcp.json')
     baseline=read_json('first-pass.json');audit=read_json('audit.json');plan=read_json('sample-plan.json')
@@ -49,7 +57,7 @@ def build():
         assert all(x.startswith('https://') for x in item['sources'])
         assert row['verdict'] in {'Build','Conditional','Investigate'}
         assert row['access'] in SELF|GATED|{'Account check','Unresolved'}
-        item['access_group']=access_group(row['access']);item['mcp']=mcp.get(row['id']);item['next_action']=next_action(item);rows.append(item)
+        item['access_group']=access_group(row['access']);item['mcp']=mcp.get(row['id']);item['next_action']=next_action(item);item['alternative_action']=alternative_action(item);rows.append(item)
     byid={x['id']:x for x in rows};first={x['id']:x for x in baseline['results']}
     evaluations=[]
     for check in audit['checks']:
@@ -72,7 +80,7 @@ def build():
     template=(ROOT/'site/template.html').read_text();assert template.count('@@DATA@@')==1
     (ROOT/'index.html').write_text(template.replace('@@DATA@@',data))
     (ROOT/'data/atlas.json').write_text(json.dumps(payload,indent=2,ensure_ascii=False))
-    fields=['id','app','category','description','auth','access','access_detail','surface','verdict','blocker','next_action','note','sources','mcp_kind','mcp_scope','mcp_url']
+    fields=['id','app','category','description','auth','access','access_detail','surface','verdict','blocker','next_action','alternative_action','note','sources','mcp_kind','mcp_scope','mcp_url']
     with (ROOT/'data/atlas.csv').open('w',newline='') as f:
         writer=csv.DictWriter(f,fieldnames=fields,lineterminator='\n');writer.writeheader()
         for row in rows:

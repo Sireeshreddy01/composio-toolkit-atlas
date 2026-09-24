@@ -1,0 +1,21 @@
+{
+  "kind": "Live public API read",
+  "endpoint": "https://api.github.com/repos/Sireeshreddy01/composio-toolkit-atlas",
+  "method": "GET",
+  "authentication": "None",
+  "started_at": "2026-09-24T12:53:46.140Z",
+  "http_status": 200,
+  "passed": true,
+  "rate_limit_remaining": "59",
+  "response": {
+    "id": 1385294941,
+    "full_name": "Sireeshreddy01/composio-toolkit-atlas",
+    "private": false,
+    "default_branch": "main",
+    "html_url": "https://github.com/Sireeshreddy01/composio-toolkit-atlas",
+    "description": "Composio AI Product Ops take-home: 100-app toolkit research, evidence, runnable pipeline and verification"
+  },
+  "elapsed_ms": 446,
+  "completed_at": "2026-09-24T12:53:46.586Z",
+  "scope": "One unauthenticated public repository read. No OAuth, private data, write operations or other endpoints tested."
+}

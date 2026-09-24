@@ -9,11 +9,21 @@ A single-page case study covering all 100 apps in the assignment: what they do, 
 
 ## Read or present the case study
 
-The redesigned page has six chapters: takeaway, patterns, next moves, proof, all 100 apps and handoff. Use **Present** to switch to a chapter-at-a-time presentation; use the buttons or arrow keys to advance. The app grid and library open focused evidence records. Search, category, verdict and MCP filters work together; exports include the selected records.
+The page has six sections: executive summary, key findings, recommendations, method and validation, the application library, and next steps. **Start presentation** opens a guided section-by-section view; a dismissible first-visit tip explains navigation. Use the buttons or arrow keys to advance, or Escape to exit. The app grid and library open evidence records. Filters and exports include selected records.
 
-Every app includes a `next_action` recommendation derived from its existing research. These recommendations are not completed tests or confirmed workarounds. The original Build / Conditional / Investigate classifications are preserved in the data; the interface explains them as prototype candidates, prerequisites to resolve and further investigation. Reverse engineering and vendor outreach are possible future investigation routes, not established outcomes.
+### Run directly on the page
 
-Visual references: [Pentagram's SSG editorial design](https://www.pentagram.com/work/sustainability-solutions-group) and [Stripe's 2025 annual letter](https://stripe.com/annual-updates/2025). The typography, chapter structure and visual hierarchy are original adaptations; no reference artwork or brand assets are copied.
+Select **Try an example** or **Run checks here**. No installation is needed:
+
+1. **Research example:** four steps replay the saved Freshdesk finding from an incorrect access prediction to the reviewed record and proposed implementation test. This does not perform a new source review.
+2. **Run dataset checks:** JavaScript checks all 100 embedded records, category and source coverage, recomputes summary counts, and recalculates the 20-app diagnostic sample from initial predictions and reviewed rows against the saved agent-authored rubric. Results and exact executable code are visible; the result can be downloaded as JSON. This is consistency checking, not independent fact verification.
+3. **Live API request:** an explicit button sends one unauthenticated GET request to GitHub for this public repository. It records HTTP status, elapsed time, selected response fields and schema checks, or the actual failure. No credentials, writes or proxy backend are used. Browser/network restrictions and rate limits can prevent a result. This demo does not change the frozen research or count as an authenticated integration test.
+
+The first two tools work offline. Fresh research across arbitrary vendor documentation still uses the Python collector below because vendor pages do not universally permit browser cross-origin reads. The browser does not silently proxy requests or simulate live success.
+
+Every app includes a `next_action` derived from its research. Conditional apps with an established product identity also include an `alternative_action`: capture and reproduce a read workflow from an authorized account, document the endpoint and schema, and assess session requirements and repeatability. These are proposed endpoint reverse-engineering tasks, not completed tests or a guarantee of access to restricted features. The original classifications are preserved.
+
+The interface uses restrained system typography, descriptive headings and explicit review controls. Earlier layout exploration referenced [Pentagram's SSG report](https://www.pentagram.com/work/sustainability-solutions-group) and [Stripe's annual update](https://stripe.com/annual-updates/2025); no artwork or brand assets are copied.
 
 ## Run in under a minute
 
@@ -103,3 +113,9 @@ Some development-access judgments combine multiple sources. Linear combines Free
 The brief asks for human checks and candidate understanding. The page includes five targeted primary-source checks. A person must inspect them, record actual findings and corrections, and understand the workflow before representing those checks as complete. Update the review record and page only after that happens.
 
 Submission requires the live-page URL and this repository URL. The form also asks for one file. The self-contained HTML or packaged source can be supplied, subject to its allowed file types. The form has not been submitted by this repository's workflow.
+
+## Interface validation
+
+Run `node tests/reviewer-tools.test.cjs` to check the exact functions embedded in the HTML template. Tests cover corrupted dataset inputs and live-request success, unexpected schema, HTTP failure, network failure and timeout handling. This command uses mocked responses for failure paths; it does not make vendor requests.
+
+The browser demo also made a real public GitHub request during UI verification on 24 September 2026: HTTP 200, expected repository response, 446 ms. The sanitized result is saved in `evidence/github-public-read.json`. This is one unauthenticated public read, separate from the 100-app documentation study and its unchanged authenticated-test count.
