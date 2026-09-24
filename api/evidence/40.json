@@ -1,0 +1,42 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 40,
+  "app": "SendGrid",
+  "sources": [
+    "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+    "https://www.twilio.com/docs/sendgrid/ui/account-and-settings/api-keys"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 228,
+      "url": "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+      "checked_at": "2026-09-24T10:49:05.443771+00:00",
+      "status": 200,
+      "final_url": "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+      "sha256": "449d8027aeb491262c0e7561a45b2e864157491aee9a2f6a3cceff23c964af10",
+      "text_chars": 17165,
+      "auth_guess": "API key",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 229,
+      "url": "https://www.twilio.com/docs/sendgrid/ui/account-and-settings/api-keys",
+      "checked_at": "2026-09-24T10:49:05.458773+00:00",
+      "status": 200,
+      "final_url": "https://www.twilio.com/docs/sendgrid/ui/account-and-settings/api-keys",
+      "sha256": "60f167ec6a0c1c9146f2da7135bfd48ca9aa1a038339f966d7df0f89c46282fc",
+      "text_chars": 11783,
+      "auth_guess": "API key",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

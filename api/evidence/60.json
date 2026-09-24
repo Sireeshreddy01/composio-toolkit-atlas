@@ -1,0 +1,56 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 60,
+  "app": "Clay",
+  "sources": [
+    "https://agent-docs.clay.com/blog/implementation-guide/we-want-to-test-two-versions-of-an-outbound-sequence-without-spinning-up-a-whole-new-campaign-each-t-fdd053",
+    "https://university.clay.com/docs/webhook-integration-guide",
+    "https://www.clay.com/pricing"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 1,
+      "url": "https://agent-docs.clay.com/blog/implementation-guide/we-want-to-test-two-versions-of-an-outbound-sequence-without-spinning-up-a-whole-new-campaign-each-t-fdd053",
+      "checked_at": "2026-09-24T10:48:24.227001+00:00",
+      "status": 200,
+      "final_url": "https://agent-docs.clay.com/blog/implementation-guide/we-want-to-test-two-versions-of-an-outbound-sequence-without-spinning-up-a-whole-new-campaign-each-t-fdd053",
+      "sha256": "9e7bf4d13b45a524ac13fff962ba986fff7cf5bd07732ecdfd4f5cb19624cd82",
+      "text_chars": 11013,
+      "auth_guess": "API key",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 205,
+      "url": "https://university.clay.com/docs/webhook-integration-guide",
+      "checked_at": "2026-09-24T10:49:01.330927+00:00",
+      "status": 200,
+      "final_url": "https://university.clay.com/docs/webhook-integration-guide",
+      "sha256": "993aaed21c02b59cb9a7e4f0b8701df7ddf0ed87b9a16684655923c8b3a824ca",
+      "text_chars": 5024,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 210,
+      "url": "https://www.clay.com/pricing",
+      "checked_at": "2026-09-24T10:49:02.003173+00:00",
+      "status": 200,
+      "final_url": "https://www.clay.com/pricing",
+      "sha256": "dc5489a4cdd915360fb28fe45d03bec3c17116fc4d376913c6e98c24e735c854",
+      "text_chars": 31219,
+      "auth_guess": "API key",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

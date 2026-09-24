@@ -1,0 +1,30 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 92,
+  "app": "Otter AI",
+  "sources": [
+    "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server",
+    "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 150,
+      "url": "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server",
+      "checked_at": "2026-09-24T10:48:51.659296+00:00",
+      "status": "unresolved",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": 151,
+      "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+      "checked_at": "2026-09-24T10:48:51.735806+00:00",
+      "status": "unresolved",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

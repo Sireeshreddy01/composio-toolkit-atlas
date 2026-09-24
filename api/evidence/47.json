@@ -1,0 +1,42 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 47,
+  "app": "Ecwid",
+  "sources": [
+    "https://docs.ecwid.com/develop-apps/app-settings",
+    "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 108,
+      "url": "https://docs.ecwid.com/develop-apps/app-settings",
+      "checked_at": "2026-09-24T10:48:44.533144+00:00",
+      "status": 200,
+      "final_url": "https://docs.ecwid.com/develop-apps/app-settings",
+      "sha256": "2a63b87eb0f68b59f27c92ea955f6215703c41ce92aeab7f1574cca4537bce7f",
+      "text_chars": 9810,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 109,
+      "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+      "checked_at": "2026-09-24T10:48:44.581565+00:00",
+      "status": 200,
+      "final_url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+      "sha256": "5d3408daa853e669b86b2c96b4912afe79234434b19d5492e5877fabfe256eae",
+      "text_chars": 3261,
+      "auth_guess": "Token",
+      "surface_guess": "REST",
+      "access_guess": "Gated",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

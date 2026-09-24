@@ -1,0 +1,37 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 88,
+    "category": "Finance & Fintech",
+    "app": "Brex",
+    "url": "https://developer.brex.com",
+    "description": "Corporate cards, spending and financial operations",
+    "auth": [
+      "OAuth2",
+      "Token"
+    ],
+    "access": "Account check",
+    "access_detail": "Customer user token or partner OAuth; account eligibility and partner enablement need confirmation.",
+    "surface": "REST; spend, expenses, payments and company operations",
+    "verdict": "Conditional",
+    "blocker": "Customer access",
+    "note": "User tokens may expire after inactivity; use partner OAuth for multi-customer access.",
+    "sources": [
+      "https://developer.brex.com/docs/faq",
+      "https://developer.brex.com/guides/partner_authentication"
+    ],
+    "access_group": "Unknown",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Role-controlled Brex account data",
+      "url": "https://www.brex.com/support/using-brex-in-ai-apps"
+    },
+    "workflow": "Read approved expense metadata",
+    "next_action": "Confirm Brex customer/developer eligibility and read one test expense using an authorized token with documented expiry behavior.",
+    "success_criterion": "Return the approved expense and token-lifetime constraints without enabling payment or card mutations.",
+    "alternative_action": "Use partner OAuth for multi-customer access; request a test tenant rather than borrowing a personal customer token.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

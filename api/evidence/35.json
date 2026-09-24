@@ -1,0 +1,42 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 35,
+  "app": "Mailchimp",
+  "sources": [
+    "https://mailchimp.com/developer/marketing/docs/fundamentals/",
+    "https://mailchimp.com/developer/marketing/guides/quick-start/"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 161,
+      "url": "https://mailchimp.com/developer/marketing/docs/fundamentals/",
+      "checked_at": "2026-09-24T10:48:52.793016+00:00",
+      "status": 200,
+      "final_url": "https://mailchimp.com/developer/marketing/docs/fundamentals/",
+      "sha256": "417c046ab1dd6628da83cc4f9bbbc7d24fbd21a764fc2cddb45dcf4818654c29",
+      "text_chars": 9111,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 162,
+      "url": "https://mailchimp.com/developer/marketing/guides/quick-start/",
+      "checked_at": "2026-09-24T10:48:52.810155+00:00",
+      "status": 200,
+      "final_url": "https://mailchimp.com/developer/marketing/guides/quick-start/",
+      "sha256": "290d8084d97bd0741ccde03f8f6d85387ee8b8df37b2ac90a8c2e8e60e060646",
+      "text_chars": 4859,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

@@ -1,0 +1,70 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 85,
+  "app": "iPayX",
+  "sources": [
+    "https://www.ipayx.ai/developers",
+    "https://www.ipayx.ai/developers/sandbox",
+    "https://www.ipayx.ai/docs/api",
+    "https://www.ipayx.ai/docs/mcp-server"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 212,
+      "url": "https://www.ipayx.ai/developers",
+      "checked_at": "2026-09-24T10:49:02.063365+00:00",
+      "status": 200,
+      "final_url": "https://www.ipayx.ai/developers",
+      "sha256": "9dd9d6c48d6f4c7fa9392b9dfe6828a16f1e9fcbafa1b9981355b32e31acb47b",
+      "text_chars": 61,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 213,
+      "url": "https://www.ipayx.ai/developers/sandbox",
+      "checked_at": "2026-09-24T10:49:02.069295+00:00",
+      "status": 200,
+      "final_url": "https://www.ipayx.ai/developers/sandbox",
+      "sha256": "9dd9d6c48d6f4c7fa9392b9dfe6828a16f1e9fcbafa1b9981355b32e31acb47b",
+      "text_chars": 61,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 214,
+      "url": "https://www.ipayx.ai/docs/api",
+      "checked_at": "2026-09-24T10:49:02.109294+00:00",
+      "status": 200,
+      "final_url": "https://www.ipayx.ai/docs/api",
+      "sha256": "9dd9d6c48d6f4c7fa9392b9dfe6828a16f1e9fcbafa1b9981355b32e31acb47b",
+      "text_chars": 61,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 215,
+      "url": "https://www.ipayx.ai/docs/mcp-server",
+      "checked_at": "2026-09-24T10:49:02.128919+00:00",
+      "status": 200,
+      "final_url": "https://www.ipayx.ai/docs/mcp-server",
+      "sha256": "9dd9d6c48d6f4c7fa9392b9dfe6828a16f1e9fcbafa1b9981355b32e31acb47b",
+      "text_chars": 61,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

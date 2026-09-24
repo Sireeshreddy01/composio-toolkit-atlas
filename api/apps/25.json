@@ -1,0 +1,37 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 25,
+    "category": "Communications",
+    "app": "Pumble",
+    "url": "https://pumble.com",
+    "description": "Team chat and collaboration",
+    "auth": [
+      "API key",
+      "Token"
+    ],
+    "access": "Free",
+    "access_detail": "API and integrations available across subscriptions; install the API-key integration.",
+    "surface": "REST; messaging, channels and workspace operations",
+    "verdict": "Build",
+    "blocker": "None",
+    "note": "MCP configuration requires the documented token headers, not a guessed generic bearer flow.",
+    "sources": [
+      "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration/",
+      "https://pumble.com/integrations/plaky"
+    ],
+    "access_group": "Self-serve",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Messaging and workspace actions",
+      "url": "https://pumble.com/help/integrations/automation-workflow-integrations/how-to-use-the-pumble-mcp-server/"
+    },
+    "workflow": "Read a Pumble test channel",
+    "next_action": "Connect Pumble using its documented token headers and retrieve one approved channel or message through API or MCP.",
+    "success_criterion": "Return the seeded channel/message using the documented headers and account limits.",
+    "alternative_action": "Check MCP tool coverage before writing a wrapper; do not guess a generic bearer authorization scheme.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

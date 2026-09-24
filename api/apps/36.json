@@ -1,0 +1,33 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 36,
+    "category": "Marketing & Social",
+    "app": "Klaviyo",
+    "url": "https://developers.klaviyo.com",
+    "description": "Customer marketing and lifecycle messaging",
+    "auth": [
+      "OAuth2",
+      "API key"
+    ],
+    "access": "Account check",
+    "access_detail": "Private scoped keys from account settings; public client keys have limited scope; plan quotas need confirmation.",
+    "surface": "REST; profiles, events, lists, campaigns and flows",
+    "verdict": "Conditional",
+    "blocker": "Plan check",
+    "note": "Do not confuse public tracking keys with privileged server-side API credentials.",
+    "sources": [
+      "https://developers.klaviyo.com/en/reference/api_overview",
+      "https://developers.klaviyo.com/en/v2026-01-15/docs/authenticate_"
+    ],
+    "access_group": "Unknown",
+    "mcp": null,
+    "workflow": "Read a test profile",
+    "next_action": "Confirm Klaviyo server-side API eligibility, create a least-privilege private key, and retrieve a seeded profile.",
+    "success_criterion": "Return the test profile using a private server key; demonstrate that a public tracking key cannot authorize it.",
+    "alternative_action": "Check whether official MCP exposes the same profile fields; otherwise use the documented profiles API.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

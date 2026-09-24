@@ -1,0 +1,37 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 15,
+    "category": "Support & Helpdesk",
+    "app": "Pylon",
+    "url": "https://usepylon.com",
+    "description": "B2B support across chat and ticket channels",
+    "auth": [
+      "Token"
+    ],
+    "access": "Admin / paid",
+    "access_detail": "Only admins can create API tokens; an existing workspace is required.",
+    "surface": "REST; issues, accounts, contacts and knowledge base",
+    "verdict": "Conditional",
+    "blocker": "Admin",
+    "note": "Use a scoped operational workflow; quotas differ by endpoint.",
+    "sources": [
+      "https://docs.usepylon.com/pylon-docs/developer/api",
+      "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+      "https://docs.usepylon.com/pylon-docs/developer/api/api-reference"
+    ],
+    "access_group": "Gated",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Pylon support workspace",
+      "url": "https://support.usepylon.com/articles/2407390554-connecting-to-the-pylon-mcp-server"
+    },
+    "workflow": "Read an issue and its account",
+    "next_action": "Ask a Pylon administrator for scoped test credentials and retrieve one seeded issue with its account relationship.",
+    "success_criterion": "Return the issue/account identifiers and record the quota for the chosen operation.",
+    "alternative_action": "Inspect the authorized issue-detail UI only to identify fields absent from the public issue schema.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

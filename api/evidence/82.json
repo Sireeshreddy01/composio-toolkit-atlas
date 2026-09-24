@@ -1,0 +1,70 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 82,
+  "app": "Plaid",
+  "sources": [
+    "https://plaid.com/docs/api/",
+    "https://plaid.com/docs/quickstart/",
+    "https://plaid.com/docs/resources/mcp/",
+    "https://plaid.com/docs/sandbox/"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 172,
+      "url": "https://plaid.com/docs/api/",
+      "checked_at": "2026-09-24T10:48:54.063056+00:00",
+      "status": 200,
+      "final_url": "https://plaid.com/docs/api/",
+      "sha256": "ec9196cdbea50355f718b2de1cd8babbbbee9fa9254af4f18c9bfd9664bd3fdc",
+      "text_chars": 6314,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 173,
+      "url": "https://plaid.com/docs/quickstart/",
+      "checked_at": "2026-09-24T10:48:54.157884+00:00",
+      "status": 200,
+      "final_url": "https://plaid.com/docs/quickstart/",
+      "sha256": "68ff9a4781f980eead2f5aabde5580e9f8fd73a703b33c242084dd064ae94e48",
+      "text_chars": 13541,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 174,
+      "url": "https://plaid.com/docs/resources/mcp/",
+      "checked_at": "2026-09-24T10:48:54.224266+00:00",
+      "status": 200,
+      "final_url": "https://plaid.com/docs/resources/mcp/",
+      "sha256": "263f4e76e92fead41ffb5320b632cb122c06d00340006b4542a9a5299b21c137",
+      "text_chars": 8845,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 175,
+      "url": "https://plaid.com/docs/sandbox/",
+      "checked_at": "2026-09-24T10:48:54.306555+00:00",
+      "status": 200,
+      "final_url": "https://plaid.com/docs/sandbox/",
+      "sha256": "2f62d0c77bfff958225c696ec68ba6393608eb6642c9fa4304694db3ab33b046",
+      "text_chars": 13355,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Self-serve",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

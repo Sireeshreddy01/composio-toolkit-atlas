@@ -1,0 +1,42 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 95,
+  "app": "Reducto",
+  "sources": [
+    "https://github.com/reductoai/mcp-server-reducto",
+    "https://reducto.ai/developers"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 143,
+      "url": "https://github.com/reductoai/mcp-server-reducto",
+      "checked_at": "2026-09-24T10:48:50.721257+00:00",
+      "status": 200,
+      "final_url": "https://github.com/reductoai/mcp-server-reducto",
+      "sha256": "fe99404c27fe93e1af7511a48f7940701787fe79ea1bb86486ac3d831677f409",
+      "text_chars": 25870,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 179,
+      "url": "https://reducto.ai/developers",
+      "checked_at": "2026-09-24T10:48:55.483980+00:00",
+      "status": 200,
+      "final_url": "https://reducto.ai/developers",
+      "sha256": "50d691179311d6615da8755e59c554f5ffa0d9936c15f65c4d8b4a11254bb967",
+      "text_chars": 5102,
+      "auth_guess": "API key",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

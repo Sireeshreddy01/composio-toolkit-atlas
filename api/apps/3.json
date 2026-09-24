@@ -1,0 +1,38 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 3,
+    "category": "CRM & Sales",
+    "app": "Pipedrive",
+    "url": "https://pipedrive.readme.io/docs/core-api-concepts-authentication",
+    "description": "Sales pipelines and deal tracking",
+    "auth": [
+      "OAuth2",
+      "API key"
+    ],
+    "access": "Trial",
+    "access_detail": "API token included with every plan; developer sandbox path documented.",
+    "surface": "REST; broad deals, people, activities and webhooks",
+    "verdict": "Build",
+    "blocker": "None",
+    "note": "Use OAuth for distributed apps; a personal token inherits the user's access.",
+    "sources": [
+      "https://www.pipedrive.com/en/features/crm-api",
+      "https://developers.pipedrive.com/docs/api/v1",
+      "https://pipedrive.readme.io/docs/core-api-concepts-authentication"
+    ],
+    "access_group": "Self-serve",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Native CRM workflows",
+      "url": "https://www.pipedrive.com/en/features/mcp-server"
+    },
+    "workflow": "List deals in a trial account",
+    "next_action": "Seed two Pipedrive deals in a trial, list them with a personal token, then document the OAuth scopes required for a distributed app.",
+    "success_criterion": "Retrieve the seeded deals and correctly follow pagination without exposing other users' tokens.",
+    "alternative_action": "Compare the official MCP deal tools with the required custom fields before building a REST wrapper.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

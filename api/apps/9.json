@@ -1,0 +1,33 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 9,
+    "category": "CRM & Sales",
+    "app": "Copper",
+    "url": "https://developer.copper.com/introduction/authentication.html",
+    "description": "Relationship CRM for Google Workspace teams",
+    "auth": [
+      "OAuth2",
+      "API key"
+    ],
+    "access": "Trial",
+    "access_detail": "API available on trial, Professional and Business plans.",
+    "surface": "REST; CRM people, companies, opportunities and activity",
+    "verdict": "Build",
+    "blocker": "Subscription",
+    "note": "Keys require both token and user email; partner OAuth is a separate path.",
+    "sources": [
+      "https://developer.copper.com/introduction/authentication.html",
+      "https://support.copper.com/en/articles/8823462-api-docs-and-tips"
+    ],
+    "access_group": "Self-serve",
+    "mcp": null,
+    "workflow": "Read an opportunity in a trial",
+    "next_action": "Create a Copper trial opportunity and read it using the required API token and user-email context.",
+    "success_criterion": "Return the opportunity ID and stage, and document which user's permissions apply.",
+    "alternative_action": "Request partner OAuth details only when customer distribution is required; a trial key is a separate development route.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 65,
+    "category": "Developer & Infra",
+    "app": "Supabase",
+    "url": "https://supabase.com/docs",
+    "description": "Hosted Postgres and backend services",
+    "auth": [
+      "OAuth2",
+      "Token",
+      "API key"
+    ],
+    "access": "Free",
+    "access_detail": "Two free projects plus project API credentials support a scoped database prototype; management roles and quotas still apply.",
+    "surface": "Management REST; project REST/GraphQL, storage and auth",
+    "verdict": "Build",
+    "blocker": "None",
+    "note": "Free project route is inferred from billing and project API docs; keep project keys separate from management tokens and enforce row-level security.",
+    "sources": [
+      "https://supabase.com/docs/reference/api/introduction",
+      "https://supabase.com/docs/guides/platform/personal-access-tokens",
+      "https://supabase.com/docs",
+      "https://supabase.com/docs/guides/platform/billing-on-supabase"
+    ],
+    "access_group": "Self-serve",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Management/project capabilities; PAT permissions apply",
+      "url": "https://supabase.com/docs/guides/platform/personal-access-tokens"
+    },
+    "workflow": "Read rows protected by row-level security",
+    "next_action": "Create a free Supabase test project, seed two differently owned rows, and query through the project API with the intended user context.",
+    "success_criterion": "Return only permitted rows; record RLS behavior and keep management tokens out of the data-plane test.",
+    "alternative_action": "Use the project REST or GraphQL surface for records; reserve management MCP for project administration.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

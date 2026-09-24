@@ -1,0 +1,37 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 53,
+    "category": "Data & SEO",
+    "app": "Ahrefs",
+    "url": "https://ahrefs.com/api",
+    "description": "SEO, backlinks and competitive research",
+    "auth": [
+      "API key",
+      "OAuth2"
+    ],
+    "access": "Paid",
+    "access_detail": "MCP available on Lite or higher; API entitlement and units vary by plan.",
+    "surface": "REST; SEO analytics, backlinks and keywords",
+    "verdict": "Conditional",
+    "blocker": "Subscription",
+    "note": "Older enterprise-only blanket claims are unsafe; check endpoint and plan rather than brand alone.",
+    "sources": [
+      "https://ahrefs.com/api",
+      "https://docs.ahrefs.com/en/mcp/docs/introduction"
+    ],
+    "access_group": "Gated",
+    "mcp": {
+      "kind": "Official",
+      "scope": "SEO research; Lite plan or higher",
+      "url": "https://docs.ahrefs.com/en/mcp/docs/introduction"
+    },
+    "workflow": "Read one permitted SEO report",
+    "next_action": "Check Ahrefs access for the exact endpoint and subscription, then retrieve a small authorized backlink or keyword report.",
+    "success_criterion": "Record the endpoint's entitlement and unit usage with the returned report.",
+    "alternative_action": "Evaluate the official MCP allowance separately; do not rely on an old blanket Enterprise-only rule.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

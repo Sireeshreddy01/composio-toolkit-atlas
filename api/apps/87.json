@@ -1,0 +1,33 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 87,
+    "category": "Finance & Fintech",
+    "app": "Xero",
+    "url": "https://developer.xero.com",
+    "description": "Cloud accounting and business finance",
+    "auth": [
+      "OAuth2"
+    ],
+    "access": "Free",
+    "access_detail": "Free developer account and starter path; connection/data-volume tiers govern scaling.",
+    "surface": "REST; accounting, invoices, contacts and reports",
+    "verdict": "Build",
+    "blocker": "Production entitlement",
+    "note": "No basic API-key auth; 2026 developer pricing changed, so validate connection and egress limits.",
+    "sources": [
+      "https://developer.xero.com/faq/getting-started",
+      "https://developer.xero.com/documentation/getting-started-guide/",
+      "https://developer.xero.com/pricing"
+    ],
+    "access_group": "Self-serve",
+    "mcp": null,
+    "workflow": "Read a demo-company contact",
+    "next_action": "Use Xero's developer/demo-company path to read a contact and verify current connection and data-egress allowances.",
+    "success_criterion": "Return the contact with tenant context and record the applicable developer pricing limits.",
+    "alternative_action": "Check the official MCP's authorization and connection model before assuming it avoids developer-platform limits.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 93,
+  "app": "Fathom",
+  "sources": [
+    "https://developers.fathom.ai/index"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 68,
+      "url": "https://developers.fathom.ai/index",
+      "checked_at": "2026-09-24T10:48:37.498240+00:00",
+      "status": 200,
+      "final_url": "https://developers.fathom.ai/index",
+      "sha256": "9a100b8119e221da917e217b761361d35cd25499d9706a9be9fa351d53944557",
+      "text_chars": 1113,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

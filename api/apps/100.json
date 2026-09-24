@@ -1,0 +1,38 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 100,
+    "category": "AI & Media",
+    "app": "Grain",
+    "url": "https://grain.com",
+    "description": "Meeting recordings, notes and insights",
+    "auth": [
+      "Token",
+      "OAuth2"
+    ],
+    "access": "Trial",
+    "access_detail": "Business trial includes personal/workspace API and advanced MCP; paid-plan features vary.",
+    "surface": "REST + MCP; recordings, transcripts, notes and workspace data",
+    "verdict": "Build",
+    "blocker": "Subscription",
+    "note": "Distinguish basic/advanced MCP and API plan entitlement; source meeting permissions still apply.",
+    "sources": [
+      "https://support.grain.com/en/articles/9253206-grain-business-trial",
+      "https://support.grain.com/en/articles/9253220-plans",
+      "https://developers.grain.com/mcp"
+    ],
+    "access_group": "Self-serve",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Meeting data; basic/advanced access depends on plan",
+      "url": "https://developers.grain.com/mcp"
+    },
+    "workflow": "Read an authorized meeting recording",
+    "next_action": "Use a Grain trial and confirm API versus basic/advanced MCP entitlement before retrieving one authorized test recording's metadata.",
+    "success_criterion": "Return the recording ID and permitted transcript/notes fields; record trial and meeting-access limitations.",
+    "alternative_action": "Choose the MCP tier only after comparing required transcript and workspace operations with its documented tool list.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

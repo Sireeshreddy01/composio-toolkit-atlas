@@ -1,0 +1,37 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 72,
+    "category": "Productivity",
+    "app": "Airtable",
+    "url": "https://airtable.com/developers",
+    "description": "Collaborative databases and workflows",
+    "auth": [
+      "OAuth2",
+      "Token"
+    ],
+    "access": "Free",
+    "access_detail": "Web API available on Free and paid plans; scopes and base permissions apply.",
+    "surface": "REST; records, bases, metadata and webhooks",
+    "verdict": "Build",
+    "blocker": "None",
+    "note": "Use PATs/OAuth rather than retired legacy API keys; free plans retain request limits.",
+    "sources": [
+      "https://support.airtable.com/articles/6292134965-getting-started-with-airtable-s-web-api",
+      "https://support.airtable.com/articles/9934989703-creating-personal-access-tokens"
+    ],
+    "access_group": "Self-serve",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Authorized Airtable bases/resources",
+      "url": "https://support.airtable.com/articles/9897799762-using-the-airtable-mcp-server"
+    },
+    "workflow": "Read records in one Airtable base",
+    "next_action": "Create a free test base and a PAT limited to that base, then list seeded records within the documented request allowance.",
+    "success_criterion": "Return record IDs and fields with pagination; verify the token cannot read another base.",
+    "alternative_action": "Use OAuth for customer-installed access; do not document retired legacy API keys as a new setup path.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

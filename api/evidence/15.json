@@ -1,0 +1,218 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 15,
+  "app": "Pylon",
+  "sources": [
+    "https://docs.usepylon.com/pylon-docs/developer/api",
+    "https://docs.usepylon.com/pylon-docs/developer/api/api-reference",
+    "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+    "https://support.usepylon.com/articles/2407390554-connecting-to-the-pylon-mcp-server"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 132,
+      "url": "https://docs.usepylon.com/pylon-docs/developer/api",
+      "checked_at": "2026-09-24T10:48:48.116267+00:00",
+      "status": 200,
+      "final_url": "https://docs.usepylon.com/pylon-docs/developer/api",
+      "sha256": "fd1ed8be12d967481fdf30213d8c8bbbb6b82d0f416fd2e2f6b3090df2b6a98a",
+      "text_chars": 2123,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 133,
+      "url": "https://docs.usepylon.com/pylon-docs/developer/api/api-reference",
+      "checked_at": "2026-09-24T10:48:48.124215+00:00",
+      "status": 200,
+      "final_url": "https://docs.usepylon.com/pylon-docs/developer/api/api-reference",
+      "sha256": "33bc3ebce7f009fc64c39c5758ce37befe0e2533a990ad41b1cfd2516fa50073",
+      "text_chars": 2188,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 134,
+      "url": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+      "checked_at": "2026-09-24T10:48:48.819572+00:00",
+      "status": 200,
+      "final_url": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+      "sha256": "bd4a1d851ff1392be90340225139dda03bf927a8fc2f89245dae0ccddbfbe960",
+      "text_chars": 2544,
+      "auth_guess": "Token",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 200,
+      "url": "https://support.usepylon.com/articles/2407390554-connecting-to-the-pylon-mcp-server",
+      "checked_at": "2026-09-24T10:49:00.539978+00:00",
+      "status": 200,
+      "final_url": "https://support.usepylon.com/articles/2407390554-connecting-to-the-pylon-mcp-server",
+      "sha256": "107d680c2addcab021ba4ee0afc13406fe181e76b4ad30b7155222256adabda4",
+      "text_chars": 4218,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": {
+    "id": 15,
+    "app": "Pylon",
+    "category": "Support & Helpdesk",
+    "product_scope": "Pylon B2B support platform at usepylon.com",
+    "fields": {
+      "authentication": {
+        "answer": "REST API requests use bearer API tokens generated in the Pylon dashboard. The base URL must match the tenant's hosting region.",
+        "status": "supported",
+        "caveat": "Only admins create tokens. Tenant region cannot be discovered from a token through an API endpoint.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 15,
+          "field": "authentication",
+          "assessment": "supported",
+          "reason": "S041 explicitly specifies bearer API tokens and tenant-region routing; S040 establishes admin-only token creation."
+        },
+        "citations": [
+          {
+            "source_id": "S041",
+            "url": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+            "retrieved_at": "2026-09-24T13:29:49.433893+00:00",
+            "source_sha256": "c32de0d73774fc9d74d50c6272f15fa8a139c64aa029838c9848ee8178d1952d",
+            "quote_sha256": "39adf36c808ee24fd09ae3874cecf2cb60a8a036b94b2f9362b95bfd4718bce1",
+            "normalized_offset": 116,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S041",
+            "url": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+            "retrieved_at": "2026-09-24T13:29:49.433893+00:00",
+            "source_sha256": "c32de0d73774fc9d74d50c6272f15fa8a139c64aa029838c9848ee8178d1952d",
+            "quote_sha256": "cea55ad064ed7ab58195932dd38d8bde487e3931b029bfe2a09eda35bd3dc3da",
+            "normalized_offset": 369,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "development_access": {
+        "answer": "API credential creation requires an Admin user. The packet does not establish free, trial or sandbox API entitlement.",
+        "status": "supported",
+        "caveat": "The admin requirement establishes a gate, not a paid-plan requirement.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 15,
+          "field": "development_access",
+          "assessment": "supported",
+          "reason": "S040 directly establishes the admin credential gate. The record correctly leaves free, trial and sandbox entitlement unestablished."
+        },
+        "citations": [
+          {
+            "source_id": "S040",
+            "url": "https://docs.usepylon.com/pylon-docs/developer/api",
+            "retrieved_at": "2026-09-24T13:29:49.219509+00:00",
+            "source_sha256": "6623f2db7585557c147f823f9be52b5cdb95bd4edbb1347259c823082f75b808",
+            "quote_sha256": "52b15e2459fce98c7d0e45815bbc7ab76043174274f40a9b68d0f9c268062802",
+            "normalized_offset": 194,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "api_surface": {
+        "answer": "The REST API supports fetching customer and issue information and creating issues; /me returns organization details.",
+        "status": "supported",
+        "caveat": "The API-reference index alone is not used to establish additional operations.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 15,
+          "field": "api_surface",
+          "assessment": "supported",
+          "reason": "S040–S041 describe customer and issue access, issue creation and /me; S043 explicitly identifies the REST API."
+        },
+        "citations": [
+          {
+            "source_id": "S040",
+            "url": "https://docs.usepylon.com/pylon-docs/developer/api",
+            "retrieved_at": "2026-09-24T13:29:49.219509+00:00",
+            "source_sha256": "6623f2db7585557c147f823f9be52b5cdb95bd4edbb1347259c823082f75b808",
+            "quote_sha256": "66292bd8af024c96ccedbc10fbbb306432878367bbe9d12de308c392a0e8f77a",
+            "normalized_offset": 334,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S041",
+            "url": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+            "retrieved_at": "2026-09-24T13:29:49.433893+00:00",
+            "source_sha256": "c32de0d73774fc9d74d50c6272f15fa8a139c64aa029838c9848ee8178d1952d",
+            "quote_sha256": "530d7436d60ac4d5f9156efe469b0aded93a3275cd47ab66fe869cb342e80541",
+            "normalized_offset": 732,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S043",
+            "url": "https://support.usepylon.com/articles/2407390554-connecting-to-the-pylon-mcp-server",
+            "retrieved_at": "2026-09-24T13:29:49.460555+00:00",
+            "source_sha256": "1abe3e63d005c4da6214cdbb95fd9fdf7180b89057081a62d064b77ae6c660d2",
+            "quote_sha256": "6f9c12c7b44fb76e9ba15f16b32c09786c4f79baabacd57617ffba3a6081038b",
+            "normalized_offset": 2395,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "mcp": {
+        "answer": "Pylon hosts an OAuth-only MCP at https://mcp.usepylon.com for issues, accounts and contacts. It reads and writes as the connected user.",
+        "status": "needs_review",
+        "caveat": "Requires a Member or Admin seat; Viewer/Integration users and non-OAuth headless clients cannot connect. Notebook block fetching is unsupported.",
+        "citation_binding_passed": false,
+        "verification": {
+          "id": 15,
+          "field": "mcp",
+          "assessment": "supported",
+          "reason": "S043 confirms the server, OAuth-only authentication, named resources and user-context writes, including seat and notebook limitations."
+        },
+        "citations": [
+          {
+            "source_id": "S043",
+            "url": "https://support.usepylon.com/articles/2407390554-connecting-to-the-pylon-mcp-server",
+            "retrieved_at": "2026-09-24T13:29:49.460555+00:00",
+            "source_sha256": "1abe3e63d005c4da6214cdbb95fd9fdf7180b89057081a62d064b77ae6c660d2",
+            "quote_sha256": "21eadfa56a43eb6174e7a4ab10f1be39669fb49ca669c2cfc165ddb9c679855e",
+            "normalized_offset": 186,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S043",
+            "url": "https://support.usepylon.com/articles/2407390554-connecting-to-the-pylon-mcp-server",
+            "retrieved_at": "2026-09-24T13:29:49.460555+00:00",
+            "source_sha256": "1abe3e63d005c4da6214cdbb95fd9fdf7180b89057081a62d064b77ae6c660d2",
+            "quote_sha256": "e0fe047bc69f160ffd718af787c4f86e65440b85e7e622f8d64675b492191497",
+            "normalized_offset": 1209,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S043",
+            "url": "https://support.usepylon.com/articles/2407390554-connecting-to-the-pylon-mcp-server",
+            "retrieved_at": "2026-09-24T13:29:49.460555+00:00",
+            "source_sha256": "1abe3e63d005c4da6214cdbb95fd9fdf7180b89057081a62d064b77ae6c660d2",
+            "quote_sha256": "c6123ff0889aeb3c323924bdb4e196aeaafe0d9092d08581d29a79705df9e91b",
+            "normalized_offset": null,
+            "quote_binding_passed": false
+          }
+        ]
+      }
+    },
+    "access_class": "Gated",
+    "verdict": "Access prerequisite",
+    "decision_reason": "REST token creation explicitly requires an admin; MCP separately requires a Member or Admin seat.",
+    "next_step": "Obtain Pylon's developer sandbox provisioning policy; success is a statement of API entitlement and whether admin approval or a paid tenant is required."
+  },
+  "human_review": "pending",
+  "authenticated_test": false
+}

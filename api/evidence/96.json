@@ -1,0 +1,28 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 96,
+  "app": "Devin",
+  "sources": [
+    "https://docs.devin.ai/es/api-reference/authentication"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 106,
+      "url": "https://docs.devin.ai/es/api-reference/authentication",
+      "checked_at": "2026-09-24T10:48:44.161237+00:00",
+      "status": 200,
+      "final_url": "https://docs.devin.ai/es/api-reference/authentication",
+      "sha256": "a5b1a19912a0c5e37175f34e87cf7d2ce6fa3c360a42ecd3db3e7e041fa696de",
+      "text_chars": 12283,
+      "auth_guess": "API key",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

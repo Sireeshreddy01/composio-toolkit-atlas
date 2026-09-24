@@ -1,0 +1,42 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 49,
+  "app": "Amazon Selling Partner",
+  "sources": [
+    "https://developer-docs.amazon.com/sp-api/docs/onboarding-overview",
+    "https://developer-docs.amazon.com/sp-api/lang-en_EN/docs/sp-api-registration-overview"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 18,
+      "url": "https://developer-docs.amazon.com/sp-api/docs/onboarding-overview",
+      "checked_at": "2026-09-24T10:48:27.647909+00:00",
+      "status": 200,
+      "final_url": "https://developer-docs.amazon/sp-api/docs/onboarding-overview",
+      "sha256": "6e8c7bd9f4f96b11301fa60a84c906cb67571c00be2e6f99d9e07c21c09ca158",
+      "text_chars": 28846,
+      "auth_guess": "OAuth2",
+      "surface_guess": "GraphQL",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 19,
+      "url": "https://developer-docs.amazon.com/sp-api/lang-en_EN/docs/sp-api-registration-overview",
+      "checked_at": "2026-09-24T10:48:27.887975+00:00",
+      "status": 200,
+      "final_url": "https://developer-docs.amazon/sp-api/lang-en_EN/docs/sp-api-registration-overview",
+      "sha256": "d16104dd213314c4a31e79f1bae40b8f118ef6afd7e73a6b46ee17dae16d7810",
+      "text_chars": 22061,
+      "auth_guess": "OAuth2",
+      "surface_guess": "GraphQL",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

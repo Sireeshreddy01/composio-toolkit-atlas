@@ -6,7 +6,7 @@ Composio needs to decide whether an app can become a tool an AI agent can call. 
 
 “This case study covers all 100 requested apps. A Python collector fetched public documentation and generated rough guesses. Codex then researched vendor sources, checked a 20-app sample, used browser rendering where needed, and produced an interactive matrix with evidence. The early guesses made mistakes such as reading an Enterprise menu item as a pricing gate. The final page separates documented prototype paths, conditional integrations, and unresolved identity or contract questions. The checks establish documentation support, not that every API call works.”
 
-The newer runner also performs structured extraction and a separate AI verification pass automatically, checks citations against collected text, and generates a fresh report. Reviewers can inspect its saved output on the website. The API console makes actual public GitHub requests; it is separate from the documentation research. Neither demonstrates authenticated testing of all 100 apps. Composio SDK/MCP execution is not claimed.
+The newer runner also performs structured extraction and a separate AI verification pass automatically, checks citations against collected text, and generates a fresh report. Reviewers can inspect its saved output on the website. The API console makes actual GET requests for published assessment records; it is separate from the documentation research. Neither demonstrates authenticated testing of all 100 apps. Composio SDK/MCP execution is not claimed.
 
 Use that explanation only after you understand it. Do not claim you wrote code unaided or performed tests that did not happen.
 
@@ -53,4 +53,4 @@ After checking, provide the date, your findings and any corrections. Human revie
 
 ## Give a reviewer the easiest route
 
-Open the live page and choose **Start presentation** for the findings. Choose **Try the API console — No setup** to make a real request. The reviewer workspace also contains the Freshdesk example, saved dataset checks and the recorded research run. The complete HTML contains the same interface. Live requests need internet; the saved findings and checks do not. No reviewer needs to install the Python/Codex development environment merely to inspect your submission.
+Open the live page and choose **Start presentation** for the findings. Choose **Try the API console — No setup** to request app findings, category data, recommendations or verification evidence. The reviewer workspace also contains the Freshdesk example, saved dataset checks and the recorded research run. The complete HTML contains the same interface. Live requests need internet; the saved findings and checks do not. No reviewer needs to install the Python/Codex development environment merely to inspect your submission.

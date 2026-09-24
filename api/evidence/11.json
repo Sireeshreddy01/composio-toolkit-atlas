@@ -1,0 +1,170 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 11,
+  "app": "Zendesk",
+  "sources": [
+    "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+    "https://developer.zendesk.com/documentation/authentication/oauth-migration/"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 58,
+      "url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+      "checked_at": "2026-09-24T10:48:36.038599+00:00",
+      "status": 200,
+      "final_url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+      "sha256": "794c7b22c1830a35eba6352efeb881a9d18a822525ef34ec06026e84139cabbf",
+      "text_chars": 6314,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 59,
+      "url": "https://developer.zendesk.com/documentation/authentication/oauth-migration/",
+      "checked_at": "2026-09-24T10:48:36.079726+00:00",
+      "status": 200,
+      "final_url": "https://developer.zendesk.com/documentation/authentication/oauth-migration/",
+      "sha256": "8345c5dd4978dab0a4926f3fd198576962eb3d133e9a4f6d6378fcc123195fb9",
+      "text_chars": 47968,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": {
+    "id": 11,
+    "app": "Zendesk",
+    "category": "Support & Helpdesk",
+    "product_scope": "Zendesk customer-support APIs",
+    "fields": {
+      "authentication": {
+        "answer": "OAuth bearer tokens authenticate API requests. Distributed integrations require global OAuth; internal integrations are exempt. Legacy API tokens retire April 30, 2027.",
+        "status": "supported",
+        "caveat": "Verified-user requirements apply; certain end-user endpoints have separate anonymous or password-based access rules.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 11,
+          "field": "authentication",
+          "assessment": "supported",
+          "reason": "S027 distinguishes global OAuth for distributed integrations from internal use; S028 explicitly gives the token retirement date."
+        },
+        "citations": [
+          {
+            "source_id": "S027",
+            "url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+            "retrieved_at": "2026-09-24T13:29:44.503505+00:00",
+            "source_sha256": "fcff2dc18d70a757e46577a72683ff56355bf96160347a1f6783204e1afc03bd",
+            "quote_sha256": "d93efa119576d4ca5b0a3138dee7f15e3932568b1016f055a14704bdf0184fbc",
+            "normalized_offset": 2105,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S027",
+            "url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+            "retrieved_at": "2026-09-24T13:29:44.503505+00:00",
+            "source_sha256": "fcff2dc18d70a757e46577a72683ff56355bf96160347a1f6783204e1afc03bd",
+            "quote_sha256": "3143961896a314a27116b367ee5cd3b3cb04f5afe4c79538b31b444df5cbf560",
+            "normalized_offset": 2399,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S028",
+            "url": "https://developer.zendesk.com/documentation/authentication/oauth-migration/",
+            "retrieved_at": "2026-09-24T13:29:45.014377+00:00",
+            "source_sha256": "4aa4c74e28381f269fd4c648c1b45a63d1293fef47a537214e2bfa2159ca5a5c",
+            "quote_sha256": "a700690270b544abf59881f8176a22525a072d45a02797f40a83c64096499f58",
+            "normalized_offset": 123,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "development_access": {
+        "answer": "Free, trial or sandbox API entitlement is not established by the supplied authentication guides.",
+        "status": "unresolved",
+        "caveat": "A localhost OAuth callback is a testing technique, not a free developer environment.",
+        "citation_binding_passed": false,
+        "verification": {
+          "id": 11,
+          "field": "development_access",
+          "assessment": "unresolved",
+          "reason": "S027–S028 document authentication and testing techniques, without establishing developer, trial or sandbox entitlement."
+        },
+        "citations": []
+      },
+      "api_surface": {
+        "answer": "HTTP API examples cover users, end-user requests and help-center articles; ticket-read authorization is also illustrated.",
+        "status": "supported",
+        "caveat": "These truncated authentication documents do not establish the full API inventory.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 11,
+          "field": "api_surface",
+          "assessment": "supported",
+          "reason": "S027 supplies users, requests and article examples; S028 illustrates tickets:read without establishing broader coverage."
+        },
+        "citations": [
+          {
+            "source_id": "S027",
+            "url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+            "retrieved_at": "2026-09-24T13:29:44.503505+00:00",
+            "source_sha256": "fcff2dc18d70a757e46577a72683ff56355bf96160347a1f6783204e1afc03bd",
+            "quote_sha256": "07db1f65e877939434b6c2ad66d80c1149304d8ec07844a612dee3b37d80517d",
+            "normalized_offset": 1832,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S027",
+            "url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+            "retrieved_at": "2026-09-24T13:29:44.503505+00:00",
+            "source_sha256": "fcff2dc18d70a757e46577a72683ff56355bf96160347a1f6783204e1afc03bd",
+            "quote_sha256": "9dd12e89a3e6efa02307a81ac30225937d0878841e8ba75fbf94cfc1467a5328",
+            "normalized_offset": 3870,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S027",
+            "url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+            "retrieved_at": "2026-09-24T13:29:44.503505+00:00",
+            "source_sha256": "fcff2dc18d70a757e46577a72683ff56355bf96160347a1f6783204e1afc03bd",
+            "quote_sha256": "daad3434005ce3f23221fd35309c855ddd4c8b8ec9786465280e5c602f90a74c",
+            "normalized_offset": 3676,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S028",
+            "url": "https://developer.zendesk.com/documentation/authentication/oauth-migration/",
+            "retrieved_at": "2026-09-24T13:29:45.014377+00:00",
+            "source_sha256": "4aa4c74e28381f269fd4c648c1b45a63d1293fef47a537214e2bfa2159ca5a5c",
+            "quote_sha256": "967f46c612c992a3cb3958bde640c1d24433d5ca17bdf7e8804e3ff6307b1e51",
+            "normalized_offset": 3724,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "mcp": {
+        "answer": "Vendor MCP availability is unresolved from the assigned Zendesk sources.",
+        "status": "unresolved",
+        "caveat": "Missing vendor MCP documentation does not establish absence.",
+        "citation_binding_passed": false,
+        "verification": {
+          "id": 11,
+          "field": "mcp",
+          "assessment": "unresolved",
+          "reason": "Assigned Zendesk sources contain no MCP evidence; the competitor's dated absence claim does not establish current vendor availability."
+        },
+        "citations": []
+      }
+    },
+    "access_class": "Unknown",
+    "verdict": "Review required",
+    "decision_reason": "Authentication is documented, but developer API entitlement and provisioning requirements are not.",
+    "next_step": "Obtain Zendesk's developer-account entitlement documentation; success is an explicit statement of trial or sandbox API access and its provisioning requirements."
+  },
+  "human_review": "pending",
+  "authenticated_test": false
+}

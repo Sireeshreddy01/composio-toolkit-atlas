@@ -1,0 +1,37 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 92,
+    "category": "AI & Media",
+    "app": "Otter AI",
+    "url": "https://help.otter.ai",
+    "description": "Meeting transcription and summaries",
+    "auth": [
+      "API key",
+      "OAuth2"
+    ],
+    "access": "Paid",
+    "access_detail": "Public API is available to Enterprise workspaces; MCP availability follows a separate account/plan path.",
+    "surface": "Public API plus MCP; meeting/transcript access",
+    "verdict": "Conditional",
+    "blocker": "Subscription",
+    "note": "Do not recycle older no-public-API claims or assume MCP and REST share the same entitlement.",
+    "sources": [
+      "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+      "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server"
+    ],
+    "access_group": "Gated",
+    "mcp": {
+      "kind": "Official",
+      "scope": "OAuth meeting access; API and MCP entitlements differ",
+      "url": "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server"
+    },
+    "workflow": "Retrieve an authorized meeting transcript",
+    "next_action": "Confirm Otter REST API entitlement and MCP entitlement separately, then retrieve a meeting explicitly available to the test user.",
+    "success_criterion": "Return the authorized transcript and record which plan/interface provided access.",
+    "alternative_action": "Choose MCP only if its plan and meeting permissions cover the workflow; otherwise request the REST API enterprise route.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

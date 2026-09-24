@@ -1,0 +1,34 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 29,
+    "category": "Communications",
+    "app": "Aircall",
+    "url": "https://aircall.io",
+    "description": "Cloud phone and call-center operations",
+    "auth": [
+      "OAuth2",
+      "Basic",
+      "API key"
+    ],
+    "access": "Account check",
+    "access_detail": "Account API credentials or OAuth integration; free developer entitlement not established.",
+    "surface": "REST; calls, contacts, users and numbers",
+    "verdict": "Conditional",
+    "blocker": "Customer access",
+    "note": "Basic credentials and OAuth are both supported; production requires access to a customer account.",
+    "sources": [
+      "https://developer.aircall.io/docs/authentication",
+      "https://developer.aircall.io/tutorials/"
+    ],
+    "access_group": "Unknown",
+    "mcp": null,
+    "workflow": "Read a test call record",
+    "next_action": "Confirm Aircall account entitlement, then read one test call with Basic credentials or a scoped OAuth installation.",
+    "success_criterion": "Return the approved call identifier and metadata while documenting customer-account prerequisites.",
+    "alternative_action": "Capture the authorized call-detail UI only to investigate a required metadata field absent from the public response.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

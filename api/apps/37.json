@@ -1,0 +1,31 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 37,
+    "category": "Marketing & Social",
+    "app": "systeme.io",
+    "url": "https://systeme.io",
+    "description": "Funnels, email and digital-product sales",
+    "auth": [
+      "API key"
+    ],
+    "access": "Account check",
+    "access_detail": "Public API key generated in account settings; pricing entitlement not settled by the setup article.",
+    "surface": "Public HTTP API; contact and sales-workflow integrations",
+    "verdict": "Conditional",
+    "blocker": "Plan check",
+    "note": "Public API means documented interface, not unauthenticated access.",
+    "sources": [
+      "https://help.systeme.io/article/2323-how-to-use-systeme-io-public-api"
+    ],
+    "access_group": "Unknown",
+    "mcp": null,
+    "workflow": "Retrieve a funnel contact",
+    "next_action": "Confirm systeme.io account/API eligibility and authenticate a read of a test contact tied to a known funnel.",
+    "success_criterion": "Return the seeded contact and record the supported contact or sales objects.",
+    "alternative_action": "Inspect a specific authorized funnel UI read only when the documented public API lacks a required relationship.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

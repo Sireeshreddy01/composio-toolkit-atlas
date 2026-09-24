@@ -1,0 +1,31 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 98,
+    "category": "AI & Media",
+    "app": "Mermaid CLI",
+    "url": "https://github.com/mermaid-js/mermaid-cli",
+    "description": "Render Mermaid text into diagrams",
+    "auth": [
+      "None"
+    ],
+    "access": "Local",
+    "access_detail": "Open-source local CLI; Node/browser runtime required; no account credentials.",
+    "surface": "CLI; diagrams to SVG, PNG or PDF, not a hosted REST service",
+    "verdict": "Build",
+    "blocker": "Runtime",
+    "note": "An agent-callable subprocess tool is sufficient; a native MCP server is not necessary.",
+    "sources": [
+      "https://github.com/mermaid-js/mermaid-cli"
+    ],
+    "access_group": "Self-serve",
+    "mcp": null,
+    "workflow": "Render a local diagram file",
+    "next_action": "Wrap Mermaid CLI with a fixed input directory, timeout and SVG output path, then render a small known diagram locally.",
+    "success_criterion": "Produce a valid SVG and record the exit code; reject unexpected file paths and bound runtime.",
+    "alternative_action": "Expose the subprocess directly as an agent tool; add an MCP wrapper only if the consuming agent requires that transport.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

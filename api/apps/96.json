@@ -1,0 +1,36 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 96,
+    "category": "AI & Media",
+    "app": "Devin",
+    "url": "https://docs.devin.ai",
+    "description": "Autonomous coding-agent sessions",
+    "auth": [
+      "API key",
+      "Token"
+    ],
+    "access": "Account check",
+    "access_detail": "Account/API credential required; current plan and usage entitlement need confirmation.",
+    "surface": "REST + MCP; sessions and agent execution",
+    "verdict": "Conditional",
+    "blocker": "Plan check",
+    "note": "New cog_ credentials support MCP; legacy apk_ keys do not. Restrict execution scope and cost.",
+    "sources": [
+      "https://docs.devin.ai/es/api-reference/authentication"
+    ],
+    "access_group": "Unknown",
+    "mcp": {
+      "kind": "Official",
+      "scope": "New cog_ credentials; legacy API keys unsupported for MCP",
+      "url": "https://docs.devin.ai/es/api-reference/authentication"
+    },
+    "workflow": "Inspect an existing Devin test session",
+    "next_action": "Confirm Devin account/API allowance and use a current supported credential to inspect an existing test session without launching autonomous work.",
+    "success_criterion": "Return session metadata and document credential prefix, scope and execution-cost boundaries.",
+    "alternative_action": "Keep new session creation disabled until a separate repository, permission and spending scope is agreed.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

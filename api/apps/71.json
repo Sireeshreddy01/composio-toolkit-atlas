@@ -1,0 +1,37 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 71,
+    "category": "Productivity",
+    "app": "Notion",
+    "url": "https://developers.notion.com",
+    "description": "Documents, databases and team knowledge",
+    "auth": [
+      "OAuth2",
+      "Token"
+    ],
+    "access": "Account check",
+    "access_detail": "Integration token or OAuth; user grants access to specific workspace content.",
+    "surface": "REST; pages, blocks, data sources and search",
+    "verdict": "Conditional",
+    "blocker": "Plan check",
+    "note": "Access is limited to shared resources; MCP user authorization does not imply workspace-wide access.",
+    "sources": [
+      "https://developers.notion.com",
+      "https://www.notion.com/help/notion-mcp"
+    ],
+    "access_group": "Unknown",
+    "mcp": {
+      "kind": "Official",
+      "scope": "User-authorized Notion content",
+      "url": "https://www.notion.com/help/notion-mcp"
+    },
+    "workflow": "Read a specifically shared Notion page",
+    "next_action": "Confirm Notion integration availability on the intended plan, share one test page with the integration, and retrieve its blocks.",
+    "success_criterion": "Read the shared page while an unshared page remains inaccessible; record data-source versus page scope.",
+    "alternative_action": "Compare user-authorized MCP access with integration-token sharing rules rather than assuming workspace-wide visibility.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

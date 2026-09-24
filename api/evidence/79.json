@@ -1,0 +1,42 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 79,
+  "app": "Smartsheet",
+  "sources": [
+    "https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server",
+    "https://developers.smartsheet.com/api/smartsheet/openapi/proofs/proofs-create"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 89,
+      "url": "https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server",
+      "checked_at": "2026-09-24T10:48:40.757106+00:00",
+      "status": 200,
+      "final_url": "https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server",
+      "sha256": "398adb3e366d09e00749cdd6f7df3a975f35086b0f0a809fc275b84bb2b2037c",
+      "text_chars": 4963,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 90,
+      "url": "https://developers.smartsheet.com/api/smartsheet/openapi/proofs/proofs-create",
+      "checked_at": "2026-09-24T10:48:40.836175+00:00",
+      "status": 200,
+      "final_url": "https://developers.smartsheet.com/api/smartsheet/openapi/proofs/proofs-create",
+      "sha256": "dae732c4238506683306cb5e2f5a0b966828de26f8974409c4cadfed2d15cecd",
+      "text_chars": 14,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

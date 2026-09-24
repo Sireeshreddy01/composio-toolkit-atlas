@@ -1,0 +1,316 @@
+{
+  "kind": "category_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "category": "Data & SEO",
+  "count": 10,
+  "verdict": {
+    "Conditional": 7,
+    "Build": 3
+  },
+  "development_access": {
+    "Unknown": 5,
+    "Gated": 2,
+    "Self-serve": 3
+  },
+  "apps": [
+    {
+      "id": 51,
+      "category": "Data & SEO",
+      "app": "DataForSEO",
+      "url": "https://docs.dataforseo.com",
+      "description": "SEO, search and market datasets",
+      "auth": [
+        "Basic"
+      ],
+      "access": "Account check",
+      "access_detail": "API login/password from account API-access settings; usable test-credit entitlement not verified.",
+      "surface": "REST; SERP, keywords, backlinks and on-page data",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "Async task endpoints need polling and explicit cost budgets; credentials are not OAuth.",
+      "sources": [
+        "https://docs.dataforseo.com/v3/on_page-page_screenshot/",
+        "https://docs.dataforseo.com"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official",
+        "scope": "SEO and data tools",
+        "url": "https://dataforseo.com/help-center/setting-up-the-official-dataforseo-mcp-server-simple-guide"
+      },
+      "workflow": "Retrieve an SEO task result",
+      "next_action": "Confirm DataForSEO trial credits and choose one low-cost task type; inspect a pre-created task result using Basic authentication.",
+      "success_criterion": "Return a result with its task status and documented credit cost; distinguish submission from polling.",
+      "alternative_action": "Define a per-run credit budget before enabling task creation, rather than treating credentials as unlimited execution access.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 52,
+      "category": "Data & SEO",
+      "app": "SE Ranking",
+      "url": "https://seranking.com/api",
+      "description": "SEO analytics and rankings",
+      "auth": [
+        "API key"
+      ],
+      "access": "Paid",
+      "access_detail": "Subscription/credit-based Data API; Project API consumes subscription limits.",
+      "surface": "REST; SEO datasets and project operations",
+      "verdict": "Conditional",
+      "blocker": "Subscription",
+      "note": "Separate Data API credit balances from Project API subscription quotas.",
+      "sources": [
+        "https://seranking.com/api/how-to-get-api/",
+        "https://seranking.com/api/project/getting-started/"
+      ],
+      "access_group": "Gated",
+      "mcp": null,
+      "workflow": "Inspect Project API quota and a project",
+      "next_action": "Confirm whether the SE Ranking workflow uses Project API subscriptions or Data API credits, then read a permitted project resource.",
+      "success_criterion": "Record the product, quota model and one authorized project response.",
+      "alternative_action": "Request the exact endpoint's allowance from support when pricing does not distinguish the two API products.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 53,
+      "category": "Data & SEO",
+      "app": "Ahrefs",
+      "url": "https://ahrefs.com/api",
+      "description": "SEO, backlinks and competitive research",
+      "auth": [
+        "API key",
+        "OAuth2"
+      ],
+      "access": "Paid",
+      "access_detail": "MCP available on Lite or higher; API entitlement and units vary by plan.",
+      "surface": "REST; SEO analytics, backlinks and keywords",
+      "verdict": "Conditional",
+      "blocker": "Subscription",
+      "note": "Older enterprise-only blanket claims are unsafe; check endpoint and plan rather than brand alone.",
+      "sources": [
+        "https://ahrefs.com/api",
+        "https://docs.ahrefs.com/en/mcp/docs/introduction"
+      ],
+      "access_group": "Gated",
+      "mcp": {
+        "kind": "Official",
+        "scope": "SEO research; Lite plan or higher",
+        "url": "https://docs.ahrefs.com/en/mcp/docs/introduction"
+      },
+      "workflow": "Read one permitted SEO report",
+      "next_action": "Check Ahrefs access for the exact endpoint and subscription, then retrieve a small authorized backlink or keyword report.",
+      "success_criterion": "Record the endpoint's entitlement and unit usage with the returned report.",
+      "alternative_action": "Evaluate the official MCP allowance separately; do not rely on an old blanket Enterprise-only rule.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 54,
+      "category": "Data & SEO",
+      "app": "MrScraper",
+      "url": "https://docs.mrscraper.com",
+      "description": "Web scraping and structured extraction",
+      "auth": [
+        "API key",
+        "Token"
+      ],
+      "access": "Account check",
+      "access_detail": "Account API token; subscription quota and any free allowance require confirmation.",
+      "surface": "REST; scraping jobs, results, search and account status",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "Official CLI/MCP exists; account credits still govern execution.",
+      "sources": [
+        "https://docs.mrscraper.com/docs/api/authentication",
+        "https://docs.mrscraper.com/docs/getting-started/mcp-server"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Scrape, search, status and results",
+        "url": "https://docs.mrscraper.com/docs/getting-started/mcp-server"
+      },
+      "workflow": "Read an existing scrape job result",
+      "next_action": "Confirm MrScraper account credits and inspect a previously created test job through its API or official MCP.",
+      "success_criterion": "Return job status and result metadata, and record how credits are charged.",
+      "alternative_action": "Compare CLI/MCP job operations with the required output format before creating a custom REST wrapper.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 55,
+      "category": "Data & SEO",
+      "app": "Apify",
+      "url": "https://docs.apify.com",
+      "description": "Hosted scraping and automation Actors",
+      "auth": [
+        "Token",
+        "OAuth2"
+      ],
+      "access": "Account check",
+      "access_detail": "Account API token; Actor-specific cost and free-tier limits must be checked.",
+      "surface": "REST; Actor runs, datasets, storage and schedules",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "MCP can invoke Actors, but Actor availability does not guarantee a target website can be scraped.",
+      "sources": [
+        "https://docs.apify.com",
+        "https://github.com/apify/apify-mcp-server"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Run Apify Actors and access results",
+        "url": "https://github.com/apify/apify-mcp-server"
+      },
+      "workflow": "Read an Actor dataset",
+      "next_action": "Confirm Apify free/trial platform allowance and read a small existing test dataset before enabling Actor execution.",
+      "success_criterion": "Return dataset items with pagination and record the platform/Actor cost distinction.",
+      "alternative_action": "A working Actor invocation does not prove access to its target site; validate target-specific restrictions separately.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 56,
+      "category": "Data & SEO",
+      "app": "Firecrawl",
+      "url": "https://firecrawl.dev",
+      "description": "Web crawling and structured extraction",
+      "auth": [
+        "API key"
+      ],
+      "access": "Free",
+      "access_detail": "Self-serve API key with 1,000 monthly free credits stated on current homepage; no card required.",
+      "surface": "REST; scrape, crawl, map, search and extraction",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "A crawl is an asynchronous job; implement status handling and explicit credit limits.",
+      "sources": [
+        "https://docs.firecrawl.dev/features/stealth-mode",
+        "https://docs.firecrawl.dev",
+        "https://www.firecrawl.dev/"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Web scrape and crawl tools",
+        "url": "https://github.com/firecrawl/firecrawl-mcp-server"
+      },
+      "workflow": "Inspect a bounded crawl result",
+      "next_action": "Use Firecrawl's documented free allowance for a small owned or permitted site, with an explicit page and credit limit.",
+      "success_criterion": "Record the crawl job ID, poll to a terminal status and return only the allowed page count.",
+      "alternative_action": "Compare official MCP crawl controls with direct API limits before exposing an unconstrained crawl tool.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 57,
+      "category": "Data & SEO",
+      "app": "Bright Data",
+      "url": "https://brightdata.com",
+      "description": "Web data extraction and proxy infrastructure",
+      "auth": [
+        "API key"
+      ],
+      "access": "Free",
+      "access_detail": "Official MCP documents a free tier; paid tools and product-specific billing remain separate.",
+      "surface": "REST + MCP; scraping, search and browser/data products",
+      "verdict": "Build",
+      "blocker": "Production entitlement",
+      "note": "Free MCP access is not a blanket entitlement to every paid dataset or proxy product.",
+      "sources": [
+        "https://docs.brightdata.com/ai/mcp-server/overview"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Free and paid web data tools; quotas differ",
+        "url": "https://docs.brightdata.com/ai/mcp-server/overview"
+      },
+      "workflow": "Read a result through the free MCP path",
+      "next_action": "Select a Bright Data tool explicitly included in the documented free MCP allowance and inspect its permitted read workflow.",
+      "success_criterion": "Record tool identity, quota and result scope; distinguish it from paid datasets and proxy products.",
+      "alternative_action": "Request separate entitlement for a paid dataset rather than extrapolating from free MCP access.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 58,
+      "category": "Data & SEO",
+      "app": "Sherlock",
+      "url": "https://github.com/sherlock-project/sherlock",
+      "description": "Open-source username discovery across websites",
+      "auth": [
+        "None"
+      ],
+      "access": "Local",
+      "access_detail": "Local open-source CLI; no vendor account credential.",
+      "surface": "CLI; username lookup and report output, not a hosted REST API",
+      "verdict": "Build",
+      "blocker": "Runtime",
+      "note": "Wrap a subprocess with bounded inputs/timeouts; site changes and false positives need validation.",
+      "sources": [
+        "https://github.com/sherlock-project/sherlock"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Run a bounded local username lookup",
+      "next_action": "Wrap Sherlock as a local subprocess with an allowlisted test username, timeout and output directory, then inspect known positive and negative cases.",
+      "success_criterion": "Record exit status, tested sites and false-positive handling; never equate a match with verified identity.",
+      "alternative_action": "Keep this as a CLI tool and limit the site set; a hosted REST service is unnecessary for the first prototype.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 59,
+      "category": "Data & SEO",
+      "app": "Waterfall.io",
+      "url": "https://waterfall.io",
+      "description": "B2B contact/company enrichment",
+      "auth": [
+        "API key"
+      ],
+      "access": "Account check",
+      "access_detail": "Vendor examples show API keys; access provisioning and free trial not established.",
+      "surface": "HTTP API; enrichment and contact search",
+      "verdict": "Conditional",
+      "blocker": "Customer access",
+      "note": "Different examples use different key headers; confirm the endpoint-specific contract before coding.",
+      "sources": [
+        "https://www.waterfall.io/",
+        "https://www.waterfall.io/product/contact-search"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Read an authorized enrichment result",
+      "next_action": "Ask Waterfall.io to confirm the intended enrichment endpoint, account allowance and correct API-key header before coding.",
+      "success_criterion": "Obtain a consistent request example and validate the documented response fields on authorized test data.",
+      "alternative_action": "Capture the matching authorized enrichment UI request only to resolve header/schema ambiguity, then seek vendor confirmation.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 60,
+      "category": "Data & SEO",
+      "app": "Clay",
+      "url": "https://clay.com",
+      "description": "GTM data enrichment and workflows",
+      "auth": [
+        "API key",
+        "OAuth2"
+      ],
+      "access": "Account check",
+      "access_detail": "First-party agent docs describe a keyed REST API and OAuth CLI; feature/plan entitlement needs verification.",
+      "surface": "REST/workflow calls and webhooks; exact general CRUD breadth unresolved",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "Do not confuse Clay's outbound HTTP integration with its own API; validate the routine/workflow contract.",
+      "sources": [
+        "https://agent-docs.clay.com/blog/implementation-guide/we-want-to-test-two-versions-of-an-outbound-sequence-without-spinning-up-a-whole-new-campaign-each-t-fdd053",
+        "https://university.clay.com/docs/webhook-integration-guide",
+        "https://www.clay.com/pricing"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Trigger or inspect one defined Clay workflow",
+      "next_action": "Identify the specific Clay inbound workflow or routine contract and confirm account entitlement before claiming general CRUD coverage.",
+      "success_criterion": "Document the exact input, output and auth contract for one workflow with a test record.",
+      "alternative_action": "Use a documented webhook or export when available; do not mistake Clay's outbound HTTP action for an inbound Clay API.",
+      "status": "Proposed; not an authenticated test result"
+    }
+  ]
+}

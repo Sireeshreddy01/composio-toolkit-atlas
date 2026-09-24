@@ -1,0 +1,37 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 55,
+    "category": "Data & SEO",
+    "app": "Apify",
+    "url": "https://docs.apify.com",
+    "description": "Hosted scraping and automation Actors",
+    "auth": [
+      "Token",
+      "OAuth2"
+    ],
+    "access": "Account check",
+    "access_detail": "Account API token; Actor-specific cost and free-tier limits must be checked.",
+    "surface": "REST; Actor runs, datasets, storage and schedules",
+    "verdict": "Conditional",
+    "blocker": "Plan check",
+    "note": "MCP can invoke Actors, but Actor availability does not guarantee a target website can be scraped.",
+    "sources": [
+      "https://docs.apify.com",
+      "https://github.com/apify/apify-mcp-server"
+    ],
+    "access_group": "Unknown",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Run Apify Actors and access results",
+      "url": "https://github.com/apify/apify-mcp-server"
+    },
+    "workflow": "Read an Actor dataset",
+    "next_action": "Confirm Apify free/trial platform allowance and read a small existing test dataset before enabling Actor execution.",
+    "success_criterion": "Return dataset items with pagination and record the platform/Actor cost distinction.",
+    "alternative_action": "A working Actor invocation does not prove access to its target site; validate target-specific restrictions separately.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

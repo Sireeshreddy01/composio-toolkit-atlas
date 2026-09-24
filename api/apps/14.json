@@ -1,0 +1,38 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 14,
+    "category": "Support & Helpdesk",
+    "app": "Front",
+    "url": "https://dev.frontapp.com",
+    "description": "Shared inbox and customer operations",
+    "auth": [
+      "OAuth2",
+      "Token"
+    ],
+    "access": "Admin / paid",
+    "access_detail": "Company-level token needs admin privileges; public integrations use OAuth; free access not established.",
+    "surface": "REST; conversations, inboxes, contacts and messages",
+    "verdict": "Conditional",
+    "blocker": "Admin",
+    "note": "New official MCP beta supersedes older third-party claims that no native server exists.",
+    "sources": [
+      "https://dev.frontapp.com/docs/create-and-revoke-api-tokens",
+      "https://dev.frontapp.com/docs/core-api-getting-started",
+      "https://dev.frontapp.com/reference/introduction"
+    ],
+    "access_group": "Gated",
+    "mcp": {
+      "kind": "Official beta",
+      "scope": "Inbox workflows; workspace admin/private app path",
+      "url": "https://help.front.com/en/articles/4883136"
+    },
+    "workflow": "Read an inbox conversation",
+    "next_action": "Obtain Front administrator approval and compare its official MCP beta with a scoped conversation read in a test inbox.",
+    "success_criterion": "Return the selected conversation without access to unapproved inboxes; record beta limitations.",
+    "alternative_action": "Use Front's REST conversation endpoint family if the beta MCP lacks required inbox or message fields.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

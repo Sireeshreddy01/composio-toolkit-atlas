@@ -1,0 +1,36 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 26,
+  "app": "Discord",
+  "sources": [
+    "https://discord.com/developers/docs/topics/oauth2",
+    "https://docs.discord.com/developers/docs/interactions/slash-commands"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 93,
+      "url": "https://discord.com/developers/docs/topics/oauth2",
+      "checked_at": "2026-09-24T10:48:41.819421+00:00",
+      "status": 200,
+      "final_url": "https://docs.discord.com/developers/topics/oauth2",
+      "sha256": "f37f687b8f5b026ea33ee0eff10a2ce79a7b67582ce5ca4ccd45b2092296c4a5",
+      "text_chars": 25595,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 107,
+      "url": "https://docs.discord.com/developers/docs/interactions/slash-commands",
+      "checked_at": "2026-09-24T10:48:44.509642+00:00",
+      "status": "unresolved",
+      "error": "HTTP Error 308: Permanent Redirect"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

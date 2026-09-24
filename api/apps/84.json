@@ -1,0 +1,29 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 84,
+    "category": "Finance & Fintech",
+    "app": "Paygent Connect",
+    "url": "",
+    "description": "Payment integration named in assignment; identity unresolved",
+    "auth": [
+      "Unknown"
+    ],
+    "access": "Unresolved",
+    "access_detail": "Assignment gives no vendor URL; could not establish an unambiguous Paygent Connect product.",
+    "surface": "Unresolved; do not substitute generic NMI documentation",
+    "verdict": "Investigate",
+    "blocker": "Identity",
+    "note": "Request the exact vendor URL and API contact. NMI-powered is a hint, not evidence of Paygent's auth or access.",
+    "sources": [],
+    "access_group": "Unknown",
+    "mcp": null,
+    "workflow": "Resolve the exact Paygent product",
+    "next_action": "Ask for the Paygent Connect vendor URL, API documentation and technical contact before selecting an auth method or endpoint.",
+    "success_criterion": "Obtain an unambiguous product identity and a primary API source tied to that vendor.",
+    "alternative_action": "An NMI-powered label alone is insufficient; request confirmation before using an NMI gateway contract.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

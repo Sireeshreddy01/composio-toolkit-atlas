@@ -1,0 +1,38 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 70,
+    "category": "Developer & Infra",
+    "app": "Sentry",
+    "url": "https://docs.sentry.io/api",
+    "description": "Application error and performance monitoring",
+    "auth": [
+      "OAuth2",
+      "Token"
+    ],
+    "access": "Account check",
+    "access_detail": "Create scoped auth token or OAuth integration; organization membership and plan features apply.",
+    "surface": "REST; issues, projects, releases and events",
+    "verdict": "Conditional",
+    "blocker": "Plan check",
+    "note": "Separate the ingest DSN from a management API auth token.",
+    "sources": [
+      "https://docs.sentry.io/api/auth/",
+      "https://docs.sentry.io/api/guides/create-auth-token/",
+      "https://docs.sentry.io/api/"
+    ],
+    "access_group": "Unknown",
+    "mcp": {
+      "kind": "Official",
+      "scope": "OAuth-scoped errors, performance, issue triage and project tools",
+      "url": "https://mcp.sentry.dev/"
+    },
+    "workflow": "Read a seeded Sentry issue",
+    "next_action": "Confirm Sentry plan/API access and authorize an issue read in one test project using a management token or OAuth.",
+    "success_criterion": "Return the seeded issue and project context; demonstrate that an ingest DSN is not a management credential.",
+    "alternative_action": "Check official MCP issue coverage first; use direct REST only for fields or operations it omits.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 52,
+  "app": "SE Ranking",
+  "sources": [
+    "https://seranking.com/api/how-to-get-api/",
+    "https://seranking.com/api/project/getting-started/"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 180,
+      "url": "https://seranking.com/api/how-to-get-api/",
+      "checked_at": "2026-09-24T10:48:55.544683+00:00",
+      "status": 200,
+      "final_url": "https://seranking.com/api/how-to-get-api/",
+      "sha256": "c9ecccaffabe80d5256b34a0bd738170f581407c565b897a41fb9f164f0e63cd",
+      "text_chars": 14105,
+      "auth_guess": "API key",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 181,
+      "url": "https://seranking.com/api/project/getting-started/",
+      "checked_at": "2026-09-24T10:48:55.664059+00:00",
+      "status": 200,
+      "final_url": "https://seranking.com/api/project/getting-started/",
+      "sha256": "d4558921fe8bdc8dc673a626c5f401e54cfc35c246dc1059fa864c6b73cddfc0",
+      "text_chars": 12894,
+      "auth_guess": "API key",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

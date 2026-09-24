@@ -1,0 +1,33 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 18,
+    "category": "Support & Helpdesk",
+    "app": "Help Scout",
+    "url": "https://helpscout.com",
+    "description": "Shared support inbox and help content",
+    "auth": [
+      "OAuth2"
+    ],
+    "access": "Paid",
+    "access_detail": "Paid plans have differing API access levels; verify the required endpoint tier.",
+    "surface": "REST; inboxes, conversations, customers and users",
+    "verdict": "Conditional",
+    "blocker": "Subscription",
+    "note": "Authorization-code and client-credentials flows serve different integration models.",
+    "sources": [
+      "https://developer.helpscout.com/mailbox-api/overview/authentication/",
+      "https://developer.helpscout.com/mailbox-api/",
+      "https://docs.helpscout.com/article/1140-mailbox-api"
+    ],
+    "access_group": "Gated",
+    "mcp": null,
+    "workflow": "Read an inbox conversation",
+    "next_action": "Confirm Help Scout plan eligibility, then choose client credentials for one internal account or authorization code for customer installations.",
+    "success_criterion": "Read one approved inbox conversation and record which integration model was used.",
+    "alternative_action": "Ask for trial API access if the paid plan is unavailable; do not substitute mailbox login credentials for API authorization.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

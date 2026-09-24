@@ -1,0 +1,56 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 68,
+  "app": "MongoDB Atlas",
+  "sources": [
+    "https://mongodb.com/docs/atlas/api",
+    "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/preview/authentication",
+    "https://www.mongodb.com/docs/mcp-server/overview/"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 165,
+      "url": "https://mongodb.com/docs/atlas/api",
+      "checked_at": "2026-09-24T10:48:53.449456+00:00",
+      "status": 200,
+      "final_url": "https://www.mongodb.com/docs/atlas/api/",
+      "sha256": "47555a5c1b52e46be365736c8b85399ea040d16b8a7934c07485b6ed43724519",
+      "text_chars": 13070,
+      "auth_guess": "Unknown",
+      "surface_guess": "GraphQL",
+      "access_guess": "Gated",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 216,
+      "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/preview/authentication",
+      "checked_at": "2026-09-24T10:49:02.670343+00:00",
+      "status": 200,
+      "final_url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/preview/authentication",
+      "sha256": "5991bf7b250570dc5596a7aa5a95abbd2126da3c92d718c6d8a186943a41fe10",
+      "text_chars": 7595,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Gated",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 247,
+      "url": "https://www.mongodb.com/docs/mcp-server/overview/",
+      "checked_at": "2026-09-24T10:56:40.037470+00:00",
+      "status": 200,
+      "final_url": "https://www.mongodb.com/docs/mcp-server/overview/",
+      "sha256": "9fb418c28ac4bcac116ae553081478b6df57d595976d98c3fa22071dd7a478cd",
+      "text_chars": 17927,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

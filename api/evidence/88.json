@@ -1,0 +1,56 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 88,
+  "app": "Brex",
+  "sources": [
+    "https://developer.brex.com/docs/faq",
+    "https://developer.brex.com/guides/partner_authentication",
+    "https://www.brex.com/support/using-brex-in-ai-apps"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 29,
+      "url": "https://developer.brex.com/docs/faq",
+      "checked_at": "2026-09-24T10:48:30.920499+00:00",
+      "status": 200,
+      "final_url": "https://developer.brex.com/docs/faq",
+      "sha256": "03f7981919a226ab2971bd20f7c5024c1e2a69a47923b8264ee5d4408bdb2269",
+      "text_chars": 3921,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 30,
+      "url": "https://developer.brex.com/guides/partner_authentication",
+      "checked_at": "2026-09-24T10:48:30.928372+00:00",
+      "status": 200,
+      "final_url": "https://developer.brex.com/guides/partner_authentication",
+      "sha256": "348a883cabe16c99d48913205989b3a2d81aca7480ced59c293ffc1860aba09b",
+      "text_chars": 9570,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 209,
+      "url": "https://www.brex.com/support/using-brex-in-ai-apps",
+      "checked_at": "2026-09-24T10:49:01.704698+00:00",
+      "status": 200,
+      "final_url": "https://www.brex.com/support/using-brex-in-ai-apps",
+      "sha256": "c0235c5da2b818b5c0fc5c59ccecfcaae239cec17191c8f1f1c963dbf226deb9",
+      "text_chars": 15795,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

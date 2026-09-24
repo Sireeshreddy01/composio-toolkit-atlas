@@ -1,0 +1,32 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 50,
+    "category": "Ecommerce",
+    "app": "fanbasis",
+    "url": "https://fanbasis.com",
+    "description": "Creator commerce and payments",
+    "auth": [
+      "API key"
+    ],
+    "access": "Account check",
+    "access_detail": "Merchant account required; onboarding and free sandbox eligibility need vendor confirmation.",
+    "surface": "Public API; checkout, seller and transaction operations",
+    "verdict": "Conditional",
+    "blocker": "Customer access",
+    "note": "Published docs show x-api-key; verify merchant eligibility before estimating delivery.",
+    "sources": [
+      "https://apidocs.fan/",
+      "https://demo.embedded.fanbasis.io/docs/getting-started"
+    ],
+    "access_group": "Unknown",
+    "mcp": null,
+    "workflow": "Read a seller checkout record",
+    "next_action": "Ask fanbasis to confirm merchant API eligibility and required key scope, then retrieve a test checkout or transaction record.",
+    "success_criterion": "Record the eligibility answer and retrieve the approved test record without creating a charge.",
+    "alternative_action": "If merchant access is available but the contract is incomplete, capture one checkout-detail read and ask the vendor to confirm the endpoint schema.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 16,
+  "app": "LiveAgent",
+  "sources": [
+    "https://support.liveagent.com/741982-API-key",
+    "https://support.liveagent.com/802463-REST-API"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 197,
+      "url": "https://support.liveagent.com/741982-API-key",
+      "checked_at": "2026-09-24T10:48:59.031036+00:00",
+      "status": 200,
+      "final_url": "https://support.liveagent.com/741982-API-key",
+      "sha256": "7a4b9cf2c59a97705a4a5812d587c85d089db2b4e5e0757cb44ec9b68a70f73d",
+      "text_chars": 3080,
+      "auth_guess": "API key",
+      "surface_guess": "REST",
+      "access_guess": "Self-serve",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 198,
+      "url": "https://support.liveagent.com/802463-REST-API",
+      "checked_at": "2026-09-24T10:48:59.711862+00:00",
+      "status": 200,
+      "final_url": "https://support.liveagent.com/802463-REST-API",
+      "sha256": "9d8ee924fd9bd6e05cb7e8b273899977a80be8d62e4996780d698a3dabfefa8f",
+      "text_chars": 1986,
+      "auth_guess": "API key",
+      "surface_guess": "REST",
+      "access_guess": "Self-serve",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": {
+    "id": 16,
+    "app": "LiveAgent",
+    "category": "Support & Helpdesk",
+    "product_scope": "LiveAgent helpdesk API",
+    "fields": {
+      "authentication": {
+        "answer": "API v3 uses an API key in the apikey request header. Admins create keys and can assign different permissions to each v3 key.",
+        "status": "supported",
+        "caveat": "The generic claim that a key gives full access is qualified by v3 per-key permissions. The detailed guide is dated March 2021.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 16,
+          "field": "authentication",
+          "assessment": "supported",
+          "reason": "S046 explicitly documents admin key management, the apikey header and configurable v3 key permissions."
+        },
+        "citations": [
+          {
+            "source_id": "S046",
+            "url": "https://support.liveagent.com/741982-API-key",
+            "retrieved_at": "2026-09-24T13:29:50.309842+00:00",
+            "source_sha256": "9a894036c0457bebca7f790f43235238cb021b5088fc0f35fb71c23590ccdaf9",
+            "quote_sha256": "ba217172b00f3b287131f49a6908f7c8117c278dbaa3702122cd8d351fa0463a",
+            "normalized_offset": 428,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S046",
+            "url": "https://support.liveagent.com/741982-API-key",
+            "retrieved_at": "2026-09-24T13:29:50.309842+00:00",
+            "source_sha256": "9a894036c0457bebca7f790f43235238cb021b5088fc0f35fb71c23590ccdaf9",
+            "quote_sha256": "821809ef087cf09a08ad394ceaff6e552c94d458046998a331e487be737b2762",
+            "normalized_offset": 1453,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S046",
+            "url": "https://support.liveagent.com/741982-API-key",
+            "retrieved_at": "2026-09-24T13:29:50.309842+00:00",
+            "source_sha256": "9a894036c0457bebca7f790f43235238cb021b5088fc0f35fb71c23590ccdaf9",
+            "quote_sha256": "7ea3fbc7262b46c46e5130a8a3c72e9b9869f9040465d3d22596e9ca5eea22c7",
+            "normalized_offset": 748,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "development_access": {
+        "answer": "API key management requires an admin. A 30-day trial advertises all features, but API inclusion is not explicitly identified.",
+        "status": "supported",
+        "caveat": "Trial API inclusion would be an inference; no independent developer sandbox is documented.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 16,
+          "field": "development_access",
+          "assessment": "supported",
+          "reason": "S046 documents the admin setup route; S044 advertises a trial without specifically confirming API inclusion, as the record acknowledges."
+        },
+        "citations": [
+          {
+            "source_id": "S046",
+            "url": "https://support.liveagent.com/741982-API-key",
+            "retrieved_at": "2026-09-24T13:29:50.309842+00:00",
+            "source_sha256": "9a894036c0457bebca7f790f43235238cb021b5088fc0f35fb71c23590ccdaf9",
+            "quote_sha256": "411683a416599903caf8244c9f78098c987c4410353aba4d26af641759728944",
+            "normalized_offset": 428,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S044",
+            "url": "https://liveagent.com",
+            "retrieved_at": "2026-09-24T13:29:49.472274+00:00",
+            "source_sha256": "690a0a1ecc5688b2914a7b40dbf6c92d86f894640bb5cc3995d2c2cb822147be",
+            "quote_sha256": "916fda1a3c7b9b872e441670687a020d6bf6cf7e153520db67e742b495b6bdef",
+            "normalized_offset": 1488,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "api_surface": {
+        "answer": "API v3 documents HTTP ticket retrieval; v1 and v3 key management are described.",
+        "status": "supported",
+        "caveat": "The supplied pages do not substantiate other resource families or a complete operation inventory.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 16,
+          "field": "api_surface",
+          "assessment": "supported",
+          "reason": "S046 demonstrates GET /api/v3/tickets and describes v1/v3 key management without claiming additional resource coverage."
+        },
+        "citations": [
+          {
+            "source_id": "S046",
+            "url": "https://support.liveagent.com/741982-API-key",
+            "retrieved_at": "2026-09-24T13:29:50.309842+00:00",
+            "source_sha256": "9a894036c0457bebca7f790f43235238cb021b5088fc0f35fb71c23590ccdaf9",
+            "quote_sha256": "f6f1e025a66342338c43981e42d65148e34786216a8b6b0f509f7997b518a8f1",
+            "normalized_offset": 1294,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S046",
+            "url": "https://support.liveagent.com/741982-API-key",
+            "retrieved_at": "2026-09-24T13:29:50.309842+00:00",
+            "source_sha256": "9a894036c0457bebca7f790f43235238cb021b5088fc0f35fb71c23590ccdaf9",
+            "quote_sha256": "db8ab7183225b79e6f6aaa4c4036cb95518d57b7f73457565af97086ddc2e17e",
+            "normalized_offset": 973,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "mcp": {
+        "answer": "Vendor MCP availability is unresolved.",
+        "status": "unresolved",
+        "caveat": "The supplied LiveAgent pages contain no MCP evidence.",
+        "citation_binding_passed": false,
+        "verification": {
+          "id": 16,
+          "field": "mcp",
+          "assessment": "unresolved",
+          "reason": "S044–S046 contain no evidence establishing vendor MCP availability or absence."
+        },
+        "citations": []
+      }
+    },
+    "access_class": "Gated",
+    "verdict": "Access prerequisite",
+    "decision_reason": "The documented credential route requires an admin; trial API entitlement remains unconfirmed.",
+    "next_step": "Obtain a LiveAgent trial entitlement statement naming API v3; success is explicit confirmation that trial admins can create and use API keys."
+  },
+  "human_review": "pending",
+  "authenticated_test": false
+}

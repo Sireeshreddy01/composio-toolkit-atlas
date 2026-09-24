@@ -1,0 +1,37 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 94,
+    "category": "AI & Media",
+    "app": "Consensus",
+    "url": "https://consensus.app",
+    "description": "Evidence-based scientific literature search",
+    "auth": [
+      "OAuth2",
+      "API key"
+    ],
+    "access": "Free",
+    "access_detail": "Self-serve keys on every plan; Free includes 30 shared API/MCP calls monthly. API keys use x-api-key.",
+    "surface": "REST search + MCP; scholarly search and evidence",
+    "verdict": "Build",
+    "blocker": "None",
+    "note": "Use current docs; API and MCP share quotas. Enterprise also supports bearer keys; no broad paid-only API gate.",
+    "sources": [
+      "https://docs.consensus.app/api-plans-and-access",
+      "https://docs.consensus.app/consensus-mcp"
+    ],
+    "access_group": "Self-serve",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Scientific search; OAuth or enterprise bearer key",
+      "url": "https://docs.consensus.app/consensus-mcp"
+    },
+    "workflow": "Run one scholarly search within the shared quota",
+    "next_action": "Use Consensus's documented free API/MCP allowance for one narrow scholarly search with the required key header.",
+    "success_criterion": "Return paper identifiers and evidence fields while recording remaining shared API/MCP quota.",
+    "alternative_action": "Compare MCP search output with REST fields; do not assume separate free quotas for each interface.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 63,
+  "app": "Netlify",
+  "sources": [
+    "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+    "https://docs.netlify.com/manage/accounts-and-billing/user-settings/",
+    "https://github.com/netlify/netlify-mcp"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 118,
+      "url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+      "checked_at": "2026-09-24T10:48:46.095956+00:00",
+      "status": 200,
+      "final_url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+      "sha256": "34095977edd7ae0d1821ec09fee48b9ca30bab09f69cb5d3c6b8d29f7db9e67d",
+      "text_chars": 32691,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Gated",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 119,
+      "url": "https://docs.netlify.com/manage/accounts-and-billing/user-settings/",
+      "checked_at": "2026-09-24T10:48:46.116319+00:00",
+      "status": 200,
+      "final_url": "https://docs.netlify.com/manage/accounts-and-billing/user-settings/",
+      "sha256": "9be04eb443c1f98ca49a5005f0f509da8e62ead8399f59dc4f350182f24128a8",
+      "text_chars": 10480,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 142,
+      "url": "https://github.com/netlify/netlify-mcp",
+      "checked_at": "2026-09-24T10:48:50.473514+00:00",
+      "status": 200,
+      "final_url": "https://github.com/netlify/netlify-mcp",
+      "sha256": "72dc9352e26ca24d1bd9eddbc4b2666e559a1c25af69e0e5b59c6011aefd05ef",
+      "text_chars": 6081,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

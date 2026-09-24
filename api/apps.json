@@ -1,0 +1,3001 @@
+{
+  "kind": "app_collection",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "count": 100,
+  "apps": [
+    {
+      "id": 1,
+      "category": "CRM & Sales",
+      "app": "Salesforce",
+      "url": "https://developer.salesforce.com/docs/platform/api-rest/guide/quickstart-dev-org.html",
+      "description": "Enterprise customer and sales records",
+      "auth": [
+        "OAuth2"
+      ],
+      "access": "Sandbox",
+      "access_detail": "Free Developer Edition; API Enabled permission required. Production edition entitlement is separate.",
+      "surface": "REST; broad CRM objects and queries",
+      "verdict": "Build",
+      "blocker": "Production entitlement",
+      "note": "Prototype in a developer org; confirm customer API entitlement before rollout.",
+      "sources": [
+        "https://developer.salesforce.com/docs/platform/api-rest/guide/quickstart-dev-org.html",
+        "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/postman.html"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Hosted Salesforce resource servers; org/client setup required",
+        "url": "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/postman.html"
+      },
+      "workflow": "Read CRM accounts in a developer org",
+      "next_action": "Create a Salesforce developer org, authorize a scoped client, and query a small Account sample before requesting access to customer production data.",
+      "success_criterion": "Return Account identifiers and selected fields; prove the client cannot access unrelated objects.",
+      "alternative_action": "Confirm production API entitlement separately from developer-org access.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 2,
+      "category": "CRM & Sales",
+      "app": "HubSpot",
+      "url": "https://developers.hubspot.com/blog/harnessing-the-power-of-hubspots-public-apis-with-postman",
+      "description": "CRM, marketing and sales automation",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Sandbox",
+      "access_detail": "Free developer/test account; private app token for owned accounts; public apps use OAuth.",
+      "surface": "REST; CRM, contacts and marketing",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "Legacy API-key guidance is stale; use private app tokens or OAuth.",
+      "sources": [
+        "https://developers.hubspot.com/blog/harnessing-the-power-of-hubspots-public-apis-with-postman"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "HubSpot user-level app scopes",
+        "url": "https://developers.hubspot.com/ai-tools/mcp"
+      },
+      "workflow": "Read a test contact",
+      "next_action": "Use a HubSpot developer test account and a private-app token to read a seeded contact; design OAuth separately for customer installations.",
+      "success_criterion": "Return the seeded contact and its chosen properties; demonstrate a denied ungranted scope.",
+      "alternative_action": "For a multi-customer product, validate OAuth installation and app-review requirements instead of sharing private tokens.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 3,
+      "category": "CRM & Sales",
+      "app": "Pipedrive",
+      "url": "https://pipedrive.readme.io/docs/core-api-concepts-authentication",
+      "description": "Sales pipelines and deal tracking",
+      "auth": [
+        "OAuth2",
+        "API key"
+      ],
+      "access": "Trial",
+      "access_detail": "API token included with every plan; developer sandbox path documented.",
+      "surface": "REST; broad deals, people, activities and webhooks",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "Use OAuth for distributed apps; a personal token inherits the user's access.",
+      "sources": [
+        "https://www.pipedrive.com/en/features/crm-api",
+        "https://developers.pipedrive.com/docs/api/v1",
+        "https://pipedrive.readme.io/docs/core-api-concepts-authentication"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Native CRM workflows",
+        "url": "https://www.pipedrive.com/en/features/mcp-server"
+      },
+      "workflow": "List deals in a trial account",
+      "next_action": "Seed two Pipedrive deals in a trial, list them with a personal token, then document the OAuth scopes required for a distributed app.",
+      "success_criterion": "Retrieve the seeded deals and correctly follow pagination without exposing other users' tokens.",
+      "alternative_action": "Compare the official MCP deal tools with the required custom fields before building a REST wrapper.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 4,
+      "category": "CRM & Sales",
+      "app": "Attio",
+      "url": "https://attio.com/platform/developers",
+      "description": "Flexible relationship and pipeline CRM",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Free",
+      "access_detail": "API access available on all plans; an active workspace is required.",
+      "surface": "REST; records, lists, tasks and notes",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "Official MCP offers a faster start; validate whether its tools cover the intended workflow.",
+      "sources": [
+        "https://attio.com/platform/developers",
+        "https://attio.com/help/reference/workspace-settings-billing/attio-plans-and-features",
+        "https://attio.com/apps/mcp"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Workspace records and CRM workflows",
+        "url": "https://attio.com/apps/mcp"
+      },
+      "workflow": "Find a company record",
+      "next_action": "Connect Attio's official MCP to a test workspace and check whether company lookup and required attributes are exposed.",
+      "success_criterion": "Find one seeded company and return the requested attributes with its record ID.",
+      "alternative_action": "Use the REST records API when the MCP omits a needed custom attribute; verify field-level permissions.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 5,
+      "category": "CRM & Sales",
+      "app": "Twenty",
+      "url": "https://twenty.com",
+      "description": "Open-source customizable CRM",
+      "auth": [
+        "API key"
+      ],
+      "access": "Local",
+      "access_detail": "Self-hosting path; hosted plan is a separate purchase decision.",
+      "surface": "REST + GraphQL; generated CRM object APIs",
+      "verdict": "Build",
+      "blocker": "Runtime",
+      "note": "Self-hosted credentials require an installed workspace; do not infer OAuth from website navigation.",
+      "sources": [
+        "https://github.com/twentyhq/twenty/issues/10283",
+        "https://twentyhq-twenty.mintlify.app/"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Query a local CRM object",
+      "next_action": "Run a local Twenty workspace, create a test object, and compare its generated REST and GraphQL representations.",
+      "success_criterion": "Read the same seeded object through the selected interface and document its schema.",
+      "alternative_action": "Wrap the local API; do not introduce browser-session dependencies where a generated API exists.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 6,
+      "category": "CRM & Sales",
+      "app": "Podio",
+      "url": "https://developers.podio.com/authentication",
+      "description": "Configurable work and relationship apps",
+      "auth": [
+        "OAuth2"
+      ],
+      "access": "Free",
+      "access_detail": "API documented for both free and paid Podio accounts; register a client.",
+      "surface": "REST; items, apps, workspaces and tasks",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "Prefer authorization code or app auth; avoid collecting users' passwords.",
+      "sources": [
+        "https://developers.podio.com/authentication",
+        "https://developers.podio.com/index/faq"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Read an item in a test workspace",
+      "next_action": "Create a Podio app with a test item and use app authentication or OAuth to retrieve its fields.",
+      "success_criterion": "Return the test item with stable field identifiers and the intended workspace scope.",
+      "alternative_action": "Validate the app-auth path for a single app before selecting broader user OAuth.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 7,
+      "category": "CRM & Sales",
+      "app": "Zoho CRM",
+      "url": "https://www.zoho.com/crm/developer/docs/api/v8/auth-request.html",
+      "description": "Customer and sales management",
+      "auth": [
+        "OAuth2"
+      ],
+      "access": "Account check",
+      "access_detail": "Developer console registration and CRM organization required; edition limits apply; free eligibility not settled here.",
+      "surface": "REST; CRM modules, records and automation",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "Tokens are organization, environment and region specific; verify edition credits before launch.",
+      "sources": [
+        "https://www.zoho.com/crm/developer/docs/api/v8/auth-request.html",
+        "https://www.zoho.com/crm/developer/docs/api/v8/api-limits.html"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Read a CRM module in the correct region",
+      "next_action": "Confirm the Zoho CRM edition's API allowance, then authorize the correct regional organization and read a test module record.",
+      "success_criterion": "Record the region, organization, allowed API credits and one successful scoped read.",
+      "alternative_action": "If entitlement is unclear, ask support about the exact edition and module; a web-session capture is not proof of API entitlement.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 8,
+      "category": "CRM & Sales",
+      "app": "Close",
+      "url": "https://developer.close.com/integrations",
+      "description": "Sales CRM with calling and outreach",
+      "auth": [
+        "OAuth2",
+        "API key",
+        "Basic"
+      ],
+      "access": "Account check",
+      "access_detail": "Generate keys in account settings or create an OAuth app; trial entitlement not independently established.",
+      "surface": "REST; leads, contacts and sales activity",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "API key is the Basic username with an empty password; OAuth is preferred for public apps.",
+      "sources": [
+        "https://developer.close.com/integrations",
+        "https://developer.close.com/api/overview/api-key-authentication"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Read, safe-write and destructive-write scope groups",
+        "url": "https://developer.close.com/mcp"
+      },
+      "workflow": "Retrieve a lead and its contacts",
+      "next_action": "Confirm whether Close trial accounts include the API, then use a test key to retrieve a lead with associated contacts.",
+      "success_criterion": "Record the trial entitlement source and retrieve the seeded lead using the documented Basic-key format.",
+      "alternative_action": "For an existing authorized tenant, inspect lead-detail reads to map missing UI fields; prefer the documented API when it covers them.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 9,
+      "category": "CRM & Sales",
+      "app": "Copper",
+      "url": "https://developer.copper.com/introduction/authentication.html",
+      "description": "Relationship CRM for Google Workspace teams",
+      "auth": [
+        "OAuth2",
+        "API key"
+      ],
+      "access": "Trial",
+      "access_detail": "API available on trial, Professional and Business plans.",
+      "surface": "REST; CRM people, companies, opportunities and activity",
+      "verdict": "Build",
+      "blocker": "Subscription",
+      "note": "Keys require both token and user email; partner OAuth is a separate path.",
+      "sources": [
+        "https://developer.copper.com/introduction/authentication.html",
+        "https://support.copper.com/en/articles/8823462-api-docs-and-tips"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Read an opportunity in a trial",
+      "next_action": "Create a Copper trial opportunity and read it using the required API token and user-email context.",
+      "success_criterion": "Return the opportunity ID and stage, and document which user's permissions apply.",
+      "alternative_action": "Request partner OAuth details only when customer distribution is required; a trial key is a separate development route.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 10,
+      "category": "CRM & Sales",
+      "app": "DealCloud",
+      "url": "https://api.docs.dealcloud.com/docs/apikeys",
+      "description": "Deal and relationship management for financial firms",
+      "auth": [
+        "OAuth2",
+        "API key"
+      ],
+      "access": "Admin / paid",
+      "access_detail": "Customer tenant and API-enabled user group; admin or customer-success help if missing.",
+      "surface": "REST; data, schema, users, publications and backups",
+      "verdict": "Conditional",
+      "blocker": "Admin",
+      "note": "API key is exchanged through client-credentials OAuth; it is not simply a static bearer key.",
+      "sources": [
+        "https://api.docs.dealcloud.com/docs/token",
+        "https://api.docs.dealcloud.com/docs/apikeys",
+        "https://api.docs.dealcloud.com/docs"
+      ],
+      "access_group": "Gated",
+      "mcp": null,
+      "workflow": "Inspect a DealCloud entity schema",
+      "next_action": "Ask an authorized DealCloud administrator for a test instance and the client-credentials setup, then read one entity schema.",
+      "success_criterion": "Obtain a test token and return schema metadata for the approved entity.",
+      "alternative_action": "If direct test access is unavailable, request a sanitized schema export and documented token flow from the vendor.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 11,
+      "category": "Support & Helpdesk",
+      "app": "Zendesk",
+      "url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+      "description": "Customer service tickets and knowledge base",
+      "auth": [
+        "OAuth2"
+      ],
+      "access": "Admin / paid",
+      "access_detail": "Admin configures OAuth client; distributed integrations require a global OAuth client.",
+      "surface": "REST; tickets, users, help center and voice",
+      "verdict": "Conditional",
+      "blocker": "Admin",
+      "note": "API tokens are deprecated and unavailable for new accounts from July 28, 2026; migrate to OAuth.",
+      "sources": [
+        "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+        "https://developer.zendesk.com/documentation/authentication/oauth-migration/"
+      ],
+      "access_group": "Gated",
+      "mcp": null,
+      "workflow": "Read a Zendesk test ticket using OAuth",
+      "next_action": "Configure OAuth for a test Zendesk account and read a seeded ticket; avoid new integration instructions that require deprecated API tokens.",
+      "success_criterion": "Retrieve the ticket and document granted scopes plus the account's OAuth setup permissions.",
+      "alternative_action": "For an older customer installation, inventory token dependencies and create an OAuth migration checklist.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 12,
+      "category": "Support & Helpdesk",
+      "app": "Intercom",
+      "url": "https://developers.intercom.com",
+      "description": "Customer conversations and AI support",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Sandbox",
+      "access_detail": "Development workspace supplies a token; production features and public-app review are separate.",
+      "surface": "REST; contacts, conversations, teams and help content",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "Public apps require OAuth; development workspaces have reduced functionality.",
+      "sources": [
+        "https://developers.intercom.com/docs/build-an-integration/getting-started",
+        "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/setting-up-oauth"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "US-hosted workspaces only per checked docs",
+        "url": "https://developers.intercom.com/docs/guides/mcp"
+      },
+      "workflow": "Retrieve a development conversation",
+      "next_action": "Use an Intercom development workspace to read a test conversation, noting any production-only functionality it omits.",
+      "success_criterion": "Return conversation and contact identifiers; list unavailable development-workspace features.",
+      "alternative_action": "Compare the official MCP conversation tools with the required read fields before adding REST tools.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 13,
+      "category": "Support & Helpdesk",
+      "app": "Freshdesk",
+      "url": "https://developers.freshdesk.com/api/",
+      "description": "Ticket-based customer support",
+      "auth": [
+        "API key",
+        "Basic"
+      ],
+      "access": "Trial",
+      "access_detail": "Trial API limit explicitly documented at 50 calls/minute.",
+      "surface": "REST; tickets, contacts, companies and knowledge base",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "API key is sent through HTTP Basic; apply plan-specific throttling.",
+      "sources": [
+        "https://developers.freshdesk.com/api/"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Read one trial support ticket",
+      "next_action": "Use an authorized Freshdesk trial, seed a ticket, and read it with API-key Basic authentication while recording rate-limit headers.",
+      "success_criterion": "Return the seeded ticket and confirm the applicable trial rate limit from the account response or current docs.",
+      "alternative_action": "If the UI exposes a needed field missing from the public ticket schema, capture that specific authorized read and assess session dependence.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 14,
+      "category": "Support & Helpdesk",
+      "app": "Front",
+      "url": "https://dev.frontapp.com",
+      "description": "Shared inbox and customer operations",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Admin / paid",
+      "access_detail": "Company-level token needs admin privileges; public integrations use OAuth; free access not established.",
+      "surface": "REST; conversations, inboxes, contacts and messages",
+      "verdict": "Conditional",
+      "blocker": "Admin",
+      "note": "New official MCP beta supersedes older third-party claims that no native server exists.",
+      "sources": [
+        "https://dev.frontapp.com/docs/create-and-revoke-api-tokens",
+        "https://dev.frontapp.com/docs/core-api-getting-started",
+        "https://dev.frontapp.com/reference/introduction"
+      ],
+      "access_group": "Gated",
+      "mcp": {
+        "kind": "Official beta",
+        "scope": "Inbox workflows; workspace admin/private app path",
+        "url": "https://help.front.com/en/articles/4883136"
+      },
+      "workflow": "Read an inbox conversation",
+      "next_action": "Obtain Front administrator approval and compare its official MCP beta with a scoped conversation read in a test inbox.",
+      "success_criterion": "Return the selected conversation without access to unapproved inboxes; record beta limitations.",
+      "alternative_action": "Use Front's REST conversation endpoint family if the beta MCP lacks required inbox or message fields.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 15,
+      "category": "Support & Helpdesk",
+      "app": "Pylon",
+      "url": "https://usepylon.com",
+      "description": "B2B support across chat and ticket channels",
+      "auth": [
+        "Token"
+      ],
+      "access": "Admin / paid",
+      "access_detail": "Only admins can create API tokens; an existing workspace is required.",
+      "surface": "REST; issues, accounts, contacts and knowledge base",
+      "verdict": "Conditional",
+      "blocker": "Admin",
+      "note": "Use a scoped operational workflow; quotas differ by endpoint.",
+      "sources": [
+        "https://docs.usepylon.com/pylon-docs/developer/api",
+        "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+        "https://docs.usepylon.com/pylon-docs/developer/api/api-reference"
+      ],
+      "access_group": "Gated",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Pylon support workspace",
+        "url": "https://support.usepylon.com/articles/2407390554-connecting-to-the-pylon-mcp-server"
+      },
+      "workflow": "Read an issue and its account",
+      "next_action": "Ask a Pylon administrator for scoped test credentials and retrieve one seeded issue with its account relationship.",
+      "success_criterion": "Return the issue/account identifiers and record the quota for the chosen operation.",
+      "alternative_action": "Inspect the authorized issue-detail UI only to identify fields absent from the public issue schema.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 16,
+      "category": "Support & Helpdesk",
+      "app": "LiveAgent",
+      "url": "https://liveagent.com",
+      "description": "Helpdesk with tickets, chat and calls",
+      "auth": [
+        "API key"
+      ],
+      "access": "Admin / paid",
+      "access_detail": "Admin generates API v3 keys; free/trial API entitlement not established.",
+      "surface": "REST; tickets, messages and support resources",
+      "verdict": "Conditional",
+      "blocker": "Admin",
+      "note": "v1 and v3 keys are not interchangeable; explicitly target v3.",
+      "sources": [
+        "https://support.liveagent.com/802463-REST-API",
+        "https://support.liveagent.com/741982-API-key"
+      ],
+      "access_group": "Gated",
+      "mcp": null,
+      "workflow": "Retrieve a support ticket with v3 credentials",
+      "next_action": "Confirm the LiveAgent subscription and create a v3-specific test key before implementing a ticket read.",
+      "success_criterion": "Read the seeded ticket with v3 credentials and demonstrate a clear error for the wrong API version.",
+      "alternative_action": "Avoid adapting a captured v1 session into a v3 integration; obtain the correct version's key and contract.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 17,
+      "category": "Support & Helpdesk",
+      "app": "Plain",
+      "url": "https://plain.com",
+      "description": "API-first B2B customer support",
+      "auth": [
+        "API key"
+      ],
+      "access": "Trial",
+      "access_detail": "Seven-day trial; scoped API keys created in workspace.",
+      "surface": "GraphQL; customers, threads, events and assignment",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "GraphQL is the primary data API; a REST-only wrapper would misrepresent the interface.",
+      "sources": [
+        "https://www.plain.com/docs/graphql/introduction",
+        "https://www.plain.com/docs/graphql/authentication",
+        "https://help.plain.com/article/pricing"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Support workflow tools; vendor describes its server",
+        "url": "https://www.plain.com/blog/mcp-customer-support-2026"
+      },
+      "workflow": "Query a customer support thread",
+      "next_action": "Use a Plain trial workspace to execute a minimal GraphQL thread query with only the required fields.",
+      "success_criterion": "Return a seeded thread and customer reference; handle GraphQL errors separately from HTTP status.",
+      "alternative_action": "Compare Plain's MCP thread operations with the same query rather than building a REST-shaped adapter.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 18,
+      "category": "Support & Helpdesk",
+      "app": "Help Scout",
+      "url": "https://helpscout.com",
+      "description": "Shared support inbox and help content",
+      "auth": [
+        "OAuth2"
+      ],
+      "access": "Paid",
+      "access_detail": "Paid plans have differing API access levels; verify the required endpoint tier.",
+      "surface": "REST; inboxes, conversations, customers and users",
+      "verdict": "Conditional",
+      "blocker": "Subscription",
+      "note": "Authorization-code and client-credentials flows serve different integration models.",
+      "sources": [
+        "https://developer.helpscout.com/mailbox-api/overview/authentication/",
+        "https://developer.helpscout.com/mailbox-api/",
+        "https://docs.helpscout.com/article/1140-mailbox-api"
+      ],
+      "access_group": "Gated",
+      "mcp": null,
+      "workflow": "Read an inbox conversation",
+      "next_action": "Confirm Help Scout plan eligibility, then choose client credentials for one internal account or authorization code for customer installations.",
+      "success_criterion": "Read one approved inbox conversation and record which integration model was used.",
+      "alternative_action": "Ask for trial API access if the paid plan is unavailable; do not substitute mailbox login credentials for API authorization.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 19,
+      "category": "Support & Helpdesk",
+      "app": "Gorgias",
+      "url": "https://gorgias.com",
+      "description": "Ecommerce-focused support operations",
+      "auth": [
+        "OAuth2",
+        "API key"
+      ],
+      "access": "Account check",
+      "access_detail": "Private apps use API keys; public apps require OAuth and approval; trial entitlement not verified.",
+      "surface": "REST; tickets, customers and support operations",
+      "verdict": "Conditional",
+      "blocker": "Approval",
+      "note": "Do not ship a multi-customer app with collected private API keys.",
+      "sources": [
+        "https://developers.gorgias.com/reference/authentication",
+        "https://developers.gorgias.com/docs/oauth2-authentication-for-creating-apps-with-gorgias"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Read a Gorgias ticket privately",
+      "next_action": "Confirm private-key API access on the intended Gorgias plan and read a test ticket before considering public-app distribution.",
+      "success_criterion": "Record plan eligibility, retrieve the ticket, and separate private-key rights from public OAuth approval.",
+      "alternative_action": "For a missing ticket field, capture its authorized UI read and compare it with the public ticket response before proposing an alternative endpoint.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 20,
+      "category": "Support & Helpdesk",
+      "app": "Gladly",
+      "url": "https://gladly.com",
+      "description": "Customer-centered omnichannel support",
+      "auth": [
+        "Token",
+        "Basic"
+      ],
+      "access": "Account check",
+      "access_detail": "API token created in a customer account; free sandbox access not established.",
+      "surface": "REST; customers, conversations, tasks and events",
+      "verdict": "Conditional",
+      "blocker": "Customer access",
+      "note": "Token-based Basic authentication; a commercial tenant remains a prerequisite.",
+      "sources": [
+        "https://developer.gladly.com/rest/"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Retrieve a customer conversation",
+      "next_action": "Obtain an authorized Gladly test tenant and verify token-based Basic authentication against one customer conversation.",
+      "success_criterion": "Return only the approved customer's conversation and document tenant-access requirements.",
+      "alternative_action": "Request a vendor-provided sample payload if no test tenant is available; tenant access remains a prerequisite.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 21,
+      "category": "Communications",
+      "app": "Slack",
+      "url": "https://slack.com",
+      "description": "Team messaging and collaboration",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Sandbox",
+      "access_detail": "Developer sandbox available; workspace app approval and scopes can restrict installation.",
+      "surface": "HTTP Web API + events; messages, channels, users and files",
+      "verdict": "Build",
+      "blocker": "Admin",
+      "note": "A token does not grant access to every conversation; scopes and membership still apply.",
+      "sources": [
+        "https://docs.slack.dev/authentication/installing-with-oauth/",
+        "https://docs.slack.dev/reference/methods/admin.apps.approve/"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Slack account access; distinct from Slackbot as MCP client",
+        "url": "https://slack.com/help/articles/48855576908307-Guide-to-Model-Context-Protocol-in-Slack"
+      },
+      "workflow": "Read a message in a test channel",
+      "next_action": "Install a Slack app in a sandbox with minimum history scopes and invite it to one test channel before reading a message.",
+      "success_criterion": "Retrieve the seeded message; show that an unjoined or ungranted conversation remains inaccessible.",
+      "alternative_action": "Compare official MCP channel coverage against the required scopes; avoid capturing a personal Slack session as an app credential.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 22,
+      "category": "Communications",
+      "app": "Twilio",
+      "url": "https://twilio.com",
+      "description": "Programmable messaging and voice",
+      "auth": [
+        "API key",
+        "Basic",
+        "Token"
+      ],
+      "access": "Trial",
+      "access_detail": "Free trial exposes Account SID and Auth Token; production messaging has additional requirements.",
+      "surface": "REST; SMS, voice, numbers and verification",
+      "verdict": "Build",
+      "blocker": "Production entitlement",
+      "note": "Separate trial restrictions and usage charges from the ability to get credentials.",
+      "sources": [
+        "https://www.twilio.com/docs/usage/tutorials/how-to-use-your-free-trial-account",
+        "https://www.twilio.com/docs/iam/api-keys"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Read a trial messaging record",
+      "next_action": "Use Twilio trial credentials to inspect a test messaging record and document trial restrictions separately from future send costs.",
+      "success_criterion": "Return the approved message's status without sending messages or changing phone-number settings.",
+      "alternative_action": "Choose a messaging-specific auth path first; add voice or verification only after their separate requirements are checked.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 23,
+      "category": "Communications",
+      "app": "Zoho Cliq",
+      "url": "https://zoho.com/cliq",
+      "description": "Team chat, channels and bots",
+      "auth": [
+        "OAuth2"
+      ],
+      "access": "Account check",
+      "access_detail": "Register a Zoho client and authorize a workspace; free API entitlement not separately verified.",
+      "surface": "REST; messages, channels, users and bots",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "Use the Zoho-oauthtoken header and correct regional account endpoints.",
+      "sources": [
+        "https://www.zoho.com/cliq/help/restapi/v3/introduction/",
+        "https://www.zoho.com/cliq/help/restapi/v3/oauth/"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Read a channel with regional OAuth",
+      "next_action": "Confirm Zoho Cliq plan access and authorize a test channel using the correct regional token endpoint and header.",
+      "success_criterion": "Retrieve the approved channel data and record the region, scopes and edition allowance.",
+      "alternative_action": "Inspect an authorized channel's network read only if the public API lacks the required field; document the session dependency.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 24,
+      "category": "Communications",
+      "app": "Lark (Larksuite)",
+      "url": "https://open.larksuite.com",
+      "description": "Integrated chat, docs and workplace suite",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Admin / paid",
+      "access_detail": "App ID and secret plus user/tenant authorization; organization approval and scopes may apply.",
+      "surface": "REST; messaging, docs, calendars, base and contacts",
+      "verdict": "Conditional",
+      "blocker": "Admin",
+      "note": "Official MCP supports user and tenant token modes; validate the chosen app's permissions.",
+      "sources": [
+        "https://github.com/larksuite/lark-openapi-mcp/blob/main/docs/usage/configuration/configuration.md",
+        "https://open.larksuite.com/"
+      ],
+      "access_group": "Gated",
+      "mcp": {
+        "kind": "Official",
+        "scope": "User/tenant token modes and selected OpenAPI tools",
+        "url": "https://github.com/larksuite/lark-openapi-mcp/blob/main/docs/usage/configuration/configuration.md"
+      },
+      "workflow": "Read an authorized Lark document",
+      "next_action": "Obtain tenant approval, choose user or tenant token mode, and read one document explicitly shared with the integration.",
+      "success_criterion": "Read the selected document while an unshared document remains inaccessible.",
+      "alternative_action": "Use official MCP if its permission model and document tools match; otherwise scope a direct document API client.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 25,
+      "category": "Communications",
+      "app": "Pumble",
+      "url": "https://pumble.com",
+      "description": "Team chat and collaboration",
+      "auth": [
+        "API key",
+        "Token"
+      ],
+      "access": "Free",
+      "access_detail": "API and integrations available across subscriptions; install the API-key integration.",
+      "surface": "REST; messaging, channels and workspace operations",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "MCP configuration requires the documented token headers, not a guessed generic bearer flow.",
+      "sources": [
+        "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration/",
+        "https://pumble.com/integrations/plaky"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Messaging and workspace actions",
+        "url": "https://pumble.com/help/integrations/automation-workflow-integrations/how-to-use-the-pumble-mcp-server/"
+      },
+      "workflow": "Read a Pumble test channel",
+      "next_action": "Connect Pumble using its documented token headers and retrieve one approved channel or message through API or MCP.",
+      "success_criterion": "Return the seeded channel/message using the documented headers and account limits.",
+      "alternative_action": "Check MCP tool coverage before writing a wrapper; do not guess a generic bearer authorization scheme.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 26,
+      "category": "Communications",
+      "app": "Discord",
+      "url": "https://discord.com",
+      "description": "Community chat and bot platform",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Account check",
+      "access_detail": "Developer app and bot token; server authorization and privileged-intent approval may limit scope.",
+      "surface": "REST + Gateway; guilds, channels, messages and interactions",
+      "verdict": "Conditional",
+      "blocker": "Approval",
+      "note": "Build around bot permissions; do not treat a user login session as a bot API credential.",
+      "sources": [
+        "https://docs.discord.com/developers/docs/interactions/slash-commands",
+        "https://discord.com/developers/docs/topics/oauth2"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Read bot-visible Discord channel metadata",
+      "next_action": "Create a test bot, verify developer-account eligibility and grant it access to one test guild and channel.",
+      "success_criterion": "Read bot-visible metadata and demonstrate denial for an ungranted channel.",
+      "alternative_action": "Use the bot API and Gateway as appropriate; do not reverse engineer a personal user session into a self-bot.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 27,
+      "category": "Communications",
+      "app": "Telegram",
+      "url": "https://core.telegram.org",
+      "description": "Messaging and bots",
+      "auth": [
+        "Token"
+      ],
+      "access": "Free",
+      "access_detail": "Create a bot through BotFather; bot token is sufficient for the Bot API.",
+      "surface": "HTTP Bot API; messages, files and chat management",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "Bot capabilities differ from Telegram user-account APIs; label this as the Bot API toolkit.",
+      "sources": [
+        "https://core.telegram.org/bots/api",
+        "https://core.telegram.org/bots/features"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Read a test bot update",
+      "next_action": "Create a Telegram test bot and retrieve an update generated by a test chat, with explicit Bot API scope.",
+      "success_criterion": "Return the test chat/update identifiers and prevent unrelated update data from being logged.",
+      "alternative_action": "Keep user-account automation outside this toolkit; the Bot API and user-account APIs have different capabilities.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 28,
+      "category": "Communications",
+      "app": "WhatsApp Business",
+      "url": "https://developers.facebook.com/docs/whatsapp",
+      "description": "Business messaging over WhatsApp",
+      "auth": [
+        "Token"
+      ],
+      "access": "Sandbox",
+      "access_detail": "Meta provides test credentials/number; production requires a business setup and messaging permissions.",
+      "surface": "Graph HTTP API; messages, templates, numbers and webhooks",
+      "verdict": "Build",
+      "blocker": "Production entitlement",
+      "note": "Use scoped system-user tokens for deployment; do not equate a temporary test token with production approval.",
+      "sources": [
+        "https://www.postman.com/meta/whatsapp-business-platform/documentation/wlk6lh4/whatsapp-cloud-api",
+        "https://whatsapp.github.io/WhatsApp-Nodejs-SDK/"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Inspect WhatsApp test-number setup",
+      "next_action": "Use Meta's WhatsApp sandbox to inspect the test-number configuration and document token expiry and production prerequisites.",
+      "success_criterion": "Record the test phone-number ID, required permissions and the difference between test and production access.",
+      "alternative_action": "Plan system-user authorization and business approval separately; a temporary token is not a production solution.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 29,
+      "category": "Communications",
+      "app": "Aircall",
+      "url": "https://aircall.io",
+      "description": "Cloud phone and call-center operations",
+      "auth": [
+        "OAuth2",
+        "Basic",
+        "API key"
+      ],
+      "access": "Account check",
+      "access_detail": "Account API credentials or OAuth integration; free developer entitlement not established.",
+      "surface": "REST; calls, contacts, users and numbers",
+      "verdict": "Conditional",
+      "blocker": "Customer access",
+      "note": "Basic credentials and OAuth are both supported; production requires access to a customer account.",
+      "sources": [
+        "https://developer.aircall.io/docs/authentication",
+        "https://developer.aircall.io/tutorials/"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Read a test call record",
+      "next_action": "Confirm Aircall account entitlement, then read one test call with Basic credentials or a scoped OAuth installation.",
+      "success_criterion": "Return the approved call identifier and metadata while documenting customer-account prerequisites.",
+      "alternative_action": "Capture the authorized call-detail UI only to investigate a required metadata field absent from the public response.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 30,
+      "category": "Communications",
+      "app": "Vonage",
+      "url": "https://developer.vonage.com",
+      "description": "Programmable communications and identity",
+      "auth": [
+        "API key",
+        "Basic",
+        "JWT"
+      ],
+      "access": "Trial",
+      "access_detail": "Developer site offers a trial; credentials and billing constraints vary by API product.",
+      "surface": "REST; messaging, voice and verification",
+      "verdict": "Build",
+      "blocker": "Production entitlement",
+      "note": "Some products require application JWTs, others key/secret Basic auth; avoid one auth adapter for all APIs.",
+      "sources": [
+        "https://developer.vonage.com/en/getting-started/concepts/authentication",
+        "https://developer.vonage.com/en/messages/technical-details",
+        "https://developer.vonage.com"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Inspect a Vonage application resource",
+      "next_action": "Select the specific Vonage product, identify whether it uses key/secret or application JWT authentication, and read a test resource.",
+      "success_criterion": "Record the product-specific auth scheme and retrieve the chosen resource without sending messages or calls.",
+      "alternative_action": "Keep separate adapters for messaging and voice when their credential flows differ.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 31,
+      "category": "Marketing & Social",
+      "app": "Google Ads",
+      "url": "https://developers.google.com/google-ads",
+      "description": "Search advertising campaign management",
+      "auth": [
+        "OAuth2"
+      ],
+      "access": "Approval",
+      "access_detail": "Test access is distinct from production; developer token and access-level review generally apply.",
+      "surface": "REST + gRPC; campaigns, reporting and account resources",
+      "verdict": "Conditional",
+      "blocker": "Approval",
+      "note": "OAuth is necessary but insufficient; verify developer-token access level and current Cloud-managed pilot rules.",
+      "sources": [
+        "https://developers.google.com/google-ads/api/docs/oauth/overview",
+        "https://developers.google.com/google-ads/api/docs/api-policy/access-levels",
+        "https://developers.google.com/google-ads/api/docs/api-policy/developer-token"
+      ],
+      "access_group": "Gated",
+      "mcp": null,
+      "workflow": "Run a Google Ads sandbox report",
+      "next_action": "Apply for the appropriate developer-token access and authorize a test Ads account before running a small reporting query.",
+      "success_criterion": "Return a test report and record developer-token level, OAuth scope and customer context.",
+      "alternative_action": "Begin token approval immediately; a captured Ads UI request does not replace developer-token authorization.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 32,
+      "category": "Marketing & Social",
+      "app": "Meta Ads",
+      "url": "https://developers.facebook.com/docs/marketing-apis",
+      "description": "Advertising on Meta properties",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Approval",
+      "access_detail": "Own-account testing is distinct from managing other customers' accounts; permissions require review.",
+      "surface": "Graph HTTP API; campaigns, audiences, creatives and insights",
+      "verdict": "Conditional",
+      "blocker": "Approval",
+      "note": "Meta Graph API is not GraphQL; recent access-tier naming changes warrant checking the exact product permission.",
+      "sources": [
+        "https://www.postman.com/meta/facebook-marketing-api/documentation/0zr4mes/facebook-marketing-api-mapi",
+        "https://github.com/facebook/facebook-nodejs-business-sdk/blob/main/README.md"
+      ],
+      "access_group": "Gated",
+      "mcp": null,
+      "workflow": "Read an approved Meta ad account",
+      "next_action": "Confirm the exact Marketing API permissions and access tier, then read campaign metadata in an approved test account.",
+      "success_criterion": "Return the seeded campaign and record app permissions, account role and current access tier.",
+      "alternative_action": "Keep this Graph HTTP workflow separate from Threads; request missing permissions through the official review route.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 33,
+      "category": "Marketing & Social",
+      "app": "LinkedIn Ads",
+      "url": "https://learn.microsoft.com/linkedin/marketing",
+      "description": "Professional-audience advertising",
+      "auth": [
+        "OAuth2"
+      ],
+      "access": "Approval",
+      "access_detail": "Advertising API access requires approval; consumer sign-in access does not include Marketing APIs.",
+      "surface": "REST; ad accounts, campaigns, creatives and reporting",
+      "verdict": "Conditional",
+      "blocker": "Approval",
+      "note": "Start outreach and access application before promising a production toolkit.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+        "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access?view=li-lms-2026-03"
+      ],
+      "access_group": "Gated",
+      "mcp": null,
+      "workflow": "Obtain LinkedIn Ads development approval",
+      "next_action": "Prepare a LinkedIn Marketing API access request for a specific read-only campaign-reporting workflow and ask about test accounts.",
+      "success_criterion": "Receive a documented access decision and the scopes needed for campaign reporting.",
+      "alternative_action": "If approval is pending, use an authorized report export as a limited data-ingestion prototype, not an API substitute.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 34,
+      "category": "Marketing & Social",
+      "app": "GoHighLevel",
+      "url": "https://highlevel.stoplight.io",
+      "description": "Agency CRM and marketing automation",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Sandbox",
+      "access_detail": "Private Integration Tokens have a documented sandbox path; paid production capabilities need plan verification.",
+      "surface": "REST; contacts, calendars, opportunities and marketing",
+      "verdict": "Build",
+      "blocker": "Production entitlement",
+      "note": "Use OAuth for customer distribution; PITs suit controlled private integrations.",
+      "sources": [
+        "https://marketplace.gohighlevel.com/docs/Authorization/PrivateIntegrationsToken/",
+        "https://marketplace.gohighlevel.com/docs/oauth/SandboxPIT/"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Read a contact in a developer account",
+      "next_action": "Use a GoHighLevel development account and a controlled private integration token to read a seeded contact.",
+      "success_criterion": "Return the contact and location context; document OAuth requirements for customer distribution.",
+      "alternative_action": "Compare the marketplace OAuth path before expanding a private integration to multiple customer locations.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 35,
+      "category": "Marketing & Social",
+      "app": "Mailchimp",
+      "url": "https://mailchimp.com/developer",
+      "description": "Email marketing and audience management",
+      "auth": [
+        "OAuth2",
+        "API key",
+        "Basic"
+      ],
+      "access": "Account check",
+      "access_detail": "Key creation and OAuth paths are self-managed; free-plan eligibility for each target feature needs confirmation.",
+      "surface": "REST; audiences, campaigns, automations and reporting",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "The marketing API is REST; unrelated GraphQL mentions on the landing page are not its protocol.",
+      "sources": [
+        "https://mailchimp.com/developer/marketing/guides/quick-start/",
+        "https://mailchimp.com/developer/marketing/docs/fundamentals/"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Read one audience member",
+      "next_action": "Verify Mailchimp Marketing API access on the intended free or trial plan, then read a seeded audience member using a scoped account credential.",
+      "success_criterion": "Record plan entitlement and return the test member without sending a campaign.",
+      "alternative_action": "If a campaign workflow is missing from the public API, capture that authorized UI read and compare the response schema before proposing a wrapper.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 36,
+      "category": "Marketing & Social",
+      "app": "Klaviyo",
+      "url": "https://developers.klaviyo.com",
+      "description": "Customer marketing and lifecycle messaging",
+      "auth": [
+        "OAuth2",
+        "API key"
+      ],
+      "access": "Account check",
+      "access_detail": "Private scoped keys from account settings; public client keys have limited scope; plan quotas need confirmation.",
+      "surface": "REST; profiles, events, lists, campaigns and flows",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "Do not confuse public tracking keys with privileged server-side API credentials.",
+      "sources": [
+        "https://developers.klaviyo.com/en/reference/api_overview",
+        "https://developers.klaviyo.com/en/v2026-01-15/docs/authenticate_"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Read a test profile",
+      "next_action": "Confirm Klaviyo server-side API eligibility, create a least-privilege private key, and retrieve a seeded profile.",
+      "success_criterion": "Return the test profile using a private server key; demonstrate that a public tracking key cannot authorize it.",
+      "alternative_action": "Check whether official MCP exposes the same profile fields; otherwise use the documented profiles API.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 37,
+      "category": "Marketing & Social",
+      "app": "systeme.io",
+      "url": "https://systeme.io",
+      "description": "Funnels, email and digital-product sales",
+      "auth": [
+        "API key"
+      ],
+      "access": "Account check",
+      "access_detail": "Public API key generated in account settings; pricing entitlement not settled by the setup article.",
+      "surface": "Public HTTP API; contact and sales-workflow integrations",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "Public API means documented interface, not unauthenticated access.",
+      "sources": [
+        "https://help.systeme.io/article/2323-how-to-use-systeme-io-public-api"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Retrieve a funnel contact",
+      "next_action": "Confirm systeme.io account/API eligibility and authenticate a read of a test contact tied to a known funnel.",
+      "success_criterion": "Return the seeded contact and record the supported contact or sales objects.",
+      "alternative_action": "Inspect a specific authorized funnel UI read only when the documented public API lacks a required relationship.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 38,
+      "category": "Marketing & Social",
+      "app": "Pinterest",
+      "url": "https://developers.pinterest.com",
+      "description": "Visual discovery, publishing and ads",
+      "auth": [
+        "OAuth2"
+      ],
+      "access": "Approval",
+      "access_detail": "App approval grants Trial access; broader Standard access requires further review.",
+      "surface": "REST; pins, boards and advertising resources",
+      "verdict": "Conditional",
+      "blocker": "Approval",
+      "note": "A tier named Trial is still approval-gated; it is not necessarily instant self-serve access.",
+      "sources": [
+        "https://developers.pinterest.com/docs/key-concepts/access-tiers/",
+        "https://developers.pinterest.com/docs/developer-tools/sandbox/"
+      ],
+      "access_group": "Gated",
+      "mcp": null,
+      "workflow": "List a test board after access approval",
+      "next_action": "Apply for Pinterest's developer access tier, confirm Trial-tier approval requirements, then list a test board.",
+      "success_criterion": "Document approval status and return the approved board with the granted permissions.",
+      "alternative_action": "Use a user-provided board export for exploratory analysis while approval is pending; do not label it an API integration.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 39,
+      "category": "Marketing & Social",
+      "app": "Threads (Meta)",
+      "url": "https://developers.facebook.com/docs/threads",
+      "description": "Social publishing and engagement",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Account check",
+      "access_detail": "Meta app with Threads use case and authorized user; broader distribution permissions need review.",
+      "surface": "HTTP Graph API; publish, retrieve and manage Threads content",
+      "verdict": "Conditional",
+      "blocker": "Approval",
+      "note": "Threads tokens and permissions differ from Meta Ads; avoid reusing an unrelated Meta token.",
+      "sources": [
+        "https://www.postman.com/meta/threads/collection/dht3nzz/threads-api",
+        "https://www.postman.com/meta/threads/documentation/dht3nzz/threads-api"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Read a test Threads profile",
+      "next_action": "Confirm Threads-specific developer setup and token scopes, then read the authorized test profile or its posts.",
+      "success_criterion": "Return the intended profile and document token expiry and permissions without publishing content.",
+      "alternative_action": "Keep Threads OAuth and Meta Ads credentials separate; investigate browser requests only for authorized read fields missing from the supported API.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 40,
+      "category": "Marketing & Social",
+      "app": "SendGrid",
+      "url": "https://sendgrid.com",
+      "description": "Transactional and marketing email delivery",
+      "auth": [
+        "API key"
+      ],
+      "access": "Account check",
+      "access_detail": "Create the first key in SendGrid UI; sender verification and current trial availability need confirmation.",
+      "surface": "REST; mail send, templates, contacts and statistics",
+      "verdict": "Conditional",
+      "blocker": "Customer access",
+      "note": "API authorization and permission to send as a domain are different setup steps.",
+      "sources": [
+        "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+        "https://www.twilio.com/docs/sendgrid/ui/account-and-settings/api-keys"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Inspect email template metadata",
+      "next_action": "Confirm SendGrid account eligibility and create a restricted key for reading a test template, without enabling mail sends.",
+      "success_criterion": "Return template metadata and distinguish API scopes from domain-sending verification.",
+      "alternative_action": "If sending is later required, add verified-sender setup and separate send authorization as a new test.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 41,
+      "category": "Ecommerce",
+      "app": "Shopify",
+      "url": "https://shopify.dev",
+      "description": "Online stores and merchant operations",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Sandbox",
+      "access_detail": "Development store/app path; merchant authorization for production and review for public distribution.",
+      "surface": "GraphQL Admin; broad products, orders and inventory",
+      "verdict": "Build",
+      "blocker": "Approval",
+      "note": "Use modern app authorization; legacy admin-created custom-app instructions are not the default for new builds.",
+      "sources": [
+        "https://shopify.dev/docs/apps/build/authentication-authorization",
+        "https://shopify.dev/docs/apps/build/authentication-authorization/access-tokens"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official; partial",
+        "scope": "Storefront shopping, catalog and cart; not full Admin API",
+        "url": "https://shopify.dev/docs/apps/build/storefront-mcp/servers/storefront"
+      },
+      "workflow": "Query a development-store product",
+      "next_action": "Create a Shopify development store and query a seeded product through the GraphQL Admin API using the current app authorization flow.",
+      "success_criterion": "Return product ID and inventory-related fields with documented Admin scopes and query-cost handling.",
+      "alternative_action": "Evaluate storefront MCP only for shopper workflows; do not use it as evidence of full Admin coverage.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 42,
+      "category": "Ecommerce",
+      "app": "WooCommerce",
+      "url": "https://woocommerce.com/document/woocommerce-rest-api",
+      "description": "Open-source WordPress ecommerce",
+      "auth": [
+        "API key",
+        "Basic"
+      ],
+      "access": "Local",
+      "access_detail": "Install WooCommerce on an owned test site; generate keys for a permitted user.",
+      "surface": "REST; products, orders, customers and coupons",
+      "verdict": "Build",
+      "blocker": "Runtime",
+      "note": "Consumer key/secret via HTTPS Basic auth; hosting and user permissions are the operational prerequisites.",
+      "sources": [
+        "https://developer.woocommerce.com/docs/apis/rest-api/authentication",
+        "https://developer.woocommerce.com/docs/apis/rest-api/"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Read a local WooCommerce product",
+      "next_action": "Run a test WordPress/WooCommerce store, create a read-only consumer key, and retrieve a seeded product over HTTPS.",
+      "success_criterion": "Return the product while a write attempt is excluded by the key's permissions.",
+      "alternative_action": "Prefer the public REST API; inspect plugin-specific UI calls only if a required extension field is not exposed.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 43,
+      "category": "Ecommerce",
+      "app": "BigCommerce",
+      "url": "https://developer.bigcommerce.com",
+      "description": "Hosted ecommerce platform",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Account check",
+      "access_detail": "Store/API-account credentials and scoped access; trial eligibility not independently verified.",
+      "surface": "REST + GraphQL; catalog, orders, storefront and account operations",
+      "verdict": "Conditional",
+      "blocker": "Customer access",
+      "note": "Storefront MCP beta is not equivalent to full merchant Admin API coverage.",
+      "sources": [
+        "https://developer.bigcommerce.com",
+        "https://developer.bigcommerce.com/resource-hub/bigcommercedevs-recap-h1-23"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official beta; partial",
+        "scope": "Storefront commerce; not full management API",
+        "url": "https://docs.bigcommerce.com/developer/api-reference/mcp/overview"
+      },
+      "workflow": "Separate storefront and merchant catalog access",
+      "next_action": "Confirm BigCommerce developer-store eligibility and choose whether the workflow needs storefront GraphQL or merchant REST catalog data.",
+      "success_criterion": "Read the test product through the chosen surface and document why storefront MCP does or does not cover it.",
+      "alternative_action": "Use merchant API scopes for back-office fields instead of assuming storefront MCP has administrator access.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 44,
+      "category": "Ecommerce",
+      "app": "Salesforce Commerce Cloud",
+      "url": "https://developer.salesforce.com/docs/commerce",
+      "description": "Enterprise digital commerce",
+      "auth": [
+        "OAuth2",
+        "JWT"
+      ],
+      "access": "Admin / paid",
+      "access_detail": "Commerce tenant and Account Manager client required; customer/admin provisioning.",
+      "surface": "REST SCAPI; shopper and administrative commerce APIs",
+      "verdict": "Conditional",
+      "blocker": "Admin",
+      "note": "Shopper SLAS and Admin API tokens follow different authorization paths.",
+      "sources": [
+        "https://developer.salesforce.com/docs/commerce/sfra/guide/authorization.html",
+        "https://developer.salesforce.com/docs/commerce/commerce-api/guide/security.html"
+      ],
+      "access_group": "Gated",
+      "mcp": null,
+      "workflow": "Read shopper or admin commerce data",
+      "next_action": "Obtain a Salesforce Commerce Cloud test instance and choose either shopper SLAS or Admin authorization for a concrete catalog workflow.",
+      "success_criterion": "Return the test resource using the correct token type; document instance and role prerequisites.",
+      "alternative_action": "Request a sandbox and scoped sample catalog from the account team when no customer test instance is available.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 45,
+      "category": "Ecommerce",
+      "app": "Magento (Adobe Commerce)",
+      "url": "https://developer.adobe.com/commerce",
+      "description": "Customizable commerce platform",
+      "auth": [
+        "OAuth2",
+        "OAuth1",
+        "Token"
+      ],
+      "access": "Local",
+      "access_detail": "Magento Open Source can be self-hosted; Adobe Commerce SaaS is separately licensed.",
+      "surface": "REST + GraphQL; catalog, checkout, orders and administration",
+      "verdict": "Build",
+      "blocker": "Runtime",
+      "note": "SaaS uses Adobe IMS OAuth2; traditional installations have different integration/token flows.",
+      "sources": [
+        "https://developer.adobe.com/commerce/webapi/rest/authentication/",
+        "https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token",
+        "https://developer.adobe.com/commerce/webapi/graphql/usage/authorization-tokens"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Query a local product catalog",
+      "next_action": "Choose self-hosted Magento or Adobe Commerce SaaS explicitly, then read a seeded product through its appropriate REST or GraphQL interface.",
+      "success_criterion": "Return the product and document whether installation tokens or Adobe IMS authorization apply.",
+      "alternative_action": "Do not mix self-hosted integration credentials with the SaaS auth flow when designing the toolkit.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 46,
+      "category": "Ecommerce",
+      "app": "Squarespace",
+      "url": "https://developers.squarespace.com",
+      "description": "Website and commerce builder",
+      "auth": [
+        "OAuth2",
+        "API key"
+      ],
+      "access": "Paid",
+      "access_detail": "Commerce Advanced plan documented for custom applications; OAuth client registration is a separate path.",
+      "surface": "REST; commerce products, inventory, orders and transactions",
+      "verdict": "Conditional",
+      "blocker": "Subscription",
+      "note": "Custom API-key applications require Commerce Advanced; OAuth Extensions can serve customers on any plan. This row classifies the custom-app path.",
+      "sources": [
+        "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+        "https://developers.squarespace.com/commerce-apis/making-requests"
+      ],
+      "access_group": "Gated",
+      "mcp": null,
+      "workflow": "Read an order through the selected app model",
+      "next_action": "Choose custom API-key app or OAuth Extension first; confirm that route's plan requirements, then read a test order with minimum permissions.",
+      "success_criterion": "Record the chosen route, applicable plan restriction and a successful scoped test-order read.",
+      "alternative_action": "If a needed order field appears only in an authorized UI workflow, capture that read and assess session stability; do not treat it as a way around plan eligibility.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 47,
+      "category": "Ecommerce",
+      "app": "Ecwid",
+      "url": "https://api-docs.ecwid.com",
+      "description": "Embedded online storefronts",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Paid",
+      "access_detail": "Only paid stores can access the API; conditional developer upgrades are available.",
+      "surface": "REST; catalog, orders, customers and store settings",
+      "verdict": "Conditional",
+      "blocker": "Subscription",
+      "note": "Custom apps can use store-specific tokens; partner distribution needs the documented app process.",
+      "sources": [
+        "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+        "https://docs.ecwid.com/develop-apps/app-settings"
+      ],
+      "access_group": "Gated",
+      "mcp": null,
+      "workflow": "Read a store catalog product",
+      "next_action": "Confirm Ecwid custom-app eligibility on the intended plan and read a seeded catalog product with a store-specific token.",
+      "success_criterion": "Return product and store identifiers; record the permission set and distribution restrictions.",
+      "alternative_action": "Ask for partner-app access if the tool must serve multiple stores rather than reusing a private store token.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 48,
+      "category": "Ecommerce",
+      "app": "Gumroad",
+      "url": "https://gumroad.com/api",
+      "description": "Digital-product storefront and sales",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Account check",
+      "access_detail": "Own-account access token or OAuth app; free access needs confirmation from the live API page.",
+      "surface": "REST + CLI; products, sales, files, subscriptions and licenses",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "Browser verified OAuth2, scoped tokens and a broad REST API plus official CLI; license verification has a separate unauthenticated path.",
+      "sources": [
+        "https://gumroad.com/api"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Retrieve a seller product",
+      "next_action": "Confirm Gumroad seller API eligibility and read a test product using the documented OAuth scope or official CLI.",
+      "success_criterion": "Return the product ID and selected fields; keep license verification separate from seller-data authorization.",
+      "alternative_action": "Evaluate the official CLI before inspecting browser endpoints; use network capture only for a specific missing seller workflow.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 49,
+      "category": "Ecommerce",
+      "app": "Amazon Selling Partner",
+      "url": "https://developer-docs.amazon.com/sp-api",
+      "description": "Amazon seller and vendor operations",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Approval",
+      "access_detail": "Developer registration, role qualification and seller/vendor authorization required.",
+      "surface": "REST; catalog, orders, inventory, reports and fulfillment",
+      "verdict": "Conditional",
+      "blocker": "Approval",
+      "note": "Sandbox support does not waive onboarding or restricted-data requirements.",
+      "sources": [
+        "https://developer-docs.amazon.com/sp-api/docs/onboarding-overview",
+        "https://developer-docs.amazon.com/sp-api/lang-en_EN/docs/sp-api-registration-overview"
+      ],
+      "access_group": "Gated",
+      "mcp": null,
+      "workflow": "Read sandbox selling-partner order data",
+      "next_action": "Complete Amazon Selling Partner developer onboarding, choose the required role, and run a documented sandbox order read.",
+      "success_criterion": "Record onboarding status, role authorization and the sandbox response; identify restricted-data requirements separately.",
+      "alternative_action": "Request an authorized seller test account where sandbox fixtures cannot represent the required order workflow.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 50,
+      "category": "Ecommerce",
+      "app": "fanbasis",
+      "url": "https://fanbasis.com",
+      "description": "Creator commerce and payments",
+      "auth": [
+        "API key"
+      ],
+      "access": "Account check",
+      "access_detail": "Merchant account required; onboarding and free sandbox eligibility need vendor confirmation.",
+      "surface": "Public API; checkout, seller and transaction operations",
+      "verdict": "Conditional",
+      "blocker": "Customer access",
+      "note": "Published docs show x-api-key; verify merchant eligibility before estimating delivery.",
+      "sources": [
+        "https://apidocs.fan/",
+        "https://demo.embedded.fanbasis.io/docs/getting-started"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Read a seller checkout record",
+      "next_action": "Ask fanbasis to confirm merchant API eligibility and required key scope, then retrieve a test checkout or transaction record.",
+      "success_criterion": "Record the eligibility answer and retrieve the approved test record without creating a charge.",
+      "alternative_action": "If merchant access is available but the contract is incomplete, capture one checkout-detail read and ask the vendor to confirm the endpoint schema.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 51,
+      "category": "Data & SEO",
+      "app": "DataForSEO",
+      "url": "https://docs.dataforseo.com",
+      "description": "SEO, search and market datasets",
+      "auth": [
+        "Basic"
+      ],
+      "access": "Account check",
+      "access_detail": "API login/password from account API-access settings; usable test-credit entitlement not verified.",
+      "surface": "REST; SERP, keywords, backlinks and on-page data",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "Async task endpoints need polling and explicit cost budgets; credentials are not OAuth.",
+      "sources": [
+        "https://docs.dataforseo.com/v3/on_page-page_screenshot/",
+        "https://docs.dataforseo.com"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official",
+        "scope": "SEO and data tools",
+        "url": "https://dataforseo.com/help-center/setting-up-the-official-dataforseo-mcp-server-simple-guide"
+      },
+      "workflow": "Retrieve an SEO task result",
+      "next_action": "Confirm DataForSEO trial credits and choose one low-cost task type; inspect a pre-created task result using Basic authentication.",
+      "success_criterion": "Return a result with its task status and documented credit cost; distinguish submission from polling.",
+      "alternative_action": "Define a per-run credit budget before enabling task creation, rather than treating credentials as unlimited execution access.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 52,
+      "category": "Data & SEO",
+      "app": "SE Ranking",
+      "url": "https://seranking.com/api",
+      "description": "SEO analytics and rankings",
+      "auth": [
+        "API key"
+      ],
+      "access": "Paid",
+      "access_detail": "Subscription/credit-based Data API; Project API consumes subscription limits.",
+      "surface": "REST; SEO datasets and project operations",
+      "verdict": "Conditional",
+      "blocker": "Subscription",
+      "note": "Separate Data API credit balances from Project API subscription quotas.",
+      "sources": [
+        "https://seranking.com/api/how-to-get-api/",
+        "https://seranking.com/api/project/getting-started/"
+      ],
+      "access_group": "Gated",
+      "mcp": null,
+      "workflow": "Inspect Project API quota and a project",
+      "next_action": "Confirm whether the SE Ranking workflow uses Project API subscriptions or Data API credits, then read a permitted project resource.",
+      "success_criterion": "Record the product, quota model and one authorized project response.",
+      "alternative_action": "Request the exact endpoint's allowance from support when pricing does not distinguish the two API products.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 53,
+      "category": "Data & SEO",
+      "app": "Ahrefs",
+      "url": "https://ahrefs.com/api",
+      "description": "SEO, backlinks and competitive research",
+      "auth": [
+        "API key",
+        "OAuth2"
+      ],
+      "access": "Paid",
+      "access_detail": "MCP available on Lite or higher; API entitlement and units vary by plan.",
+      "surface": "REST; SEO analytics, backlinks and keywords",
+      "verdict": "Conditional",
+      "blocker": "Subscription",
+      "note": "Older enterprise-only blanket claims are unsafe; check endpoint and plan rather than brand alone.",
+      "sources": [
+        "https://ahrefs.com/api",
+        "https://docs.ahrefs.com/en/mcp/docs/introduction"
+      ],
+      "access_group": "Gated",
+      "mcp": {
+        "kind": "Official",
+        "scope": "SEO research; Lite plan or higher",
+        "url": "https://docs.ahrefs.com/en/mcp/docs/introduction"
+      },
+      "workflow": "Read one permitted SEO report",
+      "next_action": "Check Ahrefs access for the exact endpoint and subscription, then retrieve a small authorized backlink or keyword report.",
+      "success_criterion": "Record the endpoint's entitlement and unit usage with the returned report.",
+      "alternative_action": "Evaluate the official MCP allowance separately; do not rely on an old blanket Enterprise-only rule.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 54,
+      "category": "Data & SEO",
+      "app": "MrScraper",
+      "url": "https://docs.mrscraper.com",
+      "description": "Web scraping and structured extraction",
+      "auth": [
+        "API key",
+        "Token"
+      ],
+      "access": "Account check",
+      "access_detail": "Account API token; subscription quota and any free allowance require confirmation.",
+      "surface": "REST; scraping jobs, results, search and account status",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "Official CLI/MCP exists; account credits still govern execution.",
+      "sources": [
+        "https://docs.mrscraper.com/docs/api/authentication",
+        "https://docs.mrscraper.com/docs/getting-started/mcp-server"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Scrape, search, status and results",
+        "url": "https://docs.mrscraper.com/docs/getting-started/mcp-server"
+      },
+      "workflow": "Read an existing scrape job result",
+      "next_action": "Confirm MrScraper account credits and inspect a previously created test job through its API or official MCP.",
+      "success_criterion": "Return job status and result metadata, and record how credits are charged.",
+      "alternative_action": "Compare CLI/MCP job operations with the required output format before creating a custom REST wrapper.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 55,
+      "category": "Data & SEO",
+      "app": "Apify",
+      "url": "https://docs.apify.com",
+      "description": "Hosted scraping and automation Actors",
+      "auth": [
+        "Token",
+        "OAuth2"
+      ],
+      "access": "Account check",
+      "access_detail": "Account API token; Actor-specific cost and free-tier limits must be checked.",
+      "surface": "REST; Actor runs, datasets, storage and schedules",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "MCP can invoke Actors, but Actor availability does not guarantee a target website can be scraped.",
+      "sources": [
+        "https://docs.apify.com",
+        "https://github.com/apify/apify-mcp-server"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Run Apify Actors and access results",
+        "url": "https://github.com/apify/apify-mcp-server"
+      },
+      "workflow": "Read an Actor dataset",
+      "next_action": "Confirm Apify free/trial platform allowance and read a small existing test dataset before enabling Actor execution.",
+      "success_criterion": "Return dataset items with pagination and record the platform/Actor cost distinction.",
+      "alternative_action": "A working Actor invocation does not prove access to its target site; validate target-specific restrictions separately.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 56,
+      "category": "Data & SEO",
+      "app": "Firecrawl",
+      "url": "https://firecrawl.dev",
+      "description": "Web crawling and structured extraction",
+      "auth": [
+        "API key"
+      ],
+      "access": "Free",
+      "access_detail": "Self-serve API key with 1,000 monthly free credits stated on current homepage; no card required.",
+      "surface": "REST; scrape, crawl, map, search and extraction",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "A crawl is an asynchronous job; implement status handling and explicit credit limits.",
+      "sources": [
+        "https://docs.firecrawl.dev/features/stealth-mode",
+        "https://docs.firecrawl.dev",
+        "https://www.firecrawl.dev/"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Web scrape and crawl tools",
+        "url": "https://github.com/firecrawl/firecrawl-mcp-server"
+      },
+      "workflow": "Inspect a bounded crawl result",
+      "next_action": "Use Firecrawl's documented free allowance for a small owned or permitted site, with an explicit page and credit limit.",
+      "success_criterion": "Record the crawl job ID, poll to a terminal status and return only the allowed page count.",
+      "alternative_action": "Compare official MCP crawl controls with direct API limits before exposing an unconstrained crawl tool.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 57,
+      "category": "Data & SEO",
+      "app": "Bright Data",
+      "url": "https://brightdata.com",
+      "description": "Web data extraction and proxy infrastructure",
+      "auth": [
+        "API key"
+      ],
+      "access": "Free",
+      "access_detail": "Official MCP documents a free tier; paid tools and product-specific billing remain separate.",
+      "surface": "REST + MCP; scraping, search and browser/data products",
+      "verdict": "Build",
+      "blocker": "Production entitlement",
+      "note": "Free MCP access is not a blanket entitlement to every paid dataset or proxy product.",
+      "sources": [
+        "https://docs.brightdata.com/ai/mcp-server/overview"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Free and paid web data tools; quotas differ",
+        "url": "https://docs.brightdata.com/ai/mcp-server/overview"
+      },
+      "workflow": "Read a result through the free MCP path",
+      "next_action": "Select a Bright Data tool explicitly included in the documented free MCP allowance and inspect its permitted read workflow.",
+      "success_criterion": "Record tool identity, quota and result scope; distinguish it from paid datasets and proxy products.",
+      "alternative_action": "Request separate entitlement for a paid dataset rather than extrapolating from free MCP access.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 58,
+      "category": "Data & SEO",
+      "app": "Sherlock",
+      "url": "https://github.com/sherlock-project/sherlock",
+      "description": "Open-source username discovery across websites",
+      "auth": [
+        "None"
+      ],
+      "access": "Local",
+      "access_detail": "Local open-source CLI; no vendor account credential.",
+      "surface": "CLI; username lookup and report output, not a hosted REST API",
+      "verdict": "Build",
+      "blocker": "Runtime",
+      "note": "Wrap a subprocess with bounded inputs/timeouts; site changes and false positives need validation.",
+      "sources": [
+        "https://github.com/sherlock-project/sherlock"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Run a bounded local username lookup",
+      "next_action": "Wrap Sherlock as a local subprocess with an allowlisted test username, timeout and output directory, then inspect known positive and negative cases.",
+      "success_criterion": "Record exit status, tested sites and false-positive handling; never equate a match with verified identity.",
+      "alternative_action": "Keep this as a CLI tool and limit the site set; a hosted REST service is unnecessary for the first prototype.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 59,
+      "category": "Data & SEO",
+      "app": "Waterfall.io",
+      "url": "https://waterfall.io",
+      "description": "B2B contact/company enrichment",
+      "auth": [
+        "API key"
+      ],
+      "access": "Account check",
+      "access_detail": "Vendor examples show API keys; access provisioning and free trial not established.",
+      "surface": "HTTP API; enrichment and contact search",
+      "verdict": "Conditional",
+      "blocker": "Customer access",
+      "note": "Different examples use different key headers; confirm the endpoint-specific contract before coding.",
+      "sources": [
+        "https://www.waterfall.io/",
+        "https://www.waterfall.io/product/contact-search"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Read an authorized enrichment result",
+      "next_action": "Ask Waterfall.io to confirm the intended enrichment endpoint, account allowance and correct API-key header before coding.",
+      "success_criterion": "Obtain a consistent request example and validate the documented response fields on authorized test data.",
+      "alternative_action": "Capture the matching authorized enrichment UI request only to resolve header/schema ambiguity, then seek vendor confirmation.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 60,
+      "category": "Data & SEO",
+      "app": "Clay",
+      "url": "https://clay.com",
+      "description": "GTM data enrichment and workflows",
+      "auth": [
+        "API key",
+        "OAuth2"
+      ],
+      "access": "Account check",
+      "access_detail": "First-party agent docs describe a keyed REST API and OAuth CLI; feature/plan entitlement needs verification.",
+      "surface": "REST/workflow calls and webhooks; exact general CRUD breadth unresolved",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "Do not confuse Clay's outbound HTTP integration with its own API; validate the routine/workflow contract.",
+      "sources": [
+        "https://agent-docs.clay.com/blog/implementation-guide/we-want-to-test-two-versions-of-an-outbound-sequence-without-spinning-up-a-whole-new-campaign-each-t-fdd053",
+        "https://university.clay.com/docs/webhook-integration-guide",
+        "https://www.clay.com/pricing"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Trigger or inspect one defined Clay workflow",
+      "next_action": "Identify the specific Clay inbound workflow or routine contract and confirm account entitlement before claiming general CRUD coverage.",
+      "success_criterion": "Document the exact input, output and auth contract for one workflow with a test record.",
+      "alternative_action": "Use a documented webhook or export when available; do not mistake Clay's outbound HTTP action for an inbound Clay API.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 61,
+      "category": "Developer & Infra",
+      "app": "GitHub",
+      "url": "https://docs.github.com/rest",
+      "description": "Code hosting and developer collaboration",
+      "auth": [
+        "OAuth2",
+        "Token",
+        "JWT"
+      ],
+      "access": "Free",
+      "access_detail": "Personal tokens or registered apps; organization approval/SSO may restrict customer resources.",
+      "surface": "REST + GraphQL; repos, issues, PRs, actions and administration",
+      "verdict": "Build",
+      "blocker": "Admin",
+      "note": "Prefer a least-privilege GitHub App for multi-tenant automation; personal tokens suit prototypes.",
+      "sources": [
+        "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github",
+        "https://docs.github.com/rest",
+        "https://docs.github.com/en/rest/about-the-rest-api/about-the-openapi-description-for-the-rest-api"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "GitHub repository and collaboration resources",
+        "url": "https://github.com/github/github-mcp-server"
+      },
+      "workflow": "Read a public repository, then scoped issues",
+      "next_action": "Use the existing public-repository demo as a smoke test, then authorize a least-privilege GitHub App to read issues in one test repository.",
+      "success_criterion": "Keep the public HTTP-200 result separate from a new authenticated issue-read test and record granted repository permissions.",
+      "alternative_action": "Compare official MCP issue tools with required fields and installation boundaries before adding custom REST tools.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 62,
+      "category": "Developer & Infra",
+      "app": "Vercel",
+      "url": "https://vercel.com/docs/rest-api",
+      "description": "Application deployment and hosting",
+      "auth": [
+        "Token",
+        "OAuth2"
+      ],
+      "access": "Account check",
+      "access_detail": "Account access tokens; plan-specific deployment/resource limits need verification.",
+      "surface": "REST; projects, deployments, domains and teams",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "A platform that hosts MCP servers does not by itself prove a native account-management MCP exists.",
+      "sources": [
+        "https://vercel.com/docs/rest-api"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Vercel deployment/project workflows",
+        "url": "https://vercel.com/docs/agent-resources/vercel-mcp"
+      },
+      "workflow": "Read one deployment's metadata",
+      "next_action": "Confirm Vercel API access on the selected plan and use a team-scoped token to inspect a test deployment.",
+      "success_criterion": "Return deployment and project identifiers within the selected team; record account limits.",
+      "alternative_action": "Inspect an authorized deployment UI request only for a required field absent from the public API; hosting MCP servers is not native MCP coverage.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 63,
+      "category": "Developer & Infra",
+      "app": "Netlify",
+      "url": "https://docs.netlify.com/api",
+      "description": "Web hosting and deployment workflows",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Account check",
+      "access_detail": "Generate a personal access token or register OAuth application; team access is explicit.",
+      "surface": "REST; sites, builds, deployments and team resources",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "Separate API availability from build/runtime usage credits.",
+      "sources": [
+        "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+        "https://docs.netlify.com/manage/accounts-and-billing/user-settings/"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Build, deploy and manage Netlify resources",
+        "url": "https://github.com/netlify/netlify-mcp"
+      },
+      "workflow": "Read a test site's deployment status",
+      "next_action": "Confirm Netlify API eligibility and use a scoped account token to read one test site's deployment metadata.",
+      "success_criterion": "Return the site/deploy identifiers and distinguish API access from build/runtime credit usage.",
+      "alternative_action": "Use deployment webhooks for status updates if polling is unnecessary; verify the webhook contract and plan allowance.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 64,
+      "category": "Developer & Infra",
+      "app": "Cloudflare",
+      "url": "https://developers.cloudflare.com/api",
+      "description": "Edge infrastructure, DNS and security",
+      "auth": [
+        "Token",
+        "API key"
+      ],
+      "access": "Account check",
+      "access_detail": "Create a scoped token in dashboard; product entitlement and account role govern each service.",
+      "surface": "REST + GraphQL analytics; broad infrastructure resources",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "A single broad global key is not required; scope the token to target resources.",
+      "sources": [
+        "https://developers.cloudflare.com/fundamentals/api/get-started/create-token/",
+        "https://developers.cloudflare.com/api"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Cloudflare API plus product-specific servers",
+        "url": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare/"
+      },
+      "workflow": "Read a permitted DNS zone",
+      "next_action": "Confirm Cloudflare API eligibility for the chosen product and create a read-only token limited to one test zone.",
+      "success_criterion": "List the approved zone's records and verify access is denied outside its scope.",
+      "alternative_action": "Compare the relevant official MCP server with this zone-scoped workflow instead of using a broad global key.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 65,
+      "category": "Developer & Infra",
+      "app": "Supabase",
+      "url": "https://supabase.com/docs",
+      "description": "Hosted Postgres and backend services",
+      "auth": [
+        "OAuth2",
+        "Token",
+        "API key"
+      ],
+      "access": "Free",
+      "access_detail": "Two free projects plus project API credentials support a scoped database prototype; management roles and quotas still apply.",
+      "surface": "Management REST; project REST/GraphQL, storage and auth",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "Free project route is inferred from billing and project API docs; keep project keys separate from management tokens and enforce row-level security.",
+      "sources": [
+        "https://supabase.com/docs/reference/api/introduction",
+        "https://supabase.com/docs/guides/platform/personal-access-tokens",
+        "https://supabase.com/docs",
+        "https://supabase.com/docs/guides/platform/billing-on-supabase"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Management/project capabilities; PAT permissions apply",
+        "url": "https://supabase.com/docs/guides/platform/personal-access-tokens"
+      },
+      "workflow": "Read rows protected by row-level security",
+      "next_action": "Create a free Supabase test project, seed two differently owned rows, and query through the project API with the intended user context.",
+      "success_criterion": "Return only permitted rows; record RLS behavior and keep management tokens out of the data-plane test.",
+      "alternative_action": "Use the project REST or GraphQL surface for records; reserve management MCP for project administration.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 66,
+      "category": "Developer & Infra",
+      "app": "Neo4j",
+      "url": "https://neo4j.com/docs/api",
+      "description": "Graph database and managed graph hosting",
+      "auth": [
+        "Basic",
+        "Token",
+        "OAuth2"
+      ],
+      "access": "Local",
+      "access_detail": "Self-hosted database credentials; Aura management has separate client credentials and entitlements.",
+      "surface": "HTTP Query API + Aura management; Cypher queries and infrastructure",
+      "verdict": "Build",
+      "blocker": "Runtime",
+      "note": "Basic/Bearer database query auth and Aura OAuth are distinct; a graph database is not a GraphQL API.",
+      "sources": [
+        "https://neo4j.com/docs/query-api/current/authentication-authorization/",
+        "https://neo4j.com/docs/aura/api/authentication/"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Schema introspection and Cypher read/write; database credentials and optional read-only mode",
+        "url": "https://neo4j.com/docs/mcp/current/tools/"
+      },
+      "workflow": "Run a read-only local Cypher query",
+      "next_action": "Use a local Neo4j database and a read-only query identity to retrieve a small seeded graph through the Query API or MCP.",
+      "success_criterion": "Return the expected nodes and relationships; document database auth separately from Aura management OAuth.",
+      "alternative_action": "Keep graph query execution separate from infrastructure provisioning and constrain query/time limits.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 67,
+      "category": "Developer & Infra",
+      "app": "Snowflake",
+      "url": "https://docs.snowflake.com",
+      "description": "Cloud data warehouse and data platform",
+      "auth": [
+        "OAuth2",
+        "JWT",
+        "Token"
+      ],
+      "access": "Account check",
+      "access_detail": "Account role and authentication policy required; trial eligibility not verified in this pass.",
+      "surface": "REST + SQL API; query execution and platform resources",
+      "verdict": "Conditional",
+      "blocker": "Customer access",
+      "note": "Key-pair JWT, OAuth and programmatic access tokens are supported; role and network policy still constrain use.",
+      "sources": [
+        "https://docs.snowflake.com/en/en/developer-guide/snowflake-rest-api/authentication",
+        "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/tutorials/common-setup"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Managed Cortex Analyst/Search/Agents and configured SQL/custom tools; OAuth and RBAC",
+        "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp"
+      },
+      "workflow": "Execute a bounded Snowflake read query",
+      "next_action": "Confirm trial/API eligibility and role/network policies, then run a small read-only SQL API query with one supported credential type.",
+      "success_criterion": "Record the role, warehouse/cost limit, query ID and result; verify the chosen auth scheme.",
+      "alternative_action": "Use official MCP only after checking role and query-execution boundaries; do not imply an API token bypasses network policy.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 68,
+      "category": "Developer & Infra",
+      "app": "MongoDB Atlas",
+      "url": "https://mongodb.com/docs/atlas/api",
+      "description": "Managed MongoDB database infrastructure",
+      "auth": [
+        "OAuth2",
+        "Digest"
+      ],
+      "access": "Admin / paid",
+      "access_detail": "Organization/project service account or API key; permissions and network access configuration apply.",
+      "surface": "REST Admin API; clusters, projects, users and configuration",
+      "verdict": "Conditional",
+      "blocker": "Admin",
+      "note": "This verdict concerns management APIs; do not substitute the retired Atlas Data API for database access.",
+      "sources": [
+        "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/preview/authentication",
+        "https://mongodb.com/docs/atlas/api"
+      ],
+      "access_group": "Gated",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Local or Atlas-managed data and cluster operations; setup and roles differ",
+        "url": "https://www.mongodb.com/docs/mcp-server/overview/"
+      },
+      "workflow": "Read Atlas project configuration",
+      "next_action": "Obtain a MongoDB Atlas project role and management credential, then read a test cluster's configuration through the Admin API.",
+      "success_criterion": "Return cluster/project metadata and confirm least-privilege access; do not query application data through the retired Data API.",
+      "alternative_action": "For application records, choose a supported database driver path separately from management MCP or Admin REST.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 69,
+      "category": "Developer & Infra",
+      "app": "Datadog",
+      "url": "https://docs.datadoghq.com/api",
+      "description": "Monitoring, logs and observability",
+      "auth": [
+        "API key"
+      ],
+      "access": "Account check",
+      "access_detail": "Organization API key plus application key for many operations; role and site-specific endpoint apply.",
+      "surface": "REST; metrics, logs, monitors, dashboards and incidents",
+      "verdict": "Conditional",
+      "blocker": "Customer access",
+      "note": "One API key alone is insufficient for many read/admin operations.",
+      "sources": [
+        "https://docs.datadoghq.com/api/latest/authentication/",
+        "https://docs.datadoghq.com/api/latest/"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Remote observability tools; separate local Code Security MCP and site restrictions",
+        "url": "https://docs.datadoghq.com/mcp_server/"
+      },
+      "workflow": "Read one monitor's definition",
+      "next_action": "Confirm Datadog account/API allowance and provision the required API plus application-key or OAuth permissions for a test monitor.",
+      "success_criterion": "Return the monitor definition and document why an API key alone is insufficient for the chosen read.",
+      "alternative_action": "Compare the official MCP monitor tool and its scopes before implementing a parallel wrapper.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 70,
+      "category": "Developer & Infra",
+      "app": "Sentry",
+      "url": "https://docs.sentry.io/api",
+      "description": "Application error and performance monitoring",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Account check",
+      "access_detail": "Create scoped auth token or OAuth integration; organization membership and plan features apply.",
+      "surface": "REST; issues, projects, releases and events",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "Separate the ingest DSN from a management API auth token.",
+      "sources": [
+        "https://docs.sentry.io/api/auth/",
+        "https://docs.sentry.io/api/guides/create-auth-token/",
+        "https://docs.sentry.io/api/"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official",
+        "scope": "OAuth-scoped errors, performance, issue triage and project tools",
+        "url": "https://mcp.sentry.dev/"
+      },
+      "workflow": "Read a seeded Sentry issue",
+      "next_action": "Confirm Sentry plan/API access and authorize an issue read in one test project using a management token or OAuth.",
+      "success_criterion": "Return the seeded issue and project context; demonstrate that an ingest DSN is not a management credential.",
+      "alternative_action": "Check official MCP issue coverage first; use direct REST only for fields or operations it omits.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 71,
+      "category": "Productivity",
+      "app": "Notion",
+      "url": "https://developers.notion.com",
+      "description": "Documents, databases and team knowledge",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Account check",
+      "access_detail": "Integration token or OAuth; user grants access to specific workspace content.",
+      "surface": "REST; pages, blocks, data sources and search",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "Access is limited to shared resources; MCP user authorization does not imply workspace-wide access.",
+      "sources": [
+        "https://developers.notion.com",
+        "https://www.notion.com/help/notion-mcp"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official",
+        "scope": "User-authorized Notion content",
+        "url": "https://www.notion.com/help/notion-mcp"
+      },
+      "workflow": "Read a specifically shared Notion page",
+      "next_action": "Confirm Notion integration availability on the intended plan, share one test page with the integration, and retrieve its blocks.",
+      "success_criterion": "Read the shared page while an unshared page remains inaccessible; record data-source versus page scope.",
+      "alternative_action": "Compare user-authorized MCP access with integration-token sharing rules rather than assuming workspace-wide visibility.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 72,
+      "category": "Productivity",
+      "app": "Airtable",
+      "url": "https://airtable.com/developers",
+      "description": "Collaborative databases and workflows",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Free",
+      "access_detail": "Web API available on Free and paid plans; scopes and base permissions apply.",
+      "surface": "REST; records, bases, metadata and webhooks",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "Use PATs/OAuth rather than retired legacy API keys; free plans retain request limits.",
+      "sources": [
+        "https://support.airtable.com/articles/6292134965-getting-started-with-airtable-s-web-api",
+        "https://support.airtable.com/articles/9934989703-creating-personal-access-tokens"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Authorized Airtable bases/resources",
+        "url": "https://support.airtable.com/articles/9897799762-using-the-airtable-mcp-server"
+      },
+      "workflow": "Read records in one Airtable base",
+      "next_action": "Create a free test base and a PAT limited to that base, then list seeded records within the documented request allowance.",
+      "success_criterion": "Return record IDs and fields with pagination; verify the token cannot read another base.",
+      "alternative_action": "Use OAuth for customer-installed access; do not document retired legacy API keys as a new setup path.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 73,
+      "category": "Productivity",
+      "app": "Linear",
+      "url": "https://developers.linear.app",
+      "description": "Issue tracking and product planning",
+      "auth": [
+        "OAuth2",
+        "API key"
+      ],
+      "access": "Free",
+      "access_detail": "Free plan plus always-available admin API keys establish a scoped prototype path; Free workspace members are admins.",
+      "surface": "GraphQL; issues, projects, teams and cycles",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "API access inferred by combining pricing, Free-plan roles and API key policy; production workspace controls remain.",
+      "sources": [
+        "https://linear.app/developers/graphql",
+        "https://linear.app/developers/oauth-2-0-authentication",
+        "https://linear.app/pricing",
+        "https://linear.app/docs/api-and-webhooks",
+        "https://linear.app/docs/invite-members"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Linear issues and workspace actions",
+        "url": "https://linear.app/docs/mcp"
+      },
+      "workflow": "Query issues in one Linear team",
+      "next_action": "Confirm API-key permissions in the intended Linear workspace and execute a minimal GraphQL query for a test team's issues.",
+      "success_criterion": "Return issue ID/title/status and document pagination, scope and applicable workspace controls.",
+      "alternative_action": "Compare official MCP issue tools with the needed GraphQL fields before choosing an adapter.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 74,
+      "category": "Productivity",
+      "app": "Jira",
+      "url": "https://developer.atlassian.com",
+      "description": "Issue tracking and project workflows",
+      "auth": [
+        "OAuth2",
+        "API key",
+        "Basic"
+      ],
+      "access": "Account check",
+      "access_detail": "Cloud account/API token or OAuth app; project permissions and organization policy govern access.",
+      "surface": "REST; issues, projects, boards and workflow resources",
+      "verdict": "Conditional",
+      "blocker": "Admin",
+      "note": "Scope explicitly to Jira Cloud; Data Center has different authentication and deployment requirements.",
+      "sources": [
+        "https://developer.atlassian.com/cloud/jira/service-desk/basic-auth-for-rest-apis/",
+        "https://developer.atlassian.com/cloud/jira/platform/rest/v2/intro/"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Rovo MCP with Jira work-item search and updates; OAuth 2.1, permissions and credit limits",
+        "url": "https://developer.atlassian.com/cloud/rovo-mcp/guides/getting-started/"
+      },
+      "workflow": "Read a Jira Cloud test issue",
+      "next_action": "Confirm Jira Cloud free/trial API entitlement and read a seeded issue with an API token or scoped OAuth application.",
+      "success_criterion": "Return issue key and selected fields while documenting Cloud-specific auth and project permissions.",
+      "alternative_action": "Keep Data Center out of this test; inspect its API and deployment separately if a customer requires it.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 75,
+      "category": "Productivity",
+      "app": "Asana",
+      "url": "https://developers.asana.com",
+      "description": "Team tasks and work management",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Free",
+      "access_detail": "Free account or developer sandbox; PAT for initial API calls; paid resource entitlements remain separate.",
+      "surface": "REST; tasks, projects, workspaces and portfolios",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "PATs inherit the user permissions; official MCP uses an OAuth application.",
+      "sources": [
+        "https://developers.asana.com/docs/authentication",
+        "https://developers.asana.com/docs/personal-access-token",
+        "https://developers.asana.com/docs/overview"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Asana work resources through OAuth",
+        "url": "https://developers.asana.com/docs/integrating-with-asanas-mcp-server"
+      },
+      "workflow": "Read a test Asana task",
+      "next_action": "Create a free Asana test project and retrieve a seeded task with a PAT limited by the test user's permissions.",
+      "success_criterion": "Return the task and project identifiers and document fields unavailable on the selected plan.",
+      "alternative_action": "Use the official OAuth-based MCP for user-delegated workflows if it covers the required task fields.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 76,
+      "category": "Productivity",
+      "app": "Monday.com",
+      "url": "https://developer.monday.com",
+      "description": "Work-management boards and automations",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Sandbox",
+      "access_detail": "Free developer account for isolated API/app testing; production plan limits remain separate.",
+      "surface": "GraphQL; boards, items, columns and workspace operations",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "Treat API complexity budgets separately from HTTP request counts.",
+      "sources": [
+        "https://developer.monday.com/apps/docs/choosing-auth",
+        "https://developer.monday.com/api-reference/docs/build-on-monday-with-ai",
+        "https://developer.monday.com/api-reference/docs/developer-sandbox-account"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "GraphQL tools and separate app-development mode",
+        "url": "https://developer.monday.com/api-reference/docs/integrate-with-monday-mcp"
+      },
+      "workflow": "Query board items in a developer sandbox",
+      "next_action": "Use a Monday.com developer sandbox to run a small GraphQL board/items query and record complexity usage.",
+      "success_criterion": "Return seeded item/column values and demonstrate cursor handling within the complexity budget.",
+      "alternative_action": "Compare official MCP operations with the exact columns required before adding custom GraphQL tools.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 77,
+      "category": "Productivity",
+      "app": "ClickUp",
+      "url": "https://clickup.com/api",
+      "description": "Tasks, documents and project management",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Free",
+      "access_detail": "MCP supports Free Forever with 50 calls per 24 hours; REST uses its own rate limits.",
+      "surface": "REST; tasks, lists, spaces, comments and time tracking",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "Available credentials do not establish unlimited rates or entitlement to every feature.",
+      "sources": [
+        "https://developer.clickup.com/docs/authentication",
+        "https://developer.clickup.com/docs/Getting%20Started",
+        "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Workspace tools; Free Forever has 50 daily calls",
+        "url": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server"
+      },
+      "workflow": "Read a task in a free workspace",
+      "next_action": "Create a ClickUp free test workspace and read a seeded task using a personal token with the test user's access.",
+      "success_criterion": "Return the task/list identifiers and record the applicable rate limit and feature restrictions.",
+      "alternative_action": "Use OAuth for customer distribution; keep unsupported paid features outside the initial task-read workflow.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 78,
+      "category": "Productivity",
+      "app": "Coda",
+      "url": "https://coda.io/developers",
+      "description": "Documents with structured tables and workflows",
+      "auth": [
+        "Token"
+      ],
+      "access": "Free",
+      "access_detail": "API doc-size limits explicitly apply across all plan types, including Free; generate an account token.",
+      "surface": "REST; docs, tables, rows, formulas and controls",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "Free document API route is inferred from all-plan API limits and token docs; oversized documents and admin-only APIs are separate constraints.",
+      "sources": [
+        "https://coda.io/developers/apis/v1",
+        "https://help.coda.io/hc/en-us/articles/39555760015757-Overview-Doc-limits"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Read rows in a small Coda document",
+      "next_action": "Use a small free Coda document and API token to list a seeded table's rows, then verify current size and request limits.",
+      "success_criterion": "Return row IDs/values and document the free-plan inference plus any document-size constraint.",
+      "alternative_action": "Use documented table APIs for the prototype; do not include admin-only workspace operations in the same access claim.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 79,
+      "category": "Productivity",
+      "app": "Smartsheet",
+      "url": "https://smartsheet.com/developers",
+      "description": "Spreadsheet-style project and work management",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Paid",
+      "access_detail": "API restricted to Business and Enterprise plans.",
+      "surface": "REST; sheets, rows, attachments, reports and automation",
+      "verdict": "Conditional",
+      "blocker": "Subscription",
+      "note": "Confirm paid-tier entitlement before scheduling implementation; a basic account is insufficient.",
+      "sources": [
+        "https://developers.smartsheet.com/api/smartsheet/openapi/proofs/proofs-create"
+      ],
+      "access_group": "Gated",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Sheets, rows, workflow and portfolio tools; Business/Enterprise/Advanced Work Management required",
+        "url": "https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server"
+      },
+      "workflow": "Read a sheet after confirming entitlement",
+      "next_action": "Confirm Smartsheet Business/Enterprise API eligibility and authorize a read of one test sheet.",
+      "success_criterion": "Return sheet/row identifiers and record plan entitlement; verify the user can access that sheet.",
+      "alternative_action": "Compare MCP availability under its own plan requirements rather than assuming it matches all REST plans.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 80,
+      "category": "Productivity",
+      "app": "Harvest",
+      "url": "https://help.getharvest.com/api-v2",
+      "description": "Time tracking and project invoicing",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Free",
+      "access_detail": "API access included for all accounts, including free and trial; send account ID with token.",
+      "surface": "REST; time entries, projects, clients and invoices",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "API v2 replaced legacy Basic auth with OAuth/PATs; include account context.",
+      "sources": [
+        "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+        "https://help.getharvest.com/api-v2/introduction/overview/general/",
+        "https://support.getharvest.com/hc/en-us/articles/360048180732-The-Harvest-API"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Read an approved time entry",
+      "next_action": "Use a free Harvest account and v2 OAuth/PAT with explicit account context to read a test time entry.",
+      "success_criterion": "Return the entry and account identifier; avoid legacy Basic-auth instructions.",
+      "alternative_action": "Use a read-only reporting workflow first, keeping invoice creation and time-entry mutation outside the initial tool.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 81,
+      "category": "Finance & Fintech",
+      "app": "Stripe",
+      "url": "https://stripe.com/docs/api",
+      "description": "Payments, subscriptions and billing infrastructure",
+      "auth": [
+        "API key",
+        "OAuth2"
+      ],
+      "access": "Sandbox",
+      "access_detail": "Test keys/sandboxes support development; live payments require activation and business eligibility.",
+      "surface": "REST; payments, customers, billing and refunds",
+      "verdict": "Build",
+      "blocker": "Production entitlement",
+      "note": "Use restricted test keys and separate read tools from financial mutations.",
+      "sources": [
+        "https://docs.stripe.com/api/authentication?api-version=2025-08-27.basil",
+        "https://docs.stripe.com/testing?numbers-or-method-or-token=tokens"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Customers, products and payment-related tools",
+        "url": "https://github.com/mcp/com.stripe/mcp"
+      },
+      "workflow": "Read sandbox customer data",
+      "next_action": "Use a restricted Stripe test key to retrieve a seeded test customer; keep payment/refund actions outside the initial prototype.",
+      "success_criterion": "Return the test-mode customer and verify the key's read scope; make no live financial mutations.",
+      "alternative_action": "Compare Stripe's official MCP read tools with the required billing fields before introducing custom mutation tools.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 82,
+      "category": "Finance & Fintech",
+      "app": "Plaid",
+      "url": "https://plaid.com/docs",
+      "description": "Bank-account connectivity and financial data",
+      "auth": [
+        "API key",
+        "Token"
+      ],
+      "access": "Sandbox",
+      "access_detail": "Self-serve Sandbox keys; production approval and product access are separate.",
+      "surface": "HTTP API; accounts, transactions, identity and payment-related products",
+      "verdict": "Build",
+      "blocker": "Production entitlement",
+      "note": "Plaid's bank OAuth is not the same as developer API authentication with client_id/secret.",
+      "sources": [
+        "https://plaid.com/docs/sandbox/",
+        "https://plaid.com/docs/quickstart/",
+        "https://plaid.com/docs/api/"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official; partial",
+        "scope": "Dashboard developer tools; not blanket bank-data access",
+        "url": "https://plaid.com/docs/resources/mcp/"
+      },
+      "workflow": "Read sandbox transaction fixtures",
+      "next_action": "Create a Plaid sandbox Item and use client_id/secret plus the sandbox access token to retrieve fixture transactions.",
+      "success_criterion": "Return sandbox account/transaction data and document each credential's purpose without connecting a real bank.",
+      "alternative_action": "Treat institution OAuth and developer authentication separately; production product approval is a later prerequisite.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 83,
+      "category": "Finance & Fintech",
+      "app": "Binance",
+      "url": "https://binance-docs.github.io",
+      "description": "Cryptocurrency market and account services",
+      "auth": [
+        "API key",
+        "Signature"
+      ],
+      "access": "Account check",
+      "access_detail": "Public market data needs no key; private operations require signed keys and account/regional eligibility.",
+      "surface": "REST + WebSocket; market data and trading/account operations",
+      "verdict": "Conditional",
+      "blocker": "Production entitlement",
+      "note": "Separate unsigned read-only market data from signed private operations; do not perform transactions during evaluation.",
+      "sources": [
+        "https://developers.binance.com/en/docs/products/spot/rest-api"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Read public market data",
+      "next_action": "Start with Binance's documented unsigned market-data read and separately verify regional/account eligibility for any private API scope.",
+      "success_criterion": "Return a public price/order-book response; record that no signed account or trading action was tested.",
+      "alternative_action": "Exclude trading from the assessment prototype; signed private operations require a separate credential and authorization review.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 84,
+      "category": "Finance & Fintech",
+      "app": "Paygent Connect",
+      "url": "",
+      "description": "Payment integration named in assignment; identity unresolved",
+      "auth": [
+        "Unknown"
+      ],
+      "access": "Unresolved",
+      "access_detail": "Assignment gives no vendor URL; could not establish an unambiguous Paygent Connect product.",
+      "surface": "Unresolved; do not substitute generic NMI documentation",
+      "verdict": "Investigate",
+      "blocker": "Identity",
+      "note": "Request the exact vendor URL and API contact. NMI-powered is a hint, not evidence of Paygent's auth or access.",
+      "sources": [],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Resolve the exact Paygent product",
+      "next_action": "Ask for the Paygent Connect vendor URL, API documentation and technical contact before selecting an auth method or endpoint.",
+      "success_criterion": "Obtain an unambiguous product identity and a primary API source tied to that vendor.",
+      "alternative_action": "An NMI-powered label alone is insufficient; request confirmation before using an NMI gateway contract.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 85,
+      "category": "Finance & Fintech",
+      "app": "iPayX",
+      "url": "https://ipayx.ai/docs",
+      "description": "FX audit and payment-evidence service",
+      "auth": [
+        "API key",
+        "Token"
+      ],
+      "access": "Free",
+      "access_detail": "MCP docs offer 10 free audits/day and dashboard API keys; free REST entitlement remains unclear.",
+      "surface": "REST/OpenAPI; FX evidence and audit workflow; signed webhooks",
+      "verdict": "Conditional",
+      "blocker": "Conflicting docs",
+      "note": "Browser found conflicting REST base URLs and schemas; separate MCP docs explicitly document a free tier and test/live keys. Conditional until contract is reconciled.",
+      "sources": [
+        "https://www.ipayx.ai/docs/api",
+        "https://www.ipayx.ai/developers/sandbox",
+        "https://www.ipayx.ai/developers",
+        "https://www.ipayx.ai/docs/mcp-server"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Free MCP: 10 FX audits/day; paid forensic report. Contract inconsistencies across REST pages remain.",
+        "url": "https://www.ipayx.ai/docs/mcp-server"
+      },
+      "workflow": "Validate the documented MCP route",
+      "next_action": "Use iPayX's published MCP setup and ask the vendor to reconcile REST base-URL and payload conflicts before implementing REST calls.",
+      "success_criterion": "Record the MCP tool list and allowance; obtain one confirmed REST request example if REST is required.",
+      "alternative_action": "Prefer the separately documented MCP path for evaluation, without assuming it resolves the conflicting REST contract.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 86,
+      "category": "Finance & Fintech",
+      "app": "QuickBooks",
+      "url": "https://developer.intuit.com",
+      "description": "Small-business accounting",
+      "auth": [
+        "OAuth2"
+      ],
+      "access": "Sandbox",
+      "access_detail": "Developer sandbox provided; production credentials and app assessment are a separate path.",
+      "surface": "REST; accounting entities, invoices, payments and reports",
+      "verdict": "Build",
+      "blocker": "Approval",
+      "note": "Use the Accounting API, not QuickBooks Payments documentation, for bookkeeping use cases.",
+      "sources": [
+        "https://developer.intuit.com/app/developer/qbo/docs/api/accounting/all-entities/journalentry",
+        "https://static.developer.intuit.com/resources/Intuit_App_Partner_Program_Guide.pdf"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Read a sandbox invoice",
+      "next_action": "Create an Intuit developer sandbox company, authorize the Accounting API and retrieve a seeded invoice.",
+      "success_criterion": "Return the invoice and realm ID; document token refresh and sandbox scope without touching Payments APIs.",
+      "alternative_action": "Use a sandbox accounting workflow first; production customer authorization and app review remain separate.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 87,
+      "category": "Finance & Fintech",
+      "app": "Xero",
+      "url": "https://developer.xero.com",
+      "description": "Cloud accounting and business finance",
+      "auth": [
+        "OAuth2"
+      ],
+      "access": "Free",
+      "access_detail": "Free developer account and starter path; connection/data-volume tiers govern scaling.",
+      "surface": "REST; accounting, invoices, contacts and reports",
+      "verdict": "Build",
+      "blocker": "Production entitlement",
+      "note": "No basic API-key auth; 2026 developer pricing changed, so validate connection and egress limits.",
+      "sources": [
+        "https://developer.xero.com/faq/getting-started",
+        "https://developer.xero.com/documentation/getting-started-guide/",
+        "https://developer.xero.com/pricing"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Read a demo-company contact",
+      "next_action": "Use Xero's developer/demo-company path to read a contact and verify current connection and data-egress allowances.",
+      "success_criterion": "Return the contact with tenant context and record the applicable developer pricing limits.",
+      "alternative_action": "Check the official MCP's authorization and connection model before assuming it avoids developer-platform limits.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 88,
+      "category": "Finance & Fintech",
+      "app": "Brex",
+      "url": "https://developer.brex.com",
+      "description": "Corporate cards, spending and financial operations",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Account check",
+      "access_detail": "Customer user token or partner OAuth; account eligibility and partner enablement need confirmation.",
+      "surface": "REST; spend, expenses, payments and company operations",
+      "verdict": "Conditional",
+      "blocker": "Customer access",
+      "note": "User tokens may expire after inactivity; use partner OAuth for multi-customer access.",
+      "sources": [
+        "https://developer.brex.com/docs/faq",
+        "https://developer.brex.com/guides/partner_authentication"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Role-controlled Brex account data",
+        "url": "https://www.brex.com/support/using-brex-in-ai-apps"
+      },
+      "workflow": "Read approved expense metadata",
+      "next_action": "Confirm Brex customer/developer eligibility and read one test expense using an authorized token with documented expiry behavior.",
+      "success_criterion": "Return the approved expense and token-lifetime constraints without enabling payment or card mutations.",
+      "alternative_action": "Use partner OAuth for multi-customer access; request a test tenant rather than borrowing a personal customer token.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 89,
+      "category": "Finance & Fintech",
+      "app": "Ramp",
+      "url": "https://docs.ramp.com",
+      "description": "Corporate spend and expense management",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Sandbox",
+      "access_detail": "Documented sandbox; production capabilities can require developer access review.",
+      "surface": "REST; users, transactions, expenses, cards and accounting",
+      "verdict": "Build",
+      "blocker": "Approval",
+      "note": "Developer MCP is documentation-only; distinguish it from Ramp's account-data MCP.",
+      "sources": [
+        "https://docs.ramp.com/developer-api/v1/api/users",
+        "https://docs.ramp.com/developer-api/v1/virtual-cards",
+        "https://docs.ramp.com/developer-api/v1/developer-mcp"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Account MCP distinct from unauthenticated developer-docs MCP",
+        "url": "https://support.ramp.com/ramp-mcp"
+      },
+      "workflow": "Read a developer-sandbox transaction",
+      "next_action": "Obtain Ramp sandbox access and read a fixture transaction with appropriate OAuth or token permissions.",
+      "success_criterion": "Return the sandbox transaction and record the chosen credential path; do not perform financial actions.",
+      "alternative_action": "Distinguish Ramp's documentation MCP from its account-data MCP before choosing which one can serve the workflow.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 90,
+      "category": "Finance & Fintech",
+      "app": "PitchBook",
+      "url": "https://pitchbook.com",
+      "description": "Private-market company and investment intelligence",
+      "auth": [
+        "Unknown"
+      ],
+      "access": "Approval",
+      "access_detail": "Commercial API product marketed through sales; exact auth and license terms not publicly established here.",
+      "surface": "Data API advertised; endpoint breadth and auth unresolved",
+      "verdict": "Investigate",
+      "blocker": "Commercial access",
+      "note": "Do not infer full API licensing from the separate limited Essential Connector.",
+      "sources": [
+        "https://pitchbook.com/products/direct-access-data/api",
+        "https://pitchbook.com/data"
+      ],
+      "access_group": "Gated",
+      "mcp": null,
+      "workflow": "Obtain the licensed API contract",
+      "next_action": "Request PitchBook's Data API licensing terms, authentication documentation, permitted datasets and a test-access option for a named research workflow.",
+      "success_criterion": "Obtain a vendor-confirmed contract and sample schema; identify redistribution and usage restrictions.",
+      "alternative_action": "Evaluate the Essential Connector only for its documented limited scope; do not present it as full Data API access.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 91,
+      "category": "AI & Media",
+      "app": "NotebookLM",
+      "url": "https://cloud.google.com/gemini",
+      "description": "Source-grounded notebooks and research summaries",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Admin / paid",
+      "access_detail": "Enterprise Google Cloud project, enabled API, IAM roles and product entitlement required.",
+      "surface": "REST enterprise notebook/source management; consumer API not assumed",
+      "verdict": "Conditional",
+      "blocker": "Admin",
+      "note": "The enterprise API is real; a blanket no-API verdict for all NotebookLM editions would be wrong.",
+      "sources": [
+        "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-notebooklm",
+        "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks"
+      ],
+      "access_group": "Gated",
+      "mcp": null,
+      "workflow": "Read an enterprise notebook resource",
+      "next_action": "Confirm NotebookLM Enterprise tenant eligibility and IAM permissions, then inspect a test notebook/source resource through the enterprise API.",
+      "success_criterion": "Return the enterprise resource identifier and document required project/tenant roles.",
+      "alternative_action": "Do not extrapolate this to consumer NotebookLM; investigate that product separately if consumer automation is required.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 92,
+      "category": "AI & Media",
+      "app": "Otter AI",
+      "url": "https://help.otter.ai",
+      "description": "Meeting transcription and summaries",
+      "auth": [
+        "API key",
+        "OAuth2"
+      ],
+      "access": "Paid",
+      "access_detail": "Public API is available to Enterprise workspaces; MCP availability follows a separate account/plan path.",
+      "surface": "Public API plus MCP; meeting/transcript access",
+      "verdict": "Conditional",
+      "blocker": "Subscription",
+      "note": "Do not recycle older no-public-API claims or assume MCP and REST share the same entitlement.",
+      "sources": [
+        "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+        "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server"
+      ],
+      "access_group": "Gated",
+      "mcp": {
+        "kind": "Official",
+        "scope": "OAuth meeting access; API and MCP entitlements differ",
+        "url": "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server"
+      },
+      "workflow": "Retrieve an authorized meeting transcript",
+      "next_action": "Confirm Otter REST API entitlement and MCP entitlement separately, then retrieve a meeting explicitly available to the test user.",
+      "success_criterion": "Return the authorized transcript and record which plan/interface provided access.",
+      "alternative_action": "Choose MCP only if its plan and meeting permissions cover the workflow; otherwise request the REST API enterprise route.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 93,
+      "category": "AI & Media",
+      "app": "Fathom",
+      "url": "https://fathom.video",
+      "description": "AI meeting recording and summaries",
+      "auth": [
+        "API key",
+        "OAuth2"
+      ],
+      "access": "Account check",
+      "access_detail": "Developer guide supports API keys and public OAuth apps; plan entitlement requires verification.",
+      "surface": "REST; meetings, summaries, transcripts and webhooks",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "Fathom meeting product, not the unrelated Fathom Analytics API.",
+      "sources": [
+        "https://developers.fathom.ai/index"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Read a test meeting summary",
+      "next_action": "Confirm Fathom meeting-product API access and retrieve one authorized test meeting's summary or transcript.",
+      "success_criterion": "Return the meeting ID and permitted summary fields; record plan eligibility and webhook availability.",
+      "alternative_action": "Use the documented meeting webhook to avoid polling when available; do not use Fathom Analytics documentation.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 94,
+      "category": "AI & Media",
+      "app": "Consensus",
+      "url": "https://consensus.app",
+      "description": "Evidence-based scientific literature search",
+      "auth": [
+        "OAuth2",
+        "API key"
+      ],
+      "access": "Free",
+      "access_detail": "Self-serve keys on every plan; Free includes 30 shared API/MCP calls monthly. API keys use x-api-key.",
+      "surface": "REST search + MCP; scholarly search and evidence",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "Use current docs; API and MCP share quotas. Enterprise also supports bearer keys; no broad paid-only API gate.",
+      "sources": [
+        "https://docs.consensus.app/api-plans-and-access",
+        "https://docs.consensus.app/consensus-mcp"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Scientific search; OAuth or enterprise bearer key",
+        "url": "https://docs.consensus.app/consensus-mcp"
+      },
+      "workflow": "Run one scholarly search within the shared quota",
+      "next_action": "Use Consensus's documented free API/MCP allowance for one narrow scholarly search with the required key header.",
+      "success_criterion": "Return paper identifiers and evidence fields while recording remaining shared API/MCP quota.",
+      "alternative_action": "Compare MCP search output with REST fields; do not assume separate free quotas for each interface.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 95,
+      "category": "AI & Media",
+      "app": "Reducto",
+      "url": "https://reducto.ai",
+      "description": "Document parsing and structured extraction",
+      "auth": [
+        "API key"
+      ],
+      "access": "Account check",
+      "access_detail": "Self-managed API key in Studio; current free allowance not confirmed.",
+      "surface": "REST/OpenAPI; parse, extract, split and document workflows",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "Hosted MCP uses bearer API key; parsing quality and per-page cost need task-specific evaluation.",
+      "sources": [
+        "https://reducto.ai/developers",
+        "https://github.com/reductoai/mcp-server-reducto"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Document processing via hosted server or local wrapper",
+        "url": "https://github.com/reductoai/mcp-server-reducto"
+      },
+      "workflow": "Inspect a small document-parsing job",
+      "next_action": "Confirm Reducto trial credits and submit an owned, non-sensitive test document to a bounded parse workflow after establishing the page cost.",
+      "success_criterion": "Record job status and parsed fields against a small expected-output fixture, including any extraction errors.",
+      "alternative_action": "Compare hosted MCP parsing controls with REST job options; page cost and parsing accuracy are separate acceptance checks.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 96,
+      "category": "AI & Media",
+      "app": "Devin",
+      "url": "https://docs.devin.ai",
+      "description": "Autonomous coding-agent sessions",
+      "auth": [
+        "API key",
+        "Token"
+      ],
+      "access": "Account check",
+      "access_detail": "Account/API credential required; current plan and usage entitlement need confirmation.",
+      "surface": "REST + MCP; sessions and agent execution",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "New cog_ credentials support MCP; legacy apk_ keys do not. Restrict execution scope and cost.",
+      "sources": [
+        "https://docs.devin.ai/es/api-reference/authentication"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official",
+        "scope": "New cog_ credentials; legacy API keys unsupported for MCP",
+        "url": "https://docs.devin.ai/es/api-reference/authentication"
+      },
+      "workflow": "Inspect an existing Devin test session",
+      "next_action": "Confirm Devin account/API allowance and use a current supported credential to inspect an existing test session without launching autonomous work.",
+      "success_criterion": "Return session metadata and document credential prefix, scope and execution-cost boundaries.",
+      "alternative_action": "Keep new session creation disabled until a separate repository, permission and spending scope is agreed.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 97,
+      "category": "AI & Media",
+      "app": "higgsfield",
+      "url": "https://higgsfield.ai/cli",
+      "description": "AI image/video generation and creative workflows",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Paid",
+      "access_detail": "CLI/skills use account sign-in and plan credits; website free/unlimited generations do not transfer.",
+      "surface": "CLI + MCP; creative generation and assets; broad REST contract not established",
+      "verdict": "Conditional",
+      "blocker": "Subscription",
+      "note": "No separate API key required for the documented CLI/MCP flow; charge against account credits.",
+      "sources": [
+        "https://higgsfield.ai/creator-hub/help-center/integrations/how-do-i-access-higgsfield-via-cli",
+        "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-higgsfield-mcp"
+      ],
+      "access_group": "Gated",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Creative generation using account credits",
+        "url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-higgsfield-mcp"
+      },
+      "workflow": "Inspect creative assets through the documented CLI",
+      "next_action": "Confirm higgsfield account credits and CLI sign-in requirements, then inspect existing authorized asset metadata before generating content.",
+      "success_criterion": "Record the actual CLI/MCP operation and account entitlement; avoid inventing a broad REST contract.",
+      "alternative_action": "Use the official CLI/MCP flow first; capture an authorized asset-detail request only if a required read is missing.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 98,
+      "category": "AI & Media",
+      "app": "Mermaid CLI",
+      "url": "https://github.com/mermaid-js/mermaid-cli",
+      "description": "Render Mermaid text into diagrams",
+      "auth": [
+        "None"
+      ],
+      "access": "Local",
+      "access_detail": "Open-source local CLI; Node/browser runtime required; no account credentials.",
+      "surface": "CLI; diagrams to SVG, PNG or PDF, not a hosted REST service",
+      "verdict": "Build",
+      "blocker": "Runtime",
+      "note": "An agent-callable subprocess tool is sufficient; a native MCP server is not necessary.",
+      "sources": [
+        "https://github.com/mermaid-js/mermaid-cli"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Render a local diagram file",
+      "next_action": "Wrap Mermaid CLI with a fixed input directory, timeout and SVG output path, then render a small known diagram locally.",
+      "success_criterion": "Produce a valid SVG and record the exit code; reject unexpected file paths and bound runtime.",
+      "alternative_action": "Expose the subprocess directly as an agent tool; add an MCP wrapper only if the consuming agent requires that transport.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 99,
+      "category": "AI & Media",
+      "app": "YouTube Transcript",
+      "url": "https://transcriptapi.com",
+      "description": "YouTube transcripts and discovery through TranscriptAPI",
+      "auth": [
+        "API key",
+        "OAuth2"
+      ],
+      "access": "Account check",
+      "access_detail": "API/MCP key and active plan; trial and zero-credit endpoint eligibility should be checked separately.",
+      "surface": "REST + MCP; transcripts, videos, channels, search and playlists",
+      "verdict": "Conditional",
+      "blocker": "Subscription",
+      "note": "This is TranscriptAPI, a third-party service, not a Google YouTube transcript endpoint.",
+      "sources": [
+        "https://transcriptapi.com/docs/mcp/",
+        "https://transcriptapi.com/blog/youtube-api-expansion-2026-09-17",
+        "https://transcriptapi.com/"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official (TranscriptAPI)",
+        "scope": "Third-party YouTube transcript/discovery tools",
+        "url": "https://transcriptapi.com/docs/mcp/"
+      },
+      "workflow": "Retrieve a transcript from TranscriptAPI",
+      "next_action": "Confirm TranscriptAPI account allowance and retrieve one permitted test video's transcript using its documented key flow.",
+      "success_criterion": "Return timed transcript segments and identify TranscriptAPI as the provider rather than Google.",
+      "alternative_action": "Evaluate the vendor MCP for the same transcript workflow and document coverage/language limitations.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 100,
+      "category": "AI & Media",
+      "app": "Grain",
+      "url": "https://grain.com",
+      "description": "Meeting recordings, notes and insights",
+      "auth": [
+        "Token",
+        "OAuth2"
+      ],
+      "access": "Trial",
+      "access_detail": "Business trial includes personal/workspace API and advanced MCP; paid-plan features vary.",
+      "surface": "REST + MCP; recordings, transcripts, notes and workspace data",
+      "verdict": "Build",
+      "blocker": "Subscription",
+      "note": "Distinguish basic/advanced MCP and API plan entitlement; source meeting permissions still apply.",
+      "sources": [
+        "https://support.grain.com/en/articles/9253206-grain-business-trial",
+        "https://support.grain.com/en/articles/9253220-plans",
+        "https://developers.grain.com/mcp"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Meeting data; basic/advanced access depends on plan",
+        "url": "https://developers.grain.com/mcp"
+      },
+      "workflow": "Read an authorized meeting recording",
+      "next_action": "Use a Grain trial and confirm API versus basic/advanced MCP entitlement before retrieving one authorized test recording's metadata.",
+      "success_criterion": "Return the recording ID and permitted transcript/notes fields; record trial and meeting-access limitations.",
+      "alternative_action": "Choose the MCP tier only after comparing required transcript and workspace operations with its documented tool list.",
+      "status": "Proposed; not an authenticated test result"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 22,
+    "category": "Communications",
+    "app": "Twilio",
+    "url": "https://twilio.com",
+    "description": "Programmable messaging and voice",
+    "auth": [
+      "API key",
+      "Basic",
+      "Token"
+    ],
+    "access": "Trial",
+    "access_detail": "Free trial exposes Account SID and Auth Token; production messaging has additional requirements.",
+    "surface": "REST; SMS, voice, numbers and verification",
+    "verdict": "Build",
+    "blocker": "Production entitlement",
+    "note": "Separate trial restrictions and usage charges from the ability to get credentials.",
+    "sources": [
+      "https://www.twilio.com/docs/usage/tutorials/how-to-use-your-free-trial-account",
+      "https://www.twilio.com/docs/iam/api-keys"
+    ],
+    "access_group": "Self-serve",
+    "mcp": null,
+    "workflow": "Read a trial messaging record",
+    "next_action": "Use Twilio trial credentials to inspect a test messaging record and document trial restrictions separately from future send costs.",
+    "success_criterion": "Return the approved message's status without sending messages or changing phone-number settings.",
+    "alternative_action": "Choose a messaging-specific auth path first; add voice or verification only after their separate requirements are checked.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

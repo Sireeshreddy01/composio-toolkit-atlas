@@ -1,0 +1,42 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 50,
+  "app": "fanbasis",
+  "sources": [
+    "https://apidocs.fan/",
+    "https://demo.embedded.fanbasis.io/docs/getting-started"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 6,
+      "url": "https://apidocs.fan/",
+      "checked_at": "2026-09-24T10:48:24.227884+00:00",
+      "status": 200,
+      "final_url": "https://apidocs.fan/",
+      "sha256": "48440c6d21d00204818a51d8444cb8a33f5435ea8ebe43f671c8dbb26e805f97",
+      "text_chars": 35,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 14,
+      "url": "https://demo.embedded.fanbasis.io/docs/getting-started",
+      "checked_at": "2026-09-24T10:48:27.019897+00:00",
+      "status": 200,
+      "final_url": "https://demo.embedded.fanbasis.io/docs/getting-started",
+      "sha256": "60ea2ca588917c34bfa636afb2e55d07e2d9f528f40c54005ba29bba7b732ab4",
+      "text_chars": 19,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

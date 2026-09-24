@@ -1,0 +1,38 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 76,
+    "category": "Productivity",
+    "app": "Monday.com",
+    "url": "https://developer.monday.com",
+    "description": "Work-management boards and automations",
+    "auth": [
+      "OAuth2",
+      "Token"
+    ],
+    "access": "Sandbox",
+    "access_detail": "Free developer account for isolated API/app testing; production plan limits remain separate.",
+    "surface": "GraphQL; boards, items, columns and workspace operations",
+    "verdict": "Build",
+    "blocker": "None",
+    "note": "Treat API complexity budgets separately from HTTP request counts.",
+    "sources": [
+      "https://developer.monday.com/apps/docs/choosing-auth",
+      "https://developer.monday.com/api-reference/docs/build-on-monday-with-ai",
+      "https://developer.monday.com/api-reference/docs/developer-sandbox-account"
+    ],
+    "access_group": "Self-serve",
+    "mcp": {
+      "kind": "Official",
+      "scope": "GraphQL tools and separate app-development mode",
+      "url": "https://developer.monday.com/api-reference/docs/integrate-with-monday-mcp"
+    },
+    "workflow": "Query board items in a developer sandbox",
+    "next_action": "Use a Monday.com developer sandbox to run a small GraphQL board/items query and record complexity usage.",
+    "success_criterion": "Return seeded item/column values and demonstrate cursor handling within the complexity budget.",
+    "alternative_action": "Compare official MCP operations with the exact columns required before adding custom GraphQL tools.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

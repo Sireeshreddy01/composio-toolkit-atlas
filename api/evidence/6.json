@@ -1,0 +1,171 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 6,
+  "app": "Podio",
+  "sources": [
+    "https://developers.podio.com/authentication",
+    "https://developers.podio.com/index/faq"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 87,
+      "url": "https://developers.podio.com/authentication",
+      "checked_at": "2026-09-24T10:48:40.681092+00:00",
+      "status": 200,
+      "final_url": "https://developers.podio.com/authentication",
+      "sha256": "6e9db0bc42720a13d588c1518b14aea9ba7d41c60bdc035fa5370c7bfcea23b5",
+      "text_chars": 4890,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 88,
+      "url": "https://developers.podio.com/index/faq",
+      "checked_at": "2026-09-24T10:48:40.726331+00:00",
+      "status": 200,
+      "final_url": "https://developers.podio.com/index/faq",
+      "sha256": "1f1269095037db903875c99b88fa9c1b8b3dfddb4bf76c0426f70483f98c3cb6",
+      "text_chars": 4569,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": {
+    "id": 6,
+    "app": "Podio",
+    "category": "CRM & Sales",
+    "product_scope": "Podio API for user and single-app integrations",
+    "fields": {
+      "authentication": {
+        "answer": "OAuth2 uses registered client credentials and access tokens sent as Authorization: OAuth2 ACCESS_TOKEN. Single-app scripts can use app authentication with a special app token.",
+        "status": "supported",
+        "caveat": "App authentication is scoped to one Podio app; it does not imply user-wide access.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 6,
+          "field": "authentication",
+          "assessment": "supported",
+          "reason": "S015 documents registered OAuth2 credentials and the authorization header; S016 documents app-token authentication limited to one Podio app."
+        },
+        "citations": [
+          {
+            "source_id": "S015",
+            "url": "https://developers.podio.com/authentication",
+            "retrieved_at": "2026-09-24T13:29:39.475228+00:00",
+            "source_sha256": "d922f5b31978e352dbe2c23c0f759ea907abe15a8d85ffd6ded0b5b2cbd093b9",
+            "quote_sha256": "0d56c66db5873bb7fa23248cbbd8b66bc558b68836c76e33ed7e564d54f8c92e",
+            "normalized_offset": 278,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S015",
+            "url": "https://developers.podio.com/authentication",
+            "retrieved_at": "2026-09-24T13:29:39.475228+00:00",
+            "source_sha256": "d922f5b31978e352dbe2c23c0f759ea907abe15a8d85ffd6ded0b5b2cbd093b9",
+            "quote_sha256": "f0b8a9e781ed0f13e3d6ac5860e23921a0150c37199396fdf96f83a8458783fa",
+            "normalized_offset": 1514,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S016",
+            "url": "https://developers.podio.com/index/faq",
+            "retrieved_at": "2026-09-24T13:29:40.830481+00:00",
+            "source_sha256": "6e398ac36052bc1e7db6320c97615e3813ca85609c2aad512fe2df6a404c875f",
+            "quote_sha256": "7b6402512b2e92fdf7739106d132d703989f4815843b9a1a2cd95571bdf84d61",
+            "normalized_offset": 1931,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "development_access": {
+        "answer": "Free and paid accounts explicitly receive full API access within base rate limits. Paid add-ons increase limits; selected restricted operations and programmatic app-token access require requests.",
+        "status": "supported",
+        "caveat": "Free access does not include higher paid rate limits or automatically grant elevated trust/programmatic app-token retrieval.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 6,
+          "field": "development_access",
+          "assessment": "supported",
+          "reason": "S016 explicitly grants free and paid accounts base API access while separately documenting paid limits and request-gated capabilities."
+        },
+        "citations": [
+          {
+            "source_id": "S016",
+            "url": "https://developers.podio.com/index/faq",
+            "retrieved_at": "2026-09-24T13:29:40.830481+00:00",
+            "source_sha256": "6e398ac36052bc1e7db6320c97615e3813ca85609c2aad512fe2df6a404c875f",
+            "quote_sha256": "7083a742e46ae827912af8c74c1b718e255a54568211f4610395753e1ed2ee12",
+            "normalized_offset": 319,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S016",
+            "url": "https://developers.podio.com/index/faq",
+            "retrieved_at": "2026-09-24T13:29:40.830481+00:00",
+            "source_sha256": "6e398ac36052bc1e7db6320c97615e3813ca85609c2aad512fe2df6a404c875f",
+            "quote_sha256": "22ddc91f8b159d71d3e285e02416792ba63ebb4058259bcb923b03efd4a4203b",
+            "normalized_offset": 2541,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "api_surface": {
+        "answer": "HTTP API coverage includes app-token access and restricted deletion of apps/workspaces. Client libraries are documented; the broader business-resource catalog is unresolved.",
+        "status": "supported",
+        "caveat": "The packet does not enumerate ordinary CRM-style record resources or establish GraphQL support.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 6,
+          "field": "api_surface",
+          "assessment": "supported",
+          "reason": "S015 establishes HTTP requests; S016 describes programmatic app-token access, restricted app/workspace deletion and the listed libraries."
+        },
+        "citations": [
+          {
+            "source_id": "S016",
+            "url": "https://developers.podio.com/index/faq",
+            "retrieved_at": "2026-09-24T13:29:40.830481+00:00",
+            "source_sha256": "6e398ac36052bc1e7db6320c97615e3813ca85609c2aad512fe2df6a404c875f",
+            "quote_sha256": "dfbeb1e9bc64703e0de2453f0d09be296945d0b8f2dd2c895c6c4ea541c3e105",
+            "normalized_offset": 2622,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S016",
+            "url": "https://developers.podio.com/index/faq",
+            "retrieved_at": "2026-09-24T13:29:40.830481+00:00",
+            "source_sha256": "6e398ac36052bc1e7db6320c97615e3813ca85609c2aad512fe2df6a404c875f",
+            "quote_sha256": "df132cb64ec8cad9f244774ad460ea96860c55a1b0c188e902fe16089ec06625",
+            "normalized_offset": 2950,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "mcp": {
+        "answer": "Existing vendor MCP availability is unresolved.",
+        "status": "unresolved",
+        "caveat": "No MCP evidence is supplied; this does not establish absence.",
+        "citation_binding_passed": false,
+        "verification": {
+          "id": 6,
+          "field": "mcp",
+          "assessment": "unresolved",
+          "reason": "Neither supplied Podio document addresses MCP availability."
+        },
+        "citations": []
+      }
+    },
+    "access_class": "Self-serve",
+    "verdict": "Prototype candidate",
+    "decision_reason": "Free accounts explicitly include API access at base limits, with separate gates for selected capabilities. Nothing was authenticated or tested.",
+    "next_step": "Obtain the API Areas reference for apps and items; success is a resource-and-operation list identifying any elevated-trust requirements."
+  },
+  "human_review": "pending",
+  "authenticated_test": false
+}

@@ -1,0 +1,35 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 45,
+    "category": "Ecommerce",
+    "app": "Magento (Adobe Commerce)",
+    "url": "https://developer.adobe.com/commerce",
+    "description": "Customizable commerce platform",
+    "auth": [
+      "OAuth2",
+      "OAuth1",
+      "Token"
+    ],
+    "access": "Local",
+    "access_detail": "Magento Open Source can be self-hosted; Adobe Commerce SaaS is separately licensed.",
+    "surface": "REST + GraphQL; catalog, checkout, orders and administration",
+    "verdict": "Build",
+    "blocker": "Runtime",
+    "note": "SaaS uses Adobe IMS OAuth2; traditional installations have different integration/token flows.",
+    "sources": [
+      "https://developer.adobe.com/commerce/webapi/rest/authentication/",
+      "https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token",
+      "https://developer.adobe.com/commerce/webapi/graphql/usage/authorization-tokens"
+    ],
+    "access_group": "Self-serve",
+    "mcp": null,
+    "workflow": "Query a local product catalog",
+    "next_action": "Choose self-hosted Magento or Adobe Commerce SaaS explicitly, then read a seeded product through its appropriate REST or GraphQL interface.",
+    "success_criterion": "Return the product and document whether installation tokens or Adobe IMS authorization apply.",
+    "alternative_action": "Do not mix self-hosted integration credentials with the SaaS auth flow when designing the toolkit.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

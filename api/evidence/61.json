@@ -1,0 +1,70 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 61,
+  "app": "GitHub",
+  "sources": [
+    "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github",
+    "https://docs.github.com/en/rest/about-the-rest-api/about-the-openapi-description-for-the-rest-api",
+    "https://docs.github.com/rest",
+    "https://github.com/github/github-mcp-server"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 112,
+      "url": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github",
+      "checked_at": "2026-09-24T10:48:44.979898+00:00",
+      "status": 200,
+      "final_url": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github",
+      "sha256": "938c3d3747b387cf28c49a629e4b93b1eedd4a17ea0017c8dc1439462e2747a6",
+      "text_chars": 13991,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Gated",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 113,
+      "url": "https://docs.github.com/en/rest/about-the-rest-api/about-the-openapi-description-for-the-rest-api",
+      "checked_at": "2026-09-24T10:48:45.180176+00:00",
+      "status": 200,
+      "final_url": "https://docs.github.com/en/rest/about-the-rest-api/about-the-openapi-description-for-the-rest-api",
+      "sha256": "b4fe7774bb6a01debfcad4eb010b00c2299d0b60915ecd414946b197a74de3f9",
+      "text_chars": 6118,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Gated",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 114,
+      "url": "https://docs.github.com/rest",
+      "checked_at": "2026-09-24T10:48:45.285924+00:00",
+      "status": 200,
+      "final_url": "https://docs.github.com/en/rest",
+      "sha256": "5c55daf34ca77993f5b58ac6dad59855d290ca4d8d750f3d19763af145730d81",
+      "text_chars": 5795,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Gated",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 138,
+      "url": "https://github.com/github/github-mcp-server",
+      "checked_at": "2026-09-24T10:48:49.648587+00:00",
+      "status": 200,
+      "final_url": "https://github.com/github/github-mcp-server",
+      "sha256": "fb89ff7f63f186b4cd3e069ec28b682be817f94c03c53dba3fb8d9a9068f21c3",
+      "text_chars": 90867,
+      "auth_guess": "OAuth2",
+      "surface_guess": "GraphQL",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

@@ -1,0 +1,31 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 58,
+    "category": "Data & SEO",
+    "app": "Sherlock",
+    "url": "https://github.com/sherlock-project/sherlock",
+    "description": "Open-source username discovery across websites",
+    "auth": [
+      "None"
+    ],
+    "access": "Local",
+    "access_detail": "Local open-source CLI; no vendor account credential.",
+    "surface": "CLI; username lookup and report output, not a hosted REST API",
+    "verdict": "Build",
+    "blocker": "Runtime",
+    "note": "Wrap a subprocess with bounded inputs/timeouts; site changes and false positives need validation.",
+    "sources": [
+      "https://github.com/sherlock-project/sherlock"
+    ],
+    "access_group": "Self-serve",
+    "mcp": null,
+    "workflow": "Run a bounded local username lookup",
+    "next_action": "Wrap Sherlock as a local subprocess with an allowlisted test username, timeout and output directory, then inspect known positive and negative cases.",
+    "success_criterion": "Record exit status, tested sites and false-positive handling; never equate a match with verified identity.",
+    "alternative_action": "Keep this as a CLI tool and limit the site set; a hosted REST service is unnecessary for the first prototype.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

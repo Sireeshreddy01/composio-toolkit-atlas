@@ -1,0 +1,28 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 48,
+  "app": "Gumroad",
+  "sources": [
+    "https://gumroad.com/api"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 146,
+      "url": "https://gumroad.com/api",
+      "checked_at": "2026-09-24T10:48:50.836657+00:00",
+      "status": 200,
+      "final_url": "https://gumroad.com/api",
+      "sha256": "4992d4138e648ca0065fefdeb41cd3b4fc46f9961a582474211e8c93d65341b7",
+      "text_chars": 5,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

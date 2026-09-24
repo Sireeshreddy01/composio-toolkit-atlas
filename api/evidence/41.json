@@ -1,0 +1,56 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 41,
+  "app": "Shopify",
+  "sources": [
+    "https://shopify.dev/docs/apps/build/authentication-authorization",
+    "https://shopify.dev/docs/apps/build/authentication-authorization/access-tokens",
+    "https://shopify.dev/docs/apps/build/storefront-mcp/servers/storefront"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 182,
+      "url": "https://shopify.dev/docs/apps/build/authentication-authorization",
+      "checked_at": "2026-09-24T10:48:56.017780+00:00",
+      "status": 200,
+      "final_url": "https://shopify.dev/docs/apps/build/authentication-authorization",
+      "sha256": "4725ac57b10357c01c3d792b908ea69d75c714a88c1e89b7bb01a262a39be998",
+      "text_chars": 9008,
+      "auth_guess": "OAuth2",
+      "surface_guess": "GraphQL",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 183,
+      "url": "https://shopify.dev/docs/apps/build/authentication-authorization/access-tokens",
+      "checked_at": "2026-09-24T10:48:56.067883+00:00",
+      "status": 200,
+      "final_url": "https://shopify.dev/docs/apps/build/authentication-authorization/access-tokens",
+      "sha256": "e9cf36b9e7335c263f41e7d2acb11725b906967288cc5524ac475ac44996e62b",
+      "text_chars": 17369,
+      "auth_guess": "OAuth2",
+      "surface_guess": "GraphQL",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 184,
+      "url": "https://shopify.dev/docs/apps/build/storefront-mcp/servers/storefront",
+      "checked_at": "2026-09-24T10:48:56.082646+00:00",
+      "status": 200,
+      "final_url": "https://shopify.dev/docs/apps/build/storefront-mcp/servers/storefront",
+      "sha256": "15ed2d51e14a222f9c7c1da0197bf6a2193c5128827a80769468eea5e61ffdb9",
+      "text_chars": 10703,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

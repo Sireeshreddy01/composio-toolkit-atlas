@@ -1,0 +1,162 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 7,
+  "app": "Zoho CRM",
+  "sources": [
+    "https://www.zoho.com/crm/developer/docs/api/v8/api-limits.html",
+    "https://www.zoho.com/crm/developer/docs/api/v8/auth-request.html"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 235,
+      "url": "https://www.zoho.com/crm/developer/docs/api/v8/api-limits.html",
+      "checked_at": "2026-09-24T10:49:06.006658+00:00",
+      "status": 200,
+      "final_url": "https://www.zoho.com/crm/developer/docs/api/v8/api-limits.html",
+      "sha256": "83e0648c34087dd0a4f0ad20f8f1cd6e1914d09b8d94e4cd23f1e8d2a21329b9",
+      "text_chars": 9974,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 236,
+      "url": "https://www.zoho.com/crm/developer/docs/api/v8/auth-request.html",
+      "checked_at": "2026-09-24T10:49:06.043159+00:00",
+      "status": 200,
+      "final_url": "https://www.zoho.com/crm/developer/docs/api/v8/auth-request.html",
+      "sha256": "e25f6170e409aced88466aa75efac71f725d6ada42ab1831f144576a7cd9dd07",
+      "text_chars": 7056,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": {
+    "id": 7,
+    "app": "Zoho CRM",
+    "category": "CRM & Sales",
+    "product_scope": "Zoho CRM V8 APIs across production, sandbox and developer organizations",
+    "fields": {
+      "authentication": {
+        "answer": "OAuth authorization-code access is documented for web apps and self-clients. Tokens are specific to an organization and environment; authorization uses the user's domain-specific Accounts URL.",
+        "status": "supported",
+        "caveat": "Production tokens cannot be reused for sandbox/developer organizations. Self-client client-credentials flow is named but not explained.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 7,
+          "field": "authentication",
+          "assessment": "supported",
+          "reason": "S017 explicitly documents authorization-code flows, organization/environment-specific tokens and domain-specific authorization routing."
+        },
+        "citations": [
+          {
+            "source_id": "S017",
+            "url": "https://www.zoho.com/crm/developer/docs/api/v8/auth-request.html",
+            "retrieved_at": "2026-09-24T13:29:41.014236+00:00",
+            "source_sha256": "c53850beb3c9f7a6dc53d3bf16957fac022a67c1beeed36a06624422d037feb2",
+            "quote_sha256": "69ec4c49382c71764a97c8f33a00046c603caac9de526463e61314d683cdcea8",
+            "normalized_offset": 277,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S017",
+            "url": "https://www.zoho.com/crm/developer/docs/api/v8/auth-request.html",
+            "retrieved_at": "2026-09-24T13:29:41.014236+00:00",
+            "source_sha256": "c53850beb3c9f7a6dc53d3bf16957fac022a67c1beeed36a06624422d037feb2",
+            "quote_sha256": "2da8b4be0eec7590af169ac0dfb72736a032cc37ac8c26a573c812b7e5e3b3ff",
+            "normalized_offset": 605,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S017",
+            "url": "https://www.zoho.com/crm/developer/docs/api/v8/auth-request.html",
+            "retrieved_at": "2026-09-24T13:29:41.014236+00:00",
+            "source_sha256": "c53850beb3c9f7a6dc53d3bf16957fac022a67c1beeed36a06624422d037feb2",
+            "quote_sha256": "7796d4e3319e1557cd9e11334fad66af8b5ec0f904710c27ee243817181f1481",
+            "normalized_offset": 3752,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "development_access": {
+        "answer": "Free Edition explicitly has 5,000 API credits. Trial editions receive the same API credit limits as their corresponding paid editions.",
+        "status": "supported",
+        "caveat": "Credits do not establish every feature's availability. Sandbox/developer environment provisioning eligibility is not supplied.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 7,
+          "field": "development_access",
+          "assessment": "supported",
+          "reason": "S018 explicitly allocates Free Edition API credits and matches trial API limits to corresponding paid editions, without guaranteeing every feature."
+        },
+        "citations": [
+          {
+            "source_id": "S018",
+            "url": "https://www.zoho.com/crm/developer/docs/api/v8/api-limits.html",
+            "retrieved_at": "2026-09-24T13:29:41.675931+00:00",
+            "source_sha256": "daf56ccc79a02a01fd00c4333ce888835584049567ed9c324507d50c1fc881ca",
+            "quote_sha256": "1ae57279f6921e12ae52863434696c322b8d5fde565d36f073b4f4d7276ce441",
+            "normalized_offset": 217,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S018",
+            "url": "https://www.zoho.com/crm/developer/docs/api/v8/api-limits.html",
+            "retrieved_at": "2026-09-24T13:29:41.675931+00:00",
+            "source_sha256": "daf56ccc79a02a01fd00c4333ce888835584049567ed9c324507d50c1fc881ca",
+            "quote_sha256": "c19bfeb9c7b52a0bd10f3e998154ae883808d72f9a8b6815114e6c5503ff910e",
+            "normalized_offset": 916,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "api_surface": {
+        "answer": "CRM V8 documents record retrieval, including cvid and sort_by parameters. The supplied pages do not establish a full resource catalog or query protocol.",
+        "status": "supported",
+        "caveat": "Authorization scopes and limits pages are insufficient to enumerate supported CRM modules or write operations.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 7,
+          "field": "api_surface",
+          "assessment": "supported",
+          "reason": "S018 explicitly names Get Records with cvid or sort_by; the record avoids inferring protocols, modules or writes."
+        },
+        "citations": [
+          {
+            "source_id": "S018",
+            "url": "https://www.zoho.com/crm/developer/docs/api/v8/api-limits.html",
+            "retrieved_at": "2026-09-24T13:29:41.675931+00:00",
+            "source_sha256": "daf56ccc79a02a01fd00c4333ce888835584049567ed9c324507d50c1fc881ca",
+            "quote_sha256": "08725cb93a76572fbfa04c0db9922e113c48ee9992c5dc07b568eac68dd6b921",
+            "normalized_offset": 1619,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "mcp": {
+        "answer": "Existing vendor MCP for Zoho CRM is unresolved.",
+        "status": "unresolved",
+        "caveat": "No scoped MCP evidence is supplied; availability in another Zoho product cannot be assumed.",
+        "citation_binding_passed": false,
+        "verification": {
+          "id": 7,
+          "field": "mcp",
+          "assessment": "unresolved",
+          "reason": "The supplied Zoho CRM authorization and limits pages contain no MCP evidence."
+        },
+        "citations": []
+      }
+    },
+    "access_class": "Self-serve",
+    "verdict": "Prototype candidate",
+    "decision_reason": "Free and trial API credit allocations explicitly support development access. Environment-specific provisioning remains unresolved. Nothing was authenticated or tested.",
+    "next_step": "Obtain the V8 Records reference and its edition restrictions; success is an explicit list of supported record operations available in Free Edition."
+  },
+  "human_review": "pending",
+  "authenticated_test": false
+}

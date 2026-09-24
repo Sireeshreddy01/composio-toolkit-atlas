@@ -1,0 +1,33 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 42,
+    "category": "Ecommerce",
+    "app": "WooCommerce",
+    "url": "https://woocommerce.com/document/woocommerce-rest-api",
+    "description": "Open-source WordPress ecommerce",
+    "auth": [
+      "API key",
+      "Basic"
+    ],
+    "access": "Local",
+    "access_detail": "Install WooCommerce on an owned test site; generate keys for a permitted user.",
+    "surface": "REST; products, orders, customers and coupons",
+    "verdict": "Build",
+    "blocker": "Runtime",
+    "note": "Consumer key/secret via HTTPS Basic auth; hosting and user permissions are the operational prerequisites.",
+    "sources": [
+      "https://developer.woocommerce.com/docs/apis/rest-api/authentication",
+      "https://developer.woocommerce.com/docs/apis/rest-api/"
+    ],
+    "access_group": "Self-serve",
+    "mcp": null,
+    "workflow": "Read a local WooCommerce product",
+    "next_action": "Run a test WordPress/WooCommerce store, create a read-only consumer key, and retrieve a seeded product over HTTPS.",
+    "success_criterion": "Return the product while a write attempt is excluded by the key's permissions.",
+    "alternative_action": "Prefer the public REST API; inspect plugin-specific UI calls only if a required extension field is not exposed.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

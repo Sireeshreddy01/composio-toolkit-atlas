@@ -1,0 +1,98 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 73,
+  "app": "Linear",
+  "sources": [
+    "https://linear.app/developers/graphql",
+    "https://linear.app/developers/oauth-2-0-authentication",
+    "https://linear.app/docs/api-and-webhooks",
+    "https://linear.app/docs/invite-members",
+    "https://linear.app/docs/mcp",
+    "https://linear.app/pricing"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 158,
+      "url": "https://linear.app/developers/graphql",
+      "checked_at": "2026-09-24T10:48:52.685195+00:00",
+      "status": 200,
+      "final_url": "https://linear.app/developers/graphql",
+      "sha256": "ab5bf7b525ad23b39d3045da97c044a853d094db494612e125b4b09a7e149a7c",
+      "text_chars": 10966,
+      "auth_guess": "OAuth2",
+      "surface_guess": "GraphQL",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 159,
+      "url": "https://linear.app/developers/oauth-2-0-authentication",
+      "checked_at": "2026-09-24T10:48:52.702859+00:00",
+      "status": 200,
+      "final_url": "https://linear.app/developers/oauth-2-0-authentication",
+      "sha256": "bfa43b02e70ede1cea7b782475e7a90d94b70b67a7096c07f338f4de80441910",
+      "text_chars": 15324,
+      "auth_guess": "OAuth2",
+      "surface_guess": "GraphQL",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 160,
+      "url": "https://linear.app/docs/mcp",
+      "checked_at": "2026-09-24T10:48:52.786859+00:00",
+      "status": 200,
+      "final_url": "https://linear.app/docs/mcp",
+      "sha256": "42cddb4919d8908483aa017a1809d5ffc557b3b319392958d1d6519b34b9d559",
+      "text_chars": 15120,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 241,
+      "url": "https://linear.app/docs/api-and-webhooks",
+      "checked_at": "2026-09-24T10:56:39.226556+00:00",
+      "status": 200,
+      "final_url": "https://linear.app/docs/api-and-webhooks",
+      "sha256": "7400865e85bbf4e8b5ccfa1071517e40f8b948135877191c85c8e92c3960168b",
+      "text_chars": 3211,
+      "auth_guess": "OAuth2",
+      "surface_guess": "GraphQL",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 242,
+      "url": "https://linear.app/docs/invite-members",
+      "checked_at": "2026-09-24T10:56:39.226652+00:00",
+      "status": 200,
+      "final_url": "https://linear.app/docs/invite-members",
+      "sha256": "d12dc016351133f2428966f62a99b5319720d7cc2f77414af215772fa3636414",
+      "text_chars": 4634,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 243,
+      "url": "https://linear.app/pricing",
+      "checked_at": "2026-09-24T10:56:39.226744+00:00",
+      "status": 200,
+      "final_url": "https://linear.app/pricing",
+      "sha256": "ea077d3a69ea33b071067542245c64d76ffd5c5ec9cb073635a82d6e538e5ddd",
+      "text_chars": 2894,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

@@ -1,0 +1,56 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 99,
+  "app": "YouTube Transcript",
+  "sources": [
+    "https://transcriptapi.com/",
+    "https://transcriptapi.com/blog/youtube-api-expansion-2026-09-17",
+    "https://transcriptapi.com/docs/mcp/"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 201,
+      "url": "https://transcriptapi.com/",
+      "checked_at": "2026-09-24T10:49:00.926335+00:00",
+      "status": 200,
+      "final_url": "https://transcriptapi.com/",
+      "sha256": "757054a82186731ea155739f9b4d1f84eadc328dec45c01228bb8aaae7e4362d",
+      "text_chars": 13161,
+      "auth_guess": "API key",
+      "surface_guess": "REST",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 202,
+      "url": "https://transcriptapi.com/blog/youtube-api-expansion-2026-09-17",
+      "checked_at": "2026-09-24T10:49:00.958307+00:00",
+      "status": 200,
+      "final_url": "https://transcriptapi.com/blog/youtube-api-expansion-2026-09-17",
+      "sha256": "1fe01e4102a554222a09a7acaed203effb4252c050a7a1f63d9b6040237fafc6",
+      "text_chars": 4901,
+      "auth_guess": "API key",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 203,
+      "url": "https://transcriptapi.com/docs/mcp/",
+      "checked_at": "2026-09-24T10:49:01.003107+00:00",
+      "status": 200,
+      "final_url": "https://transcriptapi.com/docs/mcp/",
+      "sha256": "19700083a04cd214bfd9be102a1048538523386604301be140703bff60423054",
+      "text_chars": 26863,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

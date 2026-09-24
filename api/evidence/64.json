@@ -1,0 +1,56 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 64,
+  "app": "Cloudflare",
+  "sources": [
+    "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare/",
+    "https://developers.cloudflare.com/api",
+    "https://developers.cloudflare.com/fundamentals/api/get-started/create-token/"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 65,
+      "url": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare/",
+      "checked_at": "2026-09-24T10:48:37.093540+00:00",
+      "status": 200,
+      "final_url": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare/",
+      "sha256": "5ee35326338d3a367071d8e2bcc8cff5b893492831c6cd2d74be6037e316bc51",
+      "text_chars": 9872,
+      "auth_guess": "OAuth2",
+      "surface_guess": "GraphQL",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 66,
+      "url": "https://developers.cloudflare.com/api",
+      "checked_at": "2026-09-24T10:48:37.398481+00:00",
+      "status": 200,
+      "final_url": "https://developers.cloudflare.com/api/",
+      "sha256": "7d9eb57af5749e0c0bfb538522dcec018e4ed6406ebd94d8dadce89146821241",
+      "text_chars": 190780,
+      "auth_guess": "OAuth2",
+      "surface_guess": "GraphQL",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 67,
+      "url": "https://developers.cloudflare.com/fundamentals/api/get-started/create-token/",
+      "checked_at": "2026-09-24T10:48:37.484742+00:00",
+      "status": 200,
+      "final_url": "https://developers.cloudflare.com/fundamentals/api/get-started/create-token/",
+      "sha256": "dbd91ed5fdddc713f8c9b0c179f1ec37d032080f4bba13951a1d8a49cbe56ab3",
+      "text_chars": 7355,
+      "auth_guess": "OAuth2",
+      "surface_guess": "GraphQL",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

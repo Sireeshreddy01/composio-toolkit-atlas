@@ -1,0 +1,33 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 44,
+    "category": "Ecommerce",
+    "app": "Salesforce Commerce Cloud",
+    "url": "https://developer.salesforce.com/docs/commerce",
+    "description": "Enterprise digital commerce",
+    "auth": [
+      "OAuth2",
+      "JWT"
+    ],
+    "access": "Admin / paid",
+    "access_detail": "Commerce tenant and Account Manager client required; customer/admin provisioning.",
+    "surface": "REST SCAPI; shopper and administrative commerce APIs",
+    "verdict": "Conditional",
+    "blocker": "Admin",
+    "note": "Shopper SLAS and Admin API tokens follow different authorization paths.",
+    "sources": [
+      "https://developer.salesforce.com/docs/commerce/sfra/guide/authorization.html",
+      "https://developer.salesforce.com/docs/commerce/commerce-api/guide/security.html"
+    ],
+    "access_group": "Gated",
+    "mcp": null,
+    "workflow": "Read shopper or admin commerce data",
+    "next_action": "Obtain a Salesforce Commerce Cloud test instance and choose either shopper SLAS or Admin authorization for a concrete catalog workflow.",
+    "success_criterion": "Return the test resource using the correct token type; document instance and role prerequisites.",
+    "alternative_action": "Request a sandbox and scoped sample catalog from the account team when no customer test instance is available.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

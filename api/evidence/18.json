@@ -1,0 +1,175 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 18,
+  "app": "Help Scout",
+  "sources": [
+    "https://developer.helpscout.com/mailbox-api/",
+    "https://developer.helpscout.com/mailbox-api/overview/authentication/",
+    "https://docs.helpscout.com/article/1140-mailbox-api"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 39,
+      "url": "https://developer.helpscout.com/mailbox-api/",
+      "checked_at": "2026-09-24T10:48:32.570128+00:00",
+      "status": 200,
+      "final_url": "https://developer.helpscout.com/mailbox-api/",
+      "sha256": "2c5bc1ef31017e2fe6f015e195739335636c124aa02d518efd6d69178d62770f",
+      "text_chars": 4786,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 40,
+      "url": "https://developer.helpscout.com/mailbox-api/overview/authentication/",
+      "checked_at": "2026-09-24T10:48:32.936560+00:00",
+      "status": 200,
+      "final_url": "https://developer.helpscout.com/mailbox-api/overview/authentication/",
+      "sha256": "d2de7d67315989c6026f19f2f8eda68b8b100ca914912a6fbf744393e923ab38",
+      "text_chars": 6782,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 115,
+      "url": "https://docs.helpscout.com/article/1140-mailbox-api",
+      "checked_at": "2026-09-24T10:48:45.442731+00:00",
+      "status": 200,
+      "final_url": "https://docs.helpscout.com/article/1140-mailbox-api",
+      "sha256": "70fc074d10d07fb9f2f7366a3037da3a5913f95712132b50dc0d1cfee38a9f81",
+      "text_chars": 2585,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Self-serve",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": {
+    "id": 18,
+    "app": "Help Scout",
+    "category": "Support & Helpdesk",
+    "product_scope": "Help Scout Inbox API and related developer surfaces",
+    "fields": {
+      "authentication": {
+        "answer": "Authentication could not be determined from the supplied readable evidence.",
+        "status": "unresolved",
+        "caveat": "The collected authentication page is unreadable; its URL and HTTP success status do not establish an authentication method.",
+        "citation_binding_passed": false,
+        "verification": {
+          "id": 18,
+          "field": "authentication",
+          "assessment": "unresolved",
+          "reason": "S053 is unreadable, and S055's authentication link supplies no authentication scheme or flow."
+        },
+        "citations": []
+      },
+      "development_access": {
+        "answer": "API access requires a paid plan. Standard excludes reporting endpoints; Plus and Pro include all endpoints. The Free plan excludes APIs and integrations.",
+        "status": "supported",
+        "caveat": "No API-enabled trial or developer sandbox is established.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 18,
+          "field": "development_access",
+          "assessment": "supported",
+          "reason": "S055 explicitly excludes the Free plan and specifies paid-tier endpoint access; trial and sandbox eligibility remain unestablished."
+        },
+        "citations": [
+          {
+            "source_id": "S055",
+            "url": "https://docs.helpscout.com/article/1140-mailbox-api",
+            "retrieved_at": "2026-09-24T13:29:53.464137+00:00",
+            "source_sha256": "81aaa6c2607d730cba308480dfc1205104a8b28bf0cbef7272986d4cdfb82f90",
+            "quote_sha256": "db5b8666c03d4fbc30c135952778f4307da4afa8bb2611448bbc59b9dcf75300",
+            "normalized_offset": 393,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S055",
+            "url": "https://docs.helpscout.com/article/1140-mailbox-api",
+            "retrieved_at": "2026-09-24T13:29:53.464137+00:00",
+            "source_sha256": "81aaa6c2607d730cba308480dfc1205104a8b28bf0cbef7272986d4cdfb82f90",
+            "quote_sha256": "e1206e1dc371989acf63835e7a153f5e76a3c1aa7681050bfd2155d8a50dd077",
+            "normalized_offset": 667,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S055",
+            "url": "https://docs.helpscout.com/article/1140-mailbox-api",
+            "retrieved_at": "2026-09-24T13:29:53.464137+00:00",
+            "source_sha256": "81aaa6c2607d730cba308480dfc1205104a8b28bf0cbef7272986d4cdfb82f90",
+            "quote_sha256": "c75878e9034fc61b83dca4c8985972d31ac3ff18d9272285f12dc8d274b689f9",
+            "normalized_offset": 487,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "api_surface": {
+        "answer": "Readable documentation establishes reporting endpoints, custom Docs development and conversation-sidebar apps; the main Inbox API resource inventory remains unresolved.",
+        "status": "supported",
+        "caveat": "The main API reference is unreadable; sidebar apps are not proof of conversation HTTP endpoints.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 18,
+          "field": "api_surface",
+          "assessment": "supported",
+          "reason": "S055 establishes reporting endpoints, Docs API and sidebar extensions; the record correctly avoids inferring Inbox HTTP operations from them."
+        },
+        "citations": [
+          {
+            "source_id": "S055",
+            "url": "https://docs.helpscout.com/article/1140-mailbox-api",
+            "retrieved_at": "2026-09-24T13:29:53.464137+00:00",
+            "source_sha256": "81aaa6c2607d730cba308480dfc1205104a8b28bf0cbef7272986d4cdfb82f90",
+            "quote_sha256": "9d7291f08a4d8d60dfd72fe2292dcb5738643454e69898f9032fd4d56ac5c255",
+            "normalized_offset": 523,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S055",
+            "url": "https://docs.helpscout.com/article/1140-mailbox-api",
+            "retrieved_at": "2026-09-24T13:29:53.464137+00:00",
+            "source_sha256": "81aaa6c2607d730cba308480dfc1205104a8b28bf0cbef7272986d4cdfb82f90",
+            "quote_sha256": "5f95dd2618cf66c89a4bba70508c44827b26b7a8efa8e6bb95f3045de20207f6",
+            "normalized_offset": 1123,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S055",
+            "url": "https://docs.helpscout.com/article/1140-mailbox-api",
+            "retrieved_at": "2026-09-24T13:29:53.464137+00:00",
+            "source_sha256": "81aaa6c2607d730cba308480dfc1205104a8b28bf0cbef7272986d4cdfb82f90",
+            "quote_sha256": "3b54ccfc312bb8a8545ca1d0f7f451d3a0c3c6c486ce0738a2ea8fd412e1730f",
+            "normalized_offset": 896,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "mcp": {
+        "answer": "Vendor MCP availability is unresolved from the assigned Help Scout evidence.",
+        "status": "unresolved",
+        "caveat": "No direct vendor MCP documentation was supplied.",
+        "citation_binding_passed": false,
+        "verification": {
+          "id": 18,
+          "field": "mcp",
+          "assessment": "unresolved",
+          "reason": "Assigned Help Scout sources provide no MCP evidence; the dated competitor statement does not establish current vendor availability."
+        },
+        "citations": []
+      }
+    },
+    "access_class": "Gated",
+    "verdict": "Review required",
+    "decision_reason": "The support document explicitly limits API access to paid plans and excludes the Free plan.",
+    "next_step": "Recollect the authentication document with correct content decoding; success is readable vendor text identifying the credential and authorization flow."
+  },
+  "human_review": "pending",
+  "authenticated_test": false
+}

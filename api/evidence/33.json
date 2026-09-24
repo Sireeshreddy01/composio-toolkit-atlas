@@ -1,0 +1,42 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 33,
+  "app": "LinkedIn Ads",
+  "sources": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access?view=li-lms-2026-03",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 156,
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access?view=li-lms-2026-03",
+      "checked_at": "2026-09-24T10:48:52.068103+00:00",
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access?view=li-lms-2026-03",
+      "sha256": "e3c525bfa330fed8eac4e7a91656e88a61d04762ef257369651791ebc5bce10a",
+      "text_chars": 13608,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 157,
+      "url": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+      "checked_at": "2026-09-24T10:48:52.398316+00:00",
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+      "sha256": "7ce73116aaad157da3f0ada6dba1ea3a200572ce3168ab9b7c51a35dd3b2211f",
+      "text_chars": 5046,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

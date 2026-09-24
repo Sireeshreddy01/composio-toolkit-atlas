@@ -1,0 +1,37 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 64,
+    "category": "Developer & Infra",
+    "app": "Cloudflare",
+    "url": "https://developers.cloudflare.com/api",
+    "description": "Edge infrastructure, DNS and security",
+    "auth": [
+      "Token",
+      "API key"
+    ],
+    "access": "Account check",
+    "access_detail": "Create a scoped token in dashboard; product entitlement and account role govern each service.",
+    "surface": "REST + GraphQL analytics; broad infrastructure resources",
+    "verdict": "Conditional",
+    "blocker": "Plan check",
+    "note": "A single broad global key is not required; scope the token to target resources.",
+    "sources": [
+      "https://developers.cloudflare.com/fundamentals/api/get-started/create-token/",
+      "https://developers.cloudflare.com/api"
+    ],
+    "access_group": "Unknown",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Cloudflare API plus product-specific servers",
+      "url": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare/"
+    },
+    "workflow": "Read a permitted DNS zone",
+    "next_action": "Confirm Cloudflare API eligibility for the chosen product and create a read-only token limited to one test zone.",
+    "success_criterion": "List the approved zone's records and verify access is denied outside its scope.",
+    "alternative_action": "Compare the relevant official MCP server with this zone-scoped workflow instead of using a broad global key.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

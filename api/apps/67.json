@@ -1,0 +1,38 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 67,
+    "category": "Developer & Infra",
+    "app": "Snowflake",
+    "url": "https://docs.snowflake.com",
+    "description": "Cloud data warehouse and data platform",
+    "auth": [
+      "OAuth2",
+      "JWT",
+      "Token"
+    ],
+    "access": "Account check",
+    "access_detail": "Account role and authentication policy required; trial eligibility not verified in this pass.",
+    "surface": "REST + SQL API; query execution and platform resources",
+    "verdict": "Conditional",
+    "blocker": "Customer access",
+    "note": "Key-pair JWT, OAuth and programmatic access tokens are supported; role and network policy still constrain use.",
+    "sources": [
+      "https://docs.snowflake.com/en/en/developer-guide/snowflake-rest-api/authentication",
+      "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/tutorials/common-setup"
+    ],
+    "access_group": "Unknown",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Managed Cortex Analyst/Search/Agents and configured SQL/custom tools; OAuth and RBAC",
+      "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp"
+    },
+    "workflow": "Execute a bounded Snowflake read query",
+    "next_action": "Confirm trial/API eligibility and role/network policies, then run a small read-only SQL API query with one supported credential type.",
+    "success_criterion": "Record the role, warehouse/cost limit, query ID and result; verify the chosen auth scheme.",
+    "alternative_action": "Use official MCP only after checking role and query-execution boundaries; do not imply an API token bypasses network policy.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

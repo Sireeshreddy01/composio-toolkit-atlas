@@ -66,6 +66,21 @@ def build():
             out={k:row.get(k,'') for k in fields};out['auth']='; '.join(row['auth']);out['sources']='; '.join(row['sources'])
             for k in ['kind','scope','url']:out['mcp_'+k]=(row['mcp'] or {}).get(k,'')
             writer.writerow(out)
+    # Public static JSON resources: the same evidence as the HTML, readable without setup.
+    api=ROOT/'api';(api/'apps').mkdir(parents=True,exist_ok=True);(api/'evidence').mkdir(exist_ok=True);(api/'categories').mkdir(exist_ok=True)
+    def resource(path,kind,**content):
+        (api/path).write_text(json.dumps({'kind':kind,'as_of':payload['as_of'],'scope':'Published documentation-research snapshot; not a fresh vendor API test.',**content},indent=2,ensure_ascii=False)+'\n')
+    resource('apps.json','app_collection',count=len(rows),apps=rows)
+    category_slugs={'CRM & Sales':'crm-sales','Support & Helpdesk':'support-helpdesk','Communications':'communications','Marketing & Social':'marketing-social','Ecommerce':'ecommerce','Data & SEO':'data-seo','Developer & Infra':'developer-infra','Productivity':'productivity','Finance & Fintech':'finance-fintech','AI & Media':'ai-media'}
+    for category,slug in category_slugs.items():
+        subset=[r for r in rows if r['category']==category]
+        resource('categories/'+slug+'.json','category_assessment',category=category,count=len(subset),verdict=dict(collections.Counter(r['verdict'] for r in subset)),development_access=dict(collections.Counter(r['access_group'] for r in subset)),apps=subset)
+    for row in rows:
+        resource('apps/'+str(row['id'])+'.json','app_assessment',app=row)
+        urls=set(row['sources']+([row['mcp']['url']] if row['mcp'] else []))
+        resource('evidence/'+str(row['id'])+'.json','evidence_record',id=row['id'],app=row['app'],sources=sorted(urls),retrieval_checks=[x for x in source_checks if x['url'] in urls],additional_run=next((x for x in (payload['research_run'] or {}).get('records',[]) if x['id']==row['id']),None),human_review='pending',authenticated_test=False)
+    resource('priorities.json','recommendation_queue',basis='Feasibility experiments; commercial priority still needs customer demand and effort estimates.',first_experiments=[byid[i] for i in [61,13,73,81,98]],all_actions=read_json('action-plans.json'))
+    resource('verification.json','verification_report',diagnostic=payload['audit'],diagnostic_counts={k:stats[k] for k in ['sample_before','sample_after','sample_fields','sample_unresolved']},additional_run=payload['research_run'],retrieval_iteration=payload['retrieval_iteration'],human_review=read_json('human-review.json'),agent_spotchecks=read_json('agent-spotchecks.json'))
     print(json.dumps({'validation':'passed','apps':100,'stats':stats},indent=2))
     return payload
 if __name__=='__main__':build()

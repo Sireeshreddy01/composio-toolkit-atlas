@@ -1,0 +1,42 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 32,
+  "app": "Meta Ads",
+  "sources": [
+    "https://github.com/facebook/facebook-nodejs-business-sdk/blob/main/README.md",
+    "https://www.postman.com/meta/facebook-marketing-api/documentation/0zr4mes/facebook-marketing-api-mapi"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 136,
+      "url": "https://github.com/facebook/facebook-nodejs-business-sdk/blob/main/README.md",
+      "checked_at": "2026-09-24T10:48:49.484779+00:00",
+      "status": 200,
+      "final_url": "https://github.com/facebook/facebook-nodejs-business-sdk/blob/main/README.md",
+      "sha256": "5ff66e0c588dc404a365a4179f6bef9a20ca1ec0e8dd8bc2ed66ddd07376a1ff",
+      "text_chars": 15243,
+      "auth_guess": "Token",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 223,
+      "url": "https://www.postman.com/meta/facebook-marketing-api/documentation/0zr4mes/facebook-marketing-api-mapi",
+      "checked_at": "2026-09-24T10:49:04.393707+00:00",
+      "status": 200,
+      "final_url": "https://www.postman.com/meta/facebook-marketing-api/documentation/0zr4mes/facebook-marketing-api-mapi",
+      "sha256": "4366557deb5e0fa3e973fca8e1cf1957072bba3d4d847b5806a433688b10d7ef",
+      "text_chars": 8,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

@@ -1,0 +1,204 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 4,
+  "app": "Attio",
+  "sources": [
+    "https://attio.com/apps/mcp",
+    "https://attio.com/help/reference/workspace-settings-billing/attio-plans-and-features",
+    "https://attio.com/platform/developers"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 7,
+      "url": "https://attio.com/apps/mcp",
+      "checked_at": "2026-09-24T10:48:24.227986+00:00",
+      "status": 200,
+      "final_url": "https://attio.com/apps/mcp",
+      "sha256": "7809daec28a76ca1c58f17dfcbccf2372141835197575a92e24370b057251173",
+      "text_chars": 3978,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 8,
+      "url": "https://attio.com/help/reference/workspace-settings-billing/attio-plans-and-features",
+      "checked_at": "2026-09-24T10:48:24.228068+00:00",
+      "status": 200,
+      "final_url": "https://attio.com/help/reference/workspace-settings-billing/attio-plans-and-features",
+      "sha256": "a3ae91c6e078c39fc6130d95f810af0a1505ddfc9c4903697cda994cac1b0b35",
+      "text_chars": 11071,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 9,
+      "url": "https://attio.com/platform/developers",
+      "checked_at": "2026-09-24T10:48:25.516505+00:00",
+      "status": 200,
+      "final_url": "https://attio.com/platform/developers",
+      "sha256": "be4d3c78f70096e53bb1fdc1d3bbf99db809be8f92eb19ef436f0a9b80e7c554",
+      "text_chars": 6186,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": {
+    "id": 4,
+    "app": "Attio",
+    "category": "CRM & Sales",
+    "product_scope": "Attio workspace API, App SDK and hosted MCP",
+    "fields": {
+      "authentication": {
+        "answer": "The developer platform documents OAuth 2.0. Hosted MCP uses OAuth with the connected Attio user's workspace access.",
+        "status": "supported",
+        "caveat": "The truncated platform page does not establish all REST credential types or private versus distributed app requirements.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 4,
+          "field": "authentication",
+          "assessment": "supported",
+          "reason": "S009 states platform OAuth 2.0; S011 explicitly identifies MCP OAuth and the connected user's workspace context."
+        },
+        "citations": [
+          {
+            "source_id": "S009",
+            "url": "https://attio.com/platform/developers",
+            "retrieved_at": "2026-09-24T13:29:37.740649+00:00",
+            "source_sha256": "1facf2b587b036e2a67f0fa501a294aa0786850efa097f91b68fb7f20811fca2",
+            "quote_sha256": "9fd80097a360e32f9fc319782c3fad3c02484c5fbae0da0fad3fc9844075f0b6",
+            "normalized_offset": 395,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S011",
+            "url": "https://attio.com/apps/mcp",
+            "retrieved_at": "2026-09-24T13:29:38.733761+00:00",
+            "source_sha256": "938c522c3662469f9360f61d6e1d4d3e359bc6ef6c851af4edef2eac15c695d4",
+            "quote_sha256": "dee95ab4cddc5db71a8b7cc37eaf858fc78b20cdde7f5fff0220dc2a29ac3066",
+            "normalized_offset": 1144,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S011",
+            "url": "https://attio.com/apps/mcp",
+            "retrieved_at": "2026-09-24T13:29:38.733761+00:00",
+            "source_sha256": "938c522c3662469f9360f61d6e1d4d3e359bc6ef6c851af4edef2eac15c695d4",
+            "quote_sha256": "05b862fd472aa881779b97bc3b57379af4cf98d513b3717b914cd0edf1ef5d61",
+            "normalized_offset": 1441,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "development_access": {
+        "answer": "API access is explicitly available on every Attio plan, including Free. New workspaces also receive a 14-day Pro trial.",
+        "status": "supported",
+        "caveat": "Free has a three-seat limit. API entitlement does not independently establish MCP pricing or distributed-app approval requirements.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 4,
+          "field": "development_access",
+          "assessment": "supported",
+          "reason": "S010 explicitly includes API access on all plans, including Free, and documents the 14-day Pro trial."
+        },
+        "citations": [
+          {
+            "source_id": "S010",
+            "url": "https://attio.com/help/reference/workspace-settings-billing/attio-plans-and-features",
+            "retrieved_at": "2026-09-24T13:29:37.782075+00:00",
+            "source_sha256": "e632d2d942fd6bf2c9258352834ed92009454ae6adf1081671b94841c1f95c85",
+            "quote_sha256": "77835d815039599ef637e9ccd5767f41f6fe2e6a3883a9c6c57a557d43ce6ec9",
+            "normalized_offset": 1243,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S010",
+            "url": "https://attio.com/help/reference/workspace-settings-billing/attio-plans-and-features",
+            "retrieved_at": "2026-09-24T13:29:37.782075+00:00",
+            "source_sha256": "e632d2d942fd6bf2c9258352834ed92009454ae6adf1081671b94841c1f95c85",
+            "quote_sha256": "cb3570c45ef048da995622955153fe02d6ac172ffe4058c8e6531837c00e4a13",
+            "normalized_offset": 426,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "api_surface": {
+        "answer": "A REST API and App SDK are documented. Specific REST resource families and operations are unresolved in this packet.",
+        "status": "supported",
+        "caveat": "MCP operations cannot be assumed to match the REST resource catalog.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 4,
+          "field": "api_surface",
+          "assessment": "supported",
+          "reason": "S009 explicitly names REST and the App SDK; the record appropriately leaves REST resource details unresolved."
+        },
+        "citations": [
+          {
+            "source_id": "S009",
+            "url": "https://attio.com/platform/developers",
+            "retrieved_at": "2026-09-24T13:29:37.740649+00:00",
+            "source_sha256": "1facf2b587b036e2a67f0fa501a294aa0786850efa097f91b68fb7f20811fca2",
+            "quote_sha256": "341573abe3c43c1845906cf628ec3cfae54e92638f744f033df4edab28dd7082",
+            "normalized_offset": 69,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "mcp": {
+        "answer": "Attio provides hosted MCP at https://mcp.attio.com/mcp for contacts, companies, notes, tasks, lists, pipelines and call/email insights.",
+        "status": "supported",
+        "caveat": "An active workspace and compatible MCP client are required; explicit MCP plan entitlement is not stated.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 4,
+          "field": "mcp",
+          "assessment": "supported",
+          "reason": "S011 supplies the hosted endpoint and examples covering the listed resources and actions, without establishing plan entitlement."
+        },
+        "citations": [
+          {
+            "source_id": "S011",
+            "url": "https://attio.com/apps/mcp",
+            "retrieved_at": "2026-09-24T13:29:38.733761+00:00",
+            "source_sha256": "938c522c3662469f9360f61d6e1d4d3e359bc6ef6c851af4edef2eac15c695d4",
+            "quote_sha256": "a523afbf1a25d114f2709cf1f1ce10ee1848300ac3b9008af9bd96dbd58a742f",
+            "normalized_offset": 33,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S011",
+            "url": "https://attio.com/apps/mcp",
+            "retrieved_at": "2026-09-24T13:29:38.733761+00:00",
+            "source_sha256": "938c522c3662469f9360f61d6e1d4d3e359bc6ef6c851af4edef2eac15c695d4",
+            "quote_sha256": "e8db8413cbe818679af98f14f70d458f3efcd53bbcb352b2ff5f7999ce073c62",
+            "normalized_offset": 1319,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S011",
+            "url": "https://attio.com/apps/mcp",
+            "retrieved_at": "2026-09-24T13:29:38.733761+00:00",
+            "source_sha256": "938c522c3662469f9360f61d6e1d4d3e359bc6ef6c851af4edef2eac15c695d4",
+            "quote_sha256": "bc0d0efac2ae33b6d423b5889ae69127930f90e56dc0c0e3fa31d84af91d8afb",
+            "normalized_offset": 627,
+            "quote_binding_passed": true
+          }
+        ]
+      }
+    },
+    "access_class": "Self-serve",
+    "verdict": "Prototype candidate",
+    "decision_reason": "Free-plan API entitlement is explicit. No credentials were created and no API or MCP operations were tested.",
+    "next_step": "Obtain the REST API reference for objects and records; success is a documented resource list with required authentication scopes."
+  },
+  "human_review": "pending",
+  "authenticated_test": false
+}

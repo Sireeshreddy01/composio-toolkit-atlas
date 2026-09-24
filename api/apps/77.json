@@ -1,0 +1,38 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 77,
+    "category": "Productivity",
+    "app": "ClickUp",
+    "url": "https://clickup.com/api",
+    "description": "Tasks, documents and project management",
+    "auth": [
+      "OAuth2",
+      "Token"
+    ],
+    "access": "Free",
+    "access_detail": "MCP supports Free Forever with 50 calls per 24 hours; REST uses its own rate limits.",
+    "surface": "REST; tasks, lists, spaces, comments and time tracking",
+    "verdict": "Build",
+    "blocker": "None",
+    "note": "Available credentials do not establish unlimited rates or entitlement to every feature.",
+    "sources": [
+      "https://developer.clickup.com/docs/authentication",
+      "https://developer.clickup.com/docs/Getting%20Started",
+      "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server"
+    ],
+    "access_group": "Self-serve",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Workspace tools; Free Forever has 50 daily calls",
+      "url": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server"
+    },
+    "workflow": "Read a task in a free workspace",
+    "next_action": "Create a ClickUp free test workspace and read a seeded task using a personal token with the test user's access.",
+    "success_criterion": "Return the task/list identifiers and record the applicable rate limit and feature restrictions.",
+    "alternative_action": "Use OAuth for customer distribution; keep unsupported paid features outside the initial task-read workflow.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

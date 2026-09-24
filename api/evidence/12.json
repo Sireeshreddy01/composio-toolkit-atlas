@@ -1,0 +1,222 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 12,
+  "app": "Intercom",
+  "sources": [
+    "https://developers.intercom.com/docs/build-an-integration/getting-started",
+    "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/setting-up-oauth",
+    "https://developers.intercom.com/docs/guides/mcp"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 78,
+      "url": "https://developers.intercom.com/docs/build-an-integration/getting-started",
+      "checked_at": "2026-09-24T10:48:39.114209+00:00",
+      "status": 200,
+      "final_url": "https://developers.intercom.com/docs/build-an-integration/getting-started",
+      "sha256": "b5e81cd85ff3ae84d6df2b1e4316dae496e61ade7041abd4432ceb8d20145f56",
+      "text_chars": 6756,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 79,
+      "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/setting-up-oauth",
+      "checked_at": "2026-09-24T10:48:39.128493+00:00",
+      "status": 200,
+      "final_url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/setting-up-oauth",
+      "sha256": "0d1ac0969f30fcdf8cb97934f8f38d7b6a4a76e8e67920c582cdc0370c297a63",
+      "text_chars": 17512,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 80,
+      "url": "https://developers.intercom.com/docs/guides/mcp",
+      "checked_at": "2026-09-24T10:48:39.529619+00:00",
+      "status": 200,
+      "final_url": "https://developers.intercom.com/docs/guides/mcp",
+      "sha256": "46ced3ab10a52cf7b654ea4640f0ee0cbb2b732862744308beb201526062a734",
+      "text_chars": 17520,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": {
+    "id": 12,
+    "app": "Intercom",
+    "category": "Support & Helpdesk",
+    "product_scope": "Intercom developer platform, Help Desk APIs and vendor MCP",
+    "fields": {
+      "authentication": {
+        "answer": "Private apps use access tokens; public apps require OAuth. OAuth authorization hosts depend on the customer's workspace region.",
+        "status": "supported",
+        "caveat": "Using the wrong regional host fails for Google sign-in; app installation also has regional constraints.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 12,
+          "field": "authentication",
+          "assessment": "supported",
+          "reason": "S030 explicitly separates private access tokens from public OAuth; S031 documents regional authorization hosts."
+        },
+        "citations": [
+          {
+            "source_id": "S030",
+            "url": "https://developers.intercom.com/docs/build-an-integration/getting-started",
+            "retrieved_at": "2026-09-24T13:29:45.625733+00:00",
+            "source_sha256": "6f51427868877de9427fe5d8f763862d15dcf653deed04c9ad0241ce6a0cfdb4",
+            "quote_sha256": "b00e2994f0bea3c7aba26c2e0668cb14f014db76e77ff544ea29afeb69e43f60",
+            "normalized_offset": 2364,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S031",
+            "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/setting-up-oauth",
+            "retrieved_at": "2026-09-24T13:29:46.487039+00:00",
+            "source_sha256": "cf380ab8a301339e9043e7b2092132a507b5835103e3dbf2515010f94262a81a",
+            "quote_sha256": "403e9b6d4ebf014f90acd3e8291ad3a71ccdb771f9c711eac6f961e383b7b48b",
+            "normalized_offset": 1805,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "development_access": {
+        "answer": "Free development workspaces support app creation and API testing. Public apps must use one; private production apps use a paid workspace.",
+        "status": "supported",
+        "caveat": "Development workspaces cannot become production workspaces; EU/AU private-app testing has installation limitations.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 12,
+          "field": "development_access",
+          "assessment": "supported",
+          "reason": "S030 connects free development workspaces to app creation and a contact API call, while distinguishing paid production workspaces."
+        },
+        "citations": [
+          {
+            "source_id": "S030",
+            "url": "https://developers.intercom.com/docs/build-an-integration/getting-started",
+            "retrieved_at": "2026-09-24T13:29:45.625733+00:00",
+            "source_sha256": "6f51427868877de9427fe5d8f763862d15dcf653deed04c9ad0241ce6a0cfdb4",
+            "quote_sha256": "449c290f387e6620c3cf405b8a7b59f8d5e54b7f1248d6dabb39430e301bce69",
+            "normalized_offset": 539,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S030",
+            "url": "https://developers.intercom.com/docs/build-an-integration/getting-started",
+            "retrieved_at": "2026-09-24T13:29:45.625733+00:00",
+            "source_sha256": "6f51427868877de9427fe5d8f763862d15dcf653deed04c9ad0241ce6a0cfdb4",
+            "quote_sha256": "e6604ec00ffa3eeda63fb59bbf4b5d9a8647d4fe3bec39ba3ade3b10ff733236",
+            "normalized_offset": 1400,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S030",
+            "url": "https://developers.intercom.com/docs/build-an-integration/getting-started",
+            "retrieved_at": "2026-09-24T13:29:45.625733+00:00",
+            "source_sha256": "6f51427868877de9427fe5d8f763862d15dcf653deed04c9ad0241ce6a0cfdb4",
+            "quote_sha256": "d41f7f5fb8571b8ffd5fe289a1e5cee3743189da568ea142c63e37d7f6fae39d",
+            "normalized_offset": 2584,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "api_surface": {
+        "answer": "HTTP API onboarding demonstrates contact creation. MCP documentation additionally describes conversations, contacts, companies and article operations.",
+        "status": "supported",
+        "caveat": "MCP operations do not establish the complete underlying HTTP API surface.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 12,
+          "field": "api_surface",
+          "assessment": "supported",
+          "reason": "S030 demonstrates HTTP contact creation; S032 explicitly lists the stated MCP operations without implying complete HTTP coverage."
+        },
+        "citations": [
+          {
+            "source_id": "S030",
+            "url": "https://developers.intercom.com/docs/build-an-integration/getting-started",
+            "retrieved_at": "2026-09-24T13:29:45.625733+00:00",
+            "source_sha256": "6f51427868877de9427fe5d8f763862d15dcf653deed04c9ad0241ce6a0cfdb4",
+            "quote_sha256": "b88e54c055eb6ef2edd9aa19f870a81c36f1d556fd56fa3d8e0f88bb3bf6418d",
+            "normalized_offset": 2637,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S032",
+            "url": "https://developers.intercom.com/docs/guides/mcp",
+            "retrieved_at": "2026-09-24T13:29:46.507157+00:00",
+            "source_sha256": "13d7b1ab9f9d9da771484def845707c9ca550a534d308c5f702d0e52c607ca68",
+            "quote_sha256": "5f186fdfd4f8edbd9c43d961057a77a4c7635dbbb4e726dc6c44a6833b845650",
+            "normalized_offset": 4839,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "mcp": {
+        "answer": "Intercom documents a hosted MCP with OAuth or bearer authentication for US/EU workspaces. Its read/write guide conflicts with Plain's older read-only comparison.",
+        "status": "needs_review",
+        "caveat": "Prefer Intercom's direct guide. AU hosting is unsupported; free development API access does not establish MCP plan entitlement.",
+        "citation_binding_passed": false,
+        "verification": {
+          "id": 12,
+          "field": "mcp",
+          "assessment": "conflicting",
+          "reason": "S032 documents 14 tools and write operations; S051 describes six read-only tools. The proposed record correctly identifies this disagreement."
+        },
+        "citations": [
+          {
+            "source_id": "S032",
+            "url": "https://developers.intercom.com/docs/guides/mcp",
+            "retrieved_at": "2026-09-24T13:29:46.507157+00:00",
+            "source_sha256": "13d7b1ab9f9d9da771484def845707c9ca550a534d308c5f702d0e52c607ca68",
+            "quote_sha256": "193703363487626fdc4ac111c735e3e0f7161bf41c9438470c478c5fde35bc4c",
+            "normalized_offset": 906,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S032",
+            "url": "https://developers.intercom.com/docs/guides/mcp",
+            "retrieved_at": "2026-09-24T13:29:46.507157+00:00",
+            "source_sha256": "13d7b1ab9f9d9da771484def845707c9ca550a534d308c5f702d0e52c607ca68",
+            "quote_sha256": "345b9591fec7db474def669fdfce9b9b888765bd484f2ed0e96946682596b84b",
+            "normalized_offset": 4923,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S032",
+            "url": "https://developers.intercom.com/docs/guides/mcp",
+            "retrieved_at": "2026-09-24T13:29:46.507157+00:00",
+            "source_sha256": "13d7b1ab9f9d9da771484def845707c9ca550a534d308c5f702d0e52c607ca68",
+            "quote_sha256": "b456ce18b8458f25d84a3b6c9af1602afea4da57f66b0b7823cbe1183f9403bf",
+            "normalized_offset": 2911,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S051",
+            "url": "https://www.plain.com/blog/mcp-customer-support-2026",
+            "retrieved_at": "2026-09-24T13:29:52.835247+00:00",
+            "source_sha256": "8ea1358c35d3f43ff10d5e9ee434a08612a39bf546d823fa735de9cd7e75471c",
+            "quote_sha256": "6b59e953b2ef23a9cad8282a8f076f4f48e83a69d2c251bb64c521d48b8e4a2e",
+            "normalized_offset": null,
+            "quote_binding_passed": false
+          }
+        ]
+      }
+    },
+    "access_class": "Self-serve",
+    "verdict": "Prototype candidate",
+    "decision_reason": "The onboarding guide explicitly connects free development workspaces, app creation and API calls.",
+    "next_step": "Obtain Intercom's development-workspace MCP eligibility statement; success is explicit confirmation of MCP access and supported hosting regions."
+  },
+  "human_review": "pending",
+  "authenticated_test": false
+}

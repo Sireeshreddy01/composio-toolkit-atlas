@@ -1,0 +1,40 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 73,
+    "category": "Productivity",
+    "app": "Linear",
+    "url": "https://developers.linear.app",
+    "description": "Issue tracking and product planning",
+    "auth": [
+      "OAuth2",
+      "API key"
+    ],
+    "access": "Free",
+    "access_detail": "Free plan plus always-available admin API keys establish a scoped prototype path; Free workspace members are admins.",
+    "surface": "GraphQL; issues, projects, teams and cycles",
+    "verdict": "Build",
+    "blocker": "None",
+    "note": "API access inferred by combining pricing, Free-plan roles and API key policy; production workspace controls remain.",
+    "sources": [
+      "https://linear.app/developers/graphql",
+      "https://linear.app/developers/oauth-2-0-authentication",
+      "https://linear.app/pricing",
+      "https://linear.app/docs/api-and-webhooks",
+      "https://linear.app/docs/invite-members"
+    ],
+    "access_group": "Self-serve",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Linear issues and workspace actions",
+      "url": "https://linear.app/docs/mcp"
+    },
+    "workflow": "Query issues in one Linear team",
+    "next_action": "Confirm API-key permissions in the intended Linear workspace and execute a minimal GraphQL query for a test team's issues.",
+    "success_criterion": "Return issue ID/title/status and document pagination, scope and applicable workspace controls.",
+    "alternative_action": "Compare official MCP issue tools with the needed GraphQL fields before choosing an adapter.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

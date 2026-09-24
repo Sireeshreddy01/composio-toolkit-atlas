@@ -1,0 +1,42 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 38,
+  "app": "Pinterest",
+  "sources": [
+    "https://developers.pinterest.com/docs/developer-tools/sandbox/",
+    "https://developers.pinterest.com/docs/key-concepts/access-tiers/"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 84,
+      "url": "https://developers.pinterest.com/docs/developer-tools/sandbox/",
+      "checked_at": "2026-09-24T10:48:39.873852+00:00",
+      "status": 200,
+      "final_url": "https://developers.pinterest.com/docs/developer-tools/sandbox/",
+      "sha256": "f08fd082c5c333b54c9fcb779ae3804ad4a895fae3dd633de708085ff95c2794",
+      "text_chars": 11541,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 85,
+      "url": "https://developers.pinterest.com/docs/key-concepts/access-tiers/",
+      "checked_at": "2026-09-24T10:48:39.882738+00:00",
+      "status": 200,
+      "final_url": "https://developers.pinterest.com/docs/key-concepts/access-tiers/",
+      "sha256": "7719f720ce7a931aaa0338a0e32564531f5435f0e8d9f776b75c458852a679d7",
+      "text_chars": 5444,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

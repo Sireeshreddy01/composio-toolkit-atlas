@@ -1,0 +1,42 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 42,
+  "app": "WooCommerce",
+  "sources": [
+    "https://developer.woocommerce.com/docs/apis/rest-api/",
+    "https://developer.woocommerce.com/docs/apis/rest-api/authentication"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 53,
+      "url": "https://developer.woocommerce.com/docs/apis/rest-api/",
+      "checked_at": "2026-09-24T10:48:34.819071+00:00",
+      "status": 200,
+      "final_url": "https://developer.woocommerce.com/docs/apis/rest-api/",
+      "sha256": "362478eea5297145ec9efcd04526a4662411d9598c7946e057b1aa0209d8029d",
+      "text_chars": 10109,
+      "auth_guess": "API key",
+      "surface_guess": "GraphQL",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 54,
+      "url": "https://developer.woocommerce.com/docs/apis/rest-api/authentication",
+      "checked_at": "2026-09-24T10:48:34.825557+00:00",
+      "status": 200,
+      "final_url": "https://developer.woocommerce.com/docs/apis/rest-api/authentication",
+      "sha256": "21cbbfb85c806d0b303f2160fac283a2a217ac5f18dbc65856b60ffee58250fb",
+      "text_chars": 14073,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

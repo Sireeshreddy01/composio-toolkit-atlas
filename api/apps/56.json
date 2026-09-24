@@ -1,0 +1,37 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 56,
+    "category": "Data & SEO",
+    "app": "Firecrawl",
+    "url": "https://firecrawl.dev",
+    "description": "Web crawling and structured extraction",
+    "auth": [
+      "API key"
+    ],
+    "access": "Free",
+    "access_detail": "Self-serve API key with 1,000 monthly free credits stated on current homepage; no card required.",
+    "surface": "REST; scrape, crawl, map, search and extraction",
+    "verdict": "Build",
+    "blocker": "None",
+    "note": "A crawl is an asynchronous job; implement status handling and explicit credit limits.",
+    "sources": [
+      "https://docs.firecrawl.dev/features/stealth-mode",
+      "https://docs.firecrawl.dev",
+      "https://www.firecrawl.dev/"
+    ],
+    "access_group": "Self-serve",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Web scrape and crawl tools",
+      "url": "https://github.com/firecrawl/firecrawl-mcp-server"
+    },
+    "workflow": "Inspect a bounded crawl result",
+    "next_action": "Use Firecrawl's documented free allowance for a small owned or permitted site, with an explicit page and credit limit.",
+    "success_criterion": "Record the crawl job ID, poll to a terminal status and return only the allowed page count.",
+    "alternative_action": "Compare official MCP crawl controls with direct API limits before exposing an unconstrained crawl tool.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

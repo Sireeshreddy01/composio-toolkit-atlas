@@ -1,0 +1,56 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 81,
+  "app": "Stripe",
+  "sources": [
+    "https://docs.stripe.com/api/authentication?api-version=2025-08-27.basil",
+    "https://docs.stripe.com/testing?numbers-or-method-or-token=tokens",
+    "https://github.com/mcp/com.stripe/mcp"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 130,
+      "url": "https://docs.stripe.com/api/authentication?api-version=2025-08-27.basil",
+      "checked_at": "2026-09-24T10:48:47.981440+00:00",
+      "status": 200,
+      "final_url": "https://docs.stripe.com/api/authentication?api-version=2025-08-27.basil",
+      "sha256": "d4b05c2fd6799d32543fa5404ad359a50059e8ee225094817c202140afcde49e",
+      "text_chars": 7977,
+      "auth_guess": "API key",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 131,
+      "url": "https://docs.stripe.com/testing?numbers-or-method-or-token=tokens",
+      "checked_at": "2026-09-24T10:48:48.033159+00:00",
+      "status": 200,
+      "final_url": "https://docs.stripe.com/testing?numbers-or-method-or-token=tokens",
+      "sha256": "e6f119be958d7d6486c01cf2b3a078f65b56ab7a59471226f017ee437cc5fc6c",
+      "text_chars": 43230,
+      "auth_guess": "API key",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 140,
+      "url": "https://github.com/mcp/com.stripe/mcp",
+      "checked_at": "2026-09-24T10:48:49.701343+00:00",
+      "status": 200,
+      "final_url": "https://github.com/mcp/com.stripe/mcp",
+      "sha256": "6c57f68c8653ad2346cf59721d10ee9663a47aea2ecd22fc5aa62bc861be8c91",
+      "text_chars": 4376,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

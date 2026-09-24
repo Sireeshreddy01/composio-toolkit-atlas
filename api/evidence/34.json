@@ -1,0 +1,42 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 34,
+  "app": "GoHighLevel",
+  "sources": [
+    "https://marketplace.gohighlevel.com/docs/Authorization/PrivateIntegrationsToken/",
+    "https://marketplace.gohighlevel.com/docs/oauth/SandboxPIT/"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 163,
+      "url": "https://marketplace.gohighlevel.com/docs/Authorization/PrivateIntegrationsToken/",
+      "checked_at": "2026-09-24T10:48:52.835056+00:00",
+      "status": 200,
+      "final_url": "https://marketplace.gohighlevel.com/docs/Authorization/PrivateIntegrationsToken/",
+      "sha256": "c3dd971d801095968a36ffb03be4cc82599dbd0d7534e0316cdaf9d4937412d2",
+      "text_chars": 8448,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 164,
+      "url": "https://marketplace.gohighlevel.com/docs/oauth/SandboxPIT/",
+      "checked_at": "2026-09-24T10:48:52.842301+00:00",
+      "status": 200,
+      "final_url": "https://marketplace.gohighlevel.com/docs/oauth/SandboxPIT/",
+      "sha256": "27094f3496fe6bf035492f30762a5961d7919f2b222a6e0cd07a27edf8e3e647",
+      "text_chars": 5745,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

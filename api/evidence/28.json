@@ -1,0 +1,42 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 28,
+  "app": "WhatsApp Business",
+  "sources": [
+    "https://whatsapp.github.io/WhatsApp-Nodejs-SDK/",
+    "https://www.postman.com/meta/whatsapp-business-platform/documentation/wlk6lh4/whatsapp-cloud-api"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 208,
+      "url": "https://whatsapp.github.io/WhatsApp-Nodejs-SDK/",
+      "checked_at": "2026-09-24T10:49:01.676287+00:00",
+      "status": 200,
+      "final_url": "https://whatsapp.github.io/WhatsApp-Nodejs-SDK/",
+      "sha256": "5ff1b087a02ad0574cfe438e6c9161cc33a7442b1526b80fd723b37ad64f89d1",
+      "text_chars": 4280,
+      "auth_guess": "Token",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 226,
+      "url": "https://www.postman.com/meta/whatsapp-business-platform/documentation/wlk6lh4/whatsapp-cloud-api",
+      "checked_at": "2026-09-24T10:49:05.112330+00:00",
+      "status": 200,
+      "final_url": "https://www.postman.com/meta/whatsapp-business-platform/documentation/wlk6lh4/whatsapp-cloud-api",
+      "sha256": "4366557deb5e0fa3e973fca8e1cf1957072bba3d4d847b5806a433688b10d7ef",
+      "text_chars": 8,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

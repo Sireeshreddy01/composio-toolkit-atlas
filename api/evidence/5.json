@@ -1,0 +1,202 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 5,
+  "app": "Twenty",
+  "sources": [
+    "https://github.com/twentyhq/twenty/issues/10283",
+    "https://twentyhq-twenty.mintlify.app/"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 145,
+      "url": "https://github.com/twentyhq/twenty/issues/10283",
+      "checked_at": "2026-09-24T10:48:50.813942+00:00",
+      "status": 200,
+      "final_url": "https://github.com/twentyhq/twenty/issues/10283",
+      "sha256": "4c5580a06179bf515c5d274974baedc6bc9fd37057ef4174a5a2807eda7ceeca",
+      "text_chars": 14820,
+      "auth_guess": "API key",
+      "surface_guess": "GraphQL",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 204,
+      "url": "https://twentyhq-twenty.mintlify.app/",
+      "checked_at": "2026-09-24T10:49:01.248023+00:00",
+      "status": "unresolved",
+      "error": "HTTP Error 404: Not Found"
+    }
+  ],
+  "additional_run": {
+    "id": 5,
+    "app": "Twenty",
+    "category": "CRM & Sales",
+    "product_scope": "Twenty open-source/self-hosted CRM and managed Cloud",
+    "fields": {
+      "authentication": {
+        "answer": "A repository issue describes API keys sent as Authorization bearer tokens. The vendor homepage documents OAuth for Cloud MCP.",
+        "status": "supported",
+        "caveat": "API authentication details come from issue text, not a verified current reference. Cloud MCP OAuth does not establish REST OAuth.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 5,
+          "field": "authentication",
+          "assessment": "supported",
+          "reason": "S013 states bearer API-key authentication and S012 states Cloud MCP OAuth. The record accurately limits the API claim to issue text."
+        },
+        "citations": [
+          {
+            "source_id": "S013",
+            "url": "https://github.com/twentyhq/twenty/issues/10283",
+            "retrieved_at": "2026-09-24T13:29:38.871607+00:00",
+            "source_sha256": "ddc26e540b2984b57ea3f905be5bd98063f7beba70f8cebbff631013e637b73e",
+            "quote_sha256": "4491a7ba84ac70762af04316bc0ed92fc8030c58665f109be1723c70d1aca662",
+            "normalized_offset": 1625,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S013",
+            "url": "https://github.com/twentyhq/twenty/issues/10283",
+            "retrieved_at": "2026-09-24T13:29:38.871607+00:00",
+            "source_sha256": "ddc26e540b2984b57ea3f905be5bd98063f7beba70f8cebbff631013e637b73e",
+            "quote_sha256": "6e23030be226b2e4847dc859021d0e18f29b441b32f30c3c129f9819197cbb49",
+            "normalized_offset": 2136,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S012",
+            "url": "https://twenty.com",
+            "retrieved_at": "2026-09-24T13:29:38.798018+00:00",
+            "source_sha256": "50f655232f387e1c9487845ceb17976751066ae8fc5097eeea9574bf349ec20a",
+            "quote_sha256": "a4c958fbdbdba9d73f0d07978018d7d4d69fefeb7e1be3998eef1f3e8a5a2d15",
+            "normalized_offset": 2556,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "development_access": {
+        "answer": "A local developer API route is inferred from documented open-source self-hosting and issue text describing self-hosted API URLs. Cloud has a 30-day trial, but trial API entitlement is unstated.",
+        "status": "inferred",
+        "caveat": "Local API availability relies partly on repository issue text; license conditions and installation requirements are not supplied.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 5,
+          "field": "development_access",
+          "assessment": "inferred",
+          "reason": "Self-hosting plus issue-described self-hosted API URLs suggests a local API route; neither verified installation access nor Cloud trial API entitlement is established."
+        },
+        "citations": [
+          {
+            "source_id": "S012",
+            "url": "https://twenty.com",
+            "retrieved_at": "2026-09-24T13:29:38.798018+00:00",
+            "source_sha256": "50f655232f387e1c9487845ceb17976751066ae8fc5097eeea9574bf349ec20a",
+            "quote_sha256": "8ab9686d288b64a5064572a6b512d2a0e44789155399d01054e6cae55ff641a6",
+            "normalized_offset": 1936,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S013",
+            "url": "https://github.com/twentyhq/twenty/issues/10283",
+            "retrieved_at": "2026-09-24T13:29:38.871607+00:00",
+            "source_sha256": "ddc26e540b2984b57ea3f905be5bd98063f7beba70f8cebbff631013e637b73e",
+            "quote_sha256": "deb1bb4a199f00ef5cdc81b3980e3abbd96d2b0c5155b57a7126412957317dcc",
+            "normalized_offset": 2573,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S012",
+            "url": "https://twenty.com",
+            "retrieved_at": "2026-09-24T13:29:38.798018+00:00",
+            "source_sha256": "50f655232f387e1c9487845ceb17976751066ae8fc5097eeea9574bf349ec20a",
+            "quote_sha256": "f2aae2c1af35c23bd5b6482db46a6ef16c300b68fb9f9056a056f8c8bf08e0dd",
+            "normalized_offset": 2079,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "api_surface": {
+        "answer": "Repository issue text describes REST and GraphQL for people, companies, notes, tasks and relationships, plus metadata for fields/object schemas and webhooks.",
+        "status": "supported",
+        "caveat": "These details are from an issue containing proposed documentation; current implementation and example endpoint accuracy are unverified.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 5,
+          "field": "api_surface",
+          "assessment": "supported",
+          "reason": "S013 explicitly describes the listed protocols, resources, metadata and webhooks. Support is limited to the attributed issue text, not verified implementation."
+        },
+        "citations": [
+          {
+            "source_id": "S013",
+            "url": "https://github.com/twentyhq/twenty/issues/10283",
+            "retrieved_at": "2026-09-24T13:29:38.871607+00:00",
+            "source_sha256": "ddc26e540b2984b57ea3f905be5bd98063f7beba70f8cebbff631013e637b73e",
+            "quote_sha256": "73c714b7a3b53f7faed3ce1e0c18dc0c068257f3b51403be6fd714f13b0a3dd0",
+            "normalized_offset": 3098,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S013",
+            "url": "https://github.com/twentyhq/twenty/issues/10283",
+            "retrieved_at": "2026-09-24T13:29:38.871607+00:00",
+            "source_sha256": "ddc26e540b2984b57ea3f905be5bd98063f7beba70f8cebbff631013e637b73e",
+            "quote_sha256": "a0b72202e698506c7750f56f1c3beab2d556e85cac512cbf7e2a2e4b8c6c5865",
+            "normalized_offset": 3519,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S013",
+            "url": "https://github.com/twentyhq/twenty/issues/10283",
+            "retrieved_at": "2026-09-24T13:29:38.871607+00:00",
+            "source_sha256": "ddc26e540b2984b57ea3f905be5bd98063f7beba70f8cebbff631013e637b73e",
+            "quote_sha256": "79f9f8e5344807186000797defae09dfe4ff382c40d95dfcd043a2c2059d5cca",
+            "normalized_offset": 4460,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "mcp": {
+        "answer": "Every managed Cloud workspace is advertised as including a native MCP server with OAuth and CRM read/write access.",
+        "status": "supported",
+        "caveat": "Self-hosted MCP availability, endpoint URL and detailed scopes are unresolved.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 5,
+          "field": "mcp",
+          "assessment": "supported",
+          "reason": "S012 explicitly advertises native OAuth MCP with CRM reads and writes for every Cloud workspace; self-hosted availability is not claimed."
+        },
+        "citations": [
+          {
+            "source_id": "S012",
+            "url": "https://twenty.com",
+            "retrieved_at": "2026-09-24T13:29:38.798018+00:00",
+            "source_sha256": "50f655232f387e1c9487845ceb17976751066ae8fc5097eeea9574bf349ec20a",
+            "quote_sha256": "37d7a25ec4b2891b7ea43d41544d69adc71997962d325f18bcb27303151bb882",
+            "normalized_offset": 2502,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S012",
+            "url": "https://twenty.com",
+            "retrieved_at": "2026-09-24T13:29:38.798018+00:00",
+            "source_sha256": "50f655232f387e1c9487845ceb17976751066ae8fc5097eeea9574bf349ec20a",
+            "quote_sha256": "1f7065e9609d2e793a2baa287c3420d82b2939208e39d986a506afe9cb6850a1",
+            "normalized_offset": 2596,
+            "quote_binding_passed": true
+          }
+        ]
+      }
+    },
+    "access_class": "Unknown",
+    "verdict": "Review required",
+    "decision_reason": "Open-source self-hosting supports a local route, with API availability inferred from self-hosted API documentation in an issue. Nothing was installed or tested.",
+    "next_step": "Obtain current official self-hosted API documentation; success is confirmation of API availability, authentication and supported REST/GraphQL resources."
+  },
+  "human_review": "pending",
+  "authenticated_test": false
+}

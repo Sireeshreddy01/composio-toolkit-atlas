@@ -1,0 +1,37 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 41,
+    "category": "Ecommerce",
+    "app": "Shopify",
+    "url": "https://shopify.dev",
+    "description": "Online stores and merchant operations",
+    "auth": [
+      "OAuth2",
+      "Token"
+    ],
+    "access": "Sandbox",
+    "access_detail": "Development store/app path; merchant authorization for production and review for public distribution.",
+    "surface": "GraphQL Admin; broad products, orders and inventory",
+    "verdict": "Build",
+    "blocker": "Approval",
+    "note": "Use modern app authorization; legacy admin-created custom-app instructions are not the default for new builds.",
+    "sources": [
+      "https://shopify.dev/docs/apps/build/authentication-authorization",
+      "https://shopify.dev/docs/apps/build/authentication-authorization/access-tokens"
+    ],
+    "access_group": "Self-serve",
+    "mcp": {
+      "kind": "Official; partial",
+      "scope": "Storefront shopping, catalog and cart; not full Admin API",
+      "url": "https://shopify.dev/docs/apps/build/storefront-mcp/servers/storefront"
+    },
+    "workflow": "Query a development-store product",
+    "next_action": "Create a Shopify development store and query a seeded product through the GraphQL Admin API using the current app authorization flow.",
+    "success_criterion": "Return product ID and inventory-related fields with documented Admin scopes and query-cost handling.",
+    "alternative_action": "Evaluate storefront MCP only for shopper workflows; do not use it as evidence of full Admin coverage.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

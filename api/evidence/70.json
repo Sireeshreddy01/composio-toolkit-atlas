@@ -1,0 +1,70 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 70,
+  "app": "Sentry",
+  "sources": [
+    "https://docs.sentry.io/api/",
+    "https://docs.sentry.io/api/auth/",
+    "https://docs.sentry.io/api/guides/create-auth-token/",
+    "https://mcp.sentry.dev/"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 123,
+      "url": "https://docs.sentry.io/api/",
+      "checked_at": "2026-09-24T10:48:46.913180+00:00",
+      "status": 200,
+      "final_url": "https://docs.sentry.io/api/",
+      "sha256": "8c3e8c9713b190a6d3aca1878ce746375150812d47da3d5b1d9d9664f58ce750",
+      "text_chars": 2041,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 124,
+      "url": "https://docs.sentry.io/api/auth/",
+      "checked_at": "2026-09-24T10:48:47.213113+00:00",
+      "status": 200,
+      "final_url": "https://docs.sentry.io/api/auth/",
+      "sha256": "413f44d9d17c5cb8d5da66b36b77f65465316270fd9b9285cd2456179a899393",
+      "text_chars": 20345,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 125,
+      "url": "https://docs.sentry.io/api/guides/create-auth-token/",
+      "checked_at": "2026-09-24T10:48:47.542915+00:00",
+      "status": 200,
+      "final_url": "https://docs.sentry.io/api/guides/create-auth-token/",
+      "sha256": "df3a54c8efc8a2c804149b1703158e6928c1a99676f175fa742d59b4dd26d1e4",
+      "text_chars": 2373,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 244,
+      "url": "https://mcp.sentry.dev/",
+      "checked_at": "2026-09-24T10:56:39.226827+00:00",
+      "status": 200,
+      "final_url": "https://mcp.sentry.dev/",
+      "sha256": "a5eb98e5ddf311384c341ac7fefb0ffc07a8cb3239cf438529fb79f7be9883a0",
+      "text_chars": 1537,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

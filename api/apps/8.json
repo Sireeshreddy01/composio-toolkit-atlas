@@ -1,0 +1,38 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 8,
+    "category": "CRM & Sales",
+    "app": "Close",
+    "url": "https://developer.close.com/integrations",
+    "description": "Sales CRM with calling and outreach",
+    "auth": [
+      "OAuth2",
+      "API key",
+      "Basic"
+    ],
+    "access": "Account check",
+    "access_detail": "Generate keys in account settings or create an OAuth app; trial entitlement not independently established.",
+    "surface": "REST; leads, contacts and sales activity",
+    "verdict": "Conditional",
+    "blocker": "Plan check",
+    "note": "API key is the Basic username with an empty password; OAuth is preferred for public apps.",
+    "sources": [
+      "https://developer.close.com/integrations",
+      "https://developer.close.com/api/overview/api-key-authentication"
+    ],
+    "access_group": "Unknown",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Read, safe-write and destructive-write scope groups",
+      "url": "https://developer.close.com/mcp"
+    },
+    "workflow": "Retrieve a lead and its contacts",
+    "next_action": "Confirm whether Close trial accounts include the API, then use a test key to retrieve a lead with associated contacts.",
+    "success_criterion": "Record the trial entitlement source and retrieve the seeded lead using the documented Basic-key format.",
+    "alternative_action": "For an existing authorized tenant, inspect lead-detail reads to map missing UI fields; prefer the documented API when it covers them.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

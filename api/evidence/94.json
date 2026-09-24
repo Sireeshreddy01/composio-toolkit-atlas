@@ -1,0 +1,30 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 94,
+  "app": "Consensus",
+  "sources": [
+    "https://docs.consensus.app/api-plans-and-access",
+    "https://docs.consensus.app/consensus-mcp"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 100,
+      "url": "https://docs.consensus.app/api-plans-and-access",
+      "checked_at": "2026-09-24T10:48:43.067864+00:00",
+      "status": "unresolved",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": 101,
+      "url": "https://docs.consensus.app/consensus-mcp",
+      "checked_at": "2026-09-24T10:48:43.114045+00:00",
+      "status": "unresolved",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

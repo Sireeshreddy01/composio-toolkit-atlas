@@ -1,0 +1,32 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 28,
+    "category": "Communications",
+    "app": "WhatsApp Business",
+    "url": "https://developers.facebook.com/docs/whatsapp",
+    "description": "Business messaging over WhatsApp",
+    "auth": [
+      "Token"
+    ],
+    "access": "Sandbox",
+    "access_detail": "Meta provides test credentials/number; production requires a business setup and messaging permissions.",
+    "surface": "Graph HTTP API; messages, templates, numbers and webhooks",
+    "verdict": "Build",
+    "blocker": "Production entitlement",
+    "note": "Use scoped system-user tokens for deployment; do not equate a temporary test token with production approval.",
+    "sources": [
+      "https://www.postman.com/meta/whatsapp-business-platform/documentation/wlk6lh4/whatsapp-cloud-api",
+      "https://whatsapp.github.io/WhatsApp-Nodejs-SDK/"
+    ],
+    "access_group": "Self-serve",
+    "mcp": null,
+    "workflow": "Inspect WhatsApp test-number setup",
+    "next_action": "Use Meta's WhatsApp sandbox to inspect the test-number configuration and document token expiry and production prerequisites.",
+    "success_criterion": "Record the test phone-number ID, required permissions and the difference between test and production access.",
+    "alternative_action": "Plan system-user authorization and business approval separately; a temporary token is not a production solution.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

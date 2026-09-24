@@ -1,0 +1,42 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 24,
+  "app": "Lark (Larksuite)",
+  "sources": [
+    "https://github.com/larksuite/lark-openapi-mcp/blob/main/docs/usage/configuration/configuration.md",
+    "https://open.larksuite.com/"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 139,
+      "url": "https://github.com/larksuite/lark-openapi-mcp/blob/main/docs/usage/configuration/configuration.md",
+      "checked_at": "2026-09-24T10:48:49.665520+00:00",
+      "status": 200,
+      "final_url": "https://github.com/larksuite/lark-openapi-mcp/blob/main/docs/usage/configuration/configuration.md",
+      "sha256": "7de9504f9014124cdef8b5234463a9b98a577b240497f34882c0e268b859cc53",
+      "text_chars": 11406,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 168,
+      "url": "https://open.larksuite.com/",
+      "checked_at": "2026-09-24T10:48:53.484621+00:00",
+      "status": 200,
+      "final_url": "https://open.larksuite.com/",
+      "sha256": "2df7c5f2edf653fb98c5c8b8a4f94bd55dbe365dd9c377e66336aaf6955ab527",
+      "text_chars": 10,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

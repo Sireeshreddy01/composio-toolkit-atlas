@@ -1,0 +1,35 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 30,
+    "category": "Communications",
+    "app": "Vonage",
+    "url": "https://developer.vonage.com",
+    "description": "Programmable communications and identity",
+    "auth": [
+      "API key",
+      "Basic",
+      "JWT"
+    ],
+    "access": "Trial",
+    "access_detail": "Developer site offers a trial; credentials and billing constraints vary by API product.",
+    "surface": "REST; messaging, voice and verification",
+    "verdict": "Build",
+    "blocker": "Production entitlement",
+    "note": "Some products require application JWTs, others key/secret Basic auth; avoid one auth adapter for all APIs.",
+    "sources": [
+      "https://developer.vonage.com/en/getting-started/concepts/authentication",
+      "https://developer.vonage.com/en/messages/technical-details",
+      "https://developer.vonage.com"
+    ],
+    "access_group": "Self-serve",
+    "mcp": null,
+    "workflow": "Inspect a Vonage application resource",
+    "next_action": "Select the specific Vonage product, identify whether it uses key/secret or application JWT authentication, and read a test resource.",
+    "success_criterion": "Record the product-specific auth scheme and retrieve the chosen resource without sending messages or calls.",
+    "alternative_action": "Keep separate adapters for messaging and voice when their credential flows differ.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

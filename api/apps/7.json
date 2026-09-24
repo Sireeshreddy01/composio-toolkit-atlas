@@ -1,0 +1,32 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 7,
+    "category": "CRM & Sales",
+    "app": "Zoho CRM",
+    "url": "https://www.zoho.com/crm/developer/docs/api/v8/auth-request.html",
+    "description": "Customer and sales management",
+    "auth": [
+      "OAuth2"
+    ],
+    "access": "Account check",
+    "access_detail": "Developer console registration and CRM organization required; edition limits apply; free eligibility not settled here.",
+    "surface": "REST; CRM modules, records and automation",
+    "verdict": "Conditional",
+    "blocker": "Plan check",
+    "note": "Tokens are organization, environment and region specific; verify edition credits before launch.",
+    "sources": [
+      "https://www.zoho.com/crm/developer/docs/api/v8/auth-request.html",
+      "https://www.zoho.com/crm/developer/docs/api/v8/api-limits.html"
+    ],
+    "access_group": "Unknown",
+    "mcp": null,
+    "workflow": "Read a CRM module in the correct region",
+    "next_action": "Confirm the Zoho CRM edition's API allowance, then authorize the correct regional organization and read a test module record.",
+    "success_criterion": "Record the region, organization, allowed API credits and one successful scoped read.",
+    "alternative_action": "If entitlement is unclear, ask support about the exact edition and module; a web-session capture is not proof of API entitlement.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 46,
+  "app": "Squarespace",
+  "sources": [
+    "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+    "https://developers.squarespace.com/commerce-apis/making-requests"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 91,
+      "url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+      "checked_at": "2026-09-24T10:48:41.792998+00:00",
+      "status": 200,
+      "final_url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+      "sha256": "678b4321f25eba702a491b728e789f7e74bdbb488a366d5617d74cae9fae32c4",
+      "text_chars": 3973,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 92,
+      "url": "https://developers.squarespace.com/commerce-apis/making-requests",
+      "checked_at": "2026-09-24T10:48:41.805756+00:00",
+      "status": 200,
+      "final_url": "https://developers.squarespace.com/commerce-apis/making-requests",
+      "sha256": "0f5390d26d20151a0fb77f4e87cb2b68dc91568f8146033d2d9b7472ed8cbb68",
+      "text_chars": 3491,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

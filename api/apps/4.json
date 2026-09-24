@@ -1,0 +1,38 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 4,
+    "category": "CRM & Sales",
+    "app": "Attio",
+    "url": "https://attio.com/platform/developers",
+    "description": "Flexible relationship and pipeline CRM",
+    "auth": [
+      "OAuth2",
+      "Token"
+    ],
+    "access": "Free",
+    "access_detail": "API access available on all plans; an active workspace is required.",
+    "surface": "REST; records, lists, tasks and notes",
+    "verdict": "Build",
+    "blocker": "None",
+    "note": "Official MCP offers a faster start; validate whether its tools cover the intended workflow.",
+    "sources": [
+      "https://attio.com/platform/developers",
+      "https://attio.com/help/reference/workspace-settings-billing/attio-plans-and-features",
+      "https://attio.com/apps/mcp"
+    ],
+    "access_group": "Self-serve",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Workspace records and CRM workflows",
+      "url": "https://attio.com/apps/mcp"
+    },
+    "workflow": "Find a company record",
+    "next_action": "Connect Attio's official MCP to a test workspace and check whether company lookup and required attributes are exposed.",
+    "success_criterion": "Find one seeded company and return the requested attributes with its record ID.",
+    "alternative_action": "Use the REST records API when the MCP omits a needed custom attribute; verify field-level permissions.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

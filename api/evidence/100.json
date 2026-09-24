@@ -1,0 +1,56 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 100,
+  "app": "Grain",
+  "sources": [
+    "https://developers.grain.com/mcp",
+    "https://support.grain.com/en/articles/9253206-grain-business-trial",
+    "https://support.grain.com/en/articles/9253220-plans"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 75,
+      "url": "https://developers.grain.com/mcp",
+      "checked_at": "2026-09-24T10:48:38.589510+00:00",
+      "status": 200,
+      "final_url": "https://developers.grain.com/mcp",
+      "sha256": "150d60d4e49235620d663e264bc35e161fe784b3bf61de2c2a2b2c6bd1b948f7",
+      "text_chars": 58,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 195,
+      "url": "https://support.grain.com/en/articles/9253206-grain-business-trial",
+      "checked_at": "2026-09-24T10:48:58.273207+00:00",
+      "status": 200,
+      "final_url": "https://support.grain.com/en/articles/9253206-grain-business-trial",
+      "sha256": "dea1ae4d119b23d3308a2ad718e8c56f37b3369caa186862d662ba37122ff15f",
+      "text_chars": 1843,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 196,
+      "url": "https://support.grain.com/en/articles/9253220-plans",
+      "checked_at": "2026-09-24T10:48:58.795728+00:00",
+      "status": 200,
+      "final_url": "https://support.grain.com/en/articles/9253220-plans",
+      "sha256": "5b8e18c1f976e186874ab9eb8ff06ac5b1545337e630c751faeafa7b21105a22",
+      "text_chars": 5039,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

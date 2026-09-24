@@ -16,22 +16,20 @@ for(const [name,change,check]of[
 ]){const d=structuredClone(original);change(d);const result=run(d);assert.equal(result.passed,false,name);assert.equal(result.checks.find(c=>c.name===check).passed,false,name)}
 const requestSource=html.slice(html.indexOf('const REQUEST_PRESETS='),html.indexOf('let activeRequest='));
 function makeContext(fetch){const context={fetch,AbortController,setTimeout,clearTimeout,performance,Date,URL,TextEncoder};vm.createContext(context);vm.runInContext(requestSource,context);return context}
-const rc=makeContext();
-const request=(preset='repo',owner='Sireeshreddy01',repo='composio-toolkit-atlas',params='{}')=>rc.buildPublicRequest(preset,owner,repo,params);
-for(const args of [['repo','bad/owner'],['repo','owner','..'],['repo','owner','repo','[]'],['issues','owner','repo','{"per_page":101}'],['issues','owner','repo','{"state":"secret"}'],['repo','owner','repo','{"access_token":"secret"}'],['repo','owner','repo','broken']])assert.throws(()=>request(...args));
-assert.equal(new URL(request('issues','owner','repo','{"page":2,"per_page":5}').endpoint).searchParams.get('page'),'2');
+const rc=makeContext();const request=(preset='app',params='{"app_id":13}')=>rc.buildAssessmentRequest(preset,params);
+for(const args of [['app','{"app_id":101}'],['app','{"app_id":"../"}'],['app','[]'],['all','{"token":"secret"}'],['category','{"category":"other"}'],['app','broken']])assert.throws(()=>request(...args));
+assert.match(request().endpoint,/api\/apps\/13.json$/);
 (async()=>{
- const response=(status,body)=>({status,ok:status>=200&&status<300,statusText:'Mock',headers:new Map([['x-ratelimit-remaining','50']]),text:async()=>JSON.stringify(body)});
- const run=async(fetch,req=request(),signal)=>makeContext(fetch).sendPublicRequest(req,signal);
- const good=await run(async(url,options)=>{assert.equal(options.credentials,'omit');assert.equal(options.method,'GET');return response(200,{id:123,full_name:'Sireeshreddy01/composio-toolkit-atlas',private:false})});assert.equal(good.passed,true);assert.equal(good.body.id,123);assert.equal(good.headers['x-ratelimit-remaining'],'50');assert.ok(good.response_bytes>0);
- assert.equal((await run(async()=>response(200,{id:1,full_name:'wrong/repo',private:false}))).passed,false);
- const limited=await run(async()=>response(403,{message:'API rate limit exceeded'}));assert.equal(limited.passed,false);assert.equal(limited.http_status,403);assert.equal(limited.body.message,'API rate limit exceeded');assert.ok(limited.elapsed_ms>=0);
+ const response=(status,body)=>({status,ok:status>=200&&status<300,statusText:'Mock',headers:new Map([['content-type','application/json']]),text:async()=>JSON.stringify(body)});
+ const run=async(fetch,req=request(),signal)=>makeContext(fetch).sendAssessmentRequest(req,signal);
+ for(const [preset,params,file]of [['app','{"app_id":13}','apps/13.json'],['all','{}','apps.json'],['category','{"category":"support-helpdesk"}','categories/support-helpdesk.json'],['priorities','{}','priorities.json'],['evidence','{"app_id":13}','evidence/13.json'],['verification','{}','verification.json']]){
+  const req=request(preset,params),body=JSON.parse(fs.readFileSync('api/'+file,'utf8'));
+  const good=await run(async(url,options)=>{assert.equal(options.credentials,'omit');assert.equal(options.method,'GET');assert.equal(url,req.endpoint);return response(200,body)},req);assert.equal(good.passed,true);assert.equal(good.body.kind,body.kind);
+ }
+ assert.equal((await run(async()=>response(200,{kind:'wrong',as_of:'2026-09-24'}))).passed,false);
+ const failed=await run(async()=>response(404,{message:'Not found'}));assert.equal(failed.passed,false);assert.equal(failed.http_status,404);assert.equal(failed.body.message,'Not found');
  assert.equal((await run(async()=>{throw new TypeError('Failed to fetch')})).http_status,null);
- const cancelled=await run(async()=>{const e=new Error('Abort');e.name='AbortError';throw e});assert.match(cancelled.error,/cancelled/);
- const empty=await run(async()=>response(200,[]),request('issues'));assert.equal(empty.passed,true);
- assert.equal((await run(async()=>response(204,null),request('contributors'))).passed,true);
- assert.equal((await run(async()=>response(200,{JavaScript:20}),request('languages'))).passed,true);
- assert.equal((await run(async()=>response(200,{sha:'a',path:'README.md'}),request('readme'))).passed,true);
- await assert.rejects(()=>run(async()=>{throw new Error('Must never fetch')},{...request(),endpoint:'https://evil.example/'}),/Only the supported/);
- console.log('Dataset corruption checks, request validation, response bodies/headers, schema checks, empty lists, HTTP/network/cancellation and host restriction passed.');
+ assert.match((await run(async()=>{const e=new Error('Abort');e.name='AbortError';throw e})).error,/cancelled/);
+ await assert.rejects(()=>run(async()=>{throw new Error('Must never fetch')},{...request(),endpoint:'https://evil.example/'}),/Only this assessment/);
+ console.log('Dataset checks, all six assessment resources, parameter validation, schema mismatches, HTTP/network/cancellation and host restriction passed.');
 })().catch(e=>{console.error(e);process.exitCode=1});

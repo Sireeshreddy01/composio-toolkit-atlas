@@ -1,0 +1,316 @@
+{
+  "kind": "category_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "category": "Finance & Fintech",
+  "count": 10,
+  "verdict": {
+    "Build": 5,
+    "Conditional": 3,
+    "Investigate": 2
+  },
+  "development_access": {
+    "Self-serve": 6,
+    "Unknown": 3,
+    "Gated": 1
+  },
+  "apps": [
+    {
+      "id": 81,
+      "category": "Finance & Fintech",
+      "app": "Stripe",
+      "url": "https://stripe.com/docs/api",
+      "description": "Payments, subscriptions and billing infrastructure",
+      "auth": [
+        "API key",
+        "OAuth2"
+      ],
+      "access": "Sandbox",
+      "access_detail": "Test keys/sandboxes support development; live payments require activation and business eligibility.",
+      "surface": "REST; payments, customers, billing and refunds",
+      "verdict": "Build",
+      "blocker": "Production entitlement",
+      "note": "Use restricted test keys and separate read tools from financial mutations.",
+      "sources": [
+        "https://docs.stripe.com/api/authentication?api-version=2025-08-27.basil",
+        "https://docs.stripe.com/testing?numbers-or-method-or-token=tokens"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Customers, products and payment-related tools",
+        "url": "https://github.com/mcp/com.stripe/mcp"
+      },
+      "workflow": "Read sandbox customer data",
+      "next_action": "Use a restricted Stripe test key to retrieve a seeded test customer; keep payment/refund actions outside the initial prototype.",
+      "success_criterion": "Return the test-mode customer and verify the key's read scope; make no live financial mutations.",
+      "alternative_action": "Compare Stripe's official MCP read tools with the required billing fields before introducing custom mutation tools.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 82,
+      "category": "Finance & Fintech",
+      "app": "Plaid",
+      "url": "https://plaid.com/docs",
+      "description": "Bank-account connectivity and financial data",
+      "auth": [
+        "API key",
+        "Token"
+      ],
+      "access": "Sandbox",
+      "access_detail": "Self-serve Sandbox keys; production approval and product access are separate.",
+      "surface": "HTTP API; accounts, transactions, identity and payment-related products",
+      "verdict": "Build",
+      "blocker": "Production entitlement",
+      "note": "Plaid's bank OAuth is not the same as developer API authentication with client_id/secret.",
+      "sources": [
+        "https://plaid.com/docs/sandbox/",
+        "https://plaid.com/docs/quickstart/",
+        "https://plaid.com/docs/api/"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official; partial",
+        "scope": "Dashboard developer tools; not blanket bank-data access",
+        "url": "https://plaid.com/docs/resources/mcp/"
+      },
+      "workflow": "Read sandbox transaction fixtures",
+      "next_action": "Create a Plaid sandbox Item and use client_id/secret plus the sandbox access token to retrieve fixture transactions.",
+      "success_criterion": "Return sandbox account/transaction data and document each credential's purpose without connecting a real bank.",
+      "alternative_action": "Treat institution OAuth and developer authentication separately; production product approval is a later prerequisite.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 83,
+      "category": "Finance & Fintech",
+      "app": "Binance",
+      "url": "https://binance-docs.github.io",
+      "description": "Cryptocurrency market and account services",
+      "auth": [
+        "API key",
+        "Signature"
+      ],
+      "access": "Account check",
+      "access_detail": "Public market data needs no key; private operations require signed keys and account/regional eligibility.",
+      "surface": "REST + WebSocket; market data and trading/account operations",
+      "verdict": "Conditional",
+      "blocker": "Production entitlement",
+      "note": "Separate unsigned read-only market data from signed private operations; do not perform transactions during evaluation.",
+      "sources": [
+        "https://developers.binance.com/en/docs/products/spot/rest-api"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Read public market data",
+      "next_action": "Start with Binance's documented unsigned market-data read and separately verify regional/account eligibility for any private API scope.",
+      "success_criterion": "Return a public price/order-book response; record that no signed account or trading action was tested.",
+      "alternative_action": "Exclude trading from the assessment prototype; signed private operations require a separate credential and authorization review.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 84,
+      "category": "Finance & Fintech",
+      "app": "Paygent Connect",
+      "url": "",
+      "description": "Payment integration named in assignment; identity unresolved",
+      "auth": [
+        "Unknown"
+      ],
+      "access": "Unresolved",
+      "access_detail": "Assignment gives no vendor URL; could not establish an unambiguous Paygent Connect product.",
+      "surface": "Unresolved; do not substitute generic NMI documentation",
+      "verdict": "Investigate",
+      "blocker": "Identity",
+      "note": "Request the exact vendor URL and API contact. NMI-powered is a hint, not evidence of Paygent's auth or access.",
+      "sources": [],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Resolve the exact Paygent product",
+      "next_action": "Ask for the Paygent Connect vendor URL, API documentation and technical contact before selecting an auth method or endpoint.",
+      "success_criterion": "Obtain an unambiguous product identity and a primary API source tied to that vendor.",
+      "alternative_action": "An NMI-powered label alone is insufficient; request confirmation before using an NMI gateway contract.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 85,
+      "category": "Finance & Fintech",
+      "app": "iPayX",
+      "url": "https://ipayx.ai/docs",
+      "description": "FX audit and payment-evidence service",
+      "auth": [
+        "API key",
+        "Token"
+      ],
+      "access": "Free",
+      "access_detail": "MCP docs offer 10 free audits/day and dashboard API keys; free REST entitlement remains unclear.",
+      "surface": "REST/OpenAPI; FX evidence and audit workflow; signed webhooks",
+      "verdict": "Conditional",
+      "blocker": "Conflicting docs",
+      "note": "Browser found conflicting REST base URLs and schemas; separate MCP docs explicitly document a free tier and test/live keys. Conditional until contract is reconciled.",
+      "sources": [
+        "https://www.ipayx.ai/docs/api",
+        "https://www.ipayx.ai/developers/sandbox",
+        "https://www.ipayx.ai/developers",
+        "https://www.ipayx.ai/docs/mcp-server"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Free MCP: 10 FX audits/day; paid forensic report. Contract inconsistencies across REST pages remain.",
+        "url": "https://www.ipayx.ai/docs/mcp-server"
+      },
+      "workflow": "Validate the documented MCP route",
+      "next_action": "Use iPayX's published MCP setup and ask the vendor to reconcile REST base-URL and payload conflicts before implementing REST calls.",
+      "success_criterion": "Record the MCP tool list and allowance; obtain one confirmed REST request example if REST is required.",
+      "alternative_action": "Prefer the separately documented MCP path for evaluation, without assuming it resolves the conflicting REST contract.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 86,
+      "category": "Finance & Fintech",
+      "app": "QuickBooks",
+      "url": "https://developer.intuit.com",
+      "description": "Small-business accounting",
+      "auth": [
+        "OAuth2"
+      ],
+      "access": "Sandbox",
+      "access_detail": "Developer sandbox provided; production credentials and app assessment are a separate path.",
+      "surface": "REST; accounting entities, invoices, payments and reports",
+      "verdict": "Build",
+      "blocker": "Approval",
+      "note": "Use the Accounting API, not QuickBooks Payments documentation, for bookkeeping use cases.",
+      "sources": [
+        "https://developer.intuit.com/app/developer/qbo/docs/api/accounting/all-entities/journalentry",
+        "https://static.developer.intuit.com/resources/Intuit_App_Partner_Program_Guide.pdf"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Read a sandbox invoice",
+      "next_action": "Create an Intuit developer sandbox company, authorize the Accounting API and retrieve a seeded invoice.",
+      "success_criterion": "Return the invoice and realm ID; document token refresh and sandbox scope without touching Payments APIs.",
+      "alternative_action": "Use a sandbox accounting workflow first; production customer authorization and app review remain separate.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 87,
+      "category": "Finance & Fintech",
+      "app": "Xero",
+      "url": "https://developer.xero.com",
+      "description": "Cloud accounting and business finance",
+      "auth": [
+        "OAuth2"
+      ],
+      "access": "Free",
+      "access_detail": "Free developer account and starter path; connection/data-volume tiers govern scaling.",
+      "surface": "REST; accounting, invoices, contacts and reports",
+      "verdict": "Build",
+      "blocker": "Production entitlement",
+      "note": "No basic API-key auth; 2026 developer pricing changed, so validate connection and egress limits.",
+      "sources": [
+        "https://developer.xero.com/faq/getting-started",
+        "https://developer.xero.com/documentation/getting-started-guide/",
+        "https://developer.xero.com/pricing"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Read a demo-company contact",
+      "next_action": "Use Xero's developer/demo-company path to read a contact and verify current connection and data-egress allowances.",
+      "success_criterion": "Return the contact with tenant context and record the applicable developer pricing limits.",
+      "alternative_action": "Check the official MCP's authorization and connection model before assuming it avoids developer-platform limits.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 88,
+      "category": "Finance & Fintech",
+      "app": "Brex",
+      "url": "https://developer.brex.com",
+      "description": "Corporate cards, spending and financial operations",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Account check",
+      "access_detail": "Customer user token or partner OAuth; account eligibility and partner enablement need confirmation.",
+      "surface": "REST; spend, expenses, payments and company operations",
+      "verdict": "Conditional",
+      "blocker": "Customer access",
+      "note": "User tokens may expire after inactivity; use partner OAuth for multi-customer access.",
+      "sources": [
+        "https://developer.brex.com/docs/faq",
+        "https://developer.brex.com/guides/partner_authentication"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Role-controlled Brex account data",
+        "url": "https://www.brex.com/support/using-brex-in-ai-apps"
+      },
+      "workflow": "Read approved expense metadata",
+      "next_action": "Confirm Brex customer/developer eligibility and read one test expense using an authorized token with documented expiry behavior.",
+      "success_criterion": "Return the approved expense and token-lifetime constraints without enabling payment or card mutations.",
+      "alternative_action": "Use partner OAuth for multi-customer access; request a test tenant rather than borrowing a personal customer token.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 89,
+      "category": "Finance & Fintech",
+      "app": "Ramp",
+      "url": "https://docs.ramp.com",
+      "description": "Corporate spend and expense management",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Sandbox",
+      "access_detail": "Documented sandbox; production capabilities can require developer access review.",
+      "surface": "REST; users, transactions, expenses, cards and accounting",
+      "verdict": "Build",
+      "blocker": "Approval",
+      "note": "Developer MCP is documentation-only; distinguish it from Ramp's account-data MCP.",
+      "sources": [
+        "https://docs.ramp.com/developer-api/v1/api/users",
+        "https://docs.ramp.com/developer-api/v1/virtual-cards",
+        "https://docs.ramp.com/developer-api/v1/developer-mcp"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Account MCP distinct from unauthenticated developer-docs MCP",
+        "url": "https://support.ramp.com/ramp-mcp"
+      },
+      "workflow": "Read a developer-sandbox transaction",
+      "next_action": "Obtain Ramp sandbox access and read a fixture transaction with appropriate OAuth or token permissions.",
+      "success_criterion": "Return the sandbox transaction and record the chosen credential path; do not perform financial actions.",
+      "alternative_action": "Distinguish Ramp's documentation MCP from its account-data MCP before choosing which one can serve the workflow.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 90,
+      "category": "Finance & Fintech",
+      "app": "PitchBook",
+      "url": "https://pitchbook.com",
+      "description": "Private-market company and investment intelligence",
+      "auth": [
+        "Unknown"
+      ],
+      "access": "Approval",
+      "access_detail": "Commercial API product marketed through sales; exact auth and license terms not publicly established here.",
+      "surface": "Data API advertised; endpoint breadth and auth unresolved",
+      "verdict": "Investigate",
+      "blocker": "Commercial access",
+      "note": "Do not infer full API licensing from the separate limited Essential Connector.",
+      "sources": [
+        "https://pitchbook.com/products/direct-access-data/api",
+        "https://pitchbook.com/data"
+      ],
+      "access_group": "Gated",
+      "mcp": null,
+      "workflow": "Obtain the licensed API contract",
+      "next_action": "Request PitchBook's Data API licensing terms, authentication documentation, permitted datasets and a test-access option for a named research workflow.",
+      "success_criterion": "Obtain a vendor-confirmed contract and sample schema; identify redistribution and usage restrictions.",
+      "alternative_action": "Evaluate the Essential Connector only for its documented limited scope; do not present it as full Data API access.",
+      "status": "Proposed; not an authenticated test result"
+    }
+  ]
+}

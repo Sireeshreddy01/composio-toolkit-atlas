@@ -1,0 +1,36 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 51,
+    "category": "Data & SEO",
+    "app": "DataForSEO",
+    "url": "https://docs.dataforseo.com",
+    "description": "SEO, search and market datasets",
+    "auth": [
+      "Basic"
+    ],
+    "access": "Account check",
+    "access_detail": "API login/password from account API-access settings; usable test-credit entitlement not verified.",
+    "surface": "REST; SERP, keywords, backlinks and on-page data",
+    "verdict": "Conditional",
+    "blocker": "Plan check",
+    "note": "Async task endpoints need polling and explicit cost budgets; credentials are not OAuth.",
+    "sources": [
+      "https://docs.dataforseo.com/v3/on_page-page_screenshot/",
+      "https://docs.dataforseo.com"
+    ],
+    "access_group": "Unknown",
+    "mcp": {
+      "kind": "Official",
+      "scope": "SEO and data tools",
+      "url": "https://dataforseo.com/help-center/setting-up-the-official-dataforseo-mcp-server-simple-guide"
+    },
+    "workflow": "Retrieve an SEO task result",
+    "next_action": "Confirm DataForSEO trial credits and choose one low-cost task type; inspect a pre-created task result using Basic authentication.",
+    "success_criterion": "Return a result with its task status and documented credit cost; distinguish submission from polling.",
+    "alternative_action": "Define a per-run credit budget before enabling task creation, rather than treating credentials as unlimited execution access.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

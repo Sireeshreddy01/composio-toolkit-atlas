@@ -1,0 +1,175 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 13,
+  "app": "Freshdesk",
+  "sources": [
+    "https://developers.freshdesk.com/api/"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 69,
+      "url": "https://developers.freshdesk.com/api/",
+      "checked_at": "2026-09-24T10:48:37.598385+00:00",
+      "status": 200,
+      "final_url": "https://developers.freshdesk.com/api/",
+      "sha256": "f575b5c277bb4ec199090b921017576157a032daabc84c2d2ddba255cfbdb776",
+      "text_chars": 541826,
+      "auth_guess": "API key",
+      "surface_guess": "REST",
+      "access_guess": "Gated",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": {
+    "id": 13,
+    "app": "Freshdesk",
+    "category": "Support & Helpdesk",
+    "product_scope": "Freshdesk helpdesk REST API",
+    "fields": {
+      "authentication": {
+        "answer": "Use a personal API key as the Basic authentication username with a dummy password.",
+        "status": "supported",
+        "caveat": "Agent permissions and enabled account features constrain individual calls.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 13,
+          "field": "authentication",
+          "assessment": "supported",
+          "reason": "S033 specifies a personal API key, dummy password and curl username/password authentication example."
+        },
+        "citations": [
+          {
+            "source_id": "S033",
+            "url": "https://developers.freshdesk.com/api/",
+            "retrieved_at": "2026-09-24T13:29:46.565097+00:00",
+            "source_sha256": "26b96a8e00d44a4c25ecaa2905683065404f2989dbf17dc936dbb6f0a9b33332",
+            "quote_sha256": "31d318040f1900984eae2679e77050a7d4247376f92419963ae6a369706e4311",
+            "normalized_offset": 1680,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S033",
+            "url": "https://developers.freshdesk.com/api/",
+            "retrieved_at": "2026-09-24T13:29:46.565097+00:00",
+            "source_sha256": "26b96a8e00d44a4c25ecaa2905683065404f2989dbf17dc936dbb6f0a9b33332",
+            "quote_sha256": "ade14c806d6d6f414dff014393ad7ba7fdc8c7d4078cfb42f59400cfbcaff3b6",
+            "normalized_offset": 1800,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S033",
+            "url": "https://developers.freshdesk.com/api/",
+            "retrieved_at": "2026-09-24T13:29:46.565097+00:00",
+            "source_sha256": "26b96a8e00d44a4c25ecaa2905683065404f2989dbf17dc936dbb6f0a9b33332",
+            "quote_sha256": "9c7f65bf04d6d4cd6e1dd2f71dc34aee8690d9dc4097cd9001f2b7f57eb174cc",
+            "normalized_offset": 1855,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "development_access": {
+        "answer": "Trial accounts explicitly receive API access with a default limit of 50 calls per minute.",
+        "status": "supported",
+        "caveat": "Feature-specific restrictions remain; WhatsApp template delivery through the public API requires paid Pro or Enterprise.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 13,
+          "field": "development_access",
+          "assessment": "supported",
+          "reason": "S033 explicitly assigns trial users 50 API calls per minute; the record preserves feature-specific paid restrictions."
+        },
+        "citations": [
+          {
+            "source_id": "S033",
+            "url": "https://developers.freshdesk.com/api/",
+            "retrieved_at": "2026-09-24T13:29:46.565097+00:00",
+            "source_sha256": "26b96a8e00d44a4c25ecaa2905683065404f2989dbf17dc936dbb6f0a9b33332",
+            "quote_sha256": "ea2b34ca188be7b568b914d4860afb3e889bf8d871826fdf2a5d9a06b2294336",
+            "normalized_offset": 1009,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "api_surface": {
+        "answer": "REST operations cover tickets, ticket fields/forms, contacts, agents and outbound WhatsApp messages.",
+        "status": "supported",
+        "caveat": "The reference is heavily truncated; resource availability and limits depend on plan and permissions.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 13,
+          "field": "api_surface",
+          "assessment": "supported",
+          "reason": "S033 explicitly identifies REST and describes the stated ticket, form, contact, agent and outbound-message operations."
+        },
+        "citations": [
+          {
+            "source_id": "S033",
+            "url": "https://developers.freshdesk.com/api/",
+            "retrieved_at": "2026-09-24T13:29:46.565097+00:00",
+            "source_sha256": "26b96a8e00d44a4c25ecaa2905683065404f2989dbf17dc936dbb6f0a9b33332",
+            "quote_sha256": "09be2cc482a297bf0a7292760f93b280edff81ca28da5c90068ddb7d0b687001",
+            "normalized_offset": 413,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S033",
+            "url": "https://developers.freshdesk.com/api/",
+            "retrieved_at": "2026-09-24T13:29:46.565097+00:00",
+            "source_sha256": "26b96a8e00d44a4c25ecaa2905683065404f2989dbf17dc936dbb6f0a9b33332",
+            "quote_sha256": "94def774ecd988943b8541f5f1e9ca233a37dceabf5c2c6526fb647d6848fd19",
+            "normalized_offset": 7398,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S033",
+            "url": "https://developers.freshdesk.com/api/",
+            "retrieved_at": "2026-09-24T13:29:46.565097+00:00",
+            "source_sha256": "26b96a8e00d44a4c25ecaa2905683065404f2989dbf17dc936dbb6f0a9b33332",
+            "quote_sha256": "ccf650a64aab430103f79f7a6e7d77efe57c1f126e0347ee67b620d7d1d33d4a",
+            "normalized_offset": 6436,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S033",
+            "url": "https://developers.freshdesk.com/api/",
+            "retrieved_at": "2026-09-24T13:29:46.565097+00:00",
+            "source_sha256": "26b96a8e00d44a4c25ecaa2905683065404f2989dbf17dc936dbb6f0a9b33332",
+            "quote_sha256": "7b271eaaadc5870611b2a9087079b311da099d835dbecfafbd7454566df9f81f",
+            "normalized_offset": 7881,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S033",
+            "url": "https://developers.freshdesk.com/api/",
+            "retrieved_at": "2026-09-24T13:29:46.565097+00:00",
+            "source_sha256": "26b96a8e00d44a4c25ecaa2905683065404f2989dbf17dc936dbb6f0a9b33332",
+            "quote_sha256": "501b91ae0c0af2fd1aac8b06dc75096a438434ef20d202b5d7e6fd292ac6a421",
+            "normalized_offset": 6780,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "mcp": {
+        "answer": "Vendor MCP availability is unresolved from the assigned Freshdesk evidence.",
+        "status": "unresolved",
+        "caveat": "No direct vendor MCP documentation was supplied.",
+        "citation_binding_passed": false,
+        "verification": {
+          "id": 13,
+          "field": "mcp",
+          "assessment": "unresolved",
+          "reason": "S033 provides no MCP evidence; S051's dated competitor claim does not establish current vendor availability."
+        },
+        "citations": []
+      }
+    },
+    "access_class": "Self-serve",
+    "verdict": "Prototype candidate",
+    "decision_reason": "Trial API entitlement is explicit, despite paid restrictions on particular capabilities.",
+    "next_step": "Obtain the trial feature matrix for the intended resource family; success is confirmation that the desired operations are included in trial access."
+  },
+  "human_review": "pending",
+  "authenticated_test": false
+}

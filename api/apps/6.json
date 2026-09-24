@@ -1,0 +1,32 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 6,
+    "category": "CRM & Sales",
+    "app": "Podio",
+    "url": "https://developers.podio.com/authentication",
+    "description": "Configurable work and relationship apps",
+    "auth": [
+      "OAuth2"
+    ],
+    "access": "Free",
+    "access_detail": "API documented for both free and paid Podio accounts; register a client.",
+    "surface": "REST; items, apps, workspaces and tasks",
+    "verdict": "Build",
+    "blocker": "None",
+    "note": "Prefer authorization code or app auth; avoid collecting users' passwords.",
+    "sources": [
+      "https://developers.podio.com/authentication",
+      "https://developers.podio.com/index/faq"
+    ],
+    "access_group": "Self-serve",
+    "mcp": null,
+    "workflow": "Read an item in a test workspace",
+    "next_action": "Create a Podio app with a test item and use app authentication or OAuth to retrieve its fields.",
+    "success_criterion": "Return the test item with stable field identifiers and the intended workspace scope.",
+    "alternative_action": "Validate the app-auth path for a single app before selecting broader user OAuth.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 30,
+  "app": "Vonage",
+  "sources": [
+    "https://developer.vonage.com",
+    "https://developer.vonage.com/en/getting-started/concepts/authentication",
+    "https://developer.vonage.com/en/messages/technical-details"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 50,
+      "url": "https://developer.vonage.com",
+      "checked_at": "2026-09-24T10:48:34.556729+00:00",
+      "status": 200,
+      "final_url": "https://developer.vonage.com/en/home",
+      "sha256": "9971d44b8b75d5dac9c4cf3f7d15c36e579b3a8a9333c3a492e0eb662800d094",
+      "text_chars": 8883,
+      "auth_guess": "Unknown",
+      "surface_guess": "REST",
+      "access_guess": "Self-serve",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 51,
+      "url": "https://developer.vonage.com/en/getting-started/concepts/authentication",
+      "checked_at": "2026-09-24T10:48:34.626764+00:00",
+      "status": 200,
+      "final_url": "https://developer.vonage.com/en/getting-started/concepts/authentication",
+      "sha256": "32d19763b34395a5046f9775911fd3f7b1c6cc04f7ed84c0701663609d4302b9",
+      "text_chars": 25338,
+      "auth_guess": "API key",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 52,
+      "url": "https://developer.vonage.com/en/messages/technical-details",
+      "checked_at": "2026-09-24T10:48:34.755891+00:00",
+      "status": 200,
+      "final_url": "https://developer.vonage.com/en/messages/technical-details",
+      "sha256": "c1e04c207ed69bde04d1eddbd8df651221023544024ae40789323e5169531ef1",
+      "text_chars": 7750,
+      "auth_guess": "API key",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

@@ -278,6 +278,8 @@ figcaption{font:9px/1.7 var(--mono);color:#b4b5a8;border-top:1px solid #44463a;p
 
 .console-cta{display:inline-flex;align-items:center;gap:9px!important;border-color:var(--accent)!important}.console-cta small{font:10px var(--mono);text-transform:uppercase;padding-left:8px;border-left:1px solid var(--line)}.live-dot{width:6px;height:6px;border-radius:50%;background:var(--accent)}.api-entry{display:inline-flex;align-items:center;gap:7px;text-decoration:none}.api-entry span{font:9px var(--mono);color:var(--accent-ink);border:1px solid var(--accent);padding:2px 4px}textarea:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
+.console-fields.research-fields{grid-template-columns:1fr}
+
 </style></head>
 <body>
 <a class="skip" href="#brief">Skip to the case study</a>
@@ -311,15 +313,15 @@ figcaption{font:9px/1.7 var(--mono);color:#b4b5a8;border-top:1px solid #44463a;p
 <div id="panel-example"><div class="example-layout"><div class="example-steps" role="group" aria-label="Freshdesk research steps"><button data-step="0" aria-pressed="true">01 · Initial collection</button><button data-step="1" aria-pressed="false">02 · Source review</button><button data-step="2" aria-pressed="false">03 · Corrected record</button><button data-step="3" aria-pressed="false">04 · Implementation decision</button></div><div><div class="example-body" id="exampleBody" aria-live="polite"></div><div class="example-controls"><button class="outline" id="examplePrev">Previous step</button><button class="solid" id="exampleNext">Next step →</button></div></div></div></div>
 <div id="panel-checks" hidden><h3>Recalculate the saved research</h3><p class="lab-intro">Runs JavaScript locally against all 100 embedded records. Checks the dataset structure and recalculates the sample scores from initial predictions, reviewed records and the saved review rubric.</p><div class="lab-actions"><button class="solid" id="runChecks">Run dataset checks</button><button class="outline" id="downloadChecks" disabled>Download result</button></div><p class="run-status" id="checksStatus" role="status">Ready. No accounts, API keys or network access required.</p><div id="checksOutput"></div><p class="runtime-note">This checks reproducibility and internal consistency. It does not revisit vendor documentation or independently establish that a claim is true.</p><details class="source-code"><summary>View the code executed here</summary><pre id="checksCode"></pre></details></div>
 <div id="panel-live" hidden><span id="api-console"></span>
-<div class="console-heading"><div><div class="kicker">Live / public GitHub REST API</div><h3>Make the request. Inspect the response.</h3></div><span class="console-badge">No setup · No API key</span></div>
-<p class="lab-intro">Choose an endpoint, edit the public repository and parameters, then send. The response below comes directly from GitHub.</p>
-<div class="request-editor"><div class="console-fields"><label for="requestPreset">Endpoint<select id="requestPreset" aria-label="Endpoint"><option value="repo">Repository details</option><option value="issues">Issues & pull requests</option><option value="branches">Branches</option><option value="languages">Languages</option><option value="contributors">Contributors</option><option value="readme">README metadata</option></select></label><label for="requestOwner">Owner<input id="requestOwner" value="Sireeshreddy01" autocomplete="off" spellcheck="false"></label><label for="requestRepo">Repository<input id="requestRepo" value="composio-toolkit-atlas" autocomplete="off" spellcheck="false"></label></div>
-<label class="query-label">Query parameters <span class="small">Edit JSON. List endpoints accept page and per_page (1–100).</span><textarea aria-label="Query parameters" id="requestParams" rows="3" spellcheck="false">{}</textarea></label>
+<div class="console-heading"><div><div class="kicker">Live request / published assessment data</div><h3>Query the research. Inspect the evidence.</h3></div><span class="console-badge">No setup · No API key</span></div>
+<p class="lab-intro">Choose an assessment resource, edit its parameters, and send. Inspect the actual JSON returned by this project’s published data endpoints. These are research snapshots, not new calls to the 100 vendors.</p>
+<div class="request-editor"><div class="console-fields research-fields"><label for="requestPreset">Assessment endpoint<select id="requestPreset" aria-label="Assessment endpoint"><option value="app">One app: auth, access & API</option><option value="all">All 100 app assessments</option><option value="category">Category findings</option><option value="priorities">Recommended next actions</option><option value="evidence">Source evidence for an app</option><option value="verification">Verification & research run</option></select></label></div>
+<label class="query-label">Request parameters <span class="small" id="parameterHelp">app_id: 1–100. The ID selects a real published JSON resource.</span><textarea aria-label="Request parameters" id="requestParams" rows="3" spellcheck="false">{"app_id":13}</textarea></label>
 <div class="endpoint request-bar"><strong>GET</strong><code id="requestUrl"></code></div>
 <p id="requestValidation" role="status" class="small">Ready.</p><div class="lab-actions"><button class="solid" id="runLive">Send request ↗</button><button class="outline" id="cancelLive" disabled>Cancel</button><button class="outline" id="copyCurl">Copy cURL</button><button class="outline" id="downloadLive" disabled>Download result</button></div>
-</div><p class="run-status" id="liveStatus" role="status">Not run. Sending a request requires internet and is subject to GitHub’s public rate limit.</p>
+</div><p class="run-status" id="liveStatus" role="status">Not run. Choose an assessment endpoint and send a request. Internet is required.</p>
 <div class="response-panel" id="responsePanel" hidden><div class="response-meta" id="responseMeta"></div><div class="response-tabs" role="group" aria-label="Response views"><button data-response="body" aria-pressed="true">Body</button><button data-response="headers" aria-pressed="false">Headers</button><button data-response="request" aria-pressed="false">Request</button></div><pre id="liveOutput" tabindex="0" aria-label="API response"></pre></div>
-<p class="runtime-note">Six public read endpoints. Requests stay in this browser tab; no credentials are collected. This does not demonstrate OAuth, private data, writes or other vendors’ APIs. An empty list can be a valid response. Errors and rate limits are shown as received.</p><p class="small"><a href="https://docs.github.com/en/rest/repos/repos#get-a-repository" target="_blank" rel="noopener">GitHub endpoint documentation ↗</a> · <button class="text-button" data-app="61">Open the GitHub research record</button></p><details class="source-code"><summary>View the request implementation</summary><pre id="liveCode"></pre></details></div>
+<p class="runtime-note">These endpoints serve the published assessment: app findings, category patterns, actions, primary-source evidence and verification records. App/category parameters select a static resource path; they do not trigger a new research run. No credentials or local setup. The embedded research remains available offline.</p><p class="small"><a href="https://github.com/Sireeshreddy01/composio-toolkit-atlas/tree/main/api" target="_blank" rel="noopener">Inspect the published JSON resources ↗</a></p><details class="source-code"><summary>View the request implementation</summary><pre id="liveCode"></pre></details></div>
 <div id="panel-pipeline" hidden><div class="kicker">Recorded execution / inspect without installing</div><h3>Inspect the execution, claim by claim.</h3><p class="lab-intro">Public source collection → structured extraction → a second AI verification pass → citation binding → conservative decisions. This viewer loads the actual saved output; it does not pretend to run a new model in your browser.</p><div id="pipelineSummary"></div><label class="query-label">Inspect an app<select id="pipelineApp" aria-label="Inspect a research app"></select></label><div id="pipelineRecord"></div><div class="lab-actions"><button class="outline" id="downloadRun">Download complete run</button></div><details class="source-code"><summary>A real improvement in the research process</summary><div id="retrievalIteration"></div></details><p class="runtime-note">Same-model verification is not independent accuracy. A matched citation proves text occurs in a source, not that a claim is true. The automated pass uses previously discovered source URLs and can miss browser-rendered content; disagreements stay visible alongside the richer reviewed dataset. A fresh full run uses the supplied Python runner and a signed-in Codex CLI. Reviewing this submitted run needs neither.</p></div>
 </div></details>
 <details class="fold" id="workflow"><summary>The research workflow & runnable proof <small>Open the process</small></summary><div class="fold-content"><div class="pipeline"><article><b>01</b><h3>Fix the set</h3><p>100 names, 10 categories. Select two apps per category for a diagnostic sample.</p></article><article><b>02</b><h3>Collect</h3><p>Python fetches public docs, timestamps and hashes. Keyword predictions are a weak baseline.</p></article><article><b>03</b><h3>Research</h3><p>Codex interprets vendor docs, account paths, API resources and MCP scope.</p></article><article><b>04</b><h3>Challenge</h3><p>Recheck the sample. Use browser rendering for incomplete pages. Preserve real corrections.</p></article><article><b>05</b><h3>Publish</h3><p>Validate the dataset, calculate patterns, build this page and export CSV/JSON.</p></article></div><div class="reproduce"><div><p><strong id="initialFetch"></strong>/100 seed URLs fetched successfully in <strong id="initialTime"></strong> seconds. That is HTTP collection time only.</p><p>The source ledger contains <strong id="sourceTotal"></strong> cited URLs: <strong id="sourceOk"></strong> returned HTTP 200 and <strong id="sourceFail"></strong> failed or were blocked. HTTP 200 does not prove the page’s claims.</p><p class="small">The new runner automates collection, structured extraction, a second AI check and exact citation binding. Browser research remains a separate recovery step for dynamic pages. No Composio SDK or Composio MCP execution is claimed. Inspect the recorded run in the reviewer workspace; local instructions are optional for reproducing a fresh run.</p></div><div><pre>git clone https://github.com/Sireeshreddy01/composio-toolkit-atlas.git
@@ -442,71 +444,62 @@ el('runChecks').onclick=()=>{
 };
 el('downloadChecks').onclick=()=>{if(checksResult)download('toolkit-atlas-checks.json',JSON.stringify(checksResult,null,2),'application/json')};
 const REQUEST_PRESETS={
- repo:{path:'',params:{},allowed:[],shape:'repository'},
- issues:{path:'/issues',params:{state:'all',per_page:5,page:1},allowed:['state','per_page','page'],shape:'list'},
- branches:{path:'/branches',params:{per_page:5,page:1},allowed:['per_page','page'],shape:'list'},
- languages:{path:'/languages',params:{},allowed:[],shape:'object'},
- contributors:{path:'/contributors',params:{per_page:5,page:1},allowed:['per_page','page'],shape:'list'},
- readme:{path:'/readme',params:{},allowed:['ref'],shape:'readme'}
+ app:{path:'apps/{app_id}.json',params:{app_id:13},kind:'app_assessment',help:'app_id: 1–100. Example: 13 = Freshdesk, 46 = Squarespace, 73 = Linear.'},
+ all:{path:'apps.json',params:{},kind:'app_collection',help:'No parameters. Returns all 100 reviewed app records.'},
+ category:{path:'categories/{category}.json',params:{category:'support-helpdesk'},kind:'category_assessment',help:'Category slug: crm-sales, support-helpdesk, communications, marketing-social, ecommerce, data-seo, developer-infra, productivity, finance-fintech or ai-media.'},
+ priorities:{path:'priorities.json',params:{},kind:'recommendation_queue',help:'No parameters. Returns five first experiments plus all 100 proposed action plans.'},
+ evidence:{path:'evidence/{app_id}.json',params:{app_id:13},kind:'evidence_record',help:'app_id: 1–100. Returns sources, retrieval checks and any additional automated verification.'},
+ verification:{path:'verification.json',params:{},kind:'verification_report',help:'No parameters. Returns the diagnostic sample, recorded research run and review status.'}
 };
-function buildPublicRequest(preset,owner,repo,parameterText){
- const spec=REQUEST_PRESETS[preset];if(!spec)throw new Error('Choose a supported endpoint.');
- owner=owner.trim();repo=repo.trim();
- if(!/^[A-Za-z0-9][A-Za-z0-9-]{0,38}$/.test(owner))throw new Error('Enter a valid GitHub user or organization.');
- if(!/^[A-Za-z0-9_.-]{1,100}$/.test(repo)||/^\.{1,2}$/.test(repo))throw new Error('Enter a repository name, without a URL.');
- let params;try{params=JSON.parse(parameterText)}catch(e){throw new Error('Query parameters must be valid JSON, for example {"per_page": 5, "page": 1}.')}
- if(!params||Array.isArray(params)||typeof params!=='object')throw new Error('Query parameters must be a JSON object.');
- const url=new URL(`https://api.github.com/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}${spec.path}`);
- for(const [key,value]of Object.entries(params)){
-  if(!spec.allowed.includes(key))throw new Error(`“${key}” is not supported for this endpoint.`);
-  if((key==='page'||key==='per_page')&&(!Number.isInteger(value)||value<1||(key==='per_page'&&value>100)||value>10000))throw new Error(`${key} must be a positive integer${key==='per_page'?' up to 100':''}.`);
-  if(key==='state'&&!['open','closed','all'].includes(value))throw new Error('state must be open, closed or all.');
-  if(key==='ref'&&(typeof value!=='string'||value.length>200||!value.trim()))throw new Error('ref must be a nonempty branch or commit, up to 200 characters.');
-  url.searchParams.set(key,String(value));
- }
- return{endpoint:url.href,method:'GET',headers:{Accept:'application/vnd.github+json'},preset,expected:spec.shape,repository:owner+'/'+repo};
+function buildAssessmentRequest(preset,parameterText){
+ const spec=REQUEST_PRESETS[preset];if(!spec)throw new Error('Choose a supported assessment endpoint.');
+ let params;try{params=JSON.parse(parameterText)}catch(e){throw new Error('Parameters must be valid JSON, for example {"app_id":13}.')}
+ if(!params||Array.isArray(params)||typeof params!=='object')throw new Error('Parameters must be a JSON object.');
+ if(Object.keys(params).sort().join(',')!==Object.keys(spec.params).sort().join(','))throw new Error('Expected parameters: '+(Object.keys(spec.params).join(', ')||'none; use {}')+'.');
+ let path=spec.path;
+ if('app_id' in params){if(!Number.isInteger(params.app_id)||params.app_id<1||params.app_id>100)throw new Error('app_id must be an integer from 1 to 100.');path=path.replace('{app_id}',String(params.app_id))}
+ if('category' in params){if(!['crm-sales','support-helpdesk','communications','marketing-social','ecommerce','data-seo','developer-infra','productivity','finance-fintech','ai-media'].includes(params.category))throw new Error('Choose one of the listed category slugs.');path=path.replace('{category}',params.category)}
+ return{endpoint:'https://sireeshreddy01.github.io/composio-toolkit-atlas/api/'+path,method:'GET',headers:{Accept:'application/json'},preset,expected:spec.kind,parameters:params};
 }
-async function sendPublicRequest(request,externalSignal){
+async function sendAssessmentRequest(request,externalSignal){
  const url=new URL(request.endpoint);
- if(url.origin!=='https://api.github.com'||!/^\/repos\/[^/]+\/[^/]+(?:\/(?:issues|branches|languages|contributors|readme))?$/.test(url.pathname)||url.username||url.password)throw new Error('Only the supported public GitHub repository endpoints are allowed.');
+ if(url.origin!=='https://sireeshreddy01.github.io'||!/^\/composio-toolkit-atlas\/api\/(?:apps|priorities|verification|apps\/[0-9]{1,3}|evidence\/[0-9]{1,3}|categories\/[a-z-]+)\.json$/.test(url.pathname)||url.search||url.username||url.password)throw new Error('Only this assessment’s published data endpoints are allowed.');
  const controller=new AbortController();let timedOut=false;
  const cancel=()=>controller.abort();if(externalSignal?.aborted)cancel();else externalSignal?.addEventListener('abort',cancel,{once:true});
  const timer=setTimeout(()=>{timedOut=true;controller.abort()},20000),started=performance.now();
- const result={kind:'Live public API read',request:{url:request.endpoint,method:'GET',headers:request.headers},started_at:new Date().toISOString(),http_status:null,passed:false,headers:{},body:null};
+ const result={kind:'Live request for published assessment data',request:{url:request.endpoint,method:'GET',headers:request.headers,parameters:request.parameters},started_at:new Date().toISOString(),http_status:null,passed:false,headers:{},body:null};
  try{
   const response=await fetch(request.endpoint,{method:'GET',headers:request.headers,credentials:'omit',cache:'no-store',referrerPolicy:'no-referrer',signal:controller.signal});
   result.http_status=response.status;response.headers.forEach((v,k)=>{result.headers[k]=v});
   const raw=await response.text();result.response_bytes=new TextEncoder().encode(raw).length;
   try{result.body=JSON.parse(raw)}catch(e){result.body=raw}
   if(!response.ok){result.error=`HTTP ${response.status}: ${result.body?.message||response.statusText}`;return result}
-  if(response.status===204){result.passed=true;result.validation='Valid empty HTTP response.';return result}
-  const b=result.body;const object=b&&typeof b==='object'&&!Array.isArray(b);
-  const valid=request.expected==='repository'?object&&typeof b.id==='number'&&b.full_name?.toLowerCase()===request.repository.toLowerCase()&&b.private===false:request.expected==='list'?Array.isArray(b):request.expected==='readme'?object&&typeof b.sha==='string'&&typeof b.path==='string':object&&Object.values(b).every(v=>typeof v==='number');
-  result.passed=!!valid;result.validation=valid?'HTTP success; expected top-level response shape confirmed.':'HTTP success, but the response did not match the selected endpoint shape.';
+  const b=result.body;const valid=b&&typeof b==='object'&&b.kind===request.expected&&typeof b.as_of==='string';
+  result.passed=!!valid;result.validation=valid?'HTTP success; requested assessment resource confirmed.':'HTTP success, but the body did not match the selected assessment resource.';
   if(!valid)result.error=result.validation;
  }catch(error){result.error=error.name==='AbortError'?(timedOut?'Timed out after 20 seconds.':'Request cancelled.'):(error.message||String(error));}
  finally{clearTimeout(timer);externalSignal?.removeEventListener('abort',cancel);result.elapsed_ms=Math.round(performance.now()-started);result.completed_at=new Date().toISOString();}
  return result;
 }
 let activeRequest=null,responseView='body';
-function editorRequest(){return buildPublicRequest(el('requestPreset').value,el('requestOwner').value,el('requestRepo').value,el('requestParams').value)}
-function previewRequest(){try{const r=editorRequest();put('requestUrl',r.endpoint);put('requestValidation','Authentication: none · Accept: application/vnd.github+json');el('runLive').disabled=!!activeRequest;el('copyCurl').disabled=false;return r}catch(e){put('requestUrl','Correct the request fields to continue.');put('requestValidation',e.message);el('runLive').disabled=true;el('copyCurl').disabled=true;return null}}
+function editorRequest(){return buildAssessmentRequest(el('requestPreset').value,el('requestParams').value)}
+function previewRequest(){try{const r=editorRequest();put('requestUrl',r.endpoint);put('requestValidation','Authentication: none · Accept: application/json · Published research snapshot');el('runLive').disabled=!!activeRequest;el('copyCurl').disabled=false;return r}catch(e){put('requestUrl','Correct the request fields to continue.');put('requestValidation',e.message);el('runLive').disabled=true;el('copyCurl').disabled=true;return null}}
 function displayResponse(){if(!liveResult)return;const value=responseView==='body'?liveResult.body:responseView==='headers'?liveResult.headers:liveResult.request;put('liveOutput',value===null?(liveResult.error||'No response body.'):(typeof value==='string'?value:JSON.stringify(value,null,2)))}
-el('requestPreset').onchange=()=>{el('requestParams').value=JSON.stringify(REQUEST_PRESETS[el('requestPreset').value].params,null,2);previewRequest()};
-['requestOwner','requestRepo','requestParams'].forEach(id=>el(id).addEventListener('input',previewRequest));
-el('liveCode').textContent=buildPublicRequest.toString()+'\n\n'+sendPublicRequest.toString();
+el('requestPreset').onchange=()=>{el('requestParams').value=JSON.stringify(REQUEST_PRESETS[el('requestPreset').value].params,null,2);put('parameterHelp',REQUEST_PRESETS[el('requestPreset').value].help);previewRequest()};
+['requestParams'].forEach(id=>el(id).addEventListener('input',previewRequest));
+el('liveCode').textContent=buildAssessmentRequest.toString()+'\n\n'+sendAssessmentRequest.toString();
 el('runLive').onclick=async()=>{
  const request=previewRequest();if(!request)return;
  activeRequest=new AbortController();el('runLive').disabled=true;el('cancelLive').disabled=false;el('downloadLive').disabled=true;el('responsePanel').hidden=true;liveResult=null;
- put('liveStatus','Sending request to GitHub…');
+ put('liveStatus','Requesting the published assessment resource…');
  try{
-  liveResult=await sendPublicRequest(request,activeRequest.signal);
-  el('responsePanel').hidden=false;el('responseMeta').innerHTML=`<strong class="${liveResult.passed?'':'failed'}">${liveResult.http_status?'HTTP '+liveResult.http_status:'No HTTP response'}</strong><span>${liveResult.elapsed_ms} ms</span><span>${liveResult.response_bytes??0} bytes</span><span>Rate limit remaining: ${esc(liveResult.headers['x-ratelimit-remaining']??'not exposed')}</span>`;
+  liveResult=await sendAssessmentRequest(request,activeRequest.signal);
+  el('responsePanel').hidden=false;el('responseMeta').innerHTML=`<strong class="${liveResult.passed?'':'failed'}">${liveResult.http_status?'HTTP '+liveResult.http_status:'No HTTP response'}</strong><span>${liveResult.elapsed_ms} ms</span><span>${liveResult.response_bytes??0} bytes</span><span>Published research data</span>`;
   put('liveStatus',liveResult.error||liveResult.validation);displayResponse();el('downloadLive').disabled=false;
  }catch(e){put('liveStatus','Request failed: '+e.message)}finally{activeRequest=null;el('cancelLive').disabled=true;previewRequest()}
 };
 el('cancelLive').onclick=()=>activeRequest?.abort();
-el('copyCurl').onclick=async()=>{const r=previewRequest();if(!r)return;try{await navigator.clipboard.writeText(`curl --request GET '${r.endpoint}' --header 'Accept: application/vnd.github+json'`);put('requestValidation','cURL copied. No credentials included.')}catch(e){put('requestValidation','Clipboard unavailable. Copy the request URL shown above.')}};
+el('copyCurl').onclick=async()=>{const r=previewRequest();if(!r)return;try{await navigator.clipboard.writeText(`curl --request GET '${r.endpoint}' --header 'Accept: application/json'`);put('requestValidation','cURL copied. No credentials included.')}catch(e){put('requestValidation','Clipboard unavailable. Copy the request URL shown above.')}};
 document.querySelectorAll('[data-response]').forEach(b=>b.onclick=()=>{responseView=b.dataset.response;document.querySelectorAll('[data-response]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));displayResponse()});
 el('downloadLive').onclick=()=>{if(liveResult)download('toolkit-atlas-public-api-result.json',JSON.stringify(liveResult,null,2),'application/json')};
 previewRequest();

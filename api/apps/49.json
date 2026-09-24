@@ -1,0 +1,33 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 49,
+    "category": "Ecommerce",
+    "app": "Amazon Selling Partner",
+    "url": "https://developer-docs.amazon.com/sp-api",
+    "description": "Amazon seller and vendor operations",
+    "auth": [
+      "OAuth2",
+      "Token"
+    ],
+    "access": "Approval",
+    "access_detail": "Developer registration, role qualification and seller/vendor authorization required.",
+    "surface": "REST; catalog, orders, inventory, reports and fulfillment",
+    "verdict": "Conditional",
+    "blocker": "Approval",
+    "note": "Sandbox support does not waive onboarding or restricted-data requirements.",
+    "sources": [
+      "https://developer-docs.amazon.com/sp-api/docs/onboarding-overview",
+      "https://developer-docs.amazon.com/sp-api/lang-en_EN/docs/sp-api-registration-overview"
+    ],
+    "access_group": "Gated",
+    "mcp": null,
+    "workflow": "Read sandbox selling-partner order data",
+    "next_action": "Complete Amazon Selling Partner developer onboarding, choose the required role, and run a documented sandbox order read.",
+    "success_criterion": "Record onboarding status, role authorization and the sandbox response; identify restricted-data requirements separately.",
+    "alternative_action": "Request an authorized seller test account where sandbox fixtures cannot represent the required order workflow.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

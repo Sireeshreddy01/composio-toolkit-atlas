@@ -1,0 +1,28 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 83,
+  "app": "Binance",
+  "sources": [
+    "https://developers.binance.com/en/docs/products/spot/rest-api"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 64,
+      "url": "https://developers.binance.com/en/docs/products/spot/rest-api",
+      "checked_at": "2026-09-24T10:48:37.037412+00:00",
+      "status": 202,
+      "final_url": "https://developers.binance.com/en/docs/products/spot/rest-api",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text_chars": 0,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

@@ -1,0 +1,56 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 31,
+  "app": "Google Ads",
+  "sources": [
+    "https://developers.google.com/google-ads/api/docs/api-policy/access-levels",
+    "https://developers.google.com/google-ads/api/docs/api-policy/developer-token",
+    "https://developers.google.com/google-ads/api/docs/oauth/overview"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 70,
+      "url": "https://developers.google.com/google-ads/api/docs/api-policy/access-levels",
+      "checked_at": "2026-09-24T10:48:37.913914+00:00",
+      "status": 200,
+      "final_url": "https://developers.google.com/google-ads/api/docs/api-policy/access-levels",
+      "sha256": "2a838e41f5d06268ff6ea9ad68bd5833b70cf3115ea9c41347b171ac41f83240",
+      "text_chars": 11334,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 71,
+      "url": "https://developers.google.com/google-ads/api/docs/api-policy/developer-token",
+      "checked_at": "2026-09-24T10:48:37.942494+00:00",
+      "status": 200,
+      "final_url": "https://developers.google.com/google-ads/api/docs/api-policy/developer-token",
+      "sha256": "98e3a003d1369945d8ed7fefb4b58e3930030fd670c6fcd23080f3ec7bde8a37",
+      "text_chars": 24199,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Self-serve",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 72,
+      "url": "https://developers.google.com/google-ads/api/docs/oauth/overview",
+      "checked_at": "2026-09-24T10:48:37.956545+00:00",
+      "status": 200,
+      "final_url": "https://developers.google.com/google-ads/api/docs/oauth/overview",
+      "sha256": "5bf630c4e9570dfd79e16ae48e28eff4576ab3b0726065ef9d1659c39aa2e466",
+      "text_chars": 14169,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

@@ -1,0 +1,56 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 72,
+  "app": "Airtable",
+  "sources": [
+    "https://support.airtable.com/articles/6292134965-getting-started-with-airtable-s-web-api",
+    "https://support.airtable.com/articles/9897799762-using-the-airtable-mcp-server",
+    "https://support.airtable.com/articles/9934989703-creating-personal-access-tokens"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 190,
+      "url": "https://support.airtable.com/articles/6292134965-getting-started-with-airtable-s-web-api",
+      "checked_at": "2026-09-24T10:48:57.387597+00:00",
+      "status": 200,
+      "final_url": "https://support.airtable.com/articles/6292134965-getting-started-with-airtable-s-web-api",
+      "sha256": "153f9cd28209cf49e39a49c31497718180301208d4ec3a85e5ab15593207b344",
+      "text_chars": 6697,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 191,
+      "url": "https://support.airtable.com/articles/9897799762-using-the-airtable-mcp-server",
+      "checked_at": "2026-09-24T10:48:57.408816+00:00",
+      "status": 200,
+      "final_url": "https://support.airtable.com/articles/9897799762-using-the-airtable-mcp-server",
+      "sha256": "5ecab4b94d0b0933d87370ac145ff628bb97e565ced9df15c6140d30292219d3",
+      "text_chars": 11742,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 192,
+      "url": "https://support.airtable.com/articles/9934989703-creating-personal-access-tokens",
+      "checked_at": "2026-09-24T10:48:57.540951+00:00",
+      "status": 200,
+      "final_url": "https://support.airtable.com/articles/9934989703-creating-personal-access-tokens",
+      "sha256": "5d98e217dfc0d4a5479128e8e72ffe9c09b61c7edf604e06ff69dfe030dbb53b",
+      "text_chars": 7424,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

@@ -1,0 +1,28 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 98,
+  "app": "Mermaid CLI",
+  "sources": [
+    "https://github.com/mermaid-js/mermaid-cli"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 141,
+      "url": "https://github.com/mermaid-js/mermaid-cli",
+      "checked_at": "2026-09-24T10:48:50.421525+00:00",
+      "status": 200,
+      "final_url": "https://github.com/mermaid-js/mermaid-cli",
+      "sha256": "687947b57f2f8b5c03fc7781f037f3f419e4de40f3e16480b757f4b44a3063a5",
+      "text_chars": 8762,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

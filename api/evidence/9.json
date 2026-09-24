@@ -1,0 +1,153 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 9,
+  "app": "Copper",
+  "sources": [
+    "https://developer.copper.com/introduction/authentication.html",
+    "https://support.copper.com/en/articles/8823462-api-docs-and-tips"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 37,
+      "url": "https://developer.copper.com/introduction/authentication.html",
+      "checked_at": "2026-09-24T10:48:32.315726+00:00",
+      "status": 200,
+      "final_url": "https://developer.copper.com/introduction/authentication.html",
+      "sha256": "ab1076d070721df5320f03ed74f7fd7916d98c5c1885d8fc62cb332f242a7034",
+      "text_chars": 4344,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 193,
+      "url": "https://support.copper.com/en/articles/8823462-api-docs-and-tips",
+      "checked_at": "2026-09-24T10:48:57.564217+00:00",
+      "status": 200,
+      "final_url": "https://support.copper.com/en/articles/8823462-api-docs-and-tips",
+      "sha256": "dff7bdde428268b2a318d8c2fa0224cf05cdc0df2827329a2eede72f3dc92ae5",
+      "text_chars": 16185,
+      "auth_guess": "API key",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": {
+    "id": 9,
+    "app": "Copper",
+    "category": "CRM & Sales",
+    "product_scope": "Copper CRM Developer/Web API",
+    "fields": {
+      "authentication": {
+        "answer": "API keys and OAuth2.0 are supported. Key requests include the token and generating user's email in headers; OAuth is preferred for partner integrations.",
+        "status": "supported",
+        "caveat": "Exact header names, OAuth registration eligibility and scopes are not supplied.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 9,
+          "field": "authentication",
+          "assessment": "supported",
+          "reason": "S022 explicitly documents keys, generating-user email in request headers and OAuth preferred for partner integrations."
+        },
+        "citations": [
+          {
+            "source_id": "S022",
+            "url": "https://developer.copper.com/introduction/authentication.html",
+            "retrieved_at": "2026-09-24T13:29:42.213996+00:00",
+            "source_sha256": "6be5a67be5d548d57ecaf1aa69d0d97b3fe9c03a8f8407255388216f61da538a",
+            "quote_sha256": "390d9e65ac40b9c07d80a57d749b92a7fbd8e1f0b1e44a8f7c624e4971025a9a",
+            "normalized_offset": 64,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S022",
+            "url": "https://developer.copper.com/introduction/authentication.html",
+            "retrieved_at": "2026-09-24T13:29:42.213996+00:00",
+            "source_sha256": "6be5a67be5d548d57ecaf1aa69d0d97b3fe9c03a8f8407255388216f61da538a",
+            "quote_sha256": "d119eac33554d7ff4bcfe5e9415d9f2e3b7cc2677dbe5c509f71c880944ef0da",
+            "normalized_offset": 320,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S022",
+            "url": "https://developer.copper.com/introduction/authentication.html",
+            "retrieved_at": "2026-09-24T13:29:42.213996+00:00",
+            "source_sha256": "6be5a67be5d548d57ecaf1aa69d0d97b3fe9c03a8f8407255388216f61da538a",
+            "quote_sha256": "fbc5b5f85e89f996e0dab90cf03e8eda011169353030a1fba39f8da6c8320c90",
+            "normalized_offset": 192,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "development_access": {
+        "answer": "Copper explicitly makes its API available on the trial, Professional and Business plans.",
+        "status": "supported",
+        "caveat": "Trial duration, limits and partner OAuth approval requirements are unresolved; access on other plans is not established.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 9,
+          "field": "development_access",
+          "assessment": "supported",
+          "reason": "S023 expressly makes the API available on trial, Professional and Business plans; other plan eligibility is left open."
+        },
+        "citations": [
+          {
+            "source_id": "S023",
+            "url": "https://support.copper.com/en/articles/8823462-api-docs-and-tips",
+            "retrieved_at": "2026-09-24T13:29:42.226935+00:00",
+            "source_sha256": "3b38c5accef2e8e5e12f09a5784a219ccd6cefc06cf088bd0102a283293e3905",
+            "quote_sha256": "07b26e4050aa53f076e6f97719ef54dad5b18ca9b1cf0884c268784077d8ee51",
+            "normalized_offset": 388,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "api_surface": {
+        "answer": "The Web API exposes Copper entities through a RESTful interface with JSON responses. Specific entity families and operations are not supplied.",
+        "status": "supported",
+        "caveat": "The truncated help article contains no concrete resource catalog.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 9,
+          "field": "api_surface",
+          "assessment": "supported",
+          "reason": "S023 explicitly describes a RESTful interface and JSON responses for Copper entities, without listing specific entity families."
+        },
+        "citations": [
+          {
+            "source_id": "S023",
+            "url": "https://support.copper.com/en/articles/8823462-api-docs-and-tips",
+            "retrieved_at": "2026-09-24T13:29:42.226935+00:00",
+            "source_sha256": "3b38c5accef2e8e5e12f09a5784a219ccd6cefc06cf088bd0102a283293e3905",
+            "quote_sha256": "af78e2debd91e21c57c7e36d545b02067fae141f6b8de339f5b5cf7a2cceec03",
+            "normalized_offset": 611,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "mcp": {
+        "answer": "Existing vendor MCP availability is unresolved.",
+        "status": "unresolved",
+        "caveat": "No MCP evidence is supplied; this does not establish absence.",
+        "citation_binding_passed": false,
+        "verification": {
+          "id": 9,
+          "field": "mcp",
+          "assessment": "unresolved",
+          "reason": "Neither Copper source supplies evidence about vendor MCP."
+        },
+        "citations": []
+      }
+    },
+    "access_class": "Self-serve",
+    "verdict": "Prototype candidate",
+    "decision_reason": "The API-specific help article explicitly includes trial access. Nothing was authenticated or tested.",
+    "next_step": "Obtain the Copper API resource reference; success is a documented list of entities, supported operations and required request headers."
+  },
+  "human_review": "pending",
+  "authenticated_test": false
+}

@@ -1,0 +1,38 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 75,
+    "category": "Productivity",
+    "app": "Asana",
+    "url": "https://developers.asana.com",
+    "description": "Team tasks and work management",
+    "auth": [
+      "OAuth2",
+      "Token"
+    ],
+    "access": "Free",
+    "access_detail": "Free account or developer sandbox; PAT for initial API calls; paid resource entitlements remain separate.",
+    "surface": "REST; tasks, projects, workspaces and portfolios",
+    "verdict": "Build",
+    "blocker": "None",
+    "note": "PATs inherit the user permissions; official MCP uses an OAuth application.",
+    "sources": [
+      "https://developers.asana.com/docs/authentication",
+      "https://developers.asana.com/docs/personal-access-token",
+      "https://developers.asana.com/docs/overview"
+    ],
+    "access_group": "Self-serve",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Asana work resources through OAuth",
+      "url": "https://developers.asana.com/docs/integrating-with-asanas-mcp-server"
+    },
+    "workflow": "Read a test Asana task",
+    "next_action": "Create a free Asana test project and retrieve a seeded task with a PAT limited by the test user's permissions.",
+    "success_criterion": "Return the task and project identifiers and document fields unavailable on the selected plan.",
+    "alternative_action": "Use the official OAuth-based MCP for user-delegated workflows if it covers the required task fields.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

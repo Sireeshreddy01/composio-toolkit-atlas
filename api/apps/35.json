@@ -1,0 +1,34 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 35,
+    "category": "Marketing & Social",
+    "app": "Mailchimp",
+    "url": "https://mailchimp.com/developer",
+    "description": "Email marketing and audience management",
+    "auth": [
+      "OAuth2",
+      "API key",
+      "Basic"
+    ],
+    "access": "Account check",
+    "access_detail": "Key creation and OAuth paths are self-managed; free-plan eligibility for each target feature needs confirmation.",
+    "surface": "REST; audiences, campaigns, automations and reporting",
+    "verdict": "Conditional",
+    "blocker": "Plan check",
+    "note": "The marketing API is REST; unrelated GraphQL mentions on the landing page are not its protocol.",
+    "sources": [
+      "https://mailchimp.com/developer/marketing/guides/quick-start/",
+      "https://mailchimp.com/developer/marketing/docs/fundamentals/"
+    ],
+    "access_group": "Unknown",
+    "mcp": null,
+    "workflow": "Read one audience member",
+    "next_action": "Verify Mailchimp Marketing API access on the intended free or trial plan, then read a seeded audience member using a scoped account credential.",
+    "success_criterion": "Record plan entitlement and return the test member without sending a campaign.",
+    "alternative_action": "If a campaign workflow is missing from the public API, capture that authorized UI read and compare the response schema before proposing a wrapper.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

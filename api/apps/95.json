@@ -1,0 +1,36 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 95,
+    "category": "AI & Media",
+    "app": "Reducto",
+    "url": "https://reducto.ai",
+    "description": "Document parsing and structured extraction",
+    "auth": [
+      "API key"
+    ],
+    "access": "Account check",
+    "access_detail": "Self-managed API key in Studio; current free allowance not confirmed.",
+    "surface": "REST/OpenAPI; parse, extract, split and document workflows",
+    "verdict": "Conditional",
+    "blocker": "Plan check",
+    "note": "Hosted MCP uses bearer API key; parsing quality and per-page cost need task-specific evaluation.",
+    "sources": [
+      "https://reducto.ai/developers",
+      "https://github.com/reductoai/mcp-server-reducto"
+    ],
+    "access_group": "Unknown",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Document processing via hosted server or local wrapper",
+      "url": "https://github.com/reductoai/mcp-server-reducto"
+    },
+    "workflow": "Inspect a small document-parsing job",
+    "next_action": "Confirm Reducto trial credits and submit an owned, non-sensitive test document to a bounded parse workflow after establishing the page cost.",
+    "success_criterion": "Record job status and parsed fields against a small expected-output fixture, including any extraction errors.",
+    "alternative_action": "Compare hosted MCP parsing controls with REST job options; page cost and parsing accuracy are separate acceptance checks.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

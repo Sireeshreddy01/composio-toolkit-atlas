@@ -1,0 +1,37 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 81,
+    "category": "Finance & Fintech",
+    "app": "Stripe",
+    "url": "https://stripe.com/docs/api",
+    "description": "Payments, subscriptions and billing infrastructure",
+    "auth": [
+      "API key",
+      "OAuth2"
+    ],
+    "access": "Sandbox",
+    "access_detail": "Test keys/sandboxes support development; live payments require activation and business eligibility.",
+    "surface": "REST; payments, customers, billing and refunds",
+    "verdict": "Build",
+    "blocker": "Production entitlement",
+    "note": "Use restricted test keys and separate read tools from financial mutations.",
+    "sources": [
+      "https://docs.stripe.com/api/authentication?api-version=2025-08-27.basil",
+      "https://docs.stripe.com/testing?numbers-or-method-or-token=tokens"
+    ],
+    "access_group": "Self-serve",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Customers, products and payment-related tools",
+      "url": "https://github.com/mcp/com.stripe/mcp"
+    },
+    "workflow": "Read sandbox customer data",
+    "next_action": "Use a restricted Stripe test key to retrieve a seeded test customer; keep payment/refund actions outside the initial prototype.",
+    "success_criterion": "Return the test-mode customer and verify the key's read scope; make no live financial mutations.",
+    "alternative_action": "Compare Stripe's official MCP read tools with the required billing fields before introducing custom mutation tools.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

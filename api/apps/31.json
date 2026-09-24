@@ -1,0 +1,33 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 31,
+    "category": "Marketing & Social",
+    "app": "Google Ads",
+    "url": "https://developers.google.com/google-ads",
+    "description": "Search advertising campaign management",
+    "auth": [
+      "OAuth2"
+    ],
+    "access": "Approval",
+    "access_detail": "Test access is distinct from production; developer token and access-level review generally apply.",
+    "surface": "REST + gRPC; campaigns, reporting and account resources",
+    "verdict": "Conditional",
+    "blocker": "Approval",
+    "note": "OAuth is necessary but insufficient; verify developer-token access level and current Cloud-managed pilot rules.",
+    "sources": [
+      "https://developers.google.com/google-ads/api/docs/oauth/overview",
+      "https://developers.google.com/google-ads/api/docs/api-policy/access-levels",
+      "https://developers.google.com/google-ads/api/docs/api-policy/developer-token"
+    ],
+    "access_group": "Gated",
+    "mcp": null,
+    "workflow": "Run a Google Ads sandbox report",
+    "next_action": "Apply for the appropriate developer-token access and authorize a test Ads account before running a small reporting query.",
+    "success_criterion": "Return a test report and record developer-token level, OAuth scope and customer context.",
+    "alternative_action": "Begin token approval immediately; a captured Ads UI request does not replace developer-token authorization.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

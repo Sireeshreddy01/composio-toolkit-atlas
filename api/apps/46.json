@@ -1,0 +1,33 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 46,
+    "category": "Ecommerce",
+    "app": "Squarespace",
+    "url": "https://developers.squarespace.com",
+    "description": "Website and commerce builder",
+    "auth": [
+      "OAuth2",
+      "API key"
+    ],
+    "access": "Paid",
+    "access_detail": "Commerce Advanced plan documented for custom applications; OAuth client registration is a separate path.",
+    "surface": "REST; commerce products, inventory, orders and transactions",
+    "verdict": "Conditional",
+    "blocker": "Subscription",
+    "note": "Custom API-key applications require Commerce Advanced; OAuth Extensions can serve customers on any plan. This row classifies the custom-app path.",
+    "sources": [
+      "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+      "https://developers.squarespace.com/commerce-apis/making-requests"
+    ],
+    "access_group": "Gated",
+    "mcp": null,
+    "workflow": "Read an order through the selected app model",
+    "next_action": "Choose custom API-key app or OAuth Extension first; confirm that route's plan requirements, then read a test order with minimum permissions.",
+    "success_criterion": "Record the chosen route, applicable plan restriction and a successful scoped test-order read.",
+    "alternative_action": "If a needed order field appears only in an authorized UI workflow, capture that read and assess session stability; do not treat it as a way around plan eligibility.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

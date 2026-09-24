@@ -48,5 +48,7 @@
     "per_page=101 blocks Send and displays a validation message.",
     "Response header tab displays actual browser-exposed headers."
   ],
-  "standalone_html": "All code, CSS, fonts and data are embedded. Tested by serving this single file. Direct file:// opening was blocked by the browser automation URL policy and was not bypassed."
+  "standalone_html": "All code, CSS, fonts and data are embedded. Tested by serving this single file. Direct file:// opening was blocked by the browser automation URL policy and was not bypassed.",
+  "superseded": true,
+  "note": "Tests of the earlier generic GitHub console, replaced at user request by assessment-specific data endpoints."
 }

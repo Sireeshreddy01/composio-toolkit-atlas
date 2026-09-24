@@ -1,0 +1,70 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 89,
+  "app": "Ramp",
+  "sources": [
+    "https://docs.ramp.com/developer-api/v1/api/users",
+    "https://docs.ramp.com/developer-api/v1/developer-mcp",
+    "https://docs.ramp.com/developer-api/v1/virtual-cards",
+    "https://support.ramp.com/ramp-mcp"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 120,
+      "url": "https://docs.ramp.com/developer-api/v1/api/users",
+      "checked_at": "2026-09-24T10:48:46.707099+00:00",
+      "status": 200,
+      "final_url": "https://docs.ramp.com/developer-api/v1/api/users",
+      "sha256": "a932daf0f6ada550158a0a3bd7faeb144bc3524ef8c9b4bf9fd8da380eae4ad4",
+      "text_chars": 867,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 121,
+      "url": "https://docs.ramp.com/developer-api/v1/developer-mcp",
+      "checked_at": "2026-09-24T10:48:46.873980+00:00",
+      "status": 200,
+      "final_url": "https://docs.ramp.com/developer-api/v1/developer-mcp",
+      "sha256": "a932daf0f6ada550158a0a3bd7faeb144bc3524ef8c9b4bf9fd8da380eae4ad4",
+      "text_chars": 867,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 122,
+      "url": "https://docs.ramp.com/developer-api/v1/virtual-cards",
+      "checked_at": "2026-09-24T10:48:46.892515+00:00",
+      "status": 200,
+      "final_url": "https://docs.ramp.com/developer-api/v1/virtual-cards",
+      "sha256": "a932daf0f6ada550158a0a3bd7faeb144bc3524ef8c9b4bf9fd8da380eae4ad4",
+      "text_chars": 867,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 199,
+      "url": "https://support.ramp.com/ramp-mcp",
+      "checked_at": "2026-09-24T10:49:00.109614+00:00",
+      "status": 200,
+      "final_url": "https://support.ramp.com/ramp-mcp",
+      "sha256": "851aa8746f6053a32678b9073833f5828f28e620a358cf65e5a65a3326e114c9",
+      "text_chars": 18769,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

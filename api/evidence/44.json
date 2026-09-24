@@ -1,0 +1,30 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 44,
+  "app": "Salesforce Commerce Cloud",
+  "sources": [
+    "https://developer.salesforce.com/docs/commerce/commerce-api/guide/security.html",
+    "https://developer.salesforce.com/docs/commerce/sfra/guide/authorization.html"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 46,
+      "url": "https://developer.salesforce.com/docs/commerce/commerce-api/guide/security.html",
+      "checked_at": "2026-09-24T10:48:33.710585+00:00",
+      "status": "unresolved",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": 47,
+      "url": "https://developer.salesforce.com/docs/commerce/sfra/guide/authorization.html",
+      "checked_at": "2026-09-24T10:48:33.716521+00:00",
+      "status": "unresolved",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

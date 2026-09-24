@@ -1,0 +1,33 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 47,
+    "category": "Ecommerce",
+    "app": "Ecwid",
+    "url": "https://api-docs.ecwid.com",
+    "description": "Embedded online storefronts",
+    "auth": [
+      "OAuth2",
+      "Token"
+    ],
+    "access": "Paid",
+    "access_detail": "Only paid stores can access the API; conditional developer upgrades are available.",
+    "surface": "REST; catalog, orders, customers and store settings",
+    "verdict": "Conditional",
+    "blocker": "Subscription",
+    "note": "Custom apps can use store-specific tokens; partner distribution needs the documented app process.",
+    "sources": [
+      "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+      "https://docs.ecwid.com/develop-apps/app-settings"
+    ],
+    "access_group": "Gated",
+    "mcp": null,
+    "workflow": "Read a store catalog product",
+    "next_action": "Confirm Ecwid custom-app eligibility on the intended plan and read a seeded catalog product with a store-specific token.",
+    "success_criterion": "Return product and store identifiers; record the permission set and distribution restrictions.",
+    "alternative_action": "Ask for partner-app access if the tool must serve multiple stores rather than reusing a private store token.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 76,
+  "app": "Monday.com",
+  "sources": [
+    "https://developer.monday.com/api-reference/docs/build-on-monday-with-ai",
+    "https://developer.monday.com/api-reference/docs/developer-sandbox-account",
+    "https://developer.monday.com/api-reference/docs/integrate-with-monday-mcp",
+    "https://developer.monday.com/apps/docs/choosing-auth"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 42,
+      "url": "https://developer.monday.com/api-reference/docs/build-on-monday-with-ai",
+      "checked_at": "2026-09-24T10:48:33.332505+00:00",
+      "status": 200,
+      "final_url": "https://developer.monday.com/api-reference/docs/build-on-monday-with-ai",
+      "sha256": "323470e7275187562db81db2a02ca3f7e680123566dd71369feb290e8ae12a09",
+      "text_chars": 15512,
+      "auth_guess": "OAuth2",
+      "surface_guess": "GraphQL",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 43,
+      "url": "https://developer.monday.com/api-reference/docs/developer-sandbox-account",
+      "checked_at": "2026-09-24T10:48:33.337998+00:00",
+      "status": 200,
+      "final_url": "https://developer.monday.com/api-reference/docs/developer-sandbox-account",
+      "sha256": "2cd7513bfbf4d64b75f738f3df141ce47e6f6798f39844e050435f8aec4d9d0a",
+      "text_chars": 7875,
+      "auth_guess": "OAuth2",
+      "surface_guess": "GraphQL",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 44,
+      "url": "https://developer.monday.com/api-reference/docs/integrate-with-monday-mcp",
+      "checked_at": "2026-09-24T10:48:33.464753+00:00",
+      "status": 200,
+      "final_url": "https://developer.monday.com/api-reference/docs/integrate-with-monday-mcp",
+      "sha256": "48342c3c2c4e2a3d25843750a6b3c478afee1cf6403ba6b5cb123b6ab522a05c",
+      "text_chars": 8643,
+      "auth_guess": "OAuth2",
+      "surface_guess": "GraphQL",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 45,
+      "url": "https://developer.monday.com/apps/docs/choosing-auth",
+      "checked_at": "2026-09-24T10:48:33.695694+00:00",
+      "status": 200,
+      "final_url": "https://developer.monday.com/apps/docs/choosing-auth",
+      "sha256": "8ec911f81c6aed88ab67beb2953b617b38677c0b09223a6826da553a20aa3610",
+      "text_chars": 9684,
+      "auth_guess": "OAuth2",
+      "surface_guess": "GraphQL",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

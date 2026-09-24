@@ -1,0 +1,32 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 5,
+    "category": "CRM & Sales",
+    "app": "Twenty",
+    "url": "https://twenty.com",
+    "description": "Open-source customizable CRM",
+    "auth": [
+      "API key"
+    ],
+    "access": "Local",
+    "access_detail": "Self-hosting path; hosted plan is a separate purchase decision.",
+    "surface": "REST + GraphQL; generated CRM object APIs",
+    "verdict": "Build",
+    "blocker": "Runtime",
+    "note": "Self-hosted credentials require an installed workspace; do not infer OAuth from website navigation.",
+    "sources": [
+      "https://github.com/twentyhq/twenty/issues/10283",
+      "https://twentyhq-twenty.mintlify.app/"
+    ],
+    "access_group": "Self-serve",
+    "mcp": null,
+    "workflow": "Query a local CRM object",
+    "next_action": "Run a local Twenty workspace, create a test object, and compare its generated REST and GraphQL representations.",
+    "success_criterion": "Read the same seeded object through the selected interface and document its schema.",
+    "alternative_action": "Wrap the local API; do not introduce browser-session dependencies where a generated API exists.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

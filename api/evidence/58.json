@@ -1,0 +1,28 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 58,
+  "app": "Sherlock",
+  "sources": [
+    "https://github.com/sherlock-project/sherlock"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 144,
+      "url": "https://github.com/sherlock-project/sherlock",
+      "checked_at": "2026-09-24T10:48:50.742122+00:00",
+      "status": 200,
+      "final_url": "https://github.com/sherlock-project/sherlock",
+      "sha256": "f3b3bfb27beec288bc907c60c5f3cfe622b1385e861a7fa729c47bc417f91f4f",
+      "text_chars": 6832,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

@@ -1,0 +1,32 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 13,
+    "category": "Support & Helpdesk",
+    "app": "Freshdesk",
+    "url": "https://developers.freshdesk.com/api/",
+    "description": "Ticket-based customer support",
+    "auth": [
+      "API key",
+      "Basic"
+    ],
+    "access": "Trial",
+    "access_detail": "Trial API limit explicitly documented at 50 calls/minute.",
+    "surface": "REST; tickets, contacts, companies and knowledge base",
+    "verdict": "Build",
+    "blocker": "None",
+    "note": "API key is sent through HTTP Basic; apply plan-specific throttling.",
+    "sources": [
+      "https://developers.freshdesk.com/api/"
+    ],
+    "access_group": "Self-serve",
+    "mcp": null,
+    "workflow": "Read one trial support ticket",
+    "next_action": "Use an authorized Freshdesk trial, seed a ticket, and read it with API-key Basic authentication while recording rate-limit headers.",
+    "success_criterion": "Return the seeded ticket and confirm the applicable trial rate limit from the account response or current docs.",
+    "alternative_action": "If the UI exposes a needed field missing from the public ticket schema, capture that specific authorized read and assess session dependence.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

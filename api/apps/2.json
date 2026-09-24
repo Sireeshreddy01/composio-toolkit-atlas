@@ -1,0 +1,36 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 2,
+    "category": "CRM & Sales",
+    "app": "HubSpot",
+    "url": "https://developers.hubspot.com/blog/harnessing-the-power-of-hubspots-public-apis-with-postman",
+    "description": "CRM, marketing and sales automation",
+    "auth": [
+      "OAuth2",
+      "Token"
+    ],
+    "access": "Sandbox",
+    "access_detail": "Free developer/test account; private app token for owned accounts; public apps use OAuth.",
+    "surface": "REST; CRM, contacts and marketing",
+    "verdict": "Build",
+    "blocker": "None",
+    "note": "Legacy API-key guidance is stale; use private app tokens or OAuth.",
+    "sources": [
+      "https://developers.hubspot.com/blog/harnessing-the-power-of-hubspots-public-apis-with-postman"
+    ],
+    "access_group": "Self-serve",
+    "mcp": {
+      "kind": "Official",
+      "scope": "HubSpot user-level app scopes",
+      "url": "https://developers.hubspot.com/ai-tools/mcp"
+    },
+    "workflow": "Read a test contact",
+    "next_action": "Use a HubSpot developer test account and a private-app token to read a seeded contact; design OAuth separately for customer installations.",
+    "success_criterion": "Return the seeded contact and its chosen properties; demonstrate a denied ungranted scope.",
+    "alternative_action": "For a multi-customer product, validate OAuth installation and app-review requirements instead of sharing private tokens.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

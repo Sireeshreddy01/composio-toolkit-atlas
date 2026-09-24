@@ -1,0 +1,56 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 74,
+  "app": "Jira",
+  "sources": [
+    "https://developer.atlassian.com/cloud/jira/platform/rest/v2/intro/",
+    "https://developer.atlassian.com/cloud/jira/service-desk/basic-auth-for-rest-apis/",
+    "https://developer.atlassian.com/cloud/rovo-mcp/guides/getting-started/"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 25,
+      "url": "https://developer.atlassian.com/cloud/jira/platform/rest/v2/intro/",
+      "checked_at": "2026-09-24T10:48:30.013794+00:00",
+      "status": 200,
+      "final_url": "https://developer.atlassian.com/cloud/jira/platform/rest/v2/intro/",
+      "sha256": "ada373cfa8e57b21a1c83f59ad200c36581972fc53cd081373b373458c1602d3",
+      "text_chars": 13408,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 26,
+      "url": "https://developer.atlassian.com/cloud/jira/service-desk/basic-auth-for-rest-apis/",
+      "checked_at": "2026-09-24T10:48:30.479370+00:00",
+      "status": 200,
+      "final_url": "https://developer.atlassian.com/cloud/jira/service-desk/basic-auth-for-rest-apis/",
+      "sha256": "bac91b647a8de64f77e7a6f93c226c334fbc176faa80abb8fe2a1f1bf233ea3e",
+      "text_chars": 5949,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 237,
+      "url": "https://developer.atlassian.com/cloud/rovo-mcp/guides/getting-started/",
+      "checked_at": "2026-09-24T10:56:39.225709+00:00",
+      "status": 200,
+      "final_url": "https://developer.atlassian.com/cloud/rovo-mcp/guides/getting-started/",
+      "sha256": "0811f0ef023b7af35377fdb4a9e3eee2f55d1c1b62ccc06975d7f52e3811b6ce",
+      "text_chars": 4251,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

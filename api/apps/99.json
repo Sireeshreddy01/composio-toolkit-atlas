@@ -1,0 +1,38 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 99,
+    "category": "AI & Media",
+    "app": "YouTube Transcript",
+    "url": "https://transcriptapi.com",
+    "description": "YouTube transcripts and discovery through TranscriptAPI",
+    "auth": [
+      "API key",
+      "OAuth2"
+    ],
+    "access": "Account check",
+    "access_detail": "API/MCP key and active plan; trial and zero-credit endpoint eligibility should be checked separately.",
+    "surface": "REST + MCP; transcripts, videos, channels, search and playlists",
+    "verdict": "Conditional",
+    "blocker": "Subscription",
+    "note": "This is TranscriptAPI, a third-party service, not a Google YouTube transcript endpoint.",
+    "sources": [
+      "https://transcriptapi.com/docs/mcp/",
+      "https://transcriptapi.com/blog/youtube-api-expansion-2026-09-17",
+      "https://transcriptapi.com/"
+    ],
+    "access_group": "Unknown",
+    "mcp": {
+      "kind": "Official (TranscriptAPI)",
+      "scope": "Third-party YouTube transcript/discovery tools",
+      "url": "https://transcriptapi.com/docs/mcp/"
+    },
+    "workflow": "Retrieve a transcript from TranscriptAPI",
+    "next_action": "Confirm TranscriptAPI account allowance and retrieve one permitted test video's transcript using its documented key flow.",
+    "success_criterion": "Return timed transcript segments and identify TranscriptAPI as the provider rather than Google.",
+    "alternative_action": "Evaluate the vendor MCP for the same transcript workflow and document coverage/language limitations.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

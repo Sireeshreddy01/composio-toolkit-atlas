@@ -1,0 +1,42 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 91,
+  "app": "NotebookLM",
+  "sources": [
+    "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+    "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-notebooklm"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 98,
+      "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+      "checked_at": "2026-09-24T10:48:42.910546+00:00",
+      "status": 200,
+      "final_url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+      "sha256": "449724d50f3e641bac10f61f995b908919a21b5965e5bdffa392809be65e617b",
+      "text_chars": 14272,
+      "auth_guess": "Token",
+      "surface_guess": "REST",
+      "access_guess": "Gated",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 99,
+      "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-notebooklm",
+      "checked_at": "2026-09-24T10:48:43.027099+00:00",
+      "status": 200,
+      "final_url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-notebooklm",
+      "sha256": "069175534a64562f0a07882706fa8ada29d186a5ecf4f0c346ad303a266ebe6b",
+      "text_chars": 14165,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

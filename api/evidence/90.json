@@ -1,0 +1,30 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 90,
+  "app": "PitchBook",
+  "sources": [
+    "https://pitchbook.com/data",
+    "https://pitchbook.com/products/direct-access-data/api"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 170,
+      "url": "https://pitchbook.com/data",
+      "checked_at": "2026-09-24T10:48:53.904900+00:00",
+      "status": "unresolved",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": 171,
+      "url": "https://pitchbook.com/products/direct-access-data/api",
+      "checked_at": "2026-09-24T10:48:54.016251+00:00",
+      "status": "unresolved",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

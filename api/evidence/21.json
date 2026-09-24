@@ -1,0 +1,56 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 21,
+  "app": "Slack",
+  "sources": [
+    "https://docs.slack.dev/authentication/installing-with-oauth/",
+    "https://docs.slack.dev/reference/methods/admin.apps.approve/",
+    "https://slack.com/help/articles/48855576908307-Guide-to-Model-Context-Protocol-in-Slack"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 126,
+      "url": "https://docs.slack.dev/authentication/installing-with-oauth/",
+      "checked_at": "2026-09-24T10:48:47.563683+00:00",
+      "status": 200,
+      "final_url": "https://docs.slack.dev/authentication/installing-with-oauth/",
+      "sha256": "43e52105a8d53a7cebf53fd6ecbf17248e2116fd4000032e085ae4f6e943e569",
+      "text_chars": 20113,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 127,
+      "url": "https://docs.slack.dev/reference/methods/admin.apps.approve/",
+      "checked_at": "2026-09-24T10:48:47.766024+00:00",
+      "status": 200,
+      "final_url": "https://docs.slack.dev/reference/methods/admin.apps.approve/",
+      "sha256": "c1106bb42bc0058cc9d7d3ff802705563c3f8d298e38d7e05a284ec9626be39f",
+      "text_chars": 13883,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 185,
+      "url": "https://slack.com/help/articles/48855576908307-Guide-to-Model-Context-Protocol-in-Slack",
+      "checked_at": "2026-09-24T10:48:56.647194+00:00",
+      "status": 200,
+      "final_url": "https://slack.com/intl/en-in/help/articles/48855576908307-Guide-to-Model-Context-Protocol-in-Slack",
+      "sha256": "0c7a70f0b9331d8ad63d0a3c844ac04dffa663253c86bd17a32d621482996e24",
+      "text_chars": 9468,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

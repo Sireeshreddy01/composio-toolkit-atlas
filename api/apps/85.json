@@ -1,0 +1,39 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 85,
+    "category": "Finance & Fintech",
+    "app": "iPayX",
+    "url": "https://ipayx.ai/docs",
+    "description": "FX audit and payment-evidence service",
+    "auth": [
+      "API key",
+      "Token"
+    ],
+    "access": "Free",
+    "access_detail": "MCP docs offer 10 free audits/day and dashboard API keys; free REST entitlement remains unclear.",
+    "surface": "REST/OpenAPI; FX evidence and audit workflow; signed webhooks",
+    "verdict": "Conditional",
+    "blocker": "Conflicting docs",
+    "note": "Browser found conflicting REST base URLs and schemas; separate MCP docs explicitly document a free tier and test/live keys. Conditional until contract is reconciled.",
+    "sources": [
+      "https://www.ipayx.ai/docs/api",
+      "https://www.ipayx.ai/developers/sandbox",
+      "https://www.ipayx.ai/developers",
+      "https://www.ipayx.ai/docs/mcp-server"
+    ],
+    "access_group": "Self-serve",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Free MCP: 10 FX audits/day; paid forensic report. Contract inconsistencies across REST pages remain.",
+      "url": "https://www.ipayx.ai/docs/mcp-server"
+    },
+    "workflow": "Validate the documented MCP route",
+    "next_action": "Use iPayX's published MCP setup and ask the vendor to reconcile REST base-URL and payload conflicts before implementing REST calls.",
+    "success_criterion": "Record the MCP tool list and allowance; obtain one confirmed REST request example if REST is required.",
+    "alternative_action": "Prefer the separately documented MCP path for evaluation, without assuming it resolves the conflicting REST contract.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

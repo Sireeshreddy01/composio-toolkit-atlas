@@ -1,0 +1,42 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 54,
+  "app": "MrScraper",
+  "sources": [
+    "https://docs.mrscraper.com/docs/api/authentication",
+    "https://docs.mrscraper.com/docs/getting-started/mcp-server"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 116,
+      "url": "https://docs.mrscraper.com/docs/api/authentication",
+      "checked_at": "2026-09-24T10:48:45.468883+00:00",
+      "status": 200,
+      "final_url": "https://docs.mrscraper.com/docs/api/authentication",
+      "sha256": "eaaad305aafbd8bafcaddef82b6a10bc568cf71a492d33a293bb3b454fb6c1e5",
+      "text_chars": 2963,
+      "auth_guess": "Token",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 117,
+      "url": "https://docs.mrscraper.com/docs/getting-started/mcp-server",
+      "checked_at": "2026-09-24T10:48:45.509428+00:00",
+      "status": 200,
+      "final_url": "https://docs.mrscraper.com/docs/getting-started/mcp-server",
+      "sha256": "7c53c61331e66e6fd025cf454aa0a3e2a13f448db5adec5a7ee84d4076d0f66e",
+      "text_chars": 27667,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

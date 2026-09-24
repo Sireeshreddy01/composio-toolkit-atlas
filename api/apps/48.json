@@ -1,0 +1,32 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 48,
+    "category": "Ecommerce",
+    "app": "Gumroad",
+    "url": "https://gumroad.com/api",
+    "description": "Digital-product storefront and sales",
+    "auth": [
+      "OAuth2",
+      "Token"
+    ],
+    "access": "Account check",
+    "access_detail": "Own-account access token or OAuth app; free access needs confirmation from the live API page.",
+    "surface": "REST + CLI; products, sales, files, subscriptions and licenses",
+    "verdict": "Conditional",
+    "blocker": "Plan check",
+    "note": "Browser verified OAuth2, scoped tokens and a broad REST API plus official CLI; license verification has a separate unauthenticated path.",
+    "sources": [
+      "https://gumroad.com/api"
+    ],
+    "access_group": "Unknown",
+    "mcp": null,
+    "workflow": "Retrieve a seller product",
+    "next_action": "Confirm Gumroad seller API eligibility and read a test product using the documented OAuth scope or official CLI.",
+    "success_criterion": "Return the product ID and selected fields; keep license verification separate from seller-data authorization.",
+    "alternative_action": "Evaluate the official CLI before inspecting browser endpoints; use network capture only for a specific missing seller workflow.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

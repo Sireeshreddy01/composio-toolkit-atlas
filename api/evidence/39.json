@@ -1,0 +1,42 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 39,
+  "app": "Threads (Meta)",
+  "sources": [
+    "https://www.postman.com/meta/threads/collection/dht3nzz/threads-api",
+    "https://www.postman.com/meta/threads/documentation/dht3nzz/threads-api"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 224,
+      "url": "https://www.postman.com/meta/threads/collection/dht3nzz/threads-api",
+      "checked_at": "2026-09-24T10:49:04.757838+00:00",
+      "status": 200,
+      "final_url": "https://www.postman.com/meta/threads/collection/dht3nzz/threads-api",
+      "sha256": "4366557deb5e0fa3e973fca8e1cf1957072bba3d4d847b5806a433688b10d7ef",
+      "text_chars": 8,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 225,
+      "url": "https://www.postman.com/meta/threads/documentation/dht3nzz/threads-api",
+      "checked_at": "2026-09-24T10:49:05.046674+00:00",
+      "status": 200,
+      "final_url": "https://www.postman.com/meta/threads/documentation/dht3nzz/threads-api",
+      "sha256": "4366557deb5e0fa3e973fca8e1cf1957072bba3d4d847b5806a433688b10d7ef",
+      "text_chars": 8,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

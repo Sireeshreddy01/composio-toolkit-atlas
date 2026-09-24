@@ -1,0 +1,317 @@
+{
+  "kind": "category_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "category": "CRM & Sales",
+  "count": 10,
+  "verdict": {
+    "Build": 7,
+    "Conditional": 3
+  },
+  "development_access": {
+    "Self-serve": 7,
+    "Unknown": 2,
+    "Gated": 1
+  },
+  "apps": [
+    {
+      "id": 1,
+      "category": "CRM & Sales",
+      "app": "Salesforce",
+      "url": "https://developer.salesforce.com/docs/platform/api-rest/guide/quickstart-dev-org.html",
+      "description": "Enterprise customer and sales records",
+      "auth": [
+        "OAuth2"
+      ],
+      "access": "Sandbox",
+      "access_detail": "Free Developer Edition; API Enabled permission required. Production edition entitlement is separate.",
+      "surface": "REST; broad CRM objects and queries",
+      "verdict": "Build",
+      "blocker": "Production entitlement",
+      "note": "Prototype in a developer org; confirm customer API entitlement before rollout.",
+      "sources": [
+        "https://developer.salesforce.com/docs/platform/api-rest/guide/quickstart-dev-org.html",
+        "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/postman.html"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Hosted Salesforce resource servers; org/client setup required",
+        "url": "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/postman.html"
+      },
+      "workflow": "Read CRM accounts in a developer org",
+      "next_action": "Create a Salesforce developer org, authorize a scoped client, and query a small Account sample before requesting access to customer production data.",
+      "success_criterion": "Return Account identifiers and selected fields; prove the client cannot access unrelated objects.",
+      "alternative_action": "Confirm production API entitlement separately from developer-org access.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 2,
+      "category": "CRM & Sales",
+      "app": "HubSpot",
+      "url": "https://developers.hubspot.com/blog/harnessing-the-power-of-hubspots-public-apis-with-postman",
+      "description": "CRM, marketing and sales automation",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Sandbox",
+      "access_detail": "Free developer/test account; private app token for owned accounts; public apps use OAuth.",
+      "surface": "REST; CRM, contacts and marketing",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "Legacy API-key guidance is stale; use private app tokens or OAuth.",
+      "sources": [
+        "https://developers.hubspot.com/blog/harnessing-the-power-of-hubspots-public-apis-with-postman"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "HubSpot user-level app scopes",
+        "url": "https://developers.hubspot.com/ai-tools/mcp"
+      },
+      "workflow": "Read a test contact",
+      "next_action": "Use a HubSpot developer test account and a private-app token to read a seeded contact; design OAuth separately for customer installations.",
+      "success_criterion": "Return the seeded contact and its chosen properties; demonstrate a denied ungranted scope.",
+      "alternative_action": "For a multi-customer product, validate OAuth installation and app-review requirements instead of sharing private tokens.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 3,
+      "category": "CRM & Sales",
+      "app": "Pipedrive",
+      "url": "https://pipedrive.readme.io/docs/core-api-concepts-authentication",
+      "description": "Sales pipelines and deal tracking",
+      "auth": [
+        "OAuth2",
+        "API key"
+      ],
+      "access": "Trial",
+      "access_detail": "API token included with every plan; developer sandbox path documented.",
+      "surface": "REST; broad deals, people, activities and webhooks",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "Use OAuth for distributed apps; a personal token inherits the user's access.",
+      "sources": [
+        "https://www.pipedrive.com/en/features/crm-api",
+        "https://developers.pipedrive.com/docs/api/v1",
+        "https://pipedrive.readme.io/docs/core-api-concepts-authentication"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Native CRM workflows",
+        "url": "https://www.pipedrive.com/en/features/mcp-server"
+      },
+      "workflow": "List deals in a trial account",
+      "next_action": "Seed two Pipedrive deals in a trial, list them with a personal token, then document the OAuth scopes required for a distributed app.",
+      "success_criterion": "Retrieve the seeded deals and correctly follow pagination without exposing other users' tokens.",
+      "alternative_action": "Compare the official MCP deal tools with the required custom fields before building a REST wrapper.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 4,
+      "category": "CRM & Sales",
+      "app": "Attio",
+      "url": "https://attio.com/platform/developers",
+      "description": "Flexible relationship and pipeline CRM",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Free",
+      "access_detail": "API access available on all plans; an active workspace is required.",
+      "surface": "REST; records, lists, tasks and notes",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "Official MCP offers a faster start; validate whether its tools cover the intended workflow.",
+      "sources": [
+        "https://attio.com/platform/developers",
+        "https://attio.com/help/reference/workspace-settings-billing/attio-plans-and-features",
+        "https://attio.com/apps/mcp"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Workspace records and CRM workflows",
+        "url": "https://attio.com/apps/mcp"
+      },
+      "workflow": "Find a company record",
+      "next_action": "Connect Attio's official MCP to a test workspace and check whether company lookup and required attributes are exposed.",
+      "success_criterion": "Find one seeded company and return the requested attributes with its record ID.",
+      "alternative_action": "Use the REST records API when the MCP omits a needed custom attribute; verify field-level permissions.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 5,
+      "category": "CRM & Sales",
+      "app": "Twenty",
+      "url": "https://twenty.com",
+      "description": "Open-source customizable CRM",
+      "auth": [
+        "API key"
+      ],
+      "access": "Local",
+      "access_detail": "Self-hosting path; hosted plan is a separate purchase decision.",
+      "surface": "REST + GraphQL; generated CRM object APIs",
+      "verdict": "Build",
+      "blocker": "Runtime",
+      "note": "Self-hosted credentials require an installed workspace; do not infer OAuth from website navigation.",
+      "sources": [
+        "https://github.com/twentyhq/twenty/issues/10283",
+        "https://twentyhq-twenty.mintlify.app/"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Query a local CRM object",
+      "next_action": "Run a local Twenty workspace, create a test object, and compare its generated REST and GraphQL representations.",
+      "success_criterion": "Read the same seeded object through the selected interface and document its schema.",
+      "alternative_action": "Wrap the local API; do not introduce browser-session dependencies where a generated API exists.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 6,
+      "category": "CRM & Sales",
+      "app": "Podio",
+      "url": "https://developers.podio.com/authentication",
+      "description": "Configurable work and relationship apps",
+      "auth": [
+        "OAuth2"
+      ],
+      "access": "Free",
+      "access_detail": "API documented for both free and paid Podio accounts; register a client.",
+      "surface": "REST; items, apps, workspaces and tasks",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "Prefer authorization code or app auth; avoid collecting users' passwords.",
+      "sources": [
+        "https://developers.podio.com/authentication",
+        "https://developers.podio.com/index/faq"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Read an item in a test workspace",
+      "next_action": "Create a Podio app with a test item and use app authentication or OAuth to retrieve its fields.",
+      "success_criterion": "Return the test item with stable field identifiers and the intended workspace scope.",
+      "alternative_action": "Validate the app-auth path for a single app before selecting broader user OAuth.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 7,
+      "category": "CRM & Sales",
+      "app": "Zoho CRM",
+      "url": "https://www.zoho.com/crm/developer/docs/api/v8/auth-request.html",
+      "description": "Customer and sales management",
+      "auth": [
+        "OAuth2"
+      ],
+      "access": "Account check",
+      "access_detail": "Developer console registration and CRM organization required; edition limits apply; free eligibility not settled here.",
+      "surface": "REST; CRM modules, records and automation",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "Tokens are organization, environment and region specific; verify edition credits before launch.",
+      "sources": [
+        "https://www.zoho.com/crm/developer/docs/api/v8/auth-request.html",
+        "https://www.zoho.com/crm/developer/docs/api/v8/api-limits.html"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Read a CRM module in the correct region",
+      "next_action": "Confirm the Zoho CRM edition's API allowance, then authorize the correct regional organization and read a test module record.",
+      "success_criterion": "Record the region, organization, allowed API credits and one successful scoped read.",
+      "alternative_action": "If entitlement is unclear, ask support about the exact edition and module; a web-session capture is not proof of API entitlement.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 8,
+      "category": "CRM & Sales",
+      "app": "Close",
+      "url": "https://developer.close.com/integrations",
+      "description": "Sales CRM with calling and outreach",
+      "auth": [
+        "OAuth2",
+        "API key",
+        "Basic"
+      ],
+      "access": "Account check",
+      "access_detail": "Generate keys in account settings or create an OAuth app; trial entitlement not independently established.",
+      "surface": "REST; leads, contacts and sales activity",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "API key is the Basic username with an empty password; OAuth is preferred for public apps.",
+      "sources": [
+        "https://developer.close.com/integrations",
+        "https://developer.close.com/api/overview/api-key-authentication"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Read, safe-write and destructive-write scope groups",
+        "url": "https://developer.close.com/mcp"
+      },
+      "workflow": "Retrieve a lead and its contacts",
+      "next_action": "Confirm whether Close trial accounts include the API, then use a test key to retrieve a lead with associated contacts.",
+      "success_criterion": "Record the trial entitlement source and retrieve the seeded lead using the documented Basic-key format.",
+      "alternative_action": "For an existing authorized tenant, inspect lead-detail reads to map missing UI fields; prefer the documented API when it covers them.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 9,
+      "category": "CRM & Sales",
+      "app": "Copper",
+      "url": "https://developer.copper.com/introduction/authentication.html",
+      "description": "Relationship CRM for Google Workspace teams",
+      "auth": [
+        "OAuth2",
+        "API key"
+      ],
+      "access": "Trial",
+      "access_detail": "API available on trial, Professional and Business plans.",
+      "surface": "REST; CRM people, companies, opportunities and activity",
+      "verdict": "Build",
+      "blocker": "Subscription",
+      "note": "Keys require both token and user email; partner OAuth is a separate path.",
+      "sources": [
+        "https://developer.copper.com/introduction/authentication.html",
+        "https://support.copper.com/en/articles/8823462-api-docs-and-tips"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Read an opportunity in a trial",
+      "next_action": "Create a Copper trial opportunity and read it using the required API token and user-email context.",
+      "success_criterion": "Return the opportunity ID and stage, and document which user's permissions apply.",
+      "alternative_action": "Request partner OAuth details only when customer distribution is required; a trial key is a separate development route.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 10,
+      "category": "CRM & Sales",
+      "app": "DealCloud",
+      "url": "https://api.docs.dealcloud.com/docs/apikeys",
+      "description": "Deal and relationship management for financial firms",
+      "auth": [
+        "OAuth2",
+        "API key"
+      ],
+      "access": "Admin / paid",
+      "access_detail": "Customer tenant and API-enabled user group; admin or customer-success help if missing.",
+      "surface": "REST; data, schema, users, publications and backups",
+      "verdict": "Conditional",
+      "blocker": "Admin",
+      "note": "API key is exchanged through client-credentials OAuth; it is not simply a static bearer key.",
+      "sources": [
+        "https://api.docs.dealcloud.com/docs/token",
+        "https://api.docs.dealcloud.com/docs/apikeys",
+        "https://api.docs.dealcloud.com/docs"
+      ],
+      "access_group": "Gated",
+      "mcp": null,
+      "workflow": "Inspect a DealCloud entity schema",
+      "next_action": "Ask an authorized DealCloud administrator for a test instance and the client-credentials setup, then read one entity schema.",
+      "success_criterion": "Obtain a test token and return schema metadata for the approved entity.",
+      "alternative_action": "If direct test access is unavailable, request a sanitized schema export and documented token flow from the vendor.",
+      "status": "Proposed; not an authenticated test result"
+    }
+  ]
+}

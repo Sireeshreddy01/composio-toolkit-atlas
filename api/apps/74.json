@@ -1,0 +1,38 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 74,
+    "category": "Productivity",
+    "app": "Jira",
+    "url": "https://developer.atlassian.com",
+    "description": "Issue tracking and project workflows",
+    "auth": [
+      "OAuth2",
+      "API key",
+      "Basic"
+    ],
+    "access": "Account check",
+    "access_detail": "Cloud account/API token or OAuth app; project permissions and organization policy govern access.",
+    "surface": "REST; issues, projects, boards and workflow resources",
+    "verdict": "Conditional",
+    "blocker": "Admin",
+    "note": "Scope explicitly to Jira Cloud; Data Center has different authentication and deployment requirements.",
+    "sources": [
+      "https://developer.atlassian.com/cloud/jira/service-desk/basic-auth-for-rest-apis/",
+      "https://developer.atlassian.com/cloud/jira/platform/rest/v2/intro/"
+    ],
+    "access_group": "Unknown",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Rovo MCP with Jira work-item search and updates; OAuth 2.1, permissions and credit limits",
+      "url": "https://developer.atlassian.com/cloud/rovo-mcp/guides/getting-started/"
+    },
+    "workflow": "Read a Jira Cloud test issue",
+    "next_action": "Confirm Jira Cloud free/trial API entitlement and read a seeded issue with an API token or scoped OAuth application.",
+    "success_criterion": "Return issue key and selected fields while documenting Cloud-specific auth and project permissions.",
+    "alternative_action": "Keep Data Center out of this test; inspect its API and deployment separately if a customer requires it.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

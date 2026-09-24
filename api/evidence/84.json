@@ -1,0 +1,12 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 84,
+  "app": "Paygent Connect",
+  "sources": [],
+  "retrieval_checks": [],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

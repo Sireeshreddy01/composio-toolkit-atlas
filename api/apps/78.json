@@ -1,0 +1,32 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 78,
+    "category": "Productivity",
+    "app": "Coda",
+    "url": "https://coda.io/developers",
+    "description": "Documents with structured tables and workflows",
+    "auth": [
+      "Token"
+    ],
+    "access": "Free",
+    "access_detail": "API doc-size limits explicitly apply across all plan types, including Free; generate an account token.",
+    "surface": "REST; docs, tables, rows, formulas and controls",
+    "verdict": "Build",
+    "blocker": "None",
+    "note": "Free document API route is inferred from all-plan API limits and token docs; oversized documents and admin-only APIs are separate constraints.",
+    "sources": [
+      "https://coda.io/developers/apis/v1",
+      "https://help.coda.io/hc/en-us/articles/39555760015757-Overview-Doc-limits"
+    ],
+    "access_group": "Self-serve",
+    "mcp": null,
+    "workflow": "Read rows in a small Coda document",
+    "next_action": "Use a small free Coda document and API token to list a seeded table's rows, then verify current size and request limits.",
+    "success_criterion": "Return row IDs/values and document the free-plan inference plus any document-size constraint.",
+    "alternative_action": "Use documented table APIs for the prototype; do not include admin-only workspace operations in the same access claim.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 87,
+  "app": "Xero",
+  "sources": [
+    "https://developer.xero.com/documentation/getting-started-guide/",
+    "https://developer.xero.com/faq/getting-started",
+    "https://developer.xero.com/pricing"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 55,
+      "url": "https://developer.xero.com/documentation/getting-started-guide/",
+      "checked_at": "2026-09-24T10:48:35.090909+00:00",
+      "status": 200,
+      "final_url": "https://developer.xero.com/documentation/getting-started-guide/",
+      "sha256": "aa9d180f71f343132c7bcec6424e8a2355d05e3afedb69965cebe5238972b24b",
+      "text_chars": 38,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 56,
+      "url": "https://developer.xero.com/faq/getting-started",
+      "checked_at": "2026-09-24T10:48:35.806493+00:00",
+      "status": 200,
+      "final_url": "https://developer.xero.com/faq/getting-started",
+      "sha256": "9a064a13bf032c7b0de4ec68efe6d01ff499aed35162b87f959abcc642a0fa29",
+      "text_chars": 3084,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Self-serve",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 57,
+      "url": "https://developer.xero.com/pricing",
+      "checked_at": "2026-09-24T10:48:35.918611+00:00",
+      "status": 200,
+      "final_url": "https://developer.xero.com/pricing",
+      "sha256": "dbb365bd316d9f9ffe5ecdc8041c36f535ac36ec4602ffd2499cdc79d9e7c207",
+      "text_chars": 11427,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

@@ -1,0 +1,42 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 36,
+  "app": "Klaviyo",
+  "sources": [
+    "https://developers.klaviyo.com/en/reference/api_overview",
+    "https://developers.klaviyo.com/en/v2026-01-15/docs/authenticate_"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 81,
+      "url": "https://developers.klaviyo.com/en/reference/api_overview",
+      "checked_at": "2026-09-24T10:48:39.662453+00:00",
+      "status": 200,
+      "final_url": "https://developers.klaviyo.com/en/reference/api_overview",
+      "sha256": "6e8e06ec4e00c27e8acd6cc120fb787dbce218029b6a7894908fa7718a9b076f",
+      "text_chars": 27023,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 82,
+      "url": "https://developers.klaviyo.com/en/v2026-01-15/docs/authenticate_",
+      "checked_at": "2026-09-24T10:48:39.815252+00:00",
+      "status": 200,
+      "final_url": "https://developers.klaviyo.com/en/v2026-01-15/docs/authenticate_",
+      "sha256": "bbf03946172a3ffd684846f84ab385546bed3e746f290288d1b609b5cc00bf97",
+      "text_chars": 11616,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

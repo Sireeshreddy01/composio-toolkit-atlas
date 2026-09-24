@@ -1,0 +1,39 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 61,
+    "category": "Developer & Infra",
+    "app": "GitHub",
+    "url": "https://docs.github.com/rest",
+    "description": "Code hosting and developer collaboration",
+    "auth": [
+      "OAuth2",
+      "Token",
+      "JWT"
+    ],
+    "access": "Free",
+    "access_detail": "Personal tokens or registered apps; organization approval/SSO may restrict customer resources.",
+    "surface": "REST + GraphQL; repos, issues, PRs, actions and administration",
+    "verdict": "Build",
+    "blocker": "Admin",
+    "note": "Prefer a least-privilege GitHub App for multi-tenant automation; personal tokens suit prototypes.",
+    "sources": [
+      "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github",
+      "https://docs.github.com/rest",
+      "https://docs.github.com/en/rest/about-the-rest-api/about-the-openapi-description-for-the-rest-api"
+    ],
+    "access_group": "Self-serve",
+    "mcp": {
+      "kind": "Official",
+      "scope": "GitHub repository and collaboration resources",
+      "url": "https://github.com/github/github-mcp-server"
+    },
+    "workflow": "Read a public repository, then scoped issues",
+    "next_action": "Use the existing public-repository demo as a smoke test, then authorize a least-privilege GitHub App to read issues in one test repository.",
+    "success_criterion": "Keep the public HTTP-200 result separate from a new authenticated issue-read test and record granted repository permissions.",
+    "alternative_action": "Compare official MCP issue tools with required fields and installation boundaries before adding custom REST tools.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

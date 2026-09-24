@@ -1,0 +1,42 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 86,
+  "app": "QuickBooks",
+  "sources": [
+    "https://developer.intuit.com/app/developer/qbo/docs/api/accounting/all-entities/journalentry",
+    "https://static.developer.intuit.com/resources/Intuit_App_Partner_Program_Guide.pdf"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 41,
+      "url": "https://developer.intuit.com/app/developer/qbo/docs/api/accounting/all-entities/journalentry",
+      "checked_at": "2026-09-24T10:48:33.222641+00:00",
+      "status": 200,
+      "final_url": "https://developer.intuit.com/app/developer/qbo/docs/api/accounting/all-entities/journalentry",
+      "sha256": "9266e10e1b38e5fe78d8e6fbc5034b736f274950b5efc948964bbd1c91432ab6",
+      "text_chars": 63,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 186,
+      "url": "https://static.developer.intuit.com/resources/Intuit_App_Partner_Program_Guide.pdf",
+      "checked_at": "2026-09-24T10:48:56.768974+00:00",
+      "status": 200,
+      "final_url": "https://static.developer.intuit.com/resources/Intuit_App_Partner_Program_Guide.pdf",
+      "sha256": "3c9a9fecd19a5c933edab0a210fc94698751ff96c24220656c335af145bf2204",
+      "text_chars": 315917,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

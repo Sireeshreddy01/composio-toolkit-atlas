@@ -1,0 +1,37 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 63,
+    "category": "Developer & Infra",
+    "app": "Netlify",
+    "url": "https://docs.netlify.com/api",
+    "description": "Web hosting and deployment workflows",
+    "auth": [
+      "OAuth2",
+      "Token"
+    ],
+    "access": "Account check",
+    "access_detail": "Generate a personal access token or register OAuth application; team access is explicit.",
+    "surface": "REST; sites, builds, deployments and team resources",
+    "verdict": "Conditional",
+    "blocker": "Plan check",
+    "note": "Separate API availability from build/runtime usage credits.",
+    "sources": [
+      "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+      "https://docs.netlify.com/manage/accounts-and-billing/user-settings/"
+    ],
+    "access_group": "Unknown",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Build, deploy and manage Netlify resources",
+      "url": "https://github.com/netlify/netlify-mcp"
+    },
+    "workflow": "Read a test site's deployment status",
+    "next_action": "Confirm Netlify API eligibility and use a scoped account token to read one test site's deployment metadata.",
+    "success_criterion": "Return the site/deploy identifiers and distinguish API access from build/runtime credit usage.",
+    "alternative_action": "Use deployment webhooks for status updates if polling is unnecessary; verify the webhook contract and plan allowance.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

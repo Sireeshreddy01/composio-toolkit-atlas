@@ -1,0 +1,42 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 23,
+  "app": "Zoho Cliq",
+  "sources": [
+    "https://www.zoho.com/cliq/help/restapi/v3/introduction/",
+    "https://www.zoho.com/cliq/help/restapi/v3/oauth/"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 233,
+      "url": "https://www.zoho.com/cliq/help/restapi/v3/introduction/",
+      "checked_at": "2026-09-24T10:49:05.828464+00:00",
+      "status": 200,
+      "final_url": "https://www.zoho.com/cliq/help/restapi/v3/introduction/",
+      "sha256": "2df42334cf7d91380ad561d429e8c8a9d1432bcff6018fde87cc2130f28daf4b",
+      "text_chars": 11265,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 234,
+      "url": "https://www.zoho.com/cliq/help/restapi/v3/oauth/",
+      "checked_at": "2026-09-24T10:49:05.959994+00:00",
+      "status": 200,
+      "final_url": "https://www.zoho.com/cliq/help/restapi/v3/oauth/",
+      "sha256": "b751e3eef2eac972cbe3b696b7a698dc13a575dd7bf118e0f0e21b4b408ddf3b",
+      "text_chars": 18658,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

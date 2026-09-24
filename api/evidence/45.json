@@ -1,0 +1,56 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 45,
+  "app": "Magento (Adobe Commerce)",
+  "sources": [
+    "https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token",
+    "https://developer.adobe.com/commerce/webapi/graphql/usage/authorization-tokens",
+    "https://developer.adobe.com/commerce/webapi/rest/authentication/"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 20,
+      "url": "https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token",
+      "checked_at": "2026-09-24T10:48:28.171406+00:00",
+      "status": 200,
+      "final_url": "https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token",
+      "sha256": "799cfe601a89614106030b8b9fed8d534f666f9d57065c38675157e5d83a1700",
+      "text_chars": 11237,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 21,
+      "url": "https://developer.adobe.com/commerce/webapi/graphql/usage/authorization-tokens",
+      "checked_at": "2026-09-24T10:48:28.221619+00:00",
+      "status": 200,
+      "final_url": "https://developer.adobe.com/commerce/webapi/graphql/usage/authorization-tokens",
+      "sha256": "10bd9b24c111eb412012612753e80f959dd25063739899ff01d5286c438d1af6",
+      "text_chars": 5165,
+      "auth_guess": "OAuth2",
+      "surface_guess": "GraphQL",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 22,
+      "url": "https://developer.adobe.com/commerce/webapi/rest/authentication/",
+      "checked_at": "2026-09-24T10:48:28.295643+00:00",
+      "status": 200,
+      "final_url": "https://developer.adobe.com/commerce/webapi/rest/authentication/",
+      "sha256": "2af3b05df8022ce1a3481e4117dce511620508764721f54231d74f7e832049da",
+      "text_chars": 3376,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

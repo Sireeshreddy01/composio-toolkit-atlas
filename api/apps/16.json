@@ -1,0 +1,32 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 16,
+    "category": "Support & Helpdesk",
+    "app": "LiveAgent",
+    "url": "https://liveagent.com",
+    "description": "Helpdesk with tickets, chat and calls",
+    "auth": [
+      "API key"
+    ],
+    "access": "Admin / paid",
+    "access_detail": "Admin generates API v3 keys; free/trial API entitlement not established.",
+    "surface": "REST; tickets, messages and support resources",
+    "verdict": "Conditional",
+    "blocker": "Admin",
+    "note": "v1 and v3 keys are not interchangeable; explicitly target v3.",
+    "sources": [
+      "https://support.liveagent.com/802463-REST-API",
+      "https://support.liveagent.com/741982-API-key"
+    ],
+    "access_group": "Gated",
+    "mcp": null,
+    "workflow": "Retrieve a support ticket with v3 credentials",
+    "next_action": "Confirm the LiveAgent subscription and create a v3-specific test key before implementing a ticket read.",
+    "success_criterion": "Read the seeded ticket with v3 credentials and demonstrate a clear error for the wrong API version.",
+    "alternative_action": "Avoid adapting a captured v1 session into a v3 integration; obtain the correct version's key and contract.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

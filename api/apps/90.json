@@ -1,0 +1,32 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 90,
+    "category": "Finance & Fintech",
+    "app": "PitchBook",
+    "url": "https://pitchbook.com",
+    "description": "Private-market company and investment intelligence",
+    "auth": [
+      "Unknown"
+    ],
+    "access": "Approval",
+    "access_detail": "Commercial API product marketed through sales; exact auth and license terms not publicly established here.",
+    "surface": "Data API advertised; endpoint breadth and auth unresolved",
+    "verdict": "Investigate",
+    "blocker": "Commercial access",
+    "note": "Do not infer full API licensing from the separate limited Essential Connector.",
+    "sources": [
+      "https://pitchbook.com/products/direct-access-data/api",
+      "https://pitchbook.com/data"
+    ],
+    "access_group": "Gated",
+    "mcp": null,
+    "workflow": "Obtain the licensed API contract",
+    "next_action": "Request PitchBook's Data API licensing terms, authentication documentation, permitted datasets and a test-access option for a named research workflow.",
+    "success_criterion": "Obtain a vendor-confirmed contract and sample schema; identify redistribution and usage restrictions.",
+    "alternative_action": "Evaluate the Essential Connector only for its documented limited scope; do not present it as full Data API access.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

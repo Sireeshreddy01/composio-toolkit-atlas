@@ -1,0 +1,56 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 51,
+  "app": "DataForSEO",
+  "sources": [
+    "https://dataforseo.com/help-center/setting-up-the-official-dataforseo-mcp-server-simple-guide",
+    "https://docs.dataforseo.com",
+    "https://docs.dataforseo.com/v3/on_page-page_screenshot/"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 13,
+      "url": "https://dataforseo.com/help-center/setting-up-the-official-dataforseo-mcp-server-simple-guide",
+      "checked_at": "2026-09-24T10:48:26.968896+00:00",
+      "status": 200,
+      "final_url": "https://dataforseo.com/help-center/setting-up-the-official-dataforseo-mcp-server-simple-guide",
+      "sha256": "1413a0666afb1987d6b6a84a4e3cf6d1f2249460024f7b97583fb19fe34ecb2f",
+      "text_chars": 9026,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 104,
+      "url": "https://docs.dataforseo.com",
+      "checked_at": "2026-09-24T10:48:43.574579+00:00",
+      "status": 200,
+      "final_url": "https://docs.dataforseo.com/v3/",
+      "sha256": "e97b547f647f4264842a0612386ba8abc6e37aaa4b3ed6f38dde7608e0d7be82",
+      "text_chars": 13155,
+      "auth_guess": "Unknown",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 105,
+      "url": "https://docs.dataforseo.com/v3/on_page-page_screenshot/",
+      "checked_at": "2026-09-24T10:48:43.704087+00:00",
+      "status": 200,
+      "final_url": "https://docs.dataforseo.com/v3/on_page-page_screenshot/",
+      "sha256": "8776e464a8b1ff3c6764abe83c8be067ca76545d23d503ad98a36065b0d3824b",
+      "text_chars": 20069,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

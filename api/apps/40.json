@@ -1,0 +1,32 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 40,
+    "category": "Marketing & Social",
+    "app": "SendGrid",
+    "url": "https://sendgrid.com",
+    "description": "Transactional and marketing email delivery",
+    "auth": [
+      "API key"
+    ],
+    "access": "Account check",
+    "access_detail": "Create the first key in SendGrid UI; sender verification and current trial availability need confirmation.",
+    "surface": "REST; mail send, templates, contacts and statistics",
+    "verdict": "Conditional",
+    "blocker": "Customer access",
+    "note": "API authorization and permission to send as a domain are different setup steps.",
+    "sources": [
+      "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+      "https://www.twilio.com/docs/sendgrid/ui/account-and-settings/api-keys"
+    ],
+    "access_group": "Unknown",
+    "mcp": null,
+    "workflow": "Inspect email template metadata",
+    "next_action": "Confirm SendGrid account eligibility and create a restricted key for reading a test template, without enabling mail sends.",
+    "success_criterion": "Return template metadata and distinguish API scopes from domain-sending verification.",
+    "alternative_action": "If sending is later required, add verified-sender setup and separate send authorization as a new test.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 86,
+    "category": "Finance & Fintech",
+    "app": "QuickBooks",
+    "url": "https://developer.intuit.com",
+    "description": "Small-business accounting",
+    "auth": [
+      "OAuth2"
+    ],
+    "access": "Sandbox",
+    "access_detail": "Developer sandbox provided; production credentials and app assessment are a separate path.",
+    "surface": "REST; accounting entities, invoices, payments and reports",
+    "verdict": "Build",
+    "blocker": "Approval",
+    "note": "Use the Accounting API, not QuickBooks Payments documentation, for bookkeeping use cases.",
+    "sources": [
+      "https://developer.intuit.com/app/developer/qbo/docs/api/accounting/all-entities/journalentry",
+      "https://static.developer.intuit.com/resources/Intuit_App_Partner_Program_Guide.pdf"
+    ],
+    "access_group": "Self-serve",
+    "mcp": null,
+    "workflow": "Read a sandbox invoice",
+    "next_action": "Create an Intuit developer sandbox company, authorize the Accounting API and retrieve a seeded invoice.",
+    "success_criterion": "Return the invoice and realm ID; document token refresh and sandbox scope without touching Payments APIs.",
+    "alternative_action": "Use a sandbox accounting workflow first; production customer authorization and app review remain separate.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

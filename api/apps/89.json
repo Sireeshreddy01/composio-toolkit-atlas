@@ -1,0 +1,38 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 89,
+    "category": "Finance & Fintech",
+    "app": "Ramp",
+    "url": "https://docs.ramp.com",
+    "description": "Corporate spend and expense management",
+    "auth": [
+      "OAuth2",
+      "Token"
+    ],
+    "access": "Sandbox",
+    "access_detail": "Documented sandbox; production capabilities can require developer access review.",
+    "surface": "REST; users, transactions, expenses, cards and accounting",
+    "verdict": "Build",
+    "blocker": "Approval",
+    "note": "Developer MCP is documentation-only; distinguish it from Ramp's account-data MCP.",
+    "sources": [
+      "https://docs.ramp.com/developer-api/v1/api/users",
+      "https://docs.ramp.com/developer-api/v1/virtual-cards",
+      "https://docs.ramp.com/developer-api/v1/developer-mcp"
+    ],
+    "access_group": "Self-serve",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Account MCP distinct from unauthenticated developer-docs MCP",
+      "url": "https://support.ramp.com/ramp-mcp"
+    },
+    "workflow": "Read a developer-sandbox transaction",
+    "next_action": "Obtain Ramp sandbox access and read a fixture transaction with appropriate OAuth or token permissions.",
+    "success_criterion": "Return the sandbox transaction and record the chosen credential path; do not perform financial actions.",
+    "alternative_action": "Distinguish Ramp's documentation MCP from its account-data MCP before choosing which one can serve the workflow.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

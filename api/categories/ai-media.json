@@ -1,0 +1,323 @@
+{
+  "kind": "category_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "category": "AI & Media",
+  "count": 10,
+  "verdict": {
+    "Conditional": 7,
+    "Build": 3
+  },
+  "development_access": {
+    "Gated": 3,
+    "Unknown": 4,
+    "Self-serve": 3
+  },
+  "apps": [
+    {
+      "id": 91,
+      "category": "AI & Media",
+      "app": "NotebookLM",
+      "url": "https://cloud.google.com/gemini",
+      "description": "Source-grounded notebooks and research summaries",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Admin / paid",
+      "access_detail": "Enterprise Google Cloud project, enabled API, IAM roles and product entitlement required.",
+      "surface": "REST enterprise notebook/source management; consumer API not assumed",
+      "verdict": "Conditional",
+      "blocker": "Admin",
+      "note": "The enterprise API is real; a blanket no-API verdict for all NotebookLM editions would be wrong.",
+      "sources": [
+        "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-notebooklm",
+        "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks"
+      ],
+      "access_group": "Gated",
+      "mcp": null,
+      "workflow": "Read an enterprise notebook resource",
+      "next_action": "Confirm NotebookLM Enterprise tenant eligibility and IAM permissions, then inspect a test notebook/source resource through the enterprise API.",
+      "success_criterion": "Return the enterprise resource identifier and document required project/tenant roles.",
+      "alternative_action": "Do not extrapolate this to consumer NotebookLM; investigate that product separately if consumer automation is required.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 92,
+      "category": "AI & Media",
+      "app": "Otter AI",
+      "url": "https://help.otter.ai",
+      "description": "Meeting transcription and summaries",
+      "auth": [
+        "API key",
+        "OAuth2"
+      ],
+      "access": "Paid",
+      "access_detail": "Public API is available to Enterprise workspaces; MCP availability follows a separate account/plan path.",
+      "surface": "Public API plus MCP; meeting/transcript access",
+      "verdict": "Conditional",
+      "blocker": "Subscription",
+      "note": "Do not recycle older no-public-API claims or assume MCP and REST share the same entitlement.",
+      "sources": [
+        "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+        "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server"
+      ],
+      "access_group": "Gated",
+      "mcp": {
+        "kind": "Official",
+        "scope": "OAuth meeting access; API and MCP entitlements differ",
+        "url": "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server"
+      },
+      "workflow": "Retrieve an authorized meeting transcript",
+      "next_action": "Confirm Otter REST API entitlement and MCP entitlement separately, then retrieve a meeting explicitly available to the test user.",
+      "success_criterion": "Return the authorized transcript and record which plan/interface provided access.",
+      "alternative_action": "Choose MCP only if its plan and meeting permissions cover the workflow; otherwise request the REST API enterprise route.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 93,
+      "category": "AI & Media",
+      "app": "Fathom",
+      "url": "https://fathom.video",
+      "description": "AI meeting recording and summaries",
+      "auth": [
+        "API key",
+        "OAuth2"
+      ],
+      "access": "Account check",
+      "access_detail": "Developer guide supports API keys and public OAuth apps; plan entitlement requires verification.",
+      "surface": "REST; meetings, summaries, transcripts and webhooks",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "Fathom meeting product, not the unrelated Fathom Analytics API.",
+      "sources": [
+        "https://developers.fathom.ai/index"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Read a test meeting summary",
+      "next_action": "Confirm Fathom meeting-product API access and retrieve one authorized test meeting's summary or transcript.",
+      "success_criterion": "Return the meeting ID and permitted summary fields; record plan eligibility and webhook availability.",
+      "alternative_action": "Use the documented meeting webhook to avoid polling when available; do not use Fathom Analytics documentation.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 94,
+      "category": "AI & Media",
+      "app": "Consensus",
+      "url": "https://consensus.app",
+      "description": "Evidence-based scientific literature search",
+      "auth": [
+        "OAuth2",
+        "API key"
+      ],
+      "access": "Free",
+      "access_detail": "Self-serve keys on every plan; Free includes 30 shared API/MCP calls monthly. API keys use x-api-key.",
+      "surface": "REST search + MCP; scholarly search and evidence",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "Use current docs; API and MCP share quotas. Enterprise also supports bearer keys; no broad paid-only API gate.",
+      "sources": [
+        "https://docs.consensus.app/api-plans-and-access",
+        "https://docs.consensus.app/consensus-mcp"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Scientific search; OAuth or enterprise bearer key",
+        "url": "https://docs.consensus.app/consensus-mcp"
+      },
+      "workflow": "Run one scholarly search within the shared quota",
+      "next_action": "Use Consensus's documented free API/MCP allowance for one narrow scholarly search with the required key header.",
+      "success_criterion": "Return paper identifiers and evidence fields while recording remaining shared API/MCP quota.",
+      "alternative_action": "Compare MCP search output with REST fields; do not assume separate free quotas for each interface.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 95,
+      "category": "AI & Media",
+      "app": "Reducto",
+      "url": "https://reducto.ai",
+      "description": "Document parsing and structured extraction",
+      "auth": [
+        "API key"
+      ],
+      "access": "Account check",
+      "access_detail": "Self-managed API key in Studio; current free allowance not confirmed.",
+      "surface": "REST/OpenAPI; parse, extract, split and document workflows",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "Hosted MCP uses bearer API key; parsing quality and per-page cost need task-specific evaluation.",
+      "sources": [
+        "https://reducto.ai/developers",
+        "https://github.com/reductoai/mcp-server-reducto"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Document processing via hosted server or local wrapper",
+        "url": "https://github.com/reductoai/mcp-server-reducto"
+      },
+      "workflow": "Inspect a small document-parsing job",
+      "next_action": "Confirm Reducto trial credits and submit an owned, non-sensitive test document to a bounded parse workflow after establishing the page cost.",
+      "success_criterion": "Record job status and parsed fields against a small expected-output fixture, including any extraction errors.",
+      "alternative_action": "Compare hosted MCP parsing controls with REST job options; page cost and parsing accuracy are separate acceptance checks.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 96,
+      "category": "AI & Media",
+      "app": "Devin",
+      "url": "https://docs.devin.ai",
+      "description": "Autonomous coding-agent sessions",
+      "auth": [
+        "API key",
+        "Token"
+      ],
+      "access": "Account check",
+      "access_detail": "Account/API credential required; current plan and usage entitlement need confirmation.",
+      "surface": "REST + MCP; sessions and agent execution",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "New cog_ credentials support MCP; legacy apk_ keys do not. Restrict execution scope and cost.",
+      "sources": [
+        "https://docs.devin.ai/es/api-reference/authentication"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official",
+        "scope": "New cog_ credentials; legacy API keys unsupported for MCP",
+        "url": "https://docs.devin.ai/es/api-reference/authentication"
+      },
+      "workflow": "Inspect an existing Devin test session",
+      "next_action": "Confirm Devin account/API allowance and use a current supported credential to inspect an existing test session without launching autonomous work.",
+      "success_criterion": "Return session metadata and document credential prefix, scope and execution-cost boundaries.",
+      "alternative_action": "Keep new session creation disabled until a separate repository, permission and spending scope is agreed.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 97,
+      "category": "AI & Media",
+      "app": "higgsfield",
+      "url": "https://higgsfield.ai/cli",
+      "description": "AI image/video generation and creative workflows",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Paid",
+      "access_detail": "CLI/skills use account sign-in and plan credits; website free/unlimited generations do not transfer.",
+      "surface": "CLI + MCP; creative generation and assets; broad REST contract not established",
+      "verdict": "Conditional",
+      "blocker": "Subscription",
+      "note": "No separate API key required for the documented CLI/MCP flow; charge against account credits.",
+      "sources": [
+        "https://higgsfield.ai/creator-hub/help-center/integrations/how-do-i-access-higgsfield-via-cli",
+        "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-higgsfield-mcp"
+      ],
+      "access_group": "Gated",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Creative generation using account credits",
+        "url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-higgsfield-mcp"
+      },
+      "workflow": "Inspect creative assets through the documented CLI",
+      "next_action": "Confirm higgsfield account credits and CLI sign-in requirements, then inspect existing authorized asset metadata before generating content.",
+      "success_criterion": "Record the actual CLI/MCP operation and account entitlement; avoid inventing a broad REST contract.",
+      "alternative_action": "Use the official CLI/MCP flow first; capture an authorized asset-detail request only if a required read is missing.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 98,
+      "category": "AI & Media",
+      "app": "Mermaid CLI",
+      "url": "https://github.com/mermaid-js/mermaid-cli",
+      "description": "Render Mermaid text into diagrams",
+      "auth": [
+        "None"
+      ],
+      "access": "Local",
+      "access_detail": "Open-source local CLI; Node/browser runtime required; no account credentials.",
+      "surface": "CLI; diagrams to SVG, PNG or PDF, not a hosted REST service",
+      "verdict": "Build",
+      "blocker": "Runtime",
+      "note": "An agent-callable subprocess tool is sufficient; a native MCP server is not necessary.",
+      "sources": [
+        "https://github.com/mermaid-js/mermaid-cli"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Render a local diagram file",
+      "next_action": "Wrap Mermaid CLI with a fixed input directory, timeout and SVG output path, then render a small known diagram locally.",
+      "success_criterion": "Produce a valid SVG and record the exit code; reject unexpected file paths and bound runtime.",
+      "alternative_action": "Expose the subprocess directly as an agent tool; add an MCP wrapper only if the consuming agent requires that transport.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 99,
+      "category": "AI & Media",
+      "app": "YouTube Transcript",
+      "url": "https://transcriptapi.com",
+      "description": "YouTube transcripts and discovery through TranscriptAPI",
+      "auth": [
+        "API key",
+        "OAuth2"
+      ],
+      "access": "Account check",
+      "access_detail": "API/MCP key and active plan; trial and zero-credit endpoint eligibility should be checked separately.",
+      "surface": "REST + MCP; transcripts, videos, channels, search and playlists",
+      "verdict": "Conditional",
+      "blocker": "Subscription",
+      "note": "This is TranscriptAPI, a third-party service, not a Google YouTube transcript endpoint.",
+      "sources": [
+        "https://transcriptapi.com/docs/mcp/",
+        "https://transcriptapi.com/blog/youtube-api-expansion-2026-09-17",
+        "https://transcriptapi.com/"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official (TranscriptAPI)",
+        "scope": "Third-party YouTube transcript/discovery tools",
+        "url": "https://transcriptapi.com/docs/mcp/"
+      },
+      "workflow": "Retrieve a transcript from TranscriptAPI",
+      "next_action": "Confirm TranscriptAPI account allowance and retrieve one permitted test video's transcript using its documented key flow.",
+      "success_criterion": "Return timed transcript segments and identify TranscriptAPI as the provider rather than Google.",
+      "alternative_action": "Evaluate the vendor MCP for the same transcript workflow and document coverage/language limitations.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 100,
+      "category": "AI & Media",
+      "app": "Grain",
+      "url": "https://grain.com",
+      "description": "Meeting recordings, notes and insights",
+      "auth": [
+        "Token",
+        "OAuth2"
+      ],
+      "access": "Trial",
+      "access_detail": "Business trial includes personal/workspace API and advanced MCP; paid-plan features vary.",
+      "surface": "REST + MCP; recordings, transcripts, notes and workspace data",
+      "verdict": "Build",
+      "blocker": "Subscription",
+      "note": "Distinguish basic/advanced MCP and API plan entitlement; source meeting permissions still apply.",
+      "sources": [
+        "https://support.grain.com/en/articles/9253206-grain-business-trial",
+        "https://support.grain.com/en/articles/9253220-plans",
+        "https://developers.grain.com/mcp"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Meeting data; basic/advanced access depends on plan",
+        "url": "https://developers.grain.com/mcp"
+      },
+      "workflow": "Read an authorized meeting recording",
+      "next_action": "Use a Grain trial and confirm API versus basic/advanced MCP entitlement before retrieving one authorized test recording's metadata.",
+      "success_criterion": "Return the recording ID and permitted transcript/notes fields; record trial and meeting-access limitations.",
+      "alternative_action": "Choose the MCP tier only after comparing required transcript and workspace operations with its documented tool list.",
+      "status": "Proposed; not an authenticated test result"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 26,
+    "category": "Communications",
+    "app": "Discord",
+    "url": "https://discord.com",
+    "description": "Community chat and bot platform",
+    "auth": [
+      "OAuth2",
+      "Token"
+    ],
+    "access": "Account check",
+    "access_detail": "Developer app and bot token; server authorization and privileged-intent approval may limit scope.",
+    "surface": "REST + Gateway; guilds, channels, messages and interactions",
+    "verdict": "Conditional",
+    "blocker": "Approval",
+    "note": "Build around bot permissions; do not treat a user login session as a bot API credential.",
+    "sources": [
+      "https://docs.discord.com/developers/docs/interactions/slash-commands",
+      "https://discord.com/developers/docs/topics/oauth2"
+    ],
+    "access_group": "Unknown",
+    "mcp": null,
+    "workflow": "Read bot-visible Discord channel metadata",
+    "next_action": "Create a test bot, verify developer-account eligibility and grant it access to one test guild and channel.",
+    "success_criterion": "Read bot-visible metadata and demonstrate denial for an ungranted channel.",
+    "alternative_action": "Use the bot API and Gateway as appropriate; do not reverse engineer a personal user session into a self-bot.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

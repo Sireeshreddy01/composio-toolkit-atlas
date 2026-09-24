@@ -1,0 +1,202 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 20,
+  "app": "Gladly",
+  "sources": [
+    "https://developer.gladly.com/rest/"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 38,
+      "url": "https://developer.gladly.com/rest/",
+      "checked_at": "2026-09-24T10:48:32.390106+00:00",
+      "status": 200,
+      "final_url": "https://developer.gladly.com/rest/",
+      "sha256": "710815b335ebc1a022857864641acb704b6f49eaf3e8f27ceecfb8cae1fb9122",
+      "text_chars": 140576,
+      "auth_guess": "Basic",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": {
+    "id": 20,
+    "app": "Gladly",
+    "category": "Support & Helpdesk",
+    "product_scope": "Gladly REST API and inbound Lookup API integrations",
+    "fields": {
+      "authentication": {
+        "answer": "REST uses token-based Basic authentication with a user's email and API token. The user must have API User permission granted by an administrator.",
+        "status": "supported",
+        "caveat": "Tokens are associated with designated users; the guide states they can perform any API request without restriction.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 20,
+          "field": "authentication",
+          "assessment": "supported",
+          "reason": "S060 explicitly specifies token-based Basic authentication, email/token credentials and administrator-managed API User permission."
+        },
+        "citations": [
+          {
+            "source_id": "S060",
+            "url": "https://developer.gladly.com/rest/",
+            "retrieved_at": "2026-09-24T13:29:54.084820+00:00",
+            "source_sha256": "962bdbd0ee78026f25f2c97b2e1c34f99702a6f94fcff7eef696bca225e71bc9",
+            "quote_sha256": "88ea7a758e1c92b9fd0d55b155bab1db3eb488124de78d5197a32c0f48e3e567",
+            "normalized_offset": 3162,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S060",
+            "url": "https://developer.gladly.com/rest/",
+            "retrieved_at": "2026-09-24T13:29:54.084820+00:00",
+            "source_sha256": "962bdbd0ee78026f25f2c97b2e1c34f99702a6f94fcff7eef696bca225e71bc9",
+            "quote_sha256": "fec43e659796b985d23bf6ffd0353f62c5a3cf1a01e247c33baa3d903d599619",
+            "normalized_offset": 3531,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S060",
+            "url": "https://developer.gladly.com/rest/",
+            "retrieved_at": "2026-09-24T13:29:54.084820+00:00",
+            "source_sha256": "962bdbd0ee78026f25f2c97b2e1c34f99702a6f94fcff7eef696bca225e71bc9",
+            "quote_sha256": "b22a766e7707670495f0b5f02ab4e117be3259c667c2639630d83868de0609b8",
+            "normalized_offset": 3268,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "development_access": {
+        "answer": "A separate API sandbox is available through Gladly enablement. API use also requires administrator-assigned API User permission.",
+        "status": "supported",
+        "caveat": "Sandbox cost, eligibility and provisioning time are unspecified; availability does not establish self-service signup.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 20,
+          "field": "development_access",
+          "assessment": "supported",
+          "reason": "S060 states Gladly will enable a separate API sandbox and documents administrator-assigned permissions; self-service and pricing remain unspecified."
+        },
+        "citations": [
+          {
+            "source_id": "S060",
+            "url": "https://developer.gladly.com/rest/",
+            "retrieved_at": "2026-09-24T13:29:54.084820+00:00",
+            "source_sha256": "962bdbd0ee78026f25f2c97b2e1c34f99702a6f94fcff7eef696bca225e71bc9",
+            "quote_sha256": "e2515a7f7e0a1e6c41e35ce81250d6fbaa156f9c8030a0e08df1286cc7936577",
+            "normalized_offset": 1437,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S060",
+            "url": "https://developer.gladly.com/rest/",
+            "retrieved_at": "2026-09-24T13:29:54.084820+00:00",
+            "source_sha256": "962bdbd0ee78026f25f2c97b2e1c34f99702a6f94fcff7eef696bca225e71bc9",
+            "quote_sha256": "a40529af54af92e1707fe535153a1de8c27e0d87a0ae0428fe67f6384fc3b8a3",
+            "normalized_offset": 1979,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "api_surface": {
+        "answer": "REST/JSON APIs cover agents, public answers, conversation topics, inbound endpoints, customer identity JWTs and webhooks. Lookup API lets Gladly request customer data from your service.",
+        "status": "supported",
+        "caveat": "The reference is truncated. Lookup integrations are services implemented by the customer, not additional hosted query endpoints.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 20,
+          "field": "api_surface",
+          "assessment": "supported",
+          "reason": "S060 substantively describes the listed REST resources, JWTs and webhooks, and explicitly distinguishes customer-hosted Lookup services."
+        },
+        "citations": [
+          {
+            "source_id": "S060",
+            "url": "https://developer.gladly.com/rest/",
+            "retrieved_at": "2026-09-24T13:29:54.084820+00:00",
+            "source_sha256": "962bdbd0ee78026f25f2c97b2e1c34f99702a6f94fcff7eef696bca225e71bc9",
+            "quote_sha256": "df87d64f074f23a67bc1a65fdd2b1b0b1c3e3f40b9c96285a3e5840ac6c3da7b",
+            "normalized_offset": 3726,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S060",
+            "url": "https://developer.gladly.com/rest/",
+            "retrieved_at": "2026-09-24T13:29:54.084820+00:00",
+            "source_sha256": "962bdbd0ee78026f25f2c97b2e1c34f99702a6f94fcff7eef696bca225e71bc9",
+            "quote_sha256": "c470543d1c170b59126f98ed50c6f699e0c8628d3eabf23b275f1136a336eed9",
+            "normalized_offset": 4026,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S060",
+            "url": "https://developer.gladly.com/rest/",
+            "retrieved_at": "2026-09-24T13:29:54.084820+00:00",
+            "source_sha256": "962bdbd0ee78026f25f2c97b2e1c34f99702a6f94fcff7eef696bca225e71bc9",
+            "quote_sha256": "b039c4b1fb4555e9f913003626f49b6d0f8348b88e2ff10106f9fa33fe0ea4e0",
+            "normalized_offset": 4423,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S060",
+            "url": "https://developer.gladly.com/rest/",
+            "retrieved_at": "2026-09-24T13:29:54.084820+00:00",
+            "source_sha256": "962bdbd0ee78026f25f2c97b2e1c34f99702a6f94fcff7eef696bca225e71bc9",
+            "quote_sha256": "7d926e8f3d101922290d62a61c193a33fd92bbad7a23875b274aa344f869cfaa",
+            "normalized_offset": 5007,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S060",
+            "url": "https://developer.gladly.com/rest/",
+            "retrieved_at": "2026-09-24T13:29:54.084820+00:00",
+            "source_sha256": "962bdbd0ee78026f25f2c97b2e1c34f99702a6f94fcff7eef696bca225e71bc9",
+            "quote_sha256": "d59c884c66159cdfb41170c93637f26f2576de28f4a5b02503e71ac293c4cbc1",
+            "normalized_offset": 973,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S060",
+            "url": "https://developer.gladly.com/rest/",
+            "retrieved_at": "2026-09-24T13:29:54.084820+00:00",
+            "source_sha256": "962bdbd0ee78026f25f2c97b2e1c34f99702a6f94fcff7eef696bca225e71bc9",
+            "quote_sha256": "280b4de25a55e3963eb2a76684c272b784db24dd4b96236bab9c394d4eae2d09",
+            "normalized_offset": 5970,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S060",
+            "url": "https://developer.gladly.com/rest/",
+            "retrieved_at": "2026-09-24T13:29:54.084820+00:00",
+            "source_sha256": "962bdbd0ee78026f25f2c97b2e1c34f99702a6f94fcff7eef696bca225e71bc9",
+            "quote_sha256": "13d6c097a341851158272ec50cfcc7efd4ba53552daa0b48648c10dd10eba63c",
+            "normalized_offset": 6597,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "mcp": {
+        "answer": "Vendor MCP availability is unresolved.",
+        "status": "unresolved",
+        "caveat": "The REST reference contains no MCP evidence; the homepage retrieval failed.",
+        "citation_binding_passed": false,
+        "verification": {
+          "id": 20,
+          "field": "mcp",
+          "assessment": "unresolved",
+          "reason": "S060 supplies no MCP evidence, and the failed homepage retrieval cannot establish availability or absence."
+        },
+        "citations": []
+      }
+    },
+    "access_class": "Gated",
+    "verdict": "Access prerequisite",
+    "decision_reason": "Sandbox access involves vendor enablement, and API credentials require an administrator-assigned permission.",
+    "next_step": "Obtain Gladly's sandbox provisioning requirements; success is a documented eligibility, cost and approval path for an API-enabled sandbox."
+  },
+  "human_review": "pending",
+  "authenticated_test": false
+}

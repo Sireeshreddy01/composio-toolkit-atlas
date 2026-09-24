@@ -1,0 +1,199 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 2,
+  "app": "HubSpot",
+  "sources": [
+    "https://developers.hubspot.com/ai-tools/mcp",
+    "https://developers.hubspot.com/blog/harnessing-the-power-of-hubspots-public-apis-with-postman"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 76,
+      "url": "https://developers.hubspot.com/ai-tools/mcp",
+      "checked_at": "2026-09-24T10:48:38.656050+00:00",
+      "status": 200,
+      "final_url": "https://developers.hubspot.com/ai-tools/mcp",
+      "sha256": "d43c24fac6272d085e43002b5342eafd7a61eb68d6eb114869a0f3e131cfef98",
+      "text_chars": 8599,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 77,
+      "url": "https://developers.hubspot.com/blog/harnessing-the-power-of-hubspots-public-apis-with-postman",
+      "checked_at": "2026-09-24T10:48:39.024070+00:00",
+      "status": 200,
+      "final_url": "https://developers.hubspot.com/blog/harnessing-the-power-of-hubspots-public-apis-with-postman",
+      "sha256": "2ae23ca179212487abf50271e201708831531183eb09ce66c142baa7babc905a",
+      "text_chars": 12411,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": {
+    "id": 2,
+    "app": "HubSpot",
+    "category": "CRM & Sales",
+    "product_scope": "HubSpot APIs, remote CRM MCP and local Developer MCP",
+    "fields": {
+      "authentication": {
+        "answer": "APIs support OAuth and private app bearer tokens. Private tokens target personal or account-specific integrations; remote MCP uses OAuth, while local MCP uses CLI authentication.",
+        "status": "supported",
+        "caveat": "Private apps are unavailable on developer accounts. The MCP page's future OAuth 2.1 migration language is temporally unclear.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 2,
+          "field": "authentication",
+          "assessment": "supported",
+          "reason": "S003 documents OAuth and private tokens; S004 distinguishes remote OAuth from local CLI authentication. The developer-account restriction is preserved."
+        },
+        "citations": [
+          {
+            "source_id": "S003",
+            "url": "https://developers.hubspot.com/blog/harnessing-the-power-of-hubspots-public-apis-with-postman",
+            "retrieved_at": "2026-09-24T13:29:36.750148+00:00",
+            "source_sha256": "1fd3ff0292c2270443bdd2c90606a51c87eb91f014790960a70681785881febe",
+            "quote_sha256": "3fd029920f39542e394ca94afd9702de5b81c3371b50de862fb319570e8362fa",
+            "normalized_offset": 1747,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S004",
+            "url": "https://developers.hubspot.com/ai-tools/mcp",
+            "retrieved_at": "2026-09-24T13:29:36.750253+00:00",
+            "source_sha256": "db2d3598d07859417d464724845d560236f3f78c287d0f037cae6ff23c6cc85e",
+            "quote_sha256": "063f2f82027c962f4e61d5c855cb3bb3c6d9de0aa33bbf432839c647a31f9e0d",
+            "normalized_offset": 5387,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S004",
+            "url": "https://developers.hubspot.com/ai-tools/mcp",
+            "retrieved_at": "2026-09-24T13:29:36.750253+00:00",
+            "source_sha256": "db2d3598d07859417d464724845d560236f3f78c287d0f037cae6ff23c6cc85e",
+            "quote_sha256": "ae3c069ed71c88377ac7688da3423510bc955569b973b7a3bfb249d714ed622c",
+            "normalized_offset": 6487,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "development_access": {
+        "answer": "A free developer account can create a test account for the documented API testing workflow. Remote MCP separately requires the new Developer Platform and an initial admin connection.",
+        "status": "supported",
+        "caveat": "Test access does not establish production entitlements or distribution eligibility. Local Developer MCP requires Platform v2025.2.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 2,
+          "field": "development_access",
+          "assessment": "supported",
+          "reason": "S003 explicitly provides the free developer/test-account route; S004 states the separate platform and admin prerequisites for remote MCP."
+        },
+        "citations": [
+          {
+            "source_id": "S003",
+            "url": "https://developers.hubspot.com/blog/harnessing-the-power-of-hubspots-public-apis-with-postman",
+            "retrieved_at": "2026-09-24T13:29:36.750148+00:00",
+            "source_sha256": "1fd3ff0292c2270443bdd2c90606a51c87eb91f014790960a70681785881febe",
+            "quote_sha256": "e9eb2f56348e4c2c66d53e6b6408c2d3c1d81ba7e8440755005a273b7bbdf2ba",
+            "normalized_offset": 1561,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S004",
+            "url": "https://developers.hubspot.com/ai-tools/mcp",
+            "retrieved_at": "2026-09-24T13:29:36.750253+00:00",
+            "source_sha256": "db2d3598d07859417d464724845d560236f3f78c287d0f037cae6ff23c6cc85e",
+            "quote_sha256": "df7799187e6b2a48b7a9a2324099c4be0231a1f7c7e27e9a1aa5ced4392939f4",
+            "normalized_offset": 6289,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "api_surface": {
+        "answer": "HTTP APIs include contact creation, marketing email and subscription preferences. The packet does not establish the full CRM API resource catalog.",
+        "status": "supported",
+        "caveat": "The broader object list in S004 describes MCP coverage, not independently verified HTTP API coverage.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 2,
+          "field": "api_surface",
+          "assessment": "supported",
+          "reason": "S003 describes HTTP requests, contact creation, marketing email APIs and subscription preferences without establishing a complete resource catalog."
+        },
+        "citations": [
+          {
+            "source_id": "S003",
+            "url": "https://developers.hubspot.com/blog/harnessing-the-power-of-hubspots-public-apis-with-postman",
+            "retrieved_at": "2026-09-24T13:29:36.750148+00:00",
+            "source_sha256": "1fd3ff0292c2270443bdd2c90606a51c87eb91f014790960a70681785881febe",
+            "quote_sha256": "6028540ac332c722071c2992e147b1284bf6e6bc2057d2a04c57c6698bb1996d",
+            "normalized_offset": 1012,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S003",
+            "url": "https://developers.hubspot.com/blog/harnessing-the-power-of-hubspots-public-apis-with-postman",
+            "retrieved_at": "2026-09-24T13:29:36.750148+00:00",
+            "source_sha256": "1fd3ff0292c2270443bdd2c90606a51c87eb91f014790960a70681785881febe",
+            "quote_sha256": "03856145bdb94d8fb3e9abd17862976be505b9d5c0323134a6e6d96e9451be65",
+            "normalized_offset": 6578,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "mcp": {
+        "answer": "Vendor remote CRM MCP and local CLI Developer MCP are documented. Remote CRM write support is conflicting: the same page promises read/write access and later describes standard records as read-only.",
+        "status": "needs_review",
+        "caveat": "Sensitive custom properties are excluded. Remote distribution limits apply; write capability requires clarification.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 2,
+          "field": "mcp",
+          "assessment": "conflicting",
+          "reason": "S004 establishes both servers but describes remote standard-record access as both read/write and read-only."
+        },
+        "citations": [
+          {
+            "source_id": "S004",
+            "url": "https://developers.hubspot.com/ai-tools/mcp",
+            "retrieved_at": "2026-09-24T13:29:36.750253+00:00",
+            "source_sha256": "db2d3598d07859417d464724845d560236f3f78c287d0f037cae6ff23c6cc85e",
+            "quote_sha256": "5edd94d5106c3cbd11fd8897eb07a977ae4b08aa99743a18787f569de13a7ee6",
+            "normalized_offset": 114,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S004",
+            "url": "https://developers.hubspot.com/ai-tools/mcp",
+            "retrieved_at": "2026-09-24T13:29:36.750253+00:00",
+            "source_sha256": "db2d3598d07859417d464724845d560236f3f78c287d0f037cae6ff23c6cc85e",
+            "quote_sha256": "1a74cfa9e719c3921a8b9545d41fd6b90e4078dcd930033a2d27109c0f9b8d10",
+            "normalized_offset": 553,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S004",
+            "url": "https://developers.hubspot.com/ai-tools/mcp",
+            "retrieved_at": "2026-09-24T13:29:36.750253+00:00",
+            "source_sha256": "db2d3598d07859417d464724845d560236f3f78c287d0f037cae6ff23c6cc85e",
+            "quote_sha256": "880d6eb88f6ef11527752a18046c9231ced94499358b35f0f8d6cc79f8610f07",
+            "normalized_offset": 6831,
+            "quote_binding_passed": true
+          }
+        ]
+      }
+    },
+    "access_class": "Self-serve",
+    "verdict": "Prototype candidate",
+    "decision_reason": "The API tutorial explicitly supplies a free developer/test-account route. Remote MCP has separate admin prerequisites. Nothing was authenticated or tested.",
+    "next_step": "Obtain the current remote MCP tool-and-scope reference; success is an explicit statement resolving whether standard CRM records support writes."
+  },
+  "human_review": "pending",
+  "authenticated_test": false
+}

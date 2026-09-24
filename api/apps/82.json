@@ -1,0 +1,38 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 82,
+    "category": "Finance & Fintech",
+    "app": "Plaid",
+    "url": "https://plaid.com/docs",
+    "description": "Bank-account connectivity and financial data",
+    "auth": [
+      "API key",
+      "Token"
+    ],
+    "access": "Sandbox",
+    "access_detail": "Self-serve Sandbox keys; production approval and product access are separate.",
+    "surface": "HTTP API; accounts, transactions, identity and payment-related products",
+    "verdict": "Build",
+    "blocker": "Production entitlement",
+    "note": "Plaid's bank OAuth is not the same as developer API authentication with client_id/secret.",
+    "sources": [
+      "https://plaid.com/docs/sandbox/",
+      "https://plaid.com/docs/quickstart/",
+      "https://plaid.com/docs/api/"
+    ],
+    "access_group": "Self-serve",
+    "mcp": {
+      "kind": "Official; partial",
+      "scope": "Dashboard developer tools; not blanket bank-data access",
+      "url": "https://plaid.com/docs/resources/mcp/"
+    },
+    "workflow": "Read sandbox transaction fixtures",
+    "next_action": "Create a Plaid sandbox Item and use client_id/secret plus the sandbox access token to retrieve fixture transactions.",
+    "success_criterion": "Return sandbox account/transaction data and document each credential's purpose without connecting a real bank.",
+    "alternative_action": "Treat institution OAuth and developer authentication separately; production product approval is a later prerequisite.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

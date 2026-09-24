@@ -1,0 +1,32 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 33,
+    "category": "Marketing & Social",
+    "app": "LinkedIn Ads",
+    "url": "https://learn.microsoft.com/linkedin/marketing",
+    "description": "Professional-audience advertising",
+    "auth": [
+      "OAuth2"
+    ],
+    "access": "Approval",
+    "access_detail": "Advertising API access requires approval; consumer sign-in access does not include Marketing APIs.",
+    "surface": "REST; ad accounts, campaigns, creatives and reporting",
+    "verdict": "Conditional",
+    "blocker": "Approval",
+    "note": "Start outreach and access application before promising a production toolkit.",
+    "sources": [
+      "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+      "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access?view=li-lms-2026-03"
+    ],
+    "access_group": "Gated",
+    "mcp": null,
+    "workflow": "Obtain LinkedIn Ads development approval",
+    "next_action": "Prepare a LinkedIn Marketing API access request for a specific read-only campaign-reporting workflow and ask about test accounts.",
+    "success_criterion": "Receive a documented access decision and the scopes needed for campaign reporting.",
+    "alternative_action": "If approval is pending, use an authorized report export as a limited data-ingestion prototype, not an API substitute.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

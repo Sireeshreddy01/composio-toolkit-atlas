@@ -1,0 +1,70 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 75,
+  "app": "Asana",
+  "sources": [
+    "https://developers.asana.com/docs/authentication",
+    "https://developers.asana.com/docs/integrating-with-asanas-mcp-server",
+    "https://developers.asana.com/docs/overview",
+    "https://developers.asana.com/docs/personal-access-token"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 60,
+      "url": "https://developers.asana.com/docs/authentication",
+      "checked_at": "2026-09-24T10:48:36.147266+00:00",
+      "status": 200,
+      "final_url": "https://developers.asana.com/docs/authentication",
+      "sha256": "62a51dc100ef5684d2520b02c237612b1e8a1658ee1b33ff3012289352765d83",
+      "text_chars": 6335,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 61,
+      "url": "https://developers.asana.com/docs/integrating-with-asanas-mcp-server",
+      "checked_at": "2026-09-24T10:48:36.816565+00:00",
+      "status": 200,
+      "final_url": "https://developers.asana.com/docs/integrating-with-asanas-mcp-server",
+      "sha256": "fda127bd58326c6a0d37fc6300cfcec4b376aa296b4663bad6caba10e2439bd2",
+      "text_chars": 9798,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 62,
+      "url": "https://developers.asana.com/docs/overview",
+      "checked_at": "2026-09-24T10:48:36.852295+00:00",
+      "status": 200,
+      "final_url": "https://developers.asana.com/docs/overview",
+      "sha256": "1729a2ec03828243b13c7fa29a0672497536909e2c00a85b2584e6e5ab4c0814",
+      "text_chars": 7819,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Self-serve",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 63,
+      "url": "https://developers.asana.com/docs/personal-access-token",
+      "checked_at": "2026-09-24T10:48:37.000997+00:00",
+      "status": 200,
+      "final_url": "https://developers.asana.com/docs/personal-access-token",
+      "sha256": "f321184f1db6a872b8fab2371a9c8a8dfbacd57666cabd8cbe8722a45e58f6d4",
+      "text_chars": 4697,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

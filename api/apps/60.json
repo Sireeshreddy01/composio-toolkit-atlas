@@ -1,0 +1,34 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 60,
+    "category": "Data & SEO",
+    "app": "Clay",
+    "url": "https://clay.com",
+    "description": "GTM data enrichment and workflows",
+    "auth": [
+      "API key",
+      "OAuth2"
+    ],
+    "access": "Account check",
+    "access_detail": "First-party agent docs describe a keyed REST API and OAuth CLI; feature/plan entitlement needs verification.",
+    "surface": "REST/workflow calls and webhooks; exact general CRUD breadth unresolved",
+    "verdict": "Conditional",
+    "blocker": "Plan check",
+    "note": "Do not confuse Clay's outbound HTTP integration with its own API; validate the routine/workflow contract.",
+    "sources": [
+      "https://agent-docs.clay.com/blog/implementation-guide/we-want-to-test-two-versions-of-an-outbound-sequence-without-spinning-up-a-whole-new-campaign-each-t-fdd053",
+      "https://university.clay.com/docs/webhook-integration-guide",
+      "https://www.clay.com/pricing"
+    ],
+    "access_group": "Unknown",
+    "mcp": null,
+    "workflow": "Trigger or inspect one defined Clay workflow",
+    "next_action": "Identify the specific Clay inbound workflow or routine contract and confirm account entitlement before claiming general CRUD coverage.",
+    "success_criterion": "Document the exact input, output and auth contract for one workflow with a test record.",
+    "alternative_action": "Use a documented webhook or export when available; do not mistake Clay's outbound HTTP action for an inbound Clay API.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

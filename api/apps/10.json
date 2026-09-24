@@ -1,0 +1,34 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 10,
+    "category": "CRM & Sales",
+    "app": "DealCloud",
+    "url": "https://api.docs.dealcloud.com/docs/apikeys",
+    "description": "Deal and relationship management for financial firms",
+    "auth": [
+      "OAuth2",
+      "API key"
+    ],
+    "access": "Admin / paid",
+    "access_detail": "Customer tenant and API-enabled user group; admin or customer-success help if missing.",
+    "surface": "REST; data, schema, users, publications and backups",
+    "verdict": "Conditional",
+    "blocker": "Admin",
+    "note": "API key is exchanged through client-credentials OAuth; it is not simply a static bearer key.",
+    "sources": [
+      "https://api.docs.dealcloud.com/docs/token",
+      "https://api.docs.dealcloud.com/docs/apikeys",
+      "https://api.docs.dealcloud.com/docs"
+    ],
+    "access_group": "Gated",
+    "mcp": null,
+    "workflow": "Inspect a DealCloud entity schema",
+    "next_action": "Ask an authorized DealCloud administrator for a test instance and the client-credentials setup, then read one entity schema.",
+    "success_criterion": "Obtain a test token and return schema metadata for the approved entity.",
+    "alternative_action": "If direct test access is unavailable, request a sanitized schema export and documented token flow from the vendor.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

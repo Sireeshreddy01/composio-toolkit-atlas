@@ -1,0 +1,70 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 65,
+  "app": "Supabase",
+  "sources": [
+    "https://supabase.com/docs",
+    "https://supabase.com/docs/guides/platform/billing-on-supabase",
+    "https://supabase.com/docs/guides/platform/personal-access-tokens",
+    "https://supabase.com/docs/reference/api/introduction"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 187,
+      "url": "https://supabase.com/docs",
+      "checked_at": "2026-09-24T10:48:56.805084+00:00",
+      "status": 200,
+      "final_url": "https://supabase.com/docs",
+      "sha256": "5a826bb7135061d3949843f441d7c0ed62546867c21f50e946320438507685c4",
+      "text_chars": 3513,
+      "auth_guess": "OAuth2",
+      "surface_guess": "GraphQL",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 188,
+      "url": "https://supabase.com/docs/guides/platform/personal-access-tokens",
+      "checked_at": "2026-09-24T10:48:56.818107+00:00",
+      "status": 200,
+      "final_url": "https://supabase.com/docs/guides/platform/personal-access-tokens",
+      "sha256": "52c65747880db95e2e0f45269da3ab43d0c0b8a0c26a8c648497bda83f8293ef",
+      "text_chars": 13555,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 189,
+      "url": "https://supabase.com/docs/reference/api/introduction",
+      "checked_at": "2026-09-24T10:48:57.385386+00:00",
+      "status": 200,
+      "final_url": "https://supabase.com/docs/reference/api/introduction",
+      "sha256": "9aa6678ae310da90027060534280396113c2ced16a23c831f44ab14d43082be3",
+      "text_chars": 11848,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 246,
+      "url": "https://supabase.com/docs/guides/platform/billing-on-supabase",
+      "checked_at": "2026-09-24T10:56:39.803249+00:00",
+      "status": 200,
+      "final_url": "https://supabase.com/docs/guides/platform/billing-on-supabase",
+      "sha256": "674598910c8d4fbabef9e3706bed9997daa63e224e31920c5698f13a3d72ec16",
+      "text_chars": 5965,
+      "auth_guess": "Token",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

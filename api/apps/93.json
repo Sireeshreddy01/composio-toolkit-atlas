@@ -1,0 +1,32 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 93,
+    "category": "AI & Media",
+    "app": "Fathom",
+    "url": "https://fathom.video",
+    "description": "AI meeting recording and summaries",
+    "auth": [
+      "API key",
+      "OAuth2"
+    ],
+    "access": "Account check",
+    "access_detail": "Developer guide supports API keys and public OAuth apps; plan entitlement requires verification.",
+    "surface": "REST; meetings, summaries, transcripts and webhooks",
+    "verdict": "Conditional",
+    "blocker": "Plan check",
+    "note": "Fathom meeting product, not the unrelated Fathom Analytics API.",
+    "sources": [
+      "https://developers.fathom.ai/index"
+    ],
+    "access_group": "Unknown",
+    "mcp": null,
+    "workflow": "Read a test meeting summary",
+    "next_action": "Confirm Fathom meeting-product API access and retrieve one authorized test meeting's summary or transcript.",
+    "success_criterion": "Return the meeting ID and permitted summary fields; record plan eligibility and webhook availability.",
+    "alternative_action": "Use the documented meeting webhook to avoid polling when available; do not use Fathom Analytics documentation.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 62,
+    "category": "Developer & Infra",
+    "app": "Vercel",
+    "url": "https://vercel.com/docs/rest-api",
+    "description": "Application deployment and hosting",
+    "auth": [
+      "Token",
+      "OAuth2"
+    ],
+    "access": "Account check",
+    "access_detail": "Account access tokens; plan-specific deployment/resource limits need verification.",
+    "surface": "REST; projects, deployments, domains and teams",
+    "verdict": "Conditional",
+    "blocker": "Plan check",
+    "note": "A platform that hosts MCP servers does not by itself prove a native account-management MCP exists.",
+    "sources": [
+      "https://vercel.com/docs/rest-api"
+    ],
+    "access_group": "Unknown",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Vercel deployment/project workflows",
+      "url": "https://vercel.com/docs/agent-resources/vercel-mcp"
+    },
+    "workflow": "Read one deployment's metadata",
+    "next_action": "Confirm Vercel API access on the selected plan and use a team-scoped token to inspect a test deployment.",
+    "success_criterion": "Return deployment and project identifiers within the selected team; record account limits.",
+    "alternative_action": "Inspect an authorized deployment UI request only for a required field absent from the public API; hosting MCP servers is not native MCP coverage.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

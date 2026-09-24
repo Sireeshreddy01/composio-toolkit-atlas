@@ -1,0 +1,42 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 22,
+  "app": "Twilio",
+  "sources": [
+    "https://www.twilio.com/docs/iam/api-keys",
+    "https://www.twilio.com/docs/usage/tutorials/how-to-use-your-free-trial-account"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 227,
+      "url": "https://www.twilio.com/docs/iam/api-keys",
+      "checked_at": "2026-09-24T10:49:05.171346+00:00",
+      "status": 200,
+      "final_url": "https://www.twilio.com/docs/iam/api-keys",
+      "sha256": "17f707ecd0e7bbc67e93fb8851603985bccb3d5bac04ddf044dbfe209af06a01",
+      "text_chars": 5240,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 230,
+      "url": "https://www.twilio.com/docs/usage/tutorials/how-to-use-your-free-trial-account",
+      "checked_at": "2026-09-24T10:49:05.467465+00:00",
+      "status": 200,
+      "final_url": "https://www.twilio.com/docs/usage/tutorials/how-to-use-your-free-trial-account",
+      "sha256": "baf6503cec82d4a94d55f6b073125e9f6084694d1a2f1b1a49f4522e5c69b707",
+      "text_chars": 18914,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Self-serve",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

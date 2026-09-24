@@ -1,0 +1,311 @@
+{
+  "kind": "category_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "category": "Communications",
+  "count": 10,
+  "verdict": {
+    "Build": 6,
+    "Conditional": 4
+  },
+  "development_access": {
+    "Self-serve": 6,
+    "Unknown": 3,
+    "Gated": 1
+  },
+  "apps": [
+    {
+      "id": 21,
+      "category": "Communications",
+      "app": "Slack",
+      "url": "https://slack.com",
+      "description": "Team messaging and collaboration",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Sandbox",
+      "access_detail": "Developer sandbox available; workspace app approval and scopes can restrict installation.",
+      "surface": "HTTP Web API + events; messages, channels, users and files",
+      "verdict": "Build",
+      "blocker": "Admin",
+      "note": "A token does not grant access to every conversation; scopes and membership still apply.",
+      "sources": [
+        "https://docs.slack.dev/authentication/installing-with-oauth/",
+        "https://docs.slack.dev/reference/methods/admin.apps.approve/"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Slack account access; distinct from Slackbot as MCP client",
+        "url": "https://slack.com/help/articles/48855576908307-Guide-to-Model-Context-Protocol-in-Slack"
+      },
+      "workflow": "Read a message in a test channel",
+      "next_action": "Install a Slack app in a sandbox with minimum history scopes and invite it to one test channel before reading a message.",
+      "success_criterion": "Retrieve the seeded message; show that an unjoined or ungranted conversation remains inaccessible.",
+      "alternative_action": "Compare official MCP channel coverage against the required scopes; avoid capturing a personal Slack session as an app credential.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 22,
+      "category": "Communications",
+      "app": "Twilio",
+      "url": "https://twilio.com",
+      "description": "Programmable messaging and voice",
+      "auth": [
+        "API key",
+        "Basic",
+        "Token"
+      ],
+      "access": "Trial",
+      "access_detail": "Free trial exposes Account SID and Auth Token; production messaging has additional requirements.",
+      "surface": "REST; SMS, voice, numbers and verification",
+      "verdict": "Build",
+      "blocker": "Production entitlement",
+      "note": "Separate trial restrictions and usage charges from the ability to get credentials.",
+      "sources": [
+        "https://www.twilio.com/docs/usage/tutorials/how-to-use-your-free-trial-account",
+        "https://www.twilio.com/docs/iam/api-keys"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Read a trial messaging record",
+      "next_action": "Use Twilio trial credentials to inspect a test messaging record and document trial restrictions separately from future send costs.",
+      "success_criterion": "Return the approved message's status without sending messages or changing phone-number settings.",
+      "alternative_action": "Choose a messaging-specific auth path first; add voice or verification only after their separate requirements are checked.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 23,
+      "category": "Communications",
+      "app": "Zoho Cliq",
+      "url": "https://zoho.com/cliq",
+      "description": "Team chat, channels and bots",
+      "auth": [
+        "OAuth2"
+      ],
+      "access": "Account check",
+      "access_detail": "Register a Zoho client and authorize a workspace; free API entitlement not separately verified.",
+      "surface": "REST; messages, channels, users and bots",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "Use the Zoho-oauthtoken header and correct regional account endpoints.",
+      "sources": [
+        "https://www.zoho.com/cliq/help/restapi/v3/introduction/",
+        "https://www.zoho.com/cliq/help/restapi/v3/oauth/"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Read a channel with regional OAuth",
+      "next_action": "Confirm Zoho Cliq plan access and authorize a test channel using the correct regional token endpoint and header.",
+      "success_criterion": "Retrieve the approved channel data and record the region, scopes and edition allowance.",
+      "alternative_action": "Inspect an authorized channel's network read only if the public API lacks the required field; document the session dependency.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 24,
+      "category": "Communications",
+      "app": "Lark (Larksuite)",
+      "url": "https://open.larksuite.com",
+      "description": "Integrated chat, docs and workplace suite",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Admin / paid",
+      "access_detail": "App ID and secret plus user/tenant authorization; organization approval and scopes may apply.",
+      "surface": "REST; messaging, docs, calendars, base and contacts",
+      "verdict": "Conditional",
+      "blocker": "Admin",
+      "note": "Official MCP supports user and tenant token modes; validate the chosen app's permissions.",
+      "sources": [
+        "https://github.com/larksuite/lark-openapi-mcp/blob/main/docs/usage/configuration/configuration.md",
+        "https://open.larksuite.com/"
+      ],
+      "access_group": "Gated",
+      "mcp": {
+        "kind": "Official",
+        "scope": "User/tenant token modes and selected OpenAPI tools",
+        "url": "https://github.com/larksuite/lark-openapi-mcp/blob/main/docs/usage/configuration/configuration.md"
+      },
+      "workflow": "Read an authorized Lark document",
+      "next_action": "Obtain tenant approval, choose user or tenant token mode, and read one document explicitly shared with the integration.",
+      "success_criterion": "Read the selected document while an unshared document remains inaccessible.",
+      "alternative_action": "Use official MCP if its permission model and document tools match; otherwise scope a direct document API client.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 25,
+      "category": "Communications",
+      "app": "Pumble",
+      "url": "https://pumble.com",
+      "description": "Team chat and collaboration",
+      "auth": [
+        "API key",
+        "Token"
+      ],
+      "access": "Free",
+      "access_detail": "API and integrations available across subscriptions; install the API-key integration.",
+      "surface": "REST; messaging, channels and workspace operations",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "MCP configuration requires the documented token headers, not a guessed generic bearer flow.",
+      "sources": [
+        "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration/",
+        "https://pumble.com/integrations/plaky"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Messaging and workspace actions",
+        "url": "https://pumble.com/help/integrations/automation-workflow-integrations/how-to-use-the-pumble-mcp-server/"
+      },
+      "workflow": "Read a Pumble test channel",
+      "next_action": "Connect Pumble using its documented token headers and retrieve one approved channel or message through API or MCP.",
+      "success_criterion": "Return the seeded channel/message using the documented headers and account limits.",
+      "alternative_action": "Check MCP tool coverage before writing a wrapper; do not guess a generic bearer authorization scheme.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 26,
+      "category": "Communications",
+      "app": "Discord",
+      "url": "https://discord.com",
+      "description": "Community chat and bot platform",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Account check",
+      "access_detail": "Developer app and bot token; server authorization and privileged-intent approval may limit scope.",
+      "surface": "REST + Gateway; guilds, channels, messages and interactions",
+      "verdict": "Conditional",
+      "blocker": "Approval",
+      "note": "Build around bot permissions; do not treat a user login session as a bot API credential.",
+      "sources": [
+        "https://docs.discord.com/developers/docs/interactions/slash-commands",
+        "https://discord.com/developers/docs/topics/oauth2"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Read bot-visible Discord channel metadata",
+      "next_action": "Create a test bot, verify developer-account eligibility and grant it access to one test guild and channel.",
+      "success_criterion": "Read bot-visible metadata and demonstrate denial for an ungranted channel.",
+      "alternative_action": "Use the bot API and Gateway as appropriate; do not reverse engineer a personal user session into a self-bot.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 27,
+      "category": "Communications",
+      "app": "Telegram",
+      "url": "https://core.telegram.org",
+      "description": "Messaging and bots",
+      "auth": [
+        "Token"
+      ],
+      "access": "Free",
+      "access_detail": "Create a bot through BotFather; bot token is sufficient for the Bot API.",
+      "surface": "HTTP Bot API; messages, files and chat management",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "Bot capabilities differ from Telegram user-account APIs; label this as the Bot API toolkit.",
+      "sources": [
+        "https://core.telegram.org/bots/api",
+        "https://core.telegram.org/bots/features"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Read a test bot update",
+      "next_action": "Create a Telegram test bot and retrieve an update generated by a test chat, with explicit Bot API scope.",
+      "success_criterion": "Return the test chat/update identifiers and prevent unrelated update data from being logged.",
+      "alternative_action": "Keep user-account automation outside this toolkit; the Bot API and user-account APIs have different capabilities.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 28,
+      "category": "Communications",
+      "app": "WhatsApp Business",
+      "url": "https://developers.facebook.com/docs/whatsapp",
+      "description": "Business messaging over WhatsApp",
+      "auth": [
+        "Token"
+      ],
+      "access": "Sandbox",
+      "access_detail": "Meta provides test credentials/number; production requires a business setup and messaging permissions.",
+      "surface": "Graph HTTP API; messages, templates, numbers and webhooks",
+      "verdict": "Build",
+      "blocker": "Production entitlement",
+      "note": "Use scoped system-user tokens for deployment; do not equate a temporary test token with production approval.",
+      "sources": [
+        "https://www.postman.com/meta/whatsapp-business-platform/documentation/wlk6lh4/whatsapp-cloud-api",
+        "https://whatsapp.github.io/WhatsApp-Nodejs-SDK/"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Inspect WhatsApp test-number setup",
+      "next_action": "Use Meta's WhatsApp sandbox to inspect the test-number configuration and document token expiry and production prerequisites.",
+      "success_criterion": "Record the test phone-number ID, required permissions and the difference between test and production access.",
+      "alternative_action": "Plan system-user authorization and business approval separately; a temporary token is not a production solution.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 29,
+      "category": "Communications",
+      "app": "Aircall",
+      "url": "https://aircall.io",
+      "description": "Cloud phone and call-center operations",
+      "auth": [
+        "OAuth2",
+        "Basic",
+        "API key"
+      ],
+      "access": "Account check",
+      "access_detail": "Account API credentials or OAuth integration; free developer entitlement not established.",
+      "surface": "REST; calls, contacts, users and numbers",
+      "verdict": "Conditional",
+      "blocker": "Customer access",
+      "note": "Basic credentials and OAuth are both supported; production requires access to a customer account.",
+      "sources": [
+        "https://developer.aircall.io/docs/authentication",
+        "https://developer.aircall.io/tutorials/"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Read a test call record",
+      "next_action": "Confirm Aircall account entitlement, then read one test call with Basic credentials or a scoped OAuth installation.",
+      "success_criterion": "Return the approved call identifier and metadata while documenting customer-account prerequisites.",
+      "alternative_action": "Capture the authorized call-detail UI only to investigate a required metadata field absent from the public response.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 30,
+      "category": "Communications",
+      "app": "Vonage",
+      "url": "https://developer.vonage.com",
+      "description": "Programmable communications and identity",
+      "auth": [
+        "API key",
+        "Basic",
+        "JWT"
+      ],
+      "access": "Trial",
+      "access_detail": "Developer site offers a trial; credentials and billing constraints vary by API product.",
+      "surface": "REST; messaging, voice and verification",
+      "verdict": "Build",
+      "blocker": "Production entitlement",
+      "note": "Some products require application JWTs, others key/secret Basic auth; avoid one auth adapter for all APIs.",
+      "sources": [
+        "https://developer.vonage.com/en/getting-started/concepts/authentication",
+        "https://developer.vonage.com/en/messages/technical-details",
+        "https://developer.vonage.com"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Inspect a Vonage application resource",
+      "next_action": "Select the specific Vonage product, identify whether it uses key/secret or application JWT authentication, and read a test resource.",
+      "success_criterion": "Record the product-specific auth scheme and retrieve the chosen resource without sending messages or calls.",
+      "alternative_action": "Keep separate adapters for messaging and voice when their credential flows differ.",
+      "status": "Proposed; not an authenticated test result"
+    }
+  ]
+}

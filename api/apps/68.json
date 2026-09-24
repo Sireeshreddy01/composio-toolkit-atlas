@@ -1,0 +1,37 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 68,
+    "category": "Developer & Infra",
+    "app": "MongoDB Atlas",
+    "url": "https://mongodb.com/docs/atlas/api",
+    "description": "Managed MongoDB database infrastructure",
+    "auth": [
+      "OAuth2",
+      "Digest"
+    ],
+    "access": "Admin / paid",
+    "access_detail": "Organization/project service account or API key; permissions and network access configuration apply.",
+    "surface": "REST Admin API; clusters, projects, users and configuration",
+    "verdict": "Conditional",
+    "blocker": "Admin",
+    "note": "This verdict concerns management APIs; do not substitute the retired Atlas Data API for database access.",
+    "sources": [
+      "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/preview/authentication",
+      "https://mongodb.com/docs/atlas/api"
+    ],
+    "access_group": "Gated",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Local or Atlas-managed data and cluster operations; setup and roles differ",
+      "url": "https://www.mongodb.com/docs/mcp-server/overview/"
+    },
+    "workflow": "Read Atlas project configuration",
+    "next_action": "Obtain a MongoDB Atlas project role and management credential, then read a test cluster's configuration through the Admin API.",
+    "success_criterion": "Return cluster/project metadata and confirm least-privilege access; do not query application data through the retired Data API.",
+    "alternative_action": "For application records, choose a supported database driver path separately from management MCP or Admin REST.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 67,
+  "app": "Snowflake",
+  "sources": [
+    "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/tutorials/common-setup",
+    "https://docs.snowflake.com/en/en/developer-guide/snowflake-rest-api/authentication",
+    "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 128,
+      "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/tutorials/common-setup",
+      "checked_at": "2026-09-24T10:48:47.887535+00:00",
+      "status": 200,
+      "final_url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/tutorials/common-setup",
+      "sha256": "93eb9e53d15808e4fbb97de01066032e392aecae2b3f9ba18735b50642a78e80",
+      "text_chars": 5090,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 129,
+      "url": "https://docs.snowflake.com/en/en/developer-guide/snowflake-rest-api/authentication",
+      "checked_at": "2026-09-24T10:48:47.978717+00:00",
+      "status": 200,
+      "final_url": "https://docs.snowflake.com/en/en/developer-guide/snowflake-rest-api/authentication",
+      "sha256": "bdbbc677d8e5cbcd5dbd8cf471aa690dccc11e2e99ce2955d1ec42413156e24b",
+      "text_chars": 11313,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 239,
+      "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+      "checked_at": "2026-09-24T10:56:39.226335+00:00",
+      "status": 200,
+      "final_url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+      "sha256": "729e45b294720fbd3c3b19c326d0fe0af93f5df56da10b9b2f9ee5524ab35ce7",
+      "text_chars": 46717,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

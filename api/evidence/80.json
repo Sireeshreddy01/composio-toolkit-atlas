@@ -1,0 +1,50 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 80,
+  "app": "Harvest",
+  "sources": [
+    "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+    "https://help.getharvest.com/api-v2/introduction/overview/general/",
+    "https://support.getharvest.com/hc/en-us/articles/360048180732-The-Harvest-API"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 148,
+      "url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+      "checked_at": "2026-09-24T10:48:51.182704+00:00",
+      "status": 200,
+      "final_url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+      "sha256": "b62578c83afb3b4241599cb7a58f98d40ac68e35e331940e372da7cc40c487ef",
+      "text_chars": 9252,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 149,
+      "url": "https://help.getharvest.com/api-v2/introduction/overview/general/",
+      "checked_at": "2026-09-24T10:48:51.346528+00:00",
+      "status": 200,
+      "final_url": "https://help.getharvest.com/api-v2/introduction/overview/general/",
+      "sha256": "049165561ff16005ae704589e75bb87c1e98a0f4621693703477ed3fff5b7341",
+      "text_chars": 6347,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 194,
+      "url": "https://support.getharvest.com/hc/en-us/articles/360048180732-The-Harvest-API",
+      "checked_at": "2026-09-24T10:48:58.167820+00:00",
+      "status": "unresolved",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

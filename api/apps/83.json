@@ -1,0 +1,32 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 83,
+    "category": "Finance & Fintech",
+    "app": "Binance",
+    "url": "https://binance-docs.github.io",
+    "description": "Cryptocurrency market and account services",
+    "auth": [
+      "API key",
+      "Signature"
+    ],
+    "access": "Account check",
+    "access_detail": "Public market data needs no key; private operations require signed keys and account/regional eligibility.",
+    "surface": "REST + WebSocket; market data and trading/account operations",
+    "verdict": "Conditional",
+    "blocker": "Production entitlement",
+    "note": "Separate unsigned read-only market data from signed private operations; do not perform transactions during evaluation.",
+    "sources": [
+      "https://developers.binance.com/en/docs/products/spot/rest-api"
+    ],
+    "access_group": "Unknown",
+    "mcp": null,
+    "workflow": "Read public market data",
+    "next_action": "Start with Binance's documented unsigned market-data read and separately verify regional/account eligibility for any private API scope.",
+    "success_criterion": "Return a public price/order-book response; record that no signed account or trading action was tested.",
+    "alternative_action": "Exclude trading from the assessment prototype; signed private operations require a separate credential and authorization review.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

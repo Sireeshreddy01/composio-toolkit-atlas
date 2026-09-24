@@ -1,0 +1,36 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 71,
+  "app": "Notion",
+  "sources": [
+    "https://developers.notion.com",
+    "https://www.notion.com/help/notion-mcp"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 83,
+      "url": "https://developers.notion.com",
+      "checked_at": "2026-09-24T10:48:39.865223+00:00",
+      "status": "unresolved",
+      "error": "HTTP Error 308: Permanent Redirect"
+    },
+    {
+      "id": 217,
+      "url": "https://www.notion.com/help/notion-mcp",
+      "checked_at": "2026-09-24T10:49:02.885375+00:00",
+      "status": 200,
+      "final_url": "https://www.notion.com/help/notion-mcp",
+      "sha256": "8ca7cc41925d8d57e09152439e99a768b68bad3aebe4d7a6895bfa46463f05d0",
+      "text_chars": 10548,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

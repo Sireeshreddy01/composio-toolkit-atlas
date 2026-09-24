@@ -1,0 +1,38 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 66,
+    "category": "Developer & Infra",
+    "app": "Neo4j",
+    "url": "https://neo4j.com/docs/api",
+    "description": "Graph database and managed graph hosting",
+    "auth": [
+      "Basic",
+      "Token",
+      "OAuth2"
+    ],
+    "access": "Local",
+    "access_detail": "Self-hosted database credentials; Aura management has separate client credentials and entitlements.",
+    "surface": "HTTP Query API + Aura management; Cypher queries and infrastructure",
+    "verdict": "Build",
+    "blocker": "Runtime",
+    "note": "Basic/Bearer database query auth and Aura OAuth are distinct; a graph database is not a GraphQL API.",
+    "sources": [
+      "https://neo4j.com/docs/query-api/current/authentication-authorization/",
+      "https://neo4j.com/docs/aura/api/authentication/"
+    ],
+    "access_group": "Self-serve",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Schema introspection and Cypher read/write; database credentials and optional read-only mode",
+      "url": "https://neo4j.com/docs/mcp/current/tools/"
+    },
+    "workflow": "Run a read-only local Cypher query",
+    "next_action": "Use a local Neo4j database and a read-only query identity to retrieve a small seeded graph through the Query API or MCP.",
+    "success_criterion": "Return the expected nodes and relationships; document database auth separately from Aura management OAuth.",
+    "alternative_action": "Keep graph query execution separate from infrastructure provisioning and constrain query/time limits.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

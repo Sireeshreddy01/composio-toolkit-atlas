@@ -1,0 +1,37 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 54,
+    "category": "Data & SEO",
+    "app": "MrScraper",
+    "url": "https://docs.mrscraper.com",
+    "description": "Web scraping and structured extraction",
+    "auth": [
+      "API key",
+      "Token"
+    ],
+    "access": "Account check",
+    "access_detail": "Account API token; subscription quota and any free allowance require confirmation.",
+    "surface": "REST; scraping jobs, results, search and account status",
+    "verdict": "Conditional",
+    "blocker": "Plan check",
+    "note": "Official CLI/MCP exists; account credits still govern execution.",
+    "sources": [
+      "https://docs.mrscraper.com/docs/api/authentication",
+      "https://docs.mrscraper.com/docs/getting-started/mcp-server"
+    ],
+    "access_group": "Unknown",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Scrape, search, status and results",
+      "url": "https://docs.mrscraper.com/docs/getting-started/mcp-server"
+    },
+    "workflow": "Read an existing scrape job result",
+    "next_action": "Confirm MrScraper account credits and inspect a previously created test job through its API or official MCP.",
+    "success_criterion": "Return job status and result metadata, and record how credits are charged.",
+    "alternative_action": "Compare CLI/MCP job operations with the required output format before creating a custom REST wrapper.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

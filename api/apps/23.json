@@ -1,0 +1,32 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 23,
+    "category": "Communications",
+    "app": "Zoho Cliq",
+    "url": "https://zoho.com/cliq",
+    "description": "Team chat, channels and bots",
+    "auth": [
+      "OAuth2"
+    ],
+    "access": "Account check",
+    "access_detail": "Register a Zoho client and authorize a workspace; free API entitlement not separately verified.",
+    "surface": "REST; messages, channels, users and bots",
+    "verdict": "Conditional",
+    "blocker": "Plan check",
+    "note": "Use the Zoho-oauthtoken header and correct regional account endpoints.",
+    "sources": [
+      "https://www.zoho.com/cliq/help/restapi/v3/introduction/",
+      "https://www.zoho.com/cliq/help/restapi/v3/oauth/"
+    ],
+    "access_group": "Unknown",
+    "mcp": null,
+    "workflow": "Read a channel with regional OAuth",
+    "next_action": "Confirm Zoho Cliq plan access and authorize a test channel using the correct regional token endpoint and header.",
+    "success_criterion": "Retrieve the approved channel data and record the region, scopes and edition allowance.",
+    "alternative_action": "Inspect an authorized channel's network read only if the public API lacks the required field; document the session dependency.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

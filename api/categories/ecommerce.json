@@ -1,0 +1,306 @@
+{
+  "kind": "category_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "category": "Ecommerce",
+  "count": 10,
+  "verdict": {
+    "Build": 3,
+    "Conditional": 7
+  },
+  "development_access": {
+    "Self-serve": 3,
+    "Unknown": 3,
+    "Gated": 4
+  },
+  "apps": [
+    {
+      "id": 41,
+      "category": "Ecommerce",
+      "app": "Shopify",
+      "url": "https://shopify.dev",
+      "description": "Online stores and merchant operations",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Sandbox",
+      "access_detail": "Development store/app path; merchant authorization for production and review for public distribution.",
+      "surface": "GraphQL Admin; broad products, orders and inventory",
+      "verdict": "Build",
+      "blocker": "Approval",
+      "note": "Use modern app authorization; legacy admin-created custom-app instructions are not the default for new builds.",
+      "sources": [
+        "https://shopify.dev/docs/apps/build/authentication-authorization",
+        "https://shopify.dev/docs/apps/build/authentication-authorization/access-tokens"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official; partial",
+        "scope": "Storefront shopping, catalog and cart; not full Admin API",
+        "url": "https://shopify.dev/docs/apps/build/storefront-mcp/servers/storefront"
+      },
+      "workflow": "Query a development-store product",
+      "next_action": "Create a Shopify development store and query a seeded product through the GraphQL Admin API using the current app authorization flow.",
+      "success_criterion": "Return product ID and inventory-related fields with documented Admin scopes and query-cost handling.",
+      "alternative_action": "Evaluate storefront MCP only for shopper workflows; do not use it as evidence of full Admin coverage.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 42,
+      "category": "Ecommerce",
+      "app": "WooCommerce",
+      "url": "https://woocommerce.com/document/woocommerce-rest-api",
+      "description": "Open-source WordPress ecommerce",
+      "auth": [
+        "API key",
+        "Basic"
+      ],
+      "access": "Local",
+      "access_detail": "Install WooCommerce on an owned test site; generate keys for a permitted user.",
+      "surface": "REST; products, orders, customers and coupons",
+      "verdict": "Build",
+      "blocker": "Runtime",
+      "note": "Consumer key/secret via HTTPS Basic auth; hosting and user permissions are the operational prerequisites.",
+      "sources": [
+        "https://developer.woocommerce.com/docs/apis/rest-api/authentication",
+        "https://developer.woocommerce.com/docs/apis/rest-api/"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Read a local WooCommerce product",
+      "next_action": "Run a test WordPress/WooCommerce store, create a read-only consumer key, and retrieve a seeded product over HTTPS.",
+      "success_criterion": "Return the product while a write attempt is excluded by the key's permissions.",
+      "alternative_action": "Prefer the public REST API; inspect plugin-specific UI calls only if a required extension field is not exposed.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 43,
+      "category": "Ecommerce",
+      "app": "BigCommerce",
+      "url": "https://developer.bigcommerce.com",
+      "description": "Hosted ecommerce platform",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Account check",
+      "access_detail": "Store/API-account credentials and scoped access; trial eligibility not independently verified.",
+      "surface": "REST + GraphQL; catalog, orders, storefront and account operations",
+      "verdict": "Conditional",
+      "blocker": "Customer access",
+      "note": "Storefront MCP beta is not equivalent to full merchant Admin API coverage.",
+      "sources": [
+        "https://developer.bigcommerce.com",
+        "https://developer.bigcommerce.com/resource-hub/bigcommercedevs-recap-h1-23"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official beta; partial",
+        "scope": "Storefront commerce; not full management API",
+        "url": "https://docs.bigcommerce.com/developer/api-reference/mcp/overview"
+      },
+      "workflow": "Separate storefront and merchant catalog access",
+      "next_action": "Confirm BigCommerce developer-store eligibility and choose whether the workflow needs storefront GraphQL or merchant REST catalog data.",
+      "success_criterion": "Read the test product through the chosen surface and document why storefront MCP does or does not cover it.",
+      "alternative_action": "Use merchant API scopes for back-office fields instead of assuming storefront MCP has administrator access.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 44,
+      "category": "Ecommerce",
+      "app": "Salesforce Commerce Cloud",
+      "url": "https://developer.salesforce.com/docs/commerce",
+      "description": "Enterprise digital commerce",
+      "auth": [
+        "OAuth2",
+        "JWT"
+      ],
+      "access": "Admin / paid",
+      "access_detail": "Commerce tenant and Account Manager client required; customer/admin provisioning.",
+      "surface": "REST SCAPI; shopper and administrative commerce APIs",
+      "verdict": "Conditional",
+      "blocker": "Admin",
+      "note": "Shopper SLAS and Admin API tokens follow different authorization paths.",
+      "sources": [
+        "https://developer.salesforce.com/docs/commerce/sfra/guide/authorization.html",
+        "https://developer.salesforce.com/docs/commerce/commerce-api/guide/security.html"
+      ],
+      "access_group": "Gated",
+      "mcp": null,
+      "workflow": "Read shopper or admin commerce data",
+      "next_action": "Obtain a Salesforce Commerce Cloud test instance and choose either shopper SLAS or Admin authorization for a concrete catalog workflow.",
+      "success_criterion": "Return the test resource using the correct token type; document instance and role prerequisites.",
+      "alternative_action": "Request a sandbox and scoped sample catalog from the account team when no customer test instance is available.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 45,
+      "category": "Ecommerce",
+      "app": "Magento (Adobe Commerce)",
+      "url": "https://developer.adobe.com/commerce",
+      "description": "Customizable commerce platform",
+      "auth": [
+        "OAuth2",
+        "OAuth1",
+        "Token"
+      ],
+      "access": "Local",
+      "access_detail": "Magento Open Source can be self-hosted; Adobe Commerce SaaS is separately licensed.",
+      "surface": "REST + GraphQL; catalog, checkout, orders and administration",
+      "verdict": "Build",
+      "blocker": "Runtime",
+      "note": "SaaS uses Adobe IMS OAuth2; traditional installations have different integration/token flows.",
+      "sources": [
+        "https://developer.adobe.com/commerce/webapi/rest/authentication/",
+        "https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token",
+        "https://developer.adobe.com/commerce/webapi/graphql/usage/authorization-tokens"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Query a local product catalog",
+      "next_action": "Choose self-hosted Magento or Adobe Commerce SaaS explicitly, then read a seeded product through its appropriate REST or GraphQL interface.",
+      "success_criterion": "Return the product and document whether installation tokens or Adobe IMS authorization apply.",
+      "alternative_action": "Do not mix self-hosted integration credentials with the SaaS auth flow when designing the toolkit.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 46,
+      "category": "Ecommerce",
+      "app": "Squarespace",
+      "url": "https://developers.squarespace.com",
+      "description": "Website and commerce builder",
+      "auth": [
+        "OAuth2",
+        "API key"
+      ],
+      "access": "Paid",
+      "access_detail": "Commerce Advanced plan documented for custom applications; OAuth client registration is a separate path.",
+      "surface": "REST; commerce products, inventory, orders and transactions",
+      "verdict": "Conditional",
+      "blocker": "Subscription",
+      "note": "Custom API-key applications require Commerce Advanced; OAuth Extensions can serve customers on any plan. This row classifies the custom-app path.",
+      "sources": [
+        "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+        "https://developers.squarespace.com/commerce-apis/making-requests"
+      ],
+      "access_group": "Gated",
+      "mcp": null,
+      "workflow": "Read an order through the selected app model",
+      "next_action": "Choose custom API-key app or OAuth Extension first; confirm that route's plan requirements, then read a test order with minimum permissions.",
+      "success_criterion": "Record the chosen route, applicable plan restriction and a successful scoped test-order read.",
+      "alternative_action": "If a needed order field appears only in an authorized UI workflow, capture that read and assess session stability; do not treat it as a way around plan eligibility.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 47,
+      "category": "Ecommerce",
+      "app": "Ecwid",
+      "url": "https://api-docs.ecwid.com",
+      "description": "Embedded online storefronts",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Paid",
+      "access_detail": "Only paid stores can access the API; conditional developer upgrades are available.",
+      "surface": "REST; catalog, orders, customers and store settings",
+      "verdict": "Conditional",
+      "blocker": "Subscription",
+      "note": "Custom apps can use store-specific tokens; partner distribution needs the documented app process.",
+      "sources": [
+        "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+        "https://docs.ecwid.com/develop-apps/app-settings"
+      ],
+      "access_group": "Gated",
+      "mcp": null,
+      "workflow": "Read a store catalog product",
+      "next_action": "Confirm Ecwid custom-app eligibility on the intended plan and read a seeded catalog product with a store-specific token.",
+      "success_criterion": "Return product and store identifiers; record the permission set and distribution restrictions.",
+      "alternative_action": "Ask for partner-app access if the tool must serve multiple stores rather than reusing a private store token.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 48,
+      "category": "Ecommerce",
+      "app": "Gumroad",
+      "url": "https://gumroad.com/api",
+      "description": "Digital-product storefront and sales",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Account check",
+      "access_detail": "Own-account access token or OAuth app; free access needs confirmation from the live API page.",
+      "surface": "REST + CLI; products, sales, files, subscriptions and licenses",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "Browser verified OAuth2, scoped tokens and a broad REST API plus official CLI; license verification has a separate unauthenticated path.",
+      "sources": [
+        "https://gumroad.com/api"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Retrieve a seller product",
+      "next_action": "Confirm Gumroad seller API eligibility and read a test product using the documented OAuth scope or official CLI.",
+      "success_criterion": "Return the product ID and selected fields; keep license verification separate from seller-data authorization.",
+      "alternative_action": "Evaluate the official CLI before inspecting browser endpoints; use network capture only for a specific missing seller workflow.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 49,
+      "category": "Ecommerce",
+      "app": "Amazon Selling Partner",
+      "url": "https://developer-docs.amazon.com/sp-api",
+      "description": "Amazon seller and vendor operations",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Approval",
+      "access_detail": "Developer registration, role qualification and seller/vendor authorization required.",
+      "surface": "REST; catalog, orders, inventory, reports and fulfillment",
+      "verdict": "Conditional",
+      "blocker": "Approval",
+      "note": "Sandbox support does not waive onboarding or restricted-data requirements.",
+      "sources": [
+        "https://developer-docs.amazon.com/sp-api/docs/onboarding-overview",
+        "https://developer-docs.amazon.com/sp-api/lang-en_EN/docs/sp-api-registration-overview"
+      ],
+      "access_group": "Gated",
+      "mcp": null,
+      "workflow": "Read sandbox selling-partner order data",
+      "next_action": "Complete Amazon Selling Partner developer onboarding, choose the required role, and run a documented sandbox order read.",
+      "success_criterion": "Record onboarding status, role authorization and the sandbox response; identify restricted-data requirements separately.",
+      "alternative_action": "Request an authorized seller test account where sandbox fixtures cannot represent the required order workflow.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 50,
+      "category": "Ecommerce",
+      "app": "fanbasis",
+      "url": "https://fanbasis.com",
+      "description": "Creator commerce and payments",
+      "auth": [
+        "API key"
+      ],
+      "access": "Account check",
+      "access_detail": "Merchant account required; onboarding and free sandbox eligibility need vendor confirmation.",
+      "surface": "Public API; checkout, seller and transaction operations",
+      "verdict": "Conditional",
+      "blocker": "Customer access",
+      "note": "Published docs show x-api-key; verify merchant eligibility before estimating delivery.",
+      "sources": [
+        "https://apidocs.fan/",
+        "https://demo.embedded.fanbasis.io/docs/getting-started"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Read a seller checkout record",
+      "next_action": "Ask fanbasis to confirm merchant API eligibility and required key scope, then retrieve a test checkout or transaction record.",
+      "success_criterion": "Record the eligibility answer and retrieve the approved test record without creating a charge.",
+      "alternative_action": "If merchant access is available but the contract is incomplete, capture one checkout-detail read and ask the vendor to confirm the endpoint schema.",
+      "status": "Proposed; not an authenticated test result"
+    }
+  ]
+}

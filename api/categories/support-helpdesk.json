@@ -1,0 +1,311 @@
+{
+  "kind": "category_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "category": "Support & Helpdesk",
+  "count": 10,
+  "verdict": {
+    "Conditional": 7,
+    "Build": 3
+  },
+  "development_access": {
+    "Gated": 5,
+    "Self-serve": 3,
+    "Unknown": 2
+  },
+  "apps": [
+    {
+      "id": 11,
+      "category": "Support & Helpdesk",
+      "app": "Zendesk",
+      "url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+      "description": "Customer service tickets and knowledge base",
+      "auth": [
+        "OAuth2"
+      ],
+      "access": "Admin / paid",
+      "access_detail": "Admin configures OAuth client; distributed integrations require a global OAuth client.",
+      "surface": "REST; tickets, users, help center and voice",
+      "verdict": "Conditional",
+      "blocker": "Admin",
+      "note": "API tokens are deprecated and unavailable for new accounts from July 28, 2026; migrate to OAuth.",
+      "sources": [
+        "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+        "https://developer.zendesk.com/documentation/authentication/oauth-migration/"
+      ],
+      "access_group": "Gated",
+      "mcp": null,
+      "workflow": "Read a Zendesk test ticket using OAuth",
+      "next_action": "Configure OAuth for a test Zendesk account and read a seeded ticket; avoid new integration instructions that require deprecated API tokens.",
+      "success_criterion": "Retrieve the ticket and document granted scopes plus the account's OAuth setup permissions.",
+      "alternative_action": "For an older customer installation, inventory token dependencies and create an OAuth migration checklist.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 12,
+      "category": "Support & Helpdesk",
+      "app": "Intercom",
+      "url": "https://developers.intercom.com",
+      "description": "Customer conversations and AI support",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Sandbox",
+      "access_detail": "Development workspace supplies a token; production features and public-app review are separate.",
+      "surface": "REST; contacts, conversations, teams and help content",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "Public apps require OAuth; development workspaces have reduced functionality.",
+      "sources": [
+        "https://developers.intercom.com/docs/build-an-integration/getting-started",
+        "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/setting-up-oauth"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "US-hosted workspaces only per checked docs",
+        "url": "https://developers.intercom.com/docs/guides/mcp"
+      },
+      "workflow": "Retrieve a development conversation",
+      "next_action": "Use an Intercom development workspace to read a test conversation, noting any production-only functionality it omits.",
+      "success_criterion": "Return conversation and contact identifiers; list unavailable development-workspace features.",
+      "alternative_action": "Compare the official MCP conversation tools with the required read fields before adding REST tools.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 13,
+      "category": "Support & Helpdesk",
+      "app": "Freshdesk",
+      "url": "https://developers.freshdesk.com/api/",
+      "description": "Ticket-based customer support",
+      "auth": [
+        "API key",
+        "Basic"
+      ],
+      "access": "Trial",
+      "access_detail": "Trial API limit explicitly documented at 50 calls/minute.",
+      "surface": "REST; tickets, contacts, companies and knowledge base",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "API key is sent through HTTP Basic; apply plan-specific throttling.",
+      "sources": [
+        "https://developers.freshdesk.com/api/"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Read one trial support ticket",
+      "next_action": "Use an authorized Freshdesk trial, seed a ticket, and read it with API-key Basic authentication while recording rate-limit headers.",
+      "success_criterion": "Return the seeded ticket and confirm the applicable trial rate limit from the account response or current docs.",
+      "alternative_action": "If the UI exposes a needed field missing from the public ticket schema, capture that specific authorized read and assess session dependence.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 14,
+      "category": "Support & Helpdesk",
+      "app": "Front",
+      "url": "https://dev.frontapp.com",
+      "description": "Shared inbox and customer operations",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Admin / paid",
+      "access_detail": "Company-level token needs admin privileges; public integrations use OAuth; free access not established.",
+      "surface": "REST; conversations, inboxes, contacts and messages",
+      "verdict": "Conditional",
+      "blocker": "Admin",
+      "note": "New official MCP beta supersedes older third-party claims that no native server exists.",
+      "sources": [
+        "https://dev.frontapp.com/docs/create-and-revoke-api-tokens",
+        "https://dev.frontapp.com/docs/core-api-getting-started",
+        "https://dev.frontapp.com/reference/introduction"
+      ],
+      "access_group": "Gated",
+      "mcp": {
+        "kind": "Official beta",
+        "scope": "Inbox workflows; workspace admin/private app path",
+        "url": "https://help.front.com/en/articles/4883136"
+      },
+      "workflow": "Read an inbox conversation",
+      "next_action": "Obtain Front administrator approval and compare its official MCP beta with a scoped conversation read in a test inbox.",
+      "success_criterion": "Return the selected conversation without access to unapproved inboxes; record beta limitations.",
+      "alternative_action": "Use Front's REST conversation endpoint family if the beta MCP lacks required inbox or message fields.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 15,
+      "category": "Support & Helpdesk",
+      "app": "Pylon",
+      "url": "https://usepylon.com",
+      "description": "B2B support across chat and ticket channels",
+      "auth": [
+        "Token"
+      ],
+      "access": "Admin / paid",
+      "access_detail": "Only admins can create API tokens; an existing workspace is required.",
+      "surface": "REST; issues, accounts, contacts and knowledge base",
+      "verdict": "Conditional",
+      "blocker": "Admin",
+      "note": "Use a scoped operational workflow; quotas differ by endpoint.",
+      "sources": [
+        "https://docs.usepylon.com/pylon-docs/developer/api",
+        "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+        "https://docs.usepylon.com/pylon-docs/developer/api/api-reference"
+      ],
+      "access_group": "Gated",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Pylon support workspace",
+        "url": "https://support.usepylon.com/articles/2407390554-connecting-to-the-pylon-mcp-server"
+      },
+      "workflow": "Read an issue and its account",
+      "next_action": "Ask a Pylon administrator for scoped test credentials and retrieve one seeded issue with its account relationship.",
+      "success_criterion": "Return the issue/account identifiers and record the quota for the chosen operation.",
+      "alternative_action": "Inspect the authorized issue-detail UI only to identify fields absent from the public issue schema.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 16,
+      "category": "Support & Helpdesk",
+      "app": "LiveAgent",
+      "url": "https://liveagent.com",
+      "description": "Helpdesk with tickets, chat and calls",
+      "auth": [
+        "API key"
+      ],
+      "access": "Admin / paid",
+      "access_detail": "Admin generates API v3 keys; free/trial API entitlement not established.",
+      "surface": "REST; tickets, messages and support resources",
+      "verdict": "Conditional",
+      "blocker": "Admin",
+      "note": "v1 and v3 keys are not interchangeable; explicitly target v3.",
+      "sources": [
+        "https://support.liveagent.com/802463-REST-API",
+        "https://support.liveagent.com/741982-API-key"
+      ],
+      "access_group": "Gated",
+      "mcp": null,
+      "workflow": "Retrieve a support ticket with v3 credentials",
+      "next_action": "Confirm the LiveAgent subscription and create a v3-specific test key before implementing a ticket read.",
+      "success_criterion": "Read the seeded ticket with v3 credentials and demonstrate a clear error for the wrong API version.",
+      "alternative_action": "Avoid adapting a captured v1 session into a v3 integration; obtain the correct version's key and contract.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 17,
+      "category": "Support & Helpdesk",
+      "app": "Plain",
+      "url": "https://plain.com",
+      "description": "API-first B2B customer support",
+      "auth": [
+        "API key"
+      ],
+      "access": "Trial",
+      "access_detail": "Seven-day trial; scoped API keys created in workspace.",
+      "surface": "GraphQL; customers, threads, events and assignment",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "GraphQL is the primary data API; a REST-only wrapper would misrepresent the interface.",
+      "sources": [
+        "https://www.plain.com/docs/graphql/introduction",
+        "https://www.plain.com/docs/graphql/authentication",
+        "https://help.plain.com/article/pricing"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Support workflow tools; vendor describes its server",
+        "url": "https://www.plain.com/blog/mcp-customer-support-2026"
+      },
+      "workflow": "Query a customer support thread",
+      "next_action": "Use a Plain trial workspace to execute a minimal GraphQL thread query with only the required fields.",
+      "success_criterion": "Return a seeded thread and customer reference; handle GraphQL errors separately from HTTP status.",
+      "alternative_action": "Compare Plain's MCP thread operations with the same query rather than building a REST-shaped adapter.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 18,
+      "category": "Support & Helpdesk",
+      "app": "Help Scout",
+      "url": "https://helpscout.com",
+      "description": "Shared support inbox and help content",
+      "auth": [
+        "OAuth2"
+      ],
+      "access": "Paid",
+      "access_detail": "Paid plans have differing API access levels; verify the required endpoint tier.",
+      "surface": "REST; inboxes, conversations, customers and users",
+      "verdict": "Conditional",
+      "blocker": "Subscription",
+      "note": "Authorization-code and client-credentials flows serve different integration models.",
+      "sources": [
+        "https://developer.helpscout.com/mailbox-api/overview/authentication/",
+        "https://developer.helpscout.com/mailbox-api/",
+        "https://docs.helpscout.com/article/1140-mailbox-api"
+      ],
+      "access_group": "Gated",
+      "mcp": null,
+      "workflow": "Read an inbox conversation",
+      "next_action": "Confirm Help Scout plan eligibility, then choose client credentials for one internal account or authorization code for customer installations.",
+      "success_criterion": "Read one approved inbox conversation and record which integration model was used.",
+      "alternative_action": "Ask for trial API access if the paid plan is unavailable; do not substitute mailbox login credentials for API authorization.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 19,
+      "category": "Support & Helpdesk",
+      "app": "Gorgias",
+      "url": "https://gorgias.com",
+      "description": "Ecommerce-focused support operations",
+      "auth": [
+        "OAuth2",
+        "API key"
+      ],
+      "access": "Account check",
+      "access_detail": "Private apps use API keys; public apps require OAuth and approval; trial entitlement not verified.",
+      "surface": "REST; tickets, customers and support operations",
+      "verdict": "Conditional",
+      "blocker": "Approval",
+      "note": "Do not ship a multi-customer app with collected private API keys.",
+      "sources": [
+        "https://developers.gorgias.com/reference/authentication",
+        "https://developers.gorgias.com/docs/oauth2-authentication-for-creating-apps-with-gorgias"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Read a Gorgias ticket privately",
+      "next_action": "Confirm private-key API access on the intended Gorgias plan and read a test ticket before considering public-app distribution.",
+      "success_criterion": "Record plan eligibility, retrieve the ticket, and separate private-key rights from public OAuth approval.",
+      "alternative_action": "For a missing ticket field, capture its authorized UI read and compare it with the public ticket response before proposing an alternative endpoint.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 20,
+      "category": "Support & Helpdesk",
+      "app": "Gladly",
+      "url": "https://gladly.com",
+      "description": "Customer-centered omnichannel support",
+      "auth": [
+        "Token",
+        "Basic"
+      ],
+      "access": "Account check",
+      "access_detail": "API token created in a customer account; free sandbox access not established.",
+      "surface": "REST; customers, conversations, tasks and events",
+      "verdict": "Conditional",
+      "blocker": "Customer access",
+      "note": "Token-based Basic authentication; a commercial tenant remains a prerequisite.",
+      "sources": [
+        "https://developer.gladly.com/rest/"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Retrieve a customer conversation",
+      "next_action": "Obtain an authorized Gladly test tenant and verify token-based Basic authentication against one customer conversation.",
+      "success_criterion": "Return only the approved customer's conversation and document tenant-access requirements.",
+      "alternative_action": "Request a vendor-provided sample payload if no test tenant is available; tenant access remains a prerequisite.",
+      "status": "Proposed; not an authenticated test result"
+    }
+  ]
+}

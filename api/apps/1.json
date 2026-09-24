@@ -1,0 +1,36 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 1,
+    "category": "CRM & Sales",
+    "app": "Salesforce",
+    "url": "https://developer.salesforce.com/docs/platform/api-rest/guide/quickstart-dev-org.html",
+    "description": "Enterprise customer and sales records",
+    "auth": [
+      "OAuth2"
+    ],
+    "access": "Sandbox",
+    "access_detail": "Free Developer Edition; API Enabled permission required. Production edition entitlement is separate.",
+    "surface": "REST; broad CRM objects and queries",
+    "verdict": "Build",
+    "blocker": "Production entitlement",
+    "note": "Prototype in a developer org; confirm customer API entitlement before rollout.",
+    "sources": [
+      "https://developer.salesforce.com/docs/platform/api-rest/guide/quickstart-dev-org.html",
+      "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/postman.html"
+    ],
+    "access_group": "Self-serve",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Hosted Salesforce resource servers; org/client setup required",
+      "url": "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/postman.html"
+    },
+    "workflow": "Read CRM accounts in a developer org",
+    "next_action": "Create a Salesforce developer org, authorize a scoped client, and query a small Account sample before requesting access to customer production data.",
+    "success_criterion": "Return Account identifiers and selected fields; prove the client cannot access unrelated objects.",
+    "alternative_action": "Confirm production API entitlement separately from developer-org access.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

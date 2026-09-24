@@ -1,0 +1,37 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 43,
+    "category": "Ecommerce",
+    "app": "BigCommerce",
+    "url": "https://developer.bigcommerce.com",
+    "description": "Hosted ecommerce platform",
+    "auth": [
+      "OAuth2",
+      "Token"
+    ],
+    "access": "Account check",
+    "access_detail": "Store/API-account credentials and scoped access; trial eligibility not independently verified.",
+    "surface": "REST + GraphQL; catalog, orders, storefront and account operations",
+    "verdict": "Conditional",
+    "blocker": "Customer access",
+    "note": "Storefront MCP beta is not equivalent to full merchant Admin API coverage.",
+    "sources": [
+      "https://developer.bigcommerce.com",
+      "https://developer.bigcommerce.com/resource-hub/bigcommercedevs-recap-h1-23"
+    ],
+    "access_group": "Unknown",
+    "mcp": {
+      "kind": "Official beta; partial",
+      "scope": "Storefront commerce; not full management API",
+      "url": "https://docs.bigcommerce.com/developer/api-reference/mcp/overview"
+    },
+    "workflow": "Separate storefront and merchant catalog access",
+    "next_action": "Confirm BigCommerce developer-store eligibility and choose whether the workflow needs storefront GraphQL or merchant REST catalog data.",
+    "success_criterion": "Read the test product through the chosen surface and document why storefront MCP does or does not cover it.",
+    "alternative_action": "Use merchant API scopes for back-office fields instead of assuming storefront MCP has administrator access.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

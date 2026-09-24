@@ -1,0 +1,37 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 97,
+    "category": "AI & Media",
+    "app": "higgsfield",
+    "url": "https://higgsfield.ai/cli",
+    "description": "AI image/video generation and creative workflows",
+    "auth": [
+      "OAuth2",
+      "Token"
+    ],
+    "access": "Paid",
+    "access_detail": "CLI/skills use account sign-in and plan credits; website free/unlimited generations do not transfer.",
+    "surface": "CLI + MCP; creative generation and assets; broad REST contract not established",
+    "verdict": "Conditional",
+    "blocker": "Subscription",
+    "note": "No separate API key required for the documented CLI/MCP flow; charge against account credits.",
+    "sources": [
+      "https://higgsfield.ai/creator-hub/help-center/integrations/how-do-i-access-higgsfield-via-cli",
+      "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-higgsfield-mcp"
+    ],
+    "access_group": "Gated",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Creative generation using account credits",
+      "url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-higgsfield-mcp"
+    },
+    "workflow": "Inspect creative assets through the documented CLI",
+    "next_action": "Confirm higgsfield account credits and CLI sign-in requirements, then inspect existing authorized asset metadata before generating content.",
+    "success_criterion": "Record the actual CLI/MCP operation and account entitlement; avoid inventing a broad REST contract.",
+    "alternative_action": "Use the official CLI/MCP flow first; capture an authorized asset-detail request only if a required read is missing.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

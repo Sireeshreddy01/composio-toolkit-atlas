@@ -1,0 +1,42 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 53,
+  "app": "Ahrefs",
+  "sources": [
+    "https://ahrefs.com/api",
+    "https://docs.ahrefs.com/en/mcp/docs/introduction"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 2,
+      "url": "https://ahrefs.com/api",
+      "checked_at": "2026-09-24T10:48:24.227515+00:00",
+      "status": 200,
+      "final_url": "https://docs.ahrefs.com/",
+      "sha256": "8c3ee608dfabe213ce83d2406deb7b76bf9cabec0377b7ff5e290898a05a32e7",
+      "text_chars": 3517,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 94,
+      "url": "https://docs.ahrefs.com/en/mcp/docs/introduction",
+      "checked_at": "2026-09-24T10:48:41.829881+00:00",
+      "status": 200,
+      "final_url": "https://docs.ahrefs.com/en/mcp/docs/introduction",
+      "sha256": "926ec6a826b585769ae3317316489453b4b70b74804daca1f41984b5e6a0cfc2",
+      "text_chars": 3841,
+      "auth_guess": "API key",
+      "surface_guess": "REST",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

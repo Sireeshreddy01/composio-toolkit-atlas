@@ -1,0 +1,42 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 29,
+  "app": "Aircall",
+  "sources": [
+    "https://developer.aircall.io/docs/authentication",
+    "https://developer.aircall.io/tutorials/"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 23,
+      "url": "https://developer.aircall.io/docs/authentication",
+      "checked_at": "2026-09-24T10:48:28.644325+00:00",
+      "status": 200,
+      "final_url": "https://developer.aircall.io/docs/authentication",
+      "sha256": "da048d449fe8c3d1df4c2e52ab592805a5f697bf2a3ea8b195dabacda7d5fcb9",
+      "text_chars": 3748,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 24,
+      "url": "https://developer.aircall.io/tutorials/",
+      "checked_at": "2026-09-24T10:48:28.718263+00:00",
+      "status": 200,
+      "final_url": "https://developer.aircall.io/docs/introduction",
+      "sha256": "031501c82afde70c570a39714ce58dc3d0d09c4182cb16d587afb40aaf46d05c",
+      "text_chars": 4075,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

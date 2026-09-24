@@ -1,0 +1,344 @@
+{
+  "kind": "category_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "category": "Developer & Infra",
+  "count": 10,
+  "verdict": {
+    "Build": 3,
+    "Conditional": 7
+  },
+  "development_access": {
+    "Self-serve": 3,
+    "Unknown": 6,
+    "Gated": 1
+  },
+  "apps": [
+    {
+      "id": 61,
+      "category": "Developer & Infra",
+      "app": "GitHub",
+      "url": "https://docs.github.com/rest",
+      "description": "Code hosting and developer collaboration",
+      "auth": [
+        "OAuth2",
+        "Token",
+        "JWT"
+      ],
+      "access": "Free",
+      "access_detail": "Personal tokens or registered apps; organization approval/SSO may restrict customer resources.",
+      "surface": "REST + GraphQL; repos, issues, PRs, actions and administration",
+      "verdict": "Build",
+      "blocker": "Admin",
+      "note": "Prefer a least-privilege GitHub App for multi-tenant automation; personal tokens suit prototypes.",
+      "sources": [
+        "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github",
+        "https://docs.github.com/rest",
+        "https://docs.github.com/en/rest/about-the-rest-api/about-the-openapi-description-for-the-rest-api"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "GitHub repository and collaboration resources",
+        "url": "https://github.com/github/github-mcp-server"
+      },
+      "workflow": "Read a public repository, then scoped issues",
+      "next_action": "Use the existing public-repository demo as a smoke test, then authorize a least-privilege GitHub App to read issues in one test repository.",
+      "success_criterion": "Keep the public HTTP-200 result separate from a new authenticated issue-read test and record granted repository permissions.",
+      "alternative_action": "Compare official MCP issue tools with required fields and installation boundaries before adding custom REST tools.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 62,
+      "category": "Developer & Infra",
+      "app": "Vercel",
+      "url": "https://vercel.com/docs/rest-api",
+      "description": "Application deployment and hosting",
+      "auth": [
+        "Token",
+        "OAuth2"
+      ],
+      "access": "Account check",
+      "access_detail": "Account access tokens; plan-specific deployment/resource limits need verification.",
+      "surface": "REST; projects, deployments, domains and teams",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "A platform that hosts MCP servers does not by itself prove a native account-management MCP exists.",
+      "sources": [
+        "https://vercel.com/docs/rest-api"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Vercel deployment/project workflows",
+        "url": "https://vercel.com/docs/agent-resources/vercel-mcp"
+      },
+      "workflow": "Read one deployment's metadata",
+      "next_action": "Confirm Vercel API access on the selected plan and use a team-scoped token to inspect a test deployment.",
+      "success_criterion": "Return deployment and project identifiers within the selected team; record account limits.",
+      "alternative_action": "Inspect an authorized deployment UI request only for a required field absent from the public API; hosting MCP servers is not native MCP coverage.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 63,
+      "category": "Developer & Infra",
+      "app": "Netlify",
+      "url": "https://docs.netlify.com/api",
+      "description": "Web hosting and deployment workflows",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Account check",
+      "access_detail": "Generate a personal access token or register OAuth application; team access is explicit.",
+      "surface": "REST; sites, builds, deployments and team resources",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "Separate API availability from build/runtime usage credits.",
+      "sources": [
+        "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+        "https://docs.netlify.com/manage/accounts-and-billing/user-settings/"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Build, deploy and manage Netlify resources",
+        "url": "https://github.com/netlify/netlify-mcp"
+      },
+      "workflow": "Read a test site's deployment status",
+      "next_action": "Confirm Netlify API eligibility and use a scoped account token to read one test site's deployment metadata.",
+      "success_criterion": "Return the site/deploy identifiers and distinguish API access from build/runtime credit usage.",
+      "alternative_action": "Use deployment webhooks for status updates if polling is unnecessary; verify the webhook contract and plan allowance.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 64,
+      "category": "Developer & Infra",
+      "app": "Cloudflare",
+      "url": "https://developers.cloudflare.com/api",
+      "description": "Edge infrastructure, DNS and security",
+      "auth": [
+        "Token",
+        "API key"
+      ],
+      "access": "Account check",
+      "access_detail": "Create a scoped token in dashboard; product entitlement and account role govern each service.",
+      "surface": "REST + GraphQL analytics; broad infrastructure resources",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "A single broad global key is not required; scope the token to target resources.",
+      "sources": [
+        "https://developers.cloudflare.com/fundamentals/api/get-started/create-token/",
+        "https://developers.cloudflare.com/api"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Cloudflare API plus product-specific servers",
+        "url": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare/"
+      },
+      "workflow": "Read a permitted DNS zone",
+      "next_action": "Confirm Cloudflare API eligibility for the chosen product and create a read-only token limited to one test zone.",
+      "success_criterion": "List the approved zone's records and verify access is denied outside its scope.",
+      "alternative_action": "Compare the relevant official MCP server with this zone-scoped workflow instead of using a broad global key.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 65,
+      "category": "Developer & Infra",
+      "app": "Supabase",
+      "url": "https://supabase.com/docs",
+      "description": "Hosted Postgres and backend services",
+      "auth": [
+        "OAuth2",
+        "Token",
+        "API key"
+      ],
+      "access": "Free",
+      "access_detail": "Two free projects plus project API credentials support a scoped database prototype; management roles and quotas still apply.",
+      "surface": "Management REST; project REST/GraphQL, storage and auth",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "Free project route is inferred from billing and project API docs; keep project keys separate from management tokens and enforce row-level security.",
+      "sources": [
+        "https://supabase.com/docs/reference/api/introduction",
+        "https://supabase.com/docs/guides/platform/personal-access-tokens",
+        "https://supabase.com/docs",
+        "https://supabase.com/docs/guides/platform/billing-on-supabase"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Management/project capabilities; PAT permissions apply",
+        "url": "https://supabase.com/docs/guides/platform/personal-access-tokens"
+      },
+      "workflow": "Read rows protected by row-level security",
+      "next_action": "Create a free Supabase test project, seed two differently owned rows, and query through the project API with the intended user context.",
+      "success_criterion": "Return only permitted rows; record RLS behavior and keep management tokens out of the data-plane test.",
+      "alternative_action": "Use the project REST or GraphQL surface for records; reserve management MCP for project administration.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 66,
+      "category": "Developer & Infra",
+      "app": "Neo4j",
+      "url": "https://neo4j.com/docs/api",
+      "description": "Graph database and managed graph hosting",
+      "auth": [
+        "Basic",
+        "Token",
+        "OAuth2"
+      ],
+      "access": "Local",
+      "access_detail": "Self-hosted database credentials; Aura management has separate client credentials and entitlements.",
+      "surface": "HTTP Query API + Aura management; Cypher queries and infrastructure",
+      "verdict": "Build",
+      "blocker": "Runtime",
+      "note": "Basic/Bearer database query auth and Aura OAuth are distinct; a graph database is not a GraphQL API.",
+      "sources": [
+        "https://neo4j.com/docs/query-api/current/authentication-authorization/",
+        "https://neo4j.com/docs/aura/api/authentication/"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Schema introspection and Cypher read/write; database credentials and optional read-only mode",
+        "url": "https://neo4j.com/docs/mcp/current/tools/"
+      },
+      "workflow": "Run a read-only local Cypher query",
+      "next_action": "Use a local Neo4j database and a read-only query identity to retrieve a small seeded graph through the Query API or MCP.",
+      "success_criterion": "Return the expected nodes and relationships; document database auth separately from Aura management OAuth.",
+      "alternative_action": "Keep graph query execution separate from infrastructure provisioning and constrain query/time limits.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 67,
+      "category": "Developer & Infra",
+      "app": "Snowflake",
+      "url": "https://docs.snowflake.com",
+      "description": "Cloud data warehouse and data platform",
+      "auth": [
+        "OAuth2",
+        "JWT",
+        "Token"
+      ],
+      "access": "Account check",
+      "access_detail": "Account role and authentication policy required; trial eligibility not verified in this pass.",
+      "surface": "REST + SQL API; query execution and platform resources",
+      "verdict": "Conditional",
+      "blocker": "Customer access",
+      "note": "Key-pair JWT, OAuth and programmatic access tokens are supported; role and network policy still constrain use.",
+      "sources": [
+        "https://docs.snowflake.com/en/en/developer-guide/snowflake-rest-api/authentication",
+        "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/tutorials/common-setup"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Managed Cortex Analyst/Search/Agents and configured SQL/custom tools; OAuth and RBAC",
+        "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp"
+      },
+      "workflow": "Execute a bounded Snowflake read query",
+      "next_action": "Confirm trial/API eligibility and role/network policies, then run a small read-only SQL API query with one supported credential type.",
+      "success_criterion": "Record the role, warehouse/cost limit, query ID and result; verify the chosen auth scheme.",
+      "alternative_action": "Use official MCP only after checking role and query-execution boundaries; do not imply an API token bypasses network policy.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 68,
+      "category": "Developer & Infra",
+      "app": "MongoDB Atlas",
+      "url": "https://mongodb.com/docs/atlas/api",
+      "description": "Managed MongoDB database infrastructure",
+      "auth": [
+        "OAuth2",
+        "Digest"
+      ],
+      "access": "Admin / paid",
+      "access_detail": "Organization/project service account or API key; permissions and network access configuration apply.",
+      "surface": "REST Admin API; clusters, projects, users and configuration",
+      "verdict": "Conditional",
+      "blocker": "Admin",
+      "note": "This verdict concerns management APIs; do not substitute the retired Atlas Data API for database access.",
+      "sources": [
+        "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/preview/authentication",
+        "https://mongodb.com/docs/atlas/api"
+      ],
+      "access_group": "Gated",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Local or Atlas-managed data and cluster operations; setup and roles differ",
+        "url": "https://www.mongodb.com/docs/mcp-server/overview/"
+      },
+      "workflow": "Read Atlas project configuration",
+      "next_action": "Obtain a MongoDB Atlas project role and management credential, then read a test cluster's configuration through the Admin API.",
+      "success_criterion": "Return cluster/project metadata and confirm least-privilege access; do not query application data through the retired Data API.",
+      "alternative_action": "For application records, choose a supported database driver path separately from management MCP or Admin REST.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 69,
+      "category": "Developer & Infra",
+      "app": "Datadog",
+      "url": "https://docs.datadoghq.com/api",
+      "description": "Monitoring, logs and observability",
+      "auth": [
+        "API key"
+      ],
+      "access": "Account check",
+      "access_detail": "Organization API key plus application key for many operations; role and site-specific endpoint apply.",
+      "surface": "REST; metrics, logs, monitors, dashboards and incidents",
+      "verdict": "Conditional",
+      "blocker": "Customer access",
+      "note": "One API key alone is insufficient for many read/admin operations.",
+      "sources": [
+        "https://docs.datadoghq.com/api/latest/authentication/",
+        "https://docs.datadoghq.com/api/latest/"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Remote observability tools; separate local Code Security MCP and site restrictions",
+        "url": "https://docs.datadoghq.com/mcp_server/"
+      },
+      "workflow": "Read one monitor's definition",
+      "next_action": "Confirm Datadog account/API allowance and provision the required API plus application-key or OAuth permissions for a test monitor.",
+      "success_criterion": "Return the monitor definition and document why an API key alone is insufficient for the chosen read.",
+      "alternative_action": "Compare the official MCP monitor tool and its scopes before implementing a parallel wrapper.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 70,
+      "category": "Developer & Infra",
+      "app": "Sentry",
+      "url": "https://docs.sentry.io/api",
+      "description": "Application error and performance monitoring",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Account check",
+      "access_detail": "Create scoped auth token or OAuth integration; organization membership and plan features apply.",
+      "surface": "REST; issues, projects, releases and events",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "Separate the ingest DSN from a management API auth token.",
+      "sources": [
+        "https://docs.sentry.io/api/auth/",
+        "https://docs.sentry.io/api/guides/create-auth-token/",
+        "https://docs.sentry.io/api/"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official",
+        "scope": "OAuth-scoped errors, performance, issue triage and project tools",
+        "url": "https://mcp.sentry.dev/"
+      },
+      "workflow": "Read a seeded Sentry issue",
+      "next_action": "Confirm Sentry plan/API access and authorize an issue read in one test project using a management token or OAuth.",
+      "success_criterion": "Return the seeded issue and project context; demonstrate that an ingest DSN is not a management credential.",
+      "alternative_action": "Check official MCP issue coverage first; use direct REST only for fields or operations it omits.",
+      "status": "Proposed; not an authenticated test result"
+    }
+  ]
+}

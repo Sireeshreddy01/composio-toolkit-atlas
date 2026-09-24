@@ -1,0 +1,58 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 56,
+  "app": "Firecrawl",
+  "sources": [
+    "https://docs.firecrawl.dev",
+    "https://docs.firecrawl.dev/features/stealth-mode",
+    "https://github.com/firecrawl/firecrawl-mcp-server",
+    "https://www.firecrawl.dev/"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 110,
+      "url": "https://docs.firecrawl.dev",
+      "checked_at": "2026-09-24T10:48:44.695175+00:00",
+      "status": "unresolved",
+      "error": "HTTP Error 308: Permanent Redirect"
+    },
+    {
+      "id": 111,
+      "url": "https://docs.firecrawl.dev/features/stealth-mode",
+      "checked_at": "2026-09-24T10:48:44.785756+00:00",
+      "status": "unresolved",
+      "error": "HTTP Error 308: Permanent Redirect"
+    },
+    {
+      "id": 137,
+      "url": "https://github.com/firecrawl/firecrawl-mcp-server",
+      "checked_at": "2026-09-24T10:48:49.564351+00:00",
+      "status": 200,
+      "final_url": "https://github.com/firecrawl/firecrawl-mcp-server",
+      "sha256": "23fdc09f26155e437050b61ea80c87e386c76cd319915c2ef98406d3d328a567",
+      "text_chars": 49690,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 211,
+      "url": "https://www.firecrawl.dev/",
+      "checked_at": "2026-09-24T10:49:02.016447+00:00",
+      "status": 200,
+      "final_url": "https://www.firecrawl.dev/",
+      "sha256": "f3969f7cd5570dc6943880765ff1b2276dd9ebe5b3e8643f8ca5f39c5dacc433",
+      "text_chars": 21464,
+      "auth_guess": "API key",
+      "surface_guess": "REST",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

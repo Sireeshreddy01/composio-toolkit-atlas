@@ -1,0 +1,42 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 55,
+  "app": "Apify",
+  "sources": [
+    "https://docs.apify.com",
+    "https://github.com/apify/apify-mcp-server"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 95,
+      "url": "https://docs.apify.com",
+      "checked_at": "2026-09-24T10:48:41.862825+00:00",
+      "status": 200,
+      "final_url": "https://docs.apify.com",
+      "sha256": "17fbbf60f32de8ae4f46f2757e5b85bcb3c731863b5960183a201aebb2a693d9",
+      "text_chars": 3970,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 135,
+      "url": "https://github.com/apify/apify-mcp-server",
+      "checked_at": "2026-09-24T10:48:49.460871+00:00",
+      "status": 200,
+      "final_url": "https://github.com/apify/apify-mcp-server",
+      "sha256": "958f4cfe91bff821bd43926b2be43925a9d6e5ee07403c060bbbaebef2fc31c9",
+      "text_chars": 31655,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

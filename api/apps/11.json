@@ -1,0 +1,32 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 11,
+    "category": "Support & Helpdesk",
+    "app": "Zendesk",
+    "url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+    "description": "Customer service tickets and knowledge base",
+    "auth": [
+      "OAuth2"
+    ],
+    "access": "Admin / paid",
+    "access_detail": "Admin configures OAuth client; distributed integrations require a global OAuth client.",
+    "surface": "REST; tickets, users, help center and voice",
+    "verdict": "Conditional",
+    "blocker": "Admin",
+    "note": "API tokens are deprecated and unavailable for new accounts from July 28, 2026; migrate to OAuth.",
+    "sources": [
+      "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+      "https://developer.zendesk.com/documentation/authentication/oauth-migration/"
+    ],
+    "access_group": "Gated",
+    "mcp": null,
+    "workflow": "Read a Zendesk test ticket using OAuth",
+    "next_action": "Configure OAuth for a test Zendesk account and read a seeded ticket; avoid new integration instructions that require deprecated API tokens.",
+    "success_criterion": "Retrieve the ticket and document granted scopes plus the account's OAuth setup permissions.",
+    "alternative_action": "For an older customer installation, inventory token dependencies and create an OAuth migration checklist.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

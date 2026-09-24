@@ -1,0 +1,33 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 19,
+    "category": "Support & Helpdesk",
+    "app": "Gorgias",
+    "url": "https://gorgias.com",
+    "description": "Ecommerce-focused support operations",
+    "auth": [
+      "OAuth2",
+      "API key"
+    ],
+    "access": "Account check",
+    "access_detail": "Private apps use API keys; public apps require OAuth and approval; trial entitlement not verified.",
+    "surface": "REST; tickets, customers and support operations",
+    "verdict": "Conditional",
+    "blocker": "Approval",
+    "note": "Do not ship a multi-customer app with collected private API keys.",
+    "sources": [
+      "https://developers.gorgias.com/reference/authentication",
+      "https://developers.gorgias.com/docs/oauth2-authentication-for-creating-apps-with-gorgias"
+    ],
+    "access_group": "Unknown",
+    "mcp": null,
+    "workflow": "Read a Gorgias ticket privately",
+    "next_action": "Confirm private-key API access on the intended Gorgias plan and read a test ticket before considering public-app distribution.",
+    "success_criterion": "Record plan eligibility, retrieve the ticket, and separate private-key rights from public OAuth approval.",
+    "alternative_action": "For a missing ticket field, capture its authorized UI read and compare it with the public ticket response before proposing an alternative endpoint.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

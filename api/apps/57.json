@@ -1,0 +1,35 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 57,
+    "category": "Data & SEO",
+    "app": "Bright Data",
+    "url": "https://brightdata.com",
+    "description": "Web data extraction and proxy infrastructure",
+    "auth": [
+      "API key"
+    ],
+    "access": "Free",
+    "access_detail": "Official MCP documents a free tier; paid tools and product-specific billing remain separate.",
+    "surface": "REST + MCP; scraping, search and browser/data products",
+    "verdict": "Build",
+    "blocker": "Production entitlement",
+    "note": "Free MCP access is not a blanket entitlement to every paid dataset or proxy product.",
+    "sources": [
+      "https://docs.brightdata.com/ai/mcp-server/overview"
+    ],
+    "access_group": "Self-serve",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Free and paid web data tools; quotas differ",
+      "url": "https://docs.brightdata.com/ai/mcp-server/overview"
+    },
+    "workflow": "Read a result through the free MCP path",
+    "next_action": "Select a Bright Data tool explicitly included in the documented free MCP allowance and inspect its permitted read workflow.",
+    "success_criterion": "Record tool identity, quota and result scope; distinguish it from paid datasets and proxy products.",
+    "alternative_action": "Request separate entitlement for a paid dataset rather than extrapolating from free MCP access.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

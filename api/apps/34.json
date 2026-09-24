@@ -1,0 +1,33 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 34,
+    "category": "Marketing & Social",
+    "app": "GoHighLevel",
+    "url": "https://highlevel.stoplight.io",
+    "description": "Agency CRM and marketing automation",
+    "auth": [
+      "OAuth2",
+      "Token"
+    ],
+    "access": "Sandbox",
+    "access_detail": "Private Integration Tokens have a documented sandbox path; paid production capabilities need plan verification.",
+    "surface": "REST; contacts, calendars, opportunities and marketing",
+    "verdict": "Build",
+    "blocker": "Production entitlement",
+    "note": "Use OAuth for customer distribution; PITs suit controlled private integrations.",
+    "sources": [
+      "https://marketplace.gohighlevel.com/docs/Authorization/PrivateIntegrationsToken/",
+      "https://marketplace.gohighlevel.com/docs/oauth/SandboxPIT/"
+    ],
+    "access_group": "Self-serve",
+    "mcp": null,
+    "workflow": "Read a contact in a developer account",
+    "next_action": "Use a GoHighLevel development account and a controlled private integration token to read a seeded contact.",
+    "success_criterion": "Return the contact and location context; document OAuth requirements for customer distribution.",
+    "alternative_action": "Compare the marketplace OAuth path before expanding a private integration to multiple customer locations.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

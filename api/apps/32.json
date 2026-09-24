@@ -1,0 +1,33 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 32,
+    "category": "Marketing & Social",
+    "app": "Meta Ads",
+    "url": "https://developers.facebook.com/docs/marketing-apis",
+    "description": "Advertising on Meta properties",
+    "auth": [
+      "OAuth2",
+      "Token"
+    ],
+    "access": "Approval",
+    "access_detail": "Own-account testing is distinct from managing other customers' accounts; permissions require review.",
+    "surface": "Graph HTTP API; campaigns, audiences, creatives and insights",
+    "verdict": "Conditional",
+    "blocker": "Approval",
+    "note": "Meta Graph API is not GraphQL; recent access-tier naming changes warrant checking the exact product permission.",
+    "sources": [
+      "https://www.postman.com/meta/facebook-marketing-api/documentation/0zr4mes/facebook-marketing-api-mapi",
+      "https://github.com/facebook/facebook-nodejs-business-sdk/blob/main/README.md"
+    ],
+    "access_group": "Gated",
+    "mcp": null,
+    "workflow": "Read an approved Meta ad account",
+    "next_action": "Confirm the exact Marketing API permissions and access tier, then read campaign metadata in an approved test account.",
+    "success_criterion": "Return the seeded campaign and record app permissions, account role and current access tier.",
+    "alternative_action": "Keep this Graph HTTP workflow separate from Threads; request missing permissions through the official review route.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 20,
+    "category": "Support & Helpdesk",
+    "app": "Gladly",
+    "url": "https://gladly.com",
+    "description": "Customer-centered omnichannel support",
+    "auth": [
+      "Token",
+      "Basic"
+    ],
+    "access": "Account check",
+    "access_detail": "API token created in a customer account; free sandbox access not established.",
+    "surface": "REST; customers, conversations, tasks and events",
+    "verdict": "Conditional",
+    "blocker": "Customer access",
+    "note": "Token-based Basic authentication; a commercial tenant remains a prerequisite.",
+    "sources": [
+      "https://developer.gladly.com/rest/"
+    ],
+    "access_group": "Unknown",
+    "mcp": null,
+    "workflow": "Retrieve a customer conversation",
+    "next_action": "Obtain an authorized Gladly test tenant and verify token-based Basic authentication against one customer conversation.",
+    "success_criterion": "Return only the approved customer's conversation and document tenant-access requirements.",
+    "alternative_action": "Request a vendor-provided sample payload if no test tenant is available; tenant access remains a prerequisite.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

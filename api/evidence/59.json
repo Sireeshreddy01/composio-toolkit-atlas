@@ -1,0 +1,42 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 59,
+  "app": "Waterfall.io",
+  "sources": [
+    "https://www.waterfall.io/",
+    "https://www.waterfall.io/product/contact-search"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 231,
+      "url": "https://www.waterfall.io/",
+      "checked_at": "2026-09-24T10:49:05.483961+00:00",
+      "status": 200,
+      "final_url": "https://www.waterfall.io/",
+      "sha256": "ca8abbc3c91a9b54aecebe87d778114b728cfef291cbe9d5b3ec3ee7fffb589b",
+      "text_chars": 8330,
+      "auth_guess": "API key",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 232,
+      "url": "https://www.waterfall.io/product/contact-search",
+      "checked_at": "2026-09-24T10:49:05.659935+00:00",
+      "status": 200,
+      "final_url": "https://www.waterfall.io/product/contact-search",
+      "sha256": "62c37c44abed8a334430e72cbbb5e777353b5a0a36e45e4b2dc23b50fee83334",
+      "text_chars": 7585,
+      "auth_guess": "API key",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

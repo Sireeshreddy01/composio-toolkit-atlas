@@ -1,0 +1,220 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 8,
+  "app": "Close",
+  "sources": [
+    "https://developer.close.com/api/overview/api-key-authentication",
+    "https://developer.close.com/integrations",
+    "https://developer.close.com/mcp"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 34,
+      "url": "https://developer.close.com/api/overview/api-key-authentication",
+      "checked_at": "2026-09-24T10:48:31.678654+00:00",
+      "status": 200,
+      "final_url": "https://developer.close.com/api/overview/api-key-authentication",
+      "sha256": "ef9c4d4eb28223abfe3e4df8f5fe4c39b7fdfa5fb464b75408ef98f28f3f46cc",
+      "text_chars": 13622,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 35,
+      "url": "https://developer.close.com/integrations",
+      "checked_at": "2026-09-24T10:48:31.701308+00:00",
+      "status": 200,
+      "final_url": "https://developer.close.com/integrations",
+      "sha256": "7b616b50b22073a9df6e7c32314f1d3a029f9a1d89a8661caabff1c6346d9c6e",
+      "text_chars": 4036,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 36,
+      "url": "https://developer.close.com/mcp",
+      "checked_at": "2026-09-24T10:48:31.853163+00:00",
+      "status": 200,
+      "final_url": "https://developer.close.com/mcp",
+      "sha256": "e802581f1c4587790a61a6d1e451ff5dfd53f96d634b59a27be329a77b564e32",
+      "text_chars": 8833,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": {
+    "id": 8,
+    "app": "Close",
+    "category": "CRM & Sales",
+    "product_scope": "Close CRM REST API and remote MCP",
+    "fields": {
+      "authentication": {
+        "answer": "REST supports user/organization API keys via HTTP Basic with an empty password, or OAuth 2.0. OAuth is recommended for distributed integrations; MCP supports OAuth or Close-API-Key headers.",
+        "status": "supported",
+        "caveat": "Access inherits the associated user's membership permissions. REST Basic authentication and MCP key headers are distinct.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 8,
+          "field": "authentication",
+          "assessment": "supported",
+          "reason": "S019–S021 distinguish REST Basic API keys, customer-facing OAuth and MCP-specific key headers, with user/organization permission boundaries."
+        },
+        "citations": [
+          {
+            "source_id": "S020",
+            "url": "https://developer.close.com/api/overview/api-key-authentication",
+            "retrieved_at": "2026-09-24T13:29:41.946801+00:00",
+            "source_sha256": "c8097ea6900835e350e5ab638063f3be1d4273ea1b0777b79ddd365cc2d344a5",
+            "quote_sha256": "89697630afc3dc4a5d4b3331c0d6c55ac61be8d118cdb055118cd2d036abc7db",
+            "normalized_offset": 1064,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S019",
+            "url": "https://developer.close.com/integrations",
+            "retrieved_at": "2026-09-24T13:29:41.943149+00:00",
+            "source_sha256": "1dec380b1f1921d96d8b34629634970e78986c8031398e01931aeac517963ddc",
+            "quote_sha256": "5c828b6b5c2c00607a71b8104e91e107e856761606034a6c27c15a7d4810e21a",
+            "normalized_offset": 1540,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S021",
+            "url": "https://developer.close.com/mcp",
+            "retrieved_at": "2026-09-24T13:29:41.956227+00:00",
+            "source_sha256": "11ee03654b6e8004ce7cd8b79d2ca4770aa10762b13172491e8329573ede9884",
+            "quote_sha256": "c230b559f0f90b9cb919e0a2d86b790948be2045a699ff8d3c1b035bb300e180",
+            "normalized_offset": 8067,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "development_access": {
+        "answer": "Existing Close users can create a free secondary organization for integration development. Non-user integration partners must request a free Dev organization by email with app and release details.",
+        "status": "needs_review",
+        "caveat": "Self-service is conditional on already being a Close user. New integration partners have a request gate; MCP entitlement is not separately priced here.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 8,
+          "field": "development_access",
+          "assessment": "supported",
+          "reason": "S019 explicitly distinguishes free secondary organizations for existing users from requested Dev organizations for non-user integration partners."
+        },
+        "citations": [
+          {
+            "source_id": "S019",
+            "url": "https://developer.close.com/integrations",
+            "retrieved_at": "2026-09-24T13:29:41.943149+00:00",
+            "source_sha256": "1dec380b1f1921d96d8b34629634970e78986c8031398e01931aeac517963ddc",
+            "quote_sha256": "ce1f4cea876e01c3ec29cac6768b101967359d6cc556f3839638ad92832c32e4",
+            "normalized_offset": 2046,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S019",
+            "url": "https://developer.close.com/integrations",
+            "retrieved_at": "2026-09-24T13:29:41.943149+00:00",
+            "source_sha256": "1dec380b1f1921d96d8b34629634970e78986c8031398e01931aeac517963ddc",
+            "quote_sha256": "7cbbd22ef9e3377b601800d0f67a18d71fd7647f44e22eb63a3253fb5aec0d7f",
+            "normalized_offset": 2284,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S019",
+            "url": "https://developer.close.com/integrations",
+            "retrieved_at": "2026-09-24T13:29:41.943149+00:00",
+            "source_sha256": "1dec380b1f1921d96d8b34629634970e78986c8031398e01931aeac517963ddc",
+            "quote_sha256": "8e8e14b34baf95e1c06a63c4292ae5391f34689c30e481b413436c7a3ea80f10",
+            "normalized_offset": 2474,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "api_surface": {
+        "answer": "A REST API supports reading and writing Close data, plus webhooks for real-time updates. Concrete CRM object families are not enumerated in the packet.",
+        "status": "supported",
+        "caveat": "No lead, contact or other CRM resource catalog should be inferred from these integration overview pages.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 8,
+          "field": "api_surface",
+          "assessment": "supported",
+          "reason": "S019 explicitly identifies REST data reads/writes and webhooks; no unsupported object catalog is added."
+        },
+        "citations": [
+          {
+            "source_id": "S019",
+            "url": "https://developer.close.com/integrations",
+            "retrieved_at": "2026-09-24T13:29:41.943149+00:00",
+            "source_sha256": "1dec380b1f1921d96d8b34629634970e78986c8031398e01931aeac517963ddc",
+            "quote_sha256": "8b9d79d6aa2f6783ccbaa641df82ad8825bd1a83c425f689e0e909c726bfda58",
+            "normalized_offset": 1338,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S019",
+            "url": "https://developer.close.com/integrations",
+            "retrieved_at": "2026-09-24T13:29:41.943149+00:00",
+            "source_sha256": "1dec380b1f1921d96d8b34629634970e78986c8031398e01931aeac517963ddc",
+            "quote_sha256": "8502e972684ef2e40b26c47f3c2bb39d2ad5e60a76caec8faa0f9f6e9852b903",
+            "normalized_offset": 1398,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "mcp": {
+        "answer": "Vendor remote MCP runs at https://mcp.close.com/mcp with Streamable HTTP and OAuth DCR. Scopes separate read access, writes and destructive writes/deletes.",
+        "status": "supported",
+        "caveat": "The full per-scope tool list is linked but not supplied. Each organization needs its own authorized connection.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 8,
+          "field": "mcp",
+          "assessment": "supported",
+          "reason": "S021 explicitly supplies the remote endpoint, Streamable HTTP, OAuth DCR and separate read, write and destructive scopes."
+        },
+        "citations": [
+          {
+            "source_id": "S021",
+            "url": "https://developer.close.com/mcp",
+            "retrieved_at": "2026-09-24T13:29:41.956227+00:00",
+            "source_sha256": "11ee03654b6e8004ce7cd8b79d2ca4770aa10762b13172491e8329573ede9884",
+            "quote_sha256": "760476c4954de72e9d83a78921351b44c74f4099e56bb2a1a025cc911df5ad25",
+            "normalized_offset": 414,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S021",
+            "url": "https://developer.close.com/mcp",
+            "retrieved_at": "2026-09-24T13:29:41.956227+00:00",
+            "source_sha256": "11ee03654b6e8004ce7cd8b79d2ca4770aa10762b13172491e8329573ede9884",
+            "quote_sha256": "264335a2d2be93e2f675a7d2fa2be54ec0aa9ff6189df186e1889f110f58614e",
+            "normalized_offset": 1081,
+            "quote_binding_passed": true
+          }
+        ]
+      }
+    },
+    "access_class": "Unknown",
+    "verdict": "Review required",
+    "decision_reason": "An existing-user free secondary-organization route is explicit; non-user partners instead face a request gate. No organization was created or tested.",
+    "next_step": "Obtain the secondary-organization documentation; success is confirmation of creation eligibility and API/MCP entitlement for that free organization.",
+    "post_run_review": {
+      "reviewer": "Codex AI agent",
+      "reviewed_at": "2026-09-24T13:43:29.256305+00:00",
+      "previous_access_class": "Self-serve",
+      "previous_verdict": "Prototype candidate",
+      "reason": "The source distinguishes existing Close users from new integration partners, who must request a developer organization. A generic Self-serve decision overstates access for a new developer. No new-developer ungated path was established."
+    }
+  },
+  "human_review": "pending",
+  "authenticated_test": false
+}

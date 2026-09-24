@@ -1,0 +1,56 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 66,
+  "app": "Neo4j",
+  "sources": [
+    "https://neo4j.com/docs/aura/api/authentication/",
+    "https://neo4j.com/docs/mcp/current/tools/",
+    "https://neo4j.com/docs/query-api/current/authentication-authorization/"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 166,
+      "url": "https://neo4j.com/docs/aura/api/authentication/",
+      "checked_at": "2026-09-24T10:48:53.466301+00:00",
+      "status": 200,
+      "final_url": "https://neo4j.com/docs/aura/api/authentication/",
+      "sha256": "548560facc4070258e4377a637eab9612b056d224a3498451c8cc5b6e1934f18",
+      "text_chars": 10511,
+      "auth_guess": "OAuth2",
+      "surface_guess": "GraphQL",
+      "access_guess": "Gated",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 167,
+      "url": "https://neo4j.com/docs/query-api/current/authentication-authorization/",
+      "checked_at": "2026-09-24T10:48:53.476733+00:00",
+      "status": 200,
+      "final_url": "https://neo4j.com/docs/query-api/current/authentication-authorization/",
+      "sha256": "880ef2ca104e04468ecf0199b8009df825394deb2cf91a426888ce97c46c6eed",
+      "text_chars": 6151,
+      "auth_guess": "Basic",
+      "surface_guess": "GraphQL",
+      "access_guess": "Gated",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 245,
+      "url": "https://neo4j.com/docs/mcp/current/tools/",
+      "checked_at": "2026-09-24T10:56:39.582551+00:00",
+      "status": 200,
+      "final_url": "https://neo4j.com/docs/mcp/current/tools/",
+      "sha256": "683428cd0b219b58ca7c5f4795ad40ddf9d557a3993aa90b2f75ce1023e526d6",
+      "text_chars": 4574,
+      "auth_guess": "Unknown",
+      "surface_guess": "GraphQL",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

@@ -1,0 +1,227 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 17,
+  "app": "Plain",
+  "sources": [
+    "https://help.plain.com/article/pricing",
+    "https://www.plain.com/blog/mcp-customer-support-2026",
+    "https://www.plain.com/docs/graphql/authentication",
+    "https://www.plain.com/docs/graphql/introduction"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 152,
+      "url": "https://help.plain.com/article/pricing",
+      "checked_at": "2026-09-24T10:48:51.781369+00:00",
+      "status": 200,
+      "final_url": "https://help.plain.com/article/pricing",
+      "sha256": "939c1f9bfc3d8763ece27808588b0482bf3e6a7d27afdcad2ba911377a30ce37",
+      "text_chars": 2173,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 220,
+      "url": "https://www.plain.com/blog/mcp-customer-support-2026",
+      "checked_at": "2026-09-24T10:49:03.824066+00:00",
+      "status": 200,
+      "final_url": "https://www.plain.com/blog/mcp-customer-support-2026",
+      "sha256": "04d8ef901302537c922eae9d6202e02b0444726c0e3d71f37cf5ae8c6f6b2659",
+      "text_chars": 40720,
+      "auth_guess": "OAuth2",
+      "surface_guess": "GraphQL",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 221,
+      "url": "https://www.plain.com/docs/graphql/authentication",
+      "checked_at": "2026-09-24T10:49:03.963474+00:00",
+      "status": 200,
+      "final_url": "https://www.plain.com/docs/graphql/authentication",
+      "sha256": "bc44c07426d0226934fbd35bfd1fe6e37413b5b343c94d26ed7c2c31be3dc421",
+      "text_chars": 2608,
+      "auth_guess": "API key",
+      "surface_guess": "GraphQL",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 222,
+      "url": "https://www.plain.com/docs/graphql/introduction",
+      "checked_at": "2026-09-24T10:49:04.094424+00:00",
+      "status": 200,
+      "final_url": "https://www.plain.com/docs/graphql/introduction",
+      "sha256": "ef72179ed65e02f9c0218aa32124f2526f47c9c356572638bbdd5d1105c896a0",
+      "text_chars": 3629,
+      "auth_guess": "API key",
+      "surface_guess": "GraphQL",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": {
+    "id": 17,
+    "app": "Plain",
+    "category": "Support & Helpdesk",
+    "product_scope": "Plain customer-support GraphQL API and vendor MCP",
+    "fields": {
+      "authentication": {
+        "answer": "GraphQL uses bearer API keys belonging to machine users. Each key has fine-grained permissions, and a machine user can hold multiple keys.",
+        "status": "supported",
+        "caveat": "MCP instead authenticates the human user through OAuth.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 17,
+          "field": "authentication",
+          "assessment": "supported",
+          "reason": "S049 explicitly ties multiple, individually permissioned API keys to machine users and shows bearer authentication."
+        },
+        "citations": [
+          {
+            "source_id": "S049",
+            "url": "https://www.plain.com/docs/graphql/authentication",
+            "retrieved_at": "2026-09-24T13:29:52.538121+00:00",
+            "source_sha256": "4ff58cfad830937edadd99c3e0aee0980a83bae69bf3fd1ee869a39d57110fef",
+            "quote_sha256": "c386b04f4218e5d9e30a0e3d685807f9d5faac993c5a4d5f81078ff5abe06208",
+            "normalized_offset": 49,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S049",
+            "url": "https://www.plain.com/docs/graphql/authentication",
+            "retrieved_at": "2026-09-24T13:29:52.538121+00:00",
+            "source_sha256": "4ff58cfad830937edadd99c3e0aee0980a83bae69bf3fd1ee869a39d57110fef",
+            "quote_sha256": "09f5dd52d97d2792d845a0f0ea82ec7f7217c2b2a69fce12f6127f6a7250fa11",
+            "normalized_offset": 132,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S049",
+            "url": "https://www.plain.com/docs/graphql/authentication",
+            "retrieved_at": "2026-09-24T13:29:52.538121+00:00",
+            "source_sha256": "4ff58cfad830937edadd99c3e0aee0980a83bae69bf3fd1ee869a39d57110fef",
+            "quote_sha256": "9f69901714e4fc6a5ce59835ca3e57d31904f622d9175aece106e31408342d63",
+            "normalized_offset": 996,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "development_access": {
+        "answer": "Every plan offers a free seven-day trial, but the packet does not explicitly establish GraphQL API entitlement during that trial.",
+        "status": "unresolved",
+        "caveat": "Machine-user key instructions and general statements about free MCP connections do not prove trial API entitlement.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 17,
+          "field": "development_access",
+          "assessment": "unresolved",
+          "reason": "S050 confirms a seven-day product trial, but neither it nor the key instructions establishes trial GraphQL entitlement."
+        },
+        "citations": [
+          {
+            "source_id": "S050",
+            "url": "https://help.plain.com/article/pricing",
+            "retrieved_at": "2026-09-24T13:29:52.554114+00:00",
+            "source_sha256": "67f879a872252c3c7aa0becc24ee971e7c7dcf6c42f44e7247d8460c069d3b68",
+            "quote_sha256": "634d4e1dffbfbbbea2116df3516dc735c77e0b4b3d6a1b044eb729016362d0de",
+            "normalized_offset": 259,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "api_surface": {
+        "answer": "A GraphQL API accepts POST requests at https://core-api.uk.plain.com/graphql/v1. Customer lookup by email is demonstrated; a downloadable schema is documented.",
+        "status": "supported",
+        "caveat": "Only the UK API address is supplied; the example does not enumerate the full resource surface.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 17,
+          "field": "api_surface",
+          "assessment": "supported",
+          "reason": "S048 explicitly supplies the GraphQL POST endpoint, customer-email lookup example and downloadable schema URL."
+        },
+        "citations": [
+          {
+            "source_id": "S048",
+            "url": "https://www.plain.com/docs/graphql/introduction",
+            "retrieved_at": "2026-09-24T13:29:52.066117+00:00",
+            "source_sha256": "8bfdb85e7636c0bc89c9535605021aa3a16c963b3200c8b2bcc6bf38470d2612",
+            "quote_sha256": "9fd0b8cda1859a211a5f7d9410fb01f30b4eb8d2093c99787538c877243f2bc8",
+            "normalized_offset": 557,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S048",
+            "url": "https://www.plain.com/docs/graphql/introduction",
+            "retrieved_at": "2026-09-24T13:29:52.066117+00:00",
+            "source_sha256": "8bfdb85e7636c0bc89c9535605021aa3a16c963b3200c8b2bcc6bf38470d2612",
+            "quote_sha256": "087999765386e89d202d2829b78e0bad62f405453760f703b8700746253c58fb",
+            "normalized_offset": 1187,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S048",
+            "url": "https://www.plain.com/docs/graphql/introduction",
+            "retrieved_at": "2026-09-24T13:29:52.066117+00:00",
+            "source_sha256": "8bfdb85e7636c0bc89c9535605021aa3a16c963b3200c8b2bcc6bf38470d2612",
+            "quote_sha256": "49a6b693f685c46626b9b6df3babd888b1fd5a9b950fdd61c9d764a9294fccd5",
+            "normalized_offset": 1097,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "mcp": {
+        "answer": "Plain provides a remote MCP at https://mcp.plain.com/mcp using OAuth 2.0 with PKCE and inherited user permissions, including thread replies and priority changes.",
+        "status": "supported",
+        "caveat": "March 2026 limitations exclude customer creation, billing, workflows and workspace settings. Plan entitlement is not explicit.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 17,
+          "field": "mcp",
+          "assessment": "supported",
+          "reason": "S051 directly documents Plain's server, OAuth with PKCE, inherited permissions and the stated writes, with explicit capability exclusions."
+        },
+        "citations": [
+          {
+            "source_id": "S051",
+            "url": "https://www.plain.com/blog/mcp-customer-support-2026",
+            "retrieved_at": "2026-09-24T13:29:52.835247+00:00",
+            "source_sha256": "8ea1358c35d3f43ff10d5e9ee434a08612a39bf546d823fa735de9cd7e75471c",
+            "quote_sha256": "e11a94d20f9682c2adb45e9cdefe0c75f5b3edcf16f6b9194c0c4dcb8f7979b9",
+            "normalized_offset": 7696,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S051",
+            "url": "https://www.plain.com/blog/mcp-customer-support-2026",
+            "retrieved_at": "2026-09-24T13:29:52.835247+00:00",
+            "source_sha256": "8ea1358c35d3f43ff10d5e9ee434a08612a39bf546d823fa735de9cd7e75471c",
+            "quote_sha256": "e55e9810c8aca3e17bfc2c4999e29e06490b40c74d8283e90eafbccdf602cf68",
+            "normalized_offset": 5830,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S051",
+            "url": "https://www.plain.com/blog/mcp-customer-support-2026",
+            "retrieved_at": "2026-09-24T13:29:52.835247+00:00",
+            "source_sha256": "8ea1358c35d3f43ff10d5e9ee434a08612a39bf546d823fa735de9cd7e75471c",
+            "quote_sha256": "8dca04bad3b4fc81aadce5128300051fb1e0d754417f0a61e80ca7cdf7849712",
+            "normalized_offset": 2792,
+            "quote_binding_passed": true
+          }
+        ]
+      }
+    },
+    "access_class": "Unknown",
+    "verdict": "Review required",
+    "decision_reason": "A product trial exists, but neither trial GraphQL entitlement nor a separately provisioned developer route is established.",
+    "next_step": "Obtain Plain's trial entitlement matrix; success is an explicit statement covering machine-user GraphQL keys and MCP access during the seven-day trial."
+  },
+  "human_review": "pending",
+  "authenticated_test": false
+}

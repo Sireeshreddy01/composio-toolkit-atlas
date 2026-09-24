@@ -1,0 +1,32 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 52,
+    "category": "Data & SEO",
+    "app": "SE Ranking",
+    "url": "https://seranking.com/api",
+    "description": "SEO analytics and rankings",
+    "auth": [
+      "API key"
+    ],
+    "access": "Paid",
+    "access_detail": "Subscription/credit-based Data API; Project API consumes subscription limits.",
+    "surface": "REST; SEO datasets and project operations",
+    "verdict": "Conditional",
+    "blocker": "Subscription",
+    "note": "Separate Data API credit balances from Project API subscription quotas.",
+    "sources": [
+      "https://seranking.com/api/how-to-get-api/",
+      "https://seranking.com/api/project/getting-started/"
+    ],
+    "access_group": "Gated",
+    "mcp": null,
+    "workflow": "Inspect Project API quota and a project",
+    "next_action": "Confirm whether the SE Ranking workflow uses Project API subscriptions or Data API credits, then read a permitted project resource.",
+    "success_criterion": "Record the product, quota model and one authorized project response.",
+    "alternative_action": "Request the exact endpoint's allowance from support when pricing does not distinguish the two API products.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

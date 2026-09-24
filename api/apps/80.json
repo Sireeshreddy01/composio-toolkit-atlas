@@ -1,0 +1,34 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 80,
+    "category": "Productivity",
+    "app": "Harvest",
+    "url": "https://help.getharvest.com/api-v2",
+    "description": "Time tracking and project invoicing",
+    "auth": [
+      "OAuth2",
+      "Token"
+    ],
+    "access": "Free",
+    "access_detail": "API access included for all accounts, including free and trial; send account ID with token.",
+    "surface": "REST; time entries, projects, clients and invoices",
+    "verdict": "Build",
+    "blocker": "None",
+    "note": "API v2 replaced legacy Basic auth with OAuth/PATs; include account context.",
+    "sources": [
+      "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+      "https://help.getharvest.com/api-v2/introduction/overview/general/",
+      "https://support.getharvest.com/hc/en-us/articles/360048180732-The-Harvest-API"
+    ],
+    "access_group": "Self-serve",
+    "mcp": null,
+    "workflow": "Read an approved time entry",
+    "next_action": "Use a free Harvest account and v2 OAuth/PAT with explicit account context to read a test time entry.",
+    "success_criterion": "Return the entry and account identifier; avoid legacy Basic-auth instructions.",
+    "alternative_action": "Use a read-only reporting workflow first, keeping invoice creation and time-entry mutation outside the initial tool.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

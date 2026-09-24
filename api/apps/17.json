@@ -1,0 +1,37 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 17,
+    "category": "Support & Helpdesk",
+    "app": "Plain",
+    "url": "https://plain.com",
+    "description": "API-first B2B customer support",
+    "auth": [
+      "API key"
+    ],
+    "access": "Trial",
+    "access_detail": "Seven-day trial; scoped API keys created in workspace.",
+    "surface": "GraphQL; customers, threads, events and assignment",
+    "verdict": "Build",
+    "blocker": "None",
+    "note": "GraphQL is the primary data API; a REST-only wrapper would misrepresent the interface.",
+    "sources": [
+      "https://www.plain.com/docs/graphql/introduction",
+      "https://www.plain.com/docs/graphql/authentication",
+      "https://help.plain.com/article/pricing"
+    ],
+    "access_group": "Self-serve",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Support workflow tools; vendor describes its server",
+      "url": "https://www.plain.com/blog/mcp-customer-support-2026"
+    },
+    "workflow": "Query a customer support thread",
+    "next_action": "Use a Plain trial workspace to execute a minimal GraphQL thread query with only the required fields.",
+    "success_criterion": "Return a seeded thread and customer reference; handle GraphQL errors separately from HTTP status.",
+    "alternative_action": "Compare Plain's MCP thread operations with the same query rather than building a REST-shaped adapter.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 10,
+  "app": "DealCloud",
+  "sources": [
+    "https://api.docs.dealcloud.com/docs",
+    "https://api.docs.dealcloud.com/docs/apikeys",
+    "https://api.docs.dealcloud.com/docs/token"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 3,
+      "url": "https://api.docs.dealcloud.com/docs",
+      "checked_at": "2026-09-24T10:48:24.227626+00:00",
+      "status": 200,
+      "final_url": "https://api.docs.dealcloud.com/docs",
+      "sha256": "7e4b2a1483d4a72e758d773c7853c928ac0e329ca1752ca7963f2ab3dba2b70f",
+      "text_chars": 8023,
+      "auth_guess": "API key",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 4,
+      "url": "https://api.docs.dealcloud.com/docs/apikeys",
+      "checked_at": "2026-09-24T10:48:24.227714+00:00",
+      "status": 200,
+      "final_url": "https://api.docs.dealcloud.com/docs/apikeys",
+      "sha256": "9961e74d40b60037774a47aa548970490ed1532b8f7fa15d5540f4d053e768c7",
+      "text_chars": 7674,
+      "auth_guess": "API key",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 5,
+      "url": "https://api.docs.dealcloud.com/docs/token",
+      "checked_at": "2026-09-24T10:48:24.227800+00:00",
+      "status": 200,
+      "final_url": "https://api.docs.dealcloud.com/docs/token",
+      "sha256": "56e86e5713a135cc7836596d4202b7d5545303e9a6d052ddb24bd4e8eb3261d6",
+      "text_chars": 8434,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": {
+    "id": 10,
+    "app": "DealCloud",
+    "category": "CRM & Sales",
+    "product_scope": "DealCloud site REST APIs",
+    "fields": {
+      "authentication": {
+        "answer": "OAuth2 client credentials exchange client_id, API key and scopes for a bearer token. Tokens expire after 15 minutes and are renewed by repeating the flow.",
+        "status": "supported",
+        "caveat": "The prose calls the credential apiKey; the request example sends client_secret. The packet does not explicitly explain that naming correspondence.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 10,
+          "field": "authentication",
+          "assessment": "supported",
+          "reason": "S025 explicitly documents client credentials, bearer tokens and 900-second expiry. The apiKey/client_secret naming ambiguity is acknowledged."
+        },
+        "citations": [
+          {
+            "source_id": "S025",
+            "url": "https://api.docs.dealcloud.com/docs/token",
+            "retrieved_at": "2026-09-24T13:29:42.614239+00:00",
+            "source_sha256": "f4441469bbedcf261894c7ca22a67b0ae38065984df028f012dc3a28b7c3c64b",
+            "quote_sha256": "b898e78d0f803df77026e20bb09397d0f5d4b16dafe9bcfe0b29ec7a61a36811",
+            "normalized_offset": 123,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S025",
+            "url": "https://api.docs.dealcloud.com/docs/token",
+            "retrieved_at": "2026-09-24T13:29:42.614239+00:00",
+            "source_sha256": "f4441469bbedcf261894c7ca22a67b0ae38065984df028f012dc3a28b7c3c64b",
+            "quote_sha256": "d75d6870ef85ea46aca9d0176cd240c6e6e48a138e354b22247a90c4543c7f22",
+            "normalized_offset": 385,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S025",
+            "url": "https://api.docs.dealcloud.com/docs/token",
+            "retrieved_at": "2026-09-24T13:29:42.614239+00:00",
+            "source_sha256": "f4441469bbedcf261894c7ca22a67b0ae38065984df028f012dc3a28b7c3c64b",
+            "quote_sha256": "1a1d4698b7949a183ab4792f3f23003b202e1dc7b6f7e7e2e049c0e8f4f07cde",
+            "normalized_offset": 726,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "development_access": {
+        "answer": "API access requires assignment to a user group with API capability enabled through Admin settings. No free, trial or sandbox entitlement is documented.",
+        "status": "supported",
+        "caveat": "The gate is administrative; the packet does not establish a paid API requirement or sandbox availability.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 10,
+          "field": "development_access",
+          "assessment": "supported",
+          "reason": "S024 explicitly requires administrator-controlled API capability and user-group permissions; it establishes no pricing or sandbox entitlement."
+        },
+        "citations": [
+          {
+            "source_id": "S024",
+            "url": "https://api.docs.dealcloud.com/docs/apikeys",
+            "retrieved_at": "2026-09-24T13:29:42.352635+00:00",
+            "source_sha256": "73daa86f0b516382761e61dbe3b5c269ac9d4a0315549a9f2256ee1b58b0bdda",
+            "quote_sha256": "2918cc59ec3251fd295c7e85fc1d9f87b0224d31670838bcbf4eb84c424b7a63",
+            "normalized_offset": 114,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S024",
+            "url": "https://api.docs.dealcloud.com/docs/apikeys",
+            "retrieved_at": "2026-09-24T13:29:42.352635+00:00",
+            "source_sha256": "73daa86f0b516382761e61dbe3b5c269ac9d4a0315549a9f2256ee1b58b0bdda",
+            "quote_sha256": "42328bc2442328b6eaaab95cf8c77328c43d395bb38d3e81a96cd95df7001ba5",
+            "normalized_offset": 292,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "api_surface": {
+        "answer": "REST families cover authentication, user management, site schema/data, backup exports, real-time publications and Relationship Intelligence imports.",
+        "status": "supported",
+        "caveat": "Endpoint and data access depend on user-group permissions and requested scopes.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 10,
+          "field": "api_surface",
+          "assessment": "supported",
+          "reason": "S026 explicitly identifies REST and describes each claimed functional API family in substantive text."
+        },
+        "citations": [
+          {
+            "source_id": "S026",
+            "url": "https://api.docs.dealcloud.com/docs",
+            "retrieved_at": "2026-09-24T13:29:44.239873+00:00",
+            "source_sha256": "06f8f4b5a46b26588f2a8c8e9946233e19bf4cc60eb273e958930e78a23e00a1",
+            "quote_sha256": "edde9435562ca8eddc50a947fde427c2641bfc9cc681db1e98567eb75aac6e51",
+            "normalized_offset": 80,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S026",
+            "url": "https://api.docs.dealcloud.com/docs",
+            "retrieved_at": "2026-09-24T13:29:44.239873+00:00",
+            "source_sha256": "06f8f4b5a46b26588f2a8c8e9946233e19bf4cc60eb273e958930e78a23e00a1",
+            "quote_sha256": "9925253226b4bc7df49c8f70386dafbe9c5ed6c46ea52f34b59c66b496d9bd20",
+            "normalized_offset": 767,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S026",
+            "url": "https://api.docs.dealcloud.com/docs",
+            "retrieved_at": "2026-09-24T13:29:44.239873+00:00",
+            "source_sha256": "06f8f4b5a46b26588f2a8c8e9946233e19bf4cc60eb273e958930e78a23e00a1",
+            "quote_sha256": "925279aeffe6c5188f2af37e41ee15236cbabd39e68b15f00279b3097036348a",
+            "normalized_offset": 815,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S026",
+            "url": "https://api.docs.dealcloud.com/docs",
+            "retrieved_at": "2026-09-24T13:29:44.239873+00:00",
+            "source_sha256": "06f8f4b5a46b26588f2a8c8e9946233e19bf4cc60eb273e958930e78a23e00a1",
+            "quote_sha256": "258d46eace426fd166aa5969401565e82cbc92bc00714da90f2cb0cfdaafde3a",
+            "normalized_offset": 925,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "mcp": {
+        "answer": "Existing vendor MCP availability is unresolved.",
+        "status": "unresolved",
+        "caveat": "No MCP evidence is supplied; REST documentation does not establish MCP availability or absence.",
+        "citation_binding_passed": false,
+        "verification": {
+          "id": 10,
+          "field": "mcp",
+          "assessment": "unresolved",
+          "reason": "The DealCloud packet documents REST access but supplies no evidence establishing or excluding MCP."
+        },
+        "citations": []
+      }
+    },
+    "access_class": "Gated",
+    "verdict": "Access prerequisite",
+    "decision_reason": "API access explicitly depends on administrator-controlled user-group capability. No paid requirement is inferred, and nothing was authenticated or tested.",
+    "next_step": "Obtain the target site's API-capability eligibility statement from its administrator; success is confirmation that a development user can receive API access and the applicable scopes."
+  },
+  "human_review": "pending",
+  "authenticated_test": false
+}

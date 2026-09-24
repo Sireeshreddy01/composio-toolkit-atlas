@@ -1,0 +1,56 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 77,
+  "app": "ClickUp",
+  "sources": [
+    "https://developer.clickup.com/docs/Getting%20Started",
+    "https://developer.clickup.com/docs/authentication",
+    "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 31,
+      "url": "https://developer.clickup.com/docs/Getting%20Started",
+      "checked_at": "2026-09-24T10:48:31.051272+00:00",
+      "status": 200,
+      "final_url": "https://developer.clickup.com/docs/Getting%20Started",
+      "sha256": "c5d5d0003e144c8c090223bcf8d767ea5a4064fae627199d2e1e0aea753c8b2a",
+      "text_chars": 2983,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 32,
+      "url": "https://developer.clickup.com/docs/authentication",
+      "checked_at": "2026-09-24T10:48:31.092557+00:00",
+      "status": 200,
+      "final_url": "https://developer.clickup.com/docs/authentication",
+      "sha256": "550a124d340850911f992987629a6fadbf1cc6a4908f49ad7b0c1f77ce1ddd9d",
+      "text_chars": 4592,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 33,
+      "url": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server",
+      "checked_at": "2026-09-24T10:48:31.266093+00:00",
+      "status": 200,
+      "final_url": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server",
+      "sha256": "4443d2329377a6b543ca6de2adc00f3e5042e505cfd0e522b8158b8c273fed5c",
+      "text_chars": 4953,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

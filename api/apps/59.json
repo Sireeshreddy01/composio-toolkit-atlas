@@ -1,0 +1,32 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 59,
+    "category": "Data & SEO",
+    "app": "Waterfall.io",
+    "url": "https://waterfall.io",
+    "description": "B2B contact/company enrichment",
+    "auth": [
+      "API key"
+    ],
+    "access": "Account check",
+    "access_detail": "Vendor examples show API keys; access provisioning and free trial not established.",
+    "surface": "HTTP API; enrichment and contact search",
+    "verdict": "Conditional",
+    "blocker": "Customer access",
+    "note": "Different examples use different key headers; confirm the endpoint-specific contract before coding.",
+    "sources": [
+      "https://www.waterfall.io/",
+      "https://www.waterfall.io/product/contact-search"
+    ],
+    "access_group": "Unknown",
+    "mcp": null,
+    "workflow": "Read an authorized enrichment result",
+    "next_action": "Ask Waterfall.io to confirm the intended enrichment endpoint, account allowance and correct API-key header before coding.",
+    "success_criterion": "Obtain a consistent request example and validate the documented response fields on authorized test data.",
+    "alternative_action": "Capture the matching authorized enrichment UI request only to resolve header/schema ambiguity, then seek vendor confirmation.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

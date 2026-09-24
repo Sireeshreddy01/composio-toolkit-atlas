@@ -1,0 +1,189 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 19,
+  "app": "Gorgias",
+  "sources": [
+    "https://developers.gorgias.com/docs/oauth2-authentication-for-creating-apps-with-gorgias",
+    "https://developers.gorgias.com/reference/authentication"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 73,
+      "url": "https://developers.gorgias.com/docs/oauth2-authentication-for-creating-apps-with-gorgias",
+      "checked_at": "2026-09-24T10:48:38.107721+00:00",
+      "status": 200,
+      "final_url": "https://developers.gorgias.com/docs/oauth2-authentication-for-creating-apps-with-gorgias",
+      "sha256": "52c44201552082b512050dfeb82119e975e5f7070e6dda47a5a55865932fe212",
+      "text_chars": 7322,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 74,
+      "url": "https://developers.gorgias.com/reference/authentication",
+      "checked_at": "2026-09-24T10:48:38.275065+00:00",
+      "status": 200,
+      "final_url": "https://developers.gorgias.com/reference/authentication",
+      "sha256": "3080b49af6ae04fe951b773f1ca835186731c22bf1cbe19617324bd365eb2ec5",
+      "text_chars": 4367,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": {
+    "id": 19,
+    "app": "Gorgias",
+    "category": "Support & Helpdesk",
+    "product_scope": "Gorgias ecommerce helpdesk API and app platform",
+    "fields": {
+      "authentication": {
+        "answer": "Private apps use API keys with an email username; public apps must use OAuth2. Public OAuth access tokens expire after 24 hours and support refresh.",
+        "status": "supported",
+        "caveat": "API and authorization requests use the customer's account-specific subdomain.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 19,
+          "field": "authentication",
+          "assessment": "supported",
+          "reason": "S057 distinguishes private API keys from mandatory public OAuth; S058 documents 24-hour access tokens and refresh."
+        },
+        "citations": [
+          {
+            "source_id": "S057",
+            "url": "https://developers.gorgias.com/reference/authentication",
+            "retrieved_at": "2026-09-24T13:29:53.962895+00:00",
+            "source_sha256": "eae40337c8e403e80a7adf0f401f615731b400b6c0b423895cae32c092d902ce",
+            "quote_sha256": "ba92291e72a0960f640a5b7a8493f4e3b33d9ba4925d3147631db5b9d16b9f58",
+            "normalized_offset": 70,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S057",
+            "url": "https://developers.gorgias.com/reference/authentication",
+            "retrieved_at": "2026-09-24T13:29:53.962895+00:00",
+            "source_sha256": "eae40337c8e403e80a7adf0f401f615731b400b6c0b423895cae32c092d902ce",
+            "quote_sha256": "66fdb740153e8611e50ca64b1fdbe52209d57f51667495d573f32377b4af5aeb",
+            "normalized_offset": 114,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S057",
+            "url": "https://developers.gorgias.com/reference/authentication",
+            "retrieved_at": "2026-09-24T13:29:53.962895+00:00",
+            "source_sha256": "eae40337c8e403e80a7adf0f401f615731b400b6c0b423895cae32c092d902ce",
+            "quote_sha256": "f478807d4f2a7a8e831f6be81b03540fb3fc42586c42e32ba9d9457c8d14e5ff",
+            "normalized_offset": 307,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S058",
+            "url": "https://developers.gorgias.com/docs/oauth2-authentication-for-creating-apps-with-gorgias",
+            "retrieved_at": "2026-09-24T13:29:53.973415+00:00",
+            "source_sha256": "00cd208bcd740d6a4c715e2c93e013147adc91957de89e551952c1fa01f2a693",
+            "quote_sha256": "a2f753d7891b580f602bc58da39da4690b6715d1b0b3d95de72b523f73212e04",
+            "normalized_offset": 2867,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "development_access": {
+        "answer": "Public-app OAuth setup uses a partner account and supports pre-submission testing with a sandbox subdomain. Public listing requires approval.",
+        "status": "supported",
+        "caveat": "Sandbox provisioning and cost are unspecified. Private-app free or trial API entitlement is unresolved.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 19,
+          "field": "development_access",
+          "assessment": "supported",
+          "reason": "S058 documents partner-account setup, sandbox OAuth testing and publication approval, without establishing sandbox cost or provisioning."
+        },
+        "citations": [
+          {
+            "source_id": "S058",
+            "url": "https://developers.gorgias.com/docs/oauth2-authentication-for-creating-apps-with-gorgias",
+            "retrieved_at": "2026-09-24T13:29:53.973415+00:00",
+            "source_sha256": "00cd208bcd740d6a4c715e2c93e013147adc91957de89e551952c1fa01f2a693",
+            "quote_sha256": "d6e0e3936e73d6d375459794511ee2ba658d299088027f663ce78679c9f3af4a",
+            "normalized_offset": 270,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S058",
+            "url": "https://developers.gorgias.com/docs/oauth2-authentication-for-creating-apps-with-gorgias",
+            "retrieved_at": "2026-09-24T13:29:53.973415+00:00",
+            "source_sha256": "00cd208bcd740d6a4c715e2c93e013147adc91957de89e551952c1fa01f2a693",
+            "quote_sha256": "5a0261073a5c42175636321bb528e7f36d7fe321e1f2685dd6392f7d56327d98",
+            "normalized_offset": 3886,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S058",
+            "url": "https://developers.gorgias.com/docs/oauth2-authentication-for-creating-apps-with-gorgias",
+            "retrieved_at": "2026-09-24T13:29:53.973415+00:00",
+            "source_sha256": "00cd208bcd740d6a4c715e2c93e013147adc91957de89e551952c1fa01f2a693",
+            "quote_sha256": "9dac35de5e17e4953079473b82b274dad0c111c440fbded9e4e463b6b4b375d1",
+            "normalized_offset": 965,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "api_surface": {
+        "answer": "Account retrieval is documented as an API operation. OAuth examples identify customer, ticket and integration read scopes.",
+        "status": "supported",
+        "caveat": "Scope examples do not establish complete CRUD coverage or endpoint inventory.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 19,
+          "field": "api_surface",
+          "assessment": "supported",
+          "reason": "S057 names account retrieval; S058 contains the stated read scopes. The record does not turn scopes into unproven CRUD coverage."
+        },
+        "citations": [
+          {
+            "source_id": "S057",
+            "url": "https://developers.gorgias.com/reference/authentication",
+            "retrieved_at": "2026-09-24T13:29:53.962895+00:00",
+            "source_sha256": "eae40337c8e403e80a7adf0f401f615731b400b6c0b423895cae32c092d902ce",
+            "quote_sha256": "9daacb37d5ae4fc13293ac7dc81292ba0f3aea45ec5d0a9700fc542ef26e41ed",
+            "normalized_offset": 257,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S058",
+            "url": "https://developers.gorgias.com/docs/oauth2-authentication-for-creating-apps-with-gorgias",
+            "retrieved_at": "2026-09-24T13:29:53.973415+00:00",
+            "source_sha256": "00cd208bcd740d6a4c715e2c93e013147adc91957de89e551952c1fa01f2a693",
+            "quote_sha256": "efcc077c2f728262d8c4943c49ae84898bf2651a0bd3335b2f8a448667f9e124",
+            "normalized_offset": 2083,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "mcp": {
+        "answer": "Vendor MCP availability is unresolved.",
+        "status": "unresolved",
+        "caveat": "Neither the API guides nor the product page supplied MCP evidence.",
+        "citation_binding_passed": false,
+        "verification": {
+          "id": 19,
+          "field": "mcp",
+          "assessment": "unresolved",
+          "reason": "S056–S058 contain no evidence establishing a vendor MCP server or its absence."
+        },
+        "citations": []
+      }
+    },
+    "access_class": "Gated",
+    "verdict": "Access prerequisite",
+    "decision_reason": "The documented public-app route requires a partner account and publication approval; sandbox self-provisioning is not established. Private-app access remains unknown.",
+    "next_step": "Obtain the partner sandbox provisioning policy; success is explicit confirmation of how a developer obtains an API-enabled sandbox and whether approval or payment is required."
+  },
+  "human_review": "pending",
+  "authenticated_test": false
+}

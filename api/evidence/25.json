@@ -1,0 +1,56 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 25,
+  "app": "Pumble",
+  "sources": [
+    "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration/",
+    "https://pumble.com/help/integrations/automation-workflow-integrations/how-to-use-the-pumble-mcp-server/",
+    "https://pumble.com/integrations/plaky"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 176,
+      "url": "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration/",
+      "checked_at": "2026-09-24T10:48:54.651134+00:00",
+      "status": 200,
+      "final_url": "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration/",
+      "sha256": "9104a73c54f53f92c0078dcccf469f22e4c677f3c5fdb98865b50dfe496d2f53",
+      "text_chars": 4504,
+      "auth_guess": "API key",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 177,
+      "url": "https://pumble.com/help/integrations/automation-workflow-integrations/how-to-use-the-pumble-mcp-server/",
+      "checked_at": "2026-09-24T10:48:54.825375+00:00",
+      "status": 200,
+      "final_url": "https://pumble.com/help/integrations/automation-workflow-integrations/how-to-use-the-pumble-mcp-server/",
+      "sha256": "7b60c1a7e2cb51e667d12a3beaa493e68606e3e33f3d6c855e15822246f6583c",
+      "text_chars": 7153,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 178,
+      "url": "https://pumble.com/integrations/plaky",
+      "checked_at": "2026-09-24T10:48:55.233126+00:00",
+      "status": 200,
+      "final_url": "https://pumble.com/integrations/plaky",
+      "sha256": "1f0f3b00bd8573651854b7205f2f065fe97859c2990273309f4352bd1f836788",
+      "text_chars": 6185,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

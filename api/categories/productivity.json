@@ -1,0 +1,336 @@
+{
+  "kind": "category_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "category": "Productivity",
+  "count": 10,
+  "verdict": {
+    "Conditional": 3,
+    "Build": 7
+  },
+  "development_access": {
+    "Unknown": 2,
+    "Self-serve": 7,
+    "Gated": 1
+  },
+  "apps": [
+    {
+      "id": 71,
+      "category": "Productivity",
+      "app": "Notion",
+      "url": "https://developers.notion.com",
+      "description": "Documents, databases and team knowledge",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Account check",
+      "access_detail": "Integration token or OAuth; user grants access to specific workspace content.",
+      "surface": "REST; pages, blocks, data sources and search",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "Access is limited to shared resources; MCP user authorization does not imply workspace-wide access.",
+      "sources": [
+        "https://developers.notion.com",
+        "https://www.notion.com/help/notion-mcp"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official",
+        "scope": "User-authorized Notion content",
+        "url": "https://www.notion.com/help/notion-mcp"
+      },
+      "workflow": "Read a specifically shared Notion page",
+      "next_action": "Confirm Notion integration availability on the intended plan, share one test page with the integration, and retrieve its blocks.",
+      "success_criterion": "Read the shared page while an unshared page remains inaccessible; record data-source versus page scope.",
+      "alternative_action": "Compare user-authorized MCP access with integration-token sharing rules rather than assuming workspace-wide visibility.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 72,
+      "category": "Productivity",
+      "app": "Airtable",
+      "url": "https://airtable.com/developers",
+      "description": "Collaborative databases and workflows",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Free",
+      "access_detail": "Web API available on Free and paid plans; scopes and base permissions apply.",
+      "surface": "REST; records, bases, metadata and webhooks",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "Use PATs/OAuth rather than retired legacy API keys; free plans retain request limits.",
+      "sources": [
+        "https://support.airtable.com/articles/6292134965-getting-started-with-airtable-s-web-api",
+        "https://support.airtable.com/articles/9934989703-creating-personal-access-tokens"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Authorized Airtable bases/resources",
+        "url": "https://support.airtable.com/articles/9897799762-using-the-airtable-mcp-server"
+      },
+      "workflow": "Read records in one Airtable base",
+      "next_action": "Create a free test base and a PAT limited to that base, then list seeded records within the documented request allowance.",
+      "success_criterion": "Return record IDs and fields with pagination; verify the token cannot read another base.",
+      "alternative_action": "Use OAuth for customer-installed access; do not document retired legacy API keys as a new setup path.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 73,
+      "category": "Productivity",
+      "app": "Linear",
+      "url": "https://developers.linear.app",
+      "description": "Issue tracking and product planning",
+      "auth": [
+        "OAuth2",
+        "API key"
+      ],
+      "access": "Free",
+      "access_detail": "Free plan plus always-available admin API keys establish a scoped prototype path; Free workspace members are admins.",
+      "surface": "GraphQL; issues, projects, teams and cycles",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "API access inferred by combining pricing, Free-plan roles and API key policy; production workspace controls remain.",
+      "sources": [
+        "https://linear.app/developers/graphql",
+        "https://linear.app/developers/oauth-2-0-authentication",
+        "https://linear.app/pricing",
+        "https://linear.app/docs/api-and-webhooks",
+        "https://linear.app/docs/invite-members"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Linear issues and workspace actions",
+        "url": "https://linear.app/docs/mcp"
+      },
+      "workflow": "Query issues in one Linear team",
+      "next_action": "Confirm API-key permissions in the intended Linear workspace and execute a minimal GraphQL query for a test team's issues.",
+      "success_criterion": "Return issue ID/title/status and document pagination, scope and applicable workspace controls.",
+      "alternative_action": "Compare official MCP issue tools with the needed GraphQL fields before choosing an adapter.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 74,
+      "category": "Productivity",
+      "app": "Jira",
+      "url": "https://developer.atlassian.com",
+      "description": "Issue tracking and project workflows",
+      "auth": [
+        "OAuth2",
+        "API key",
+        "Basic"
+      ],
+      "access": "Account check",
+      "access_detail": "Cloud account/API token or OAuth app; project permissions and organization policy govern access.",
+      "surface": "REST; issues, projects, boards and workflow resources",
+      "verdict": "Conditional",
+      "blocker": "Admin",
+      "note": "Scope explicitly to Jira Cloud; Data Center has different authentication and deployment requirements.",
+      "sources": [
+        "https://developer.atlassian.com/cloud/jira/service-desk/basic-auth-for-rest-apis/",
+        "https://developer.atlassian.com/cloud/jira/platform/rest/v2/intro/"
+      ],
+      "access_group": "Unknown",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Rovo MCP with Jira work-item search and updates; OAuth 2.1, permissions and credit limits",
+        "url": "https://developer.atlassian.com/cloud/rovo-mcp/guides/getting-started/"
+      },
+      "workflow": "Read a Jira Cloud test issue",
+      "next_action": "Confirm Jira Cloud free/trial API entitlement and read a seeded issue with an API token or scoped OAuth application.",
+      "success_criterion": "Return issue key and selected fields while documenting Cloud-specific auth and project permissions.",
+      "alternative_action": "Keep Data Center out of this test; inspect its API and deployment separately if a customer requires it.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 75,
+      "category": "Productivity",
+      "app": "Asana",
+      "url": "https://developers.asana.com",
+      "description": "Team tasks and work management",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Free",
+      "access_detail": "Free account or developer sandbox; PAT for initial API calls; paid resource entitlements remain separate.",
+      "surface": "REST; tasks, projects, workspaces and portfolios",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "PATs inherit the user permissions; official MCP uses an OAuth application.",
+      "sources": [
+        "https://developers.asana.com/docs/authentication",
+        "https://developers.asana.com/docs/personal-access-token",
+        "https://developers.asana.com/docs/overview"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Asana work resources through OAuth",
+        "url": "https://developers.asana.com/docs/integrating-with-asanas-mcp-server"
+      },
+      "workflow": "Read a test Asana task",
+      "next_action": "Create a free Asana test project and retrieve a seeded task with a PAT limited by the test user's permissions.",
+      "success_criterion": "Return the task and project identifiers and document fields unavailable on the selected plan.",
+      "alternative_action": "Use the official OAuth-based MCP for user-delegated workflows if it covers the required task fields.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 76,
+      "category": "Productivity",
+      "app": "Monday.com",
+      "url": "https://developer.monday.com",
+      "description": "Work-management boards and automations",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Sandbox",
+      "access_detail": "Free developer account for isolated API/app testing; production plan limits remain separate.",
+      "surface": "GraphQL; boards, items, columns and workspace operations",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "Treat API complexity budgets separately from HTTP request counts.",
+      "sources": [
+        "https://developer.monday.com/apps/docs/choosing-auth",
+        "https://developer.monday.com/api-reference/docs/build-on-monday-with-ai",
+        "https://developer.monday.com/api-reference/docs/developer-sandbox-account"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "GraphQL tools and separate app-development mode",
+        "url": "https://developer.monday.com/api-reference/docs/integrate-with-monday-mcp"
+      },
+      "workflow": "Query board items in a developer sandbox",
+      "next_action": "Use a Monday.com developer sandbox to run a small GraphQL board/items query and record complexity usage.",
+      "success_criterion": "Return seeded item/column values and demonstrate cursor handling within the complexity budget.",
+      "alternative_action": "Compare official MCP operations with the exact columns required before adding custom GraphQL tools.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 77,
+      "category": "Productivity",
+      "app": "ClickUp",
+      "url": "https://clickup.com/api",
+      "description": "Tasks, documents and project management",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Free",
+      "access_detail": "MCP supports Free Forever with 50 calls per 24 hours; REST uses its own rate limits.",
+      "surface": "REST; tasks, lists, spaces, comments and time tracking",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "Available credentials do not establish unlimited rates or entitlement to every feature.",
+      "sources": [
+        "https://developer.clickup.com/docs/authentication",
+        "https://developer.clickup.com/docs/Getting%20Started",
+        "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server"
+      ],
+      "access_group": "Self-serve",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Workspace tools; Free Forever has 50 daily calls",
+        "url": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server"
+      },
+      "workflow": "Read a task in a free workspace",
+      "next_action": "Create a ClickUp free test workspace and read a seeded task using a personal token with the test user's access.",
+      "success_criterion": "Return the task/list identifiers and record the applicable rate limit and feature restrictions.",
+      "alternative_action": "Use OAuth for customer distribution; keep unsupported paid features outside the initial task-read workflow.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 78,
+      "category": "Productivity",
+      "app": "Coda",
+      "url": "https://coda.io/developers",
+      "description": "Documents with structured tables and workflows",
+      "auth": [
+        "Token"
+      ],
+      "access": "Free",
+      "access_detail": "API doc-size limits explicitly apply across all plan types, including Free; generate an account token.",
+      "surface": "REST; docs, tables, rows, formulas and controls",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "Free document API route is inferred from all-plan API limits and token docs; oversized documents and admin-only APIs are separate constraints.",
+      "sources": [
+        "https://coda.io/developers/apis/v1",
+        "https://help.coda.io/hc/en-us/articles/39555760015757-Overview-Doc-limits"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Read rows in a small Coda document",
+      "next_action": "Use a small free Coda document and API token to list a seeded table's rows, then verify current size and request limits.",
+      "success_criterion": "Return row IDs/values and document the free-plan inference plus any document-size constraint.",
+      "alternative_action": "Use documented table APIs for the prototype; do not include admin-only workspace operations in the same access claim.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 79,
+      "category": "Productivity",
+      "app": "Smartsheet",
+      "url": "https://smartsheet.com/developers",
+      "description": "Spreadsheet-style project and work management",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Paid",
+      "access_detail": "API restricted to Business and Enterprise plans.",
+      "surface": "REST; sheets, rows, attachments, reports and automation",
+      "verdict": "Conditional",
+      "blocker": "Subscription",
+      "note": "Confirm paid-tier entitlement before scheduling implementation; a basic account is insufficient.",
+      "sources": [
+        "https://developers.smartsheet.com/api/smartsheet/openapi/proofs/proofs-create"
+      ],
+      "access_group": "Gated",
+      "mcp": {
+        "kind": "Official",
+        "scope": "Sheets, rows, workflow and portfolio tools; Business/Enterprise/Advanced Work Management required",
+        "url": "https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server"
+      },
+      "workflow": "Read a sheet after confirming entitlement",
+      "next_action": "Confirm Smartsheet Business/Enterprise API eligibility and authorize a read of one test sheet.",
+      "success_criterion": "Return sheet/row identifiers and record plan entitlement; verify the user can access that sheet.",
+      "alternative_action": "Compare MCP availability under its own plan requirements rather than assuming it matches all REST plans.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 80,
+      "category": "Productivity",
+      "app": "Harvest",
+      "url": "https://help.getharvest.com/api-v2",
+      "description": "Time tracking and project invoicing",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Free",
+      "access_detail": "API access included for all accounts, including free and trial; send account ID with token.",
+      "surface": "REST; time entries, projects, clients and invoices",
+      "verdict": "Build",
+      "blocker": "None",
+      "note": "API v2 replaced legacy Basic auth with OAuth/PATs; include account context.",
+      "sources": [
+        "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+        "https://help.getharvest.com/api-v2/introduction/overview/general/",
+        "https://support.getharvest.com/hc/en-us/articles/360048180732-The-Harvest-API"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Read an approved time entry",
+      "next_action": "Use a free Harvest account and v2 OAuth/PAT with explicit account context to read a test time entry.",
+      "success_criterion": "Return the entry and account identifier; avoid legacy Basic-auth instructions.",
+      "alternative_action": "Use a read-only reporting workflow first, keeping invoice creation and time-entry mutation outside the initial tool.",
+      "status": "Proposed; not an authenticated test result"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 79,
+    "category": "Productivity",
+    "app": "Smartsheet",
+    "url": "https://smartsheet.com/developers",
+    "description": "Spreadsheet-style project and work management",
+    "auth": [
+      "OAuth2",
+      "Token"
+    ],
+    "access": "Paid",
+    "access_detail": "API restricted to Business and Enterprise plans.",
+    "surface": "REST; sheets, rows, attachments, reports and automation",
+    "verdict": "Conditional",
+    "blocker": "Subscription",
+    "note": "Confirm paid-tier entitlement before scheduling implementation; a basic account is insufficient.",
+    "sources": [
+      "https://developers.smartsheet.com/api/smartsheet/openapi/proofs/proofs-create"
+    ],
+    "access_group": "Gated",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Sheets, rows, workflow and portfolio tools; Business/Enterprise/Advanced Work Management required",
+      "url": "https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server"
+    },
+    "workflow": "Read a sheet after confirming entitlement",
+    "next_action": "Confirm Smartsheet Business/Enterprise API eligibility and authorize a read of one test sheet.",
+    "success_criterion": "Return sheet/row identifiers and record plan entitlement; verify the user can access that sheet.",
+    "alternative_action": "Compare MCP availability under its own plan requirements rather than assuming it matches all REST plans.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

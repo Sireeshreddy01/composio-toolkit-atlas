@@ -1,0 +1,37 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 24,
+    "category": "Communications",
+    "app": "Lark (Larksuite)",
+    "url": "https://open.larksuite.com",
+    "description": "Integrated chat, docs and workplace suite",
+    "auth": [
+      "OAuth2",
+      "Token"
+    ],
+    "access": "Admin / paid",
+    "access_detail": "App ID and secret plus user/tenant authorization; organization approval and scopes may apply.",
+    "surface": "REST; messaging, docs, calendars, base and contacts",
+    "verdict": "Conditional",
+    "blocker": "Admin",
+    "note": "Official MCP supports user and tenant token modes; validate the chosen app's permissions.",
+    "sources": [
+      "https://github.com/larksuite/lark-openapi-mcp/blob/main/docs/usage/configuration/configuration.md",
+      "https://open.larksuite.com/"
+    ],
+    "access_group": "Gated",
+    "mcp": {
+      "kind": "Official",
+      "scope": "User/tenant token modes and selected OpenAPI tools",
+      "url": "https://github.com/larksuite/lark-openapi-mcp/blob/main/docs/usage/configuration/configuration.md"
+    },
+    "workflow": "Read an authorized Lark document",
+    "next_action": "Obtain tenant approval, choose user or tenant token mode, and read one document explicitly shared with the integration.",
+    "success_criterion": "Read the selected document while an unshared document remains inaccessible.",
+    "alternative_action": "Use official MCP if its permission model and document tools match; otherwise scope a direct document API client.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

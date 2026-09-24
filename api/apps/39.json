@@ -1,0 +1,33 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 39,
+    "category": "Marketing & Social",
+    "app": "Threads (Meta)",
+    "url": "https://developers.facebook.com/docs/threads",
+    "description": "Social publishing and engagement",
+    "auth": [
+      "OAuth2",
+      "Token"
+    ],
+    "access": "Account check",
+    "access_detail": "Meta app with Threads use case and authorized user; broader distribution permissions need review.",
+    "surface": "HTTP Graph API; publish, retrieve and manage Threads content",
+    "verdict": "Conditional",
+    "blocker": "Approval",
+    "note": "Threads tokens and permissions differ from Meta Ads; avoid reusing an unrelated Meta token.",
+    "sources": [
+      "https://www.postman.com/meta/threads/collection/dht3nzz/threads-api",
+      "https://www.postman.com/meta/threads/documentation/dht3nzz/threads-api"
+    ],
+    "access_group": "Unknown",
+    "mcp": null,
+    "workflow": "Read a test Threads profile",
+    "next_action": "Confirm Threads-specific developer setup and token scopes, then read the authorized test profile or its posts.",
+    "success_criterion": "Return the intended profile and document token expiry and permissions without publishing content.",
+    "alternative_action": "Keep Threads OAuth and Meta Ads credentials separate; investigate browser requests only for authorized read fields missing from the supported API.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

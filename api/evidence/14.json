@@ -1,0 +1,245 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 14,
+  "app": "Front",
+  "sources": [
+    "https://dev.frontapp.com/docs/core-api-getting-started",
+    "https://dev.frontapp.com/docs/create-and-revoke-api-tokens",
+    "https://dev.frontapp.com/reference/introduction",
+    "https://help.front.com/en/articles/4883136"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 15,
+      "url": "https://dev.frontapp.com/docs/core-api-getting-started",
+      "checked_at": "2026-09-24T10:48:27.149143+00:00",
+      "status": 200,
+      "final_url": "https://dev.frontapp.com/docs/core-api-getting-started",
+      "sha256": "063cc0fa8b758e979faa7328bdc8f259387ed9bb856747ff8389d38866b7cd86",
+      "text_chars": 12143,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 16,
+      "url": "https://dev.frontapp.com/docs/create-and-revoke-api-tokens",
+      "checked_at": "2026-09-24T10:48:27.339162+00:00",
+      "status": 200,
+      "final_url": "https://dev.frontapp.com/docs/create-and-revoke-api-tokens",
+      "sha256": "99ca1797bc267d8be8d7faac0b0ea8ea483c84eca5da07e695420730e231f31e",
+      "text_chars": 6786,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 17,
+      "url": "https://dev.frontapp.com/reference/introduction",
+      "checked_at": "2026-09-24T10:48:27.622699+00:00",
+      "status": 200,
+      "final_url": "https://dev.frontapp.com/reference/introduction",
+      "sha256": "be25d26c49fad9e91bb046a5c418817597e7cb6538b3f59961f795068bdf26da",
+      "text_chars": 11561,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 147,
+      "url": "https://help.front.com/en/articles/4883136",
+      "checked_at": "2026-09-24T10:48:50.867025+00:00",
+      "status": 200,
+      "final_url": "https://help.front.com/en/articles/4883136",
+      "sha256": "c6325bcf70a9c286710a69fb8590bc63e2a5d7fc61e0120c2931bbd35f2eddb0",
+      "text_chars": 7788,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": {
+    "id": 14,
+    "app": "Front",
+    "category": "Support & Helpdesk",
+    "product_scope": "Front Core API, Channels API and vendor MCP",
+    "fields": {
+      "authentication": {
+        "answer": "Core API supports OAuth 2.0 and company-level API tokens. Admins manage tokens; public partner integrations require OAuth unless Front grants an exception.",
+        "status": "supported",
+        "caveat": "Private resources require teammate opt-in; token scopes and permissions limit access.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 14,
+          "field": "authentication",
+          "assessment": "supported",
+          "reason": "S035–S037 establish company-level tokens, admin management and partner OAuth requirements with an exception path."
+        },
+        "citations": [
+          {
+            "source_id": "S037",
+            "url": "https://dev.frontapp.com/reference/introduction",
+            "retrieved_at": "2026-09-24T13:29:47.467642+00:00",
+            "source_sha256": "a939e93958e8fd659f4940f9414728bd6ea7190e3cbe7d0b3c1b8f00605723f4",
+            "quote_sha256": "6cc96b895ddbee3d029aaf3bc23b1688d23678f7b25bb9b86003f68da310bcdd",
+            "normalized_offset": 300,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S035",
+            "url": "https://dev.frontapp.com/docs/create-and-revoke-api-tokens",
+            "retrieved_at": "2026-09-24T13:29:47.290914+00:00",
+            "source_sha256": "a89d77f9f66afcaedea3e9eb5376d0ebe219e6d1249e80923860a65b0f0ec401",
+            "quote_sha256": "6e9289459ac001f69291e6f411c4bd3fe3dca0aea675234aa2d4ec43ef148949",
+            "normalized_offset": 387,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S035",
+            "url": "https://dev.frontapp.com/docs/create-and-revoke-api-tokens",
+            "retrieved_at": "2026-09-24T13:29:47.290914+00:00",
+            "source_sha256": "a89d77f9f66afcaedea3e9eb5376d0ebe219e6d1249e80923860a65b0f0ec401",
+            "quote_sha256": "91a57a668afab6fd5d632de30bcbced5f862aee5a7d220f6a5c51e4f1d007a0e",
+            "normalized_offset": 471,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "development_access": {
+        "answer": "A free developer environment explicitly includes API development access and supports up to three teammates. App Store apps must be built in a developer account.",
+        "status": "supported",
+        "caveat": "Production use requires the customer account; public distribution has a separate partnership process.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 14,
+          "field": "development_access",
+          "assessment": "supported",
+          "reason": "S034 explicitly offers a free API developer environment, limits it to three teammates and requires it for App Store development."
+        },
+        "citations": [
+          {
+            "source_id": "S034",
+            "url": "https://dev.frontapp.com",
+            "retrieved_at": "2026-09-24T13:29:47.212391+00:00",
+            "source_sha256": "9024e88d5c8b5725de2520144ecf25b7d6decd4e335c413154fefada34d89b9b",
+            "quote_sha256": "278b314b7cbd9a53b0db12abb132f18ffc4f2d560b56d566a8380f724f06525d",
+            "normalized_offset": 1139,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S034",
+            "url": "https://dev.frontapp.com",
+            "retrieved_at": "2026-09-24T13:29:47.212391+00:00",
+            "source_sha256": "9024e88d5c8b5725de2520144ecf25b7d6decd4e335c413154fefada34d89b9b",
+            "quote_sha256": "e466174f2b7bb8c0a214376eb86cc0a55e53c480616ac048e3fb662ff4341c30",
+            "normalized_offset": 1239,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "api_surface": {
+        "answer": "Core API manages contacts, conversations, comments and inboxes. Channels API connects custom messaging platforms; contact operations include fields, avatars and handles.",
+        "status": "supported",
+        "caveat": "SCIM auto-provisioning is separately restricted and requires contacting Front.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 14,
+          "field": "api_surface",
+          "assessment": "supported",
+          "reason": "S034–S037 substantiate the listed Core resources, custom channels and contact operations; restricted SCIM access remains qualified."
+        },
+        "citations": [
+          {
+            "source_id": "S035",
+            "url": "https://dev.frontapp.com/docs/create-and-revoke-api-tokens",
+            "retrieved_at": "2026-09-24T13:29:47.290914+00:00",
+            "source_sha256": "a89d77f9f66afcaedea3e9eb5376d0ebe219e6d1249e80923860a65b0f0ec401",
+            "quote_sha256": "c5834639537e990a7fbf48b4b61eab948347eac8c48e5c6a84a0d7c7e4504c61",
+            "normalized_offset": 1175,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S037",
+            "url": "https://dev.frontapp.com/reference/introduction",
+            "retrieved_at": "2026-09-24T13:29:47.467642+00:00",
+            "source_sha256": "a939e93958e8fd659f4940f9414728bd6ea7190e3cbe7d0b3c1b8f00605723f4",
+            "quote_sha256": "fb01fdd6d6e887f36a700b7bd5966649c777f8a116127e1a3a729fa66492a7fd",
+            "normalized_offset": 113,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S034",
+            "url": "https://dev.frontapp.com",
+            "retrieved_at": "2026-09-24T13:29:47.212391+00:00",
+            "source_sha256": "9024e88d5c8b5725de2520144ecf25b7d6decd4e335c413154fefada34d89b9b",
+            "quote_sha256": "8ab5b11c1eab8865ab93519a65d2332b8b24f5a10979b2591f387731924cb1c4",
+            "normalized_offset": 3045,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S036",
+            "url": "https://dev.frontapp.com/docs/core-api-getting-started",
+            "retrieved_at": "2026-09-24T13:29:47.404275+00:00",
+            "source_sha256": "8a42b109d0fd1e325727479dc472a0995bb1756707a972306dfc25170d6b88b6",
+            "quote_sha256": "f755138b0e7f29756f106c31fcc5954ae400be9085a81e3239647467bd9e3539",
+            "normalized_offset": 574,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "mcp": {
+        "answer": "Front provides an open-beta MCP at mcp.frontapp.com/mcp for conversation search, reading, replies, comments and tags, with user permissions enforced.",
+        "status": "supported",
+        "caveat": "Directory installation needs an authorized installer; custom OAuth setup needs a workspace admin. Beta availability does not remove these requirements.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 14,
+          "field": "mcp",
+          "assessment": "supported",
+          "reason": "S038 documents the beta server address, listed conversation actions and permission restrictions; S034 also explicitly mentions replying."
+        },
+        "citations": [
+          {
+            "source_id": "S038",
+            "url": "https://help.front.com/en/articles/4883136",
+            "retrieved_at": "2026-09-24T13:29:47.960017+00:00",
+            "source_sha256": "a06c998c1578a833d1d3d05e3e33327155d06e715e58420841aa2d5713866474",
+            "quote_sha256": "838c95fc5fdb882dc3c71a2a4cb8fa53e01cae2b8d052bd96ad8406a83283318",
+            "normalized_offset": 522,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S038",
+            "url": "https://help.front.com/en/articles/4883136",
+            "retrieved_at": "2026-09-24T13:29:47.960017+00:00",
+            "source_sha256": "a06c998c1578a833d1d3d05e3e33327155d06e715e58420841aa2d5713866474",
+            "quote_sha256": "5b01dd673aa65a556a439438d367c92786d1c2a6a44c451c0bc7ddc652f854e5",
+            "normalized_offset": 1799,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S038",
+            "url": "https://help.front.com/en/articles/4883136",
+            "retrieved_at": "2026-09-24T13:29:47.960017+00:00",
+            "source_sha256": "a06c998c1578a833d1d3d05e3e33327155d06e715e58420841aa2d5713866474",
+            "quote_sha256": "388cc1399bfe8ad9e9cb0a44bdd834db3b82b6c5a8cbd902b4d16f2d08f042ae",
+            "normalized_offset": 3984,
+            "quote_binding_passed": true
+          }
+        ]
+      }
+    },
+    "access_class": "Self-serve",
+    "verdict": "Prototype candidate",
+    "decision_reason": "A free API developer environment is explicit; customer administration and public distribution requirements are separate.",
+    "next_step": "Obtain Front's developer-account MCP eligibility documentation; success is explicit confirmation that the free environment can enable MCP."
+  },
+  "human_review": "pending",
+  "authenticated_test": false
+}

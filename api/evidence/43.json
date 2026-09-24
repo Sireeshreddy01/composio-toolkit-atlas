@@ -1,0 +1,50 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 43,
+  "app": "BigCommerce",
+  "sources": [
+    "https://developer.bigcommerce.com",
+    "https://developer.bigcommerce.com/resource-hub/bigcommercedevs-recap-h1-23",
+    "https://docs.bigcommerce.com/developer/api-reference/mcp/overview"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 27,
+      "url": "https://developer.bigcommerce.com",
+      "checked_at": "2026-09-24T10:48:30.707167+00:00",
+      "status": 200,
+      "final_url": "https://docs.bigcommerce.com/developer/docs/overview/quick-start",
+      "sha256": "5ba7761907330b27a4e7328543cde40cdc378e63c588d742fbc0402c30b8a229",
+      "text_chars": 17547,
+      "auth_guess": "OAuth2",
+      "surface_guess": "GraphQL",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 28,
+      "url": "https://developer.bigcommerce.com/resource-hub/bigcommercedevs-recap-h1-23",
+      "checked_at": "2026-09-24T10:48:30.893400+00:00",
+      "status": "unresolved",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": 96,
+      "url": "https://docs.bigcommerce.com/developer/api-reference/mcp/overview",
+      "checked_at": "2026-09-24T10:48:42.379077+00:00",
+      "status": 200,
+      "final_url": "https://docs.bigcommerce.com/developer/api-reference/mcp/overview",
+      "sha256": "72508d3a84ab0df589d8183aab550976543b39379c97595b52177082134ce6b5",
+      "text_chars": 77669,
+      "auth_guess": "Token",
+      "surface_guess": "GraphQL",
+      "access_guess": "Unknown",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

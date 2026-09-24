@@ -1,0 +1,36 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 69,
+    "category": "Developer & Infra",
+    "app": "Datadog",
+    "url": "https://docs.datadoghq.com/api",
+    "description": "Monitoring, logs and observability",
+    "auth": [
+      "API key"
+    ],
+    "access": "Account check",
+    "access_detail": "Organization API key plus application key for many operations; role and site-specific endpoint apply.",
+    "surface": "REST; metrics, logs, monitors, dashboards and incidents",
+    "verdict": "Conditional",
+    "blocker": "Customer access",
+    "note": "One API key alone is insufficient for many read/admin operations.",
+    "sources": [
+      "https://docs.datadoghq.com/api/latest/authentication/",
+      "https://docs.datadoghq.com/api/latest/"
+    ],
+    "access_group": "Unknown",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Remote observability tools; separate local Code Security MCP and site restrictions",
+      "url": "https://docs.datadoghq.com/mcp_server/"
+    },
+    "workflow": "Read one monitor's definition",
+    "next_action": "Confirm Datadog account/API allowance and provision the required API plus application-key or OAuth permissions for a test monitor.",
+    "success_criterion": "Return the monitor definition and document why an API key alone is insufficient for the chosen read.",
+    "alternative_action": "Compare the official MCP monitor tool and its scopes before implementing a parallel wrapper.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

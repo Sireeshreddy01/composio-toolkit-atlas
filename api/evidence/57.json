@@ -1,0 +1,22 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 57,
+  "app": "Bright Data",
+  "sources": [
+    "https://docs.brightdata.com/ai/mcp-server/overview"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 97,
+      "url": "https://docs.brightdata.com/ai/mcp-server/overview",
+      "checked_at": "2026-09-24T10:48:42.499788+00:00",
+      "status": "unresolved",
+      "error": "HTTP Error 308: Permanent Redirect"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

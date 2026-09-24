@@ -1,0 +1,42 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 62,
+  "app": "Vercel",
+  "sources": [
+    "https://vercel.com/docs/agent-resources/vercel-mcp",
+    "https://vercel.com/docs/rest-api"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 206,
+      "url": "https://vercel.com/docs/agent-resources/vercel-mcp",
+      "checked_at": "2026-09-24T10:49:01.497998+00:00",
+      "status": 200,
+      "final_url": "https://vercel.com/docs/agent-resources/vercel-mcp",
+      "sha256": "a4f9a9af765e8fd82ace253c132c0a1e2fee2ab891812fffd2963b5ad9e4407b",
+      "text_chars": 15536,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 207,
+      "url": "https://vercel.com/docs/rest-api",
+      "checked_at": "2026-09-24T10:49:01.539431+00:00",
+      "status": 200,
+      "final_url": "https://vercel.com/docs/rest-api",
+      "sha256": "1675bc22771927dd99dbd5085507f267f8b5a4d361beedd822fd9ffbd4017ab4",
+      "text_chars": 61442,
+      "auth_guess": "API key",
+      "surface_guess": "REST",
+      "access_guess": "Gated",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

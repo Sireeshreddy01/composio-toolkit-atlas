@@ -1,0 +1,245 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 3,
+  "app": "Pipedrive",
+  "sources": [
+    "https://developers.pipedrive.com/docs/api/v1",
+    "https://pipedrive.readme.io/docs/core-api-concepts-authentication",
+    "https://www.pipedrive.com/en/features/crm-api",
+    "https://www.pipedrive.com/en/features/mcp-server"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 86,
+      "url": "https://developers.pipedrive.com/docs/api/v1",
+      "checked_at": "2026-09-24T10:48:40.284457+00:00",
+      "status": 200,
+      "final_url": "https://developers.pipedrive.com/docs/api/v1",
+      "sha256": "4e895bd1fbaa8536a46f9441868f120a12f595161cea3294f65025abec6325c2",
+      "text_chars": 2854,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 169,
+      "url": "https://pipedrive.readme.io/docs/core-api-concepts-authentication",
+      "checked_at": "2026-09-24T10:48:53.640682+00:00",
+      "status": 200,
+      "final_url": "https://pipedrive.readme.io/docs/core-api-concepts-authentication",
+      "sha256": "74f1b6834997f3efb435753c124faaaf193592db0127a940fc14c3b2452f397e",
+      "text_chars": 3693,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 218,
+      "url": "https://www.pipedrive.com/en/features/crm-api",
+      "checked_at": "2026-09-24T10:49:03.190375+00:00",
+      "status": 200,
+      "final_url": "https://www.pipedrive.com/en/features/crm-api",
+      "sha256": "f34e1ae02db09070173b3523c1eb517f3b40511b36795390c8d71b6b43e1701d",
+      "text_chars": 10156,
+      "auth_guess": "OAuth2",
+      "surface_guess": "REST",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 219,
+      "url": "https://www.pipedrive.com/en/features/mcp-server",
+      "checked_at": "2026-09-24T10:49:03.577433+00:00",
+      "status": 200,
+      "final_url": "https://www.pipedrive.com/en/features/mcp-server",
+      "sha256": "8c28deaf42e05bf3f06c3679030012f8334a537662fe67e2de834bb57b3bbccc",
+      "text_chars": 7044,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": {
+    "id": 3,
+    "app": "Pipedrive",
+    "category": "CRM & Sales",
+    "product_scope": "Pipedrive CRM REST API and vendor MCP",
+    "fields": {
+      "authentication": {
+        "answer": "Apps use OAuth 2.0; token integrations send an API token in the x-api-token header. Vendor MCP connects through OAuth.",
+        "status": "supported",
+        "caveat": "S007 broadly describes all requests as API-token validated; S005 more specifically distinguishes OAuth apps from token integrations.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 3,
+          "field": "authentication",
+          "assessment": "supported",
+          "reason": "S005 explicitly distinguishes OAuth apps from x-api-token integrations; S008 specifies MCP OAuth. S007's broad token wording is less precise."
+        },
+        "citations": [
+          {
+            "source_id": "S005",
+            "url": "https://pipedrive.readme.io/docs/core-api-concepts-authentication",
+            "retrieved_at": "2026-09-24T13:29:36.750406+00:00",
+            "source_sha256": "118f9b9181d59d5893007dbe016cf4fd983510571cba0bb703e05915b8c40f86",
+            "quote_sha256": "ff25a2ad06e6779c12b6b6f0db9706c2db24b9254a0cf78201dbdde2ca8dffcb",
+            "normalized_offset": 62,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S005",
+            "url": "https://pipedrive.readme.io/docs/core-api-concepts-authentication",
+            "retrieved_at": "2026-09-24T13:29:36.750406+00:00",
+            "source_sha256": "118f9b9181d59d5893007dbe016cf4fd983510571cba0bb703e05915b8c40f86",
+            "quote_sha256": "7f0761e473334f1a0bb036a05f19a92f8d8100167d286d2706832e6718e1bdd4",
+            "normalized_offset": 274,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S008",
+            "url": "https://www.pipedrive.com/en/features/mcp-server",
+            "retrieved_at": "2026-09-24T13:29:36.750699+00:00",
+            "source_sha256": "a78ded9bc0ab40dbe3997acff1f58ae6a04fc4c4c9310e4afaa7c69571fa30c9",
+            "quote_sha256": "c2c8c1fcb7f55e9f1a807c569ac60063c0351c3108e1a63f70a966cfcffb7bfa",
+            "normalized_offset": 803,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "development_access": {
+        "answer": "API access is included with every plan. A 14-day trial and a sandbox request route are documented, but trial API entitlement and automatic sandbox provisioning are not established.",
+        "status": "unresolved",
+        "caveat": "Trial API access would be an inference. Neither sandbox self-provisioning nor an explicit approval requirement is shown.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 3,
+          "field": "development_access",
+          "assessment": "unresolved",
+          "reason": "Plan API inclusion, a trial and sandbox requests are documented, but trial API entitlement and sandbox provisioning conditions remain unspecified."
+        },
+        "citations": [
+          {
+            "source_id": "S006",
+            "url": "https://www.pipedrive.com/en/features/crm-api",
+            "retrieved_at": "2026-09-24T13:29:36.750511+00:00",
+            "source_sha256": "17ae3e072d5520c4f3988d2925c5c672b090cee9968fb3bcdfcd3483937483b4",
+            "quote_sha256": "06809eec0b75759756eea57edaeed69c7eca65d3b1c772df23e564372fab1a99",
+            "normalized_offset": 1363,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S006",
+            "url": "https://www.pipedrive.com/en/features/crm-api",
+            "retrieved_at": "2026-09-24T13:29:36.750511+00:00",
+            "source_sha256": "17ae3e072d5520c4f3988d2925c5c672b090cee9968fb3bcdfcd3483937483b4",
+            "quote_sha256": "b2120518c93093fef042ad7a31f6495136a4ca96afc633772b7b1439385b8957",
+            "normalized_offset": 4449,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S007",
+            "url": "https://developers.pipedrive.com/docs/api/v1",
+            "retrieved_at": "2026-09-24T13:29:36.750607+00:00",
+            "source_sha256": "03e79180f862cd415b1b495f5b78708c7c38316518d95baba3a5e9f64125699b",
+            "quote_sha256": "8436844d077089b7d3fb109cf42195975d2b65e51bea98d0cc92c45a7cdbc1d2",
+            "normalized_offset": 1434,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "api_surface": {
+        "answer": "REST APIs provide JSON output, v1/v2 OpenAPI specifications and webhooks. Customer information and call-list integrations are described; a concrete resource catalog is not supplied.",
+        "status": "supported",
+        "caveat": "Endpoint navigation labels are insufficient evidence for individual resource operations.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 3,
+          "field": "api_surface",
+          "assessment": "supported",
+          "reason": "S006 and S007 explicitly establish REST, JSON, v1/v2 specifications, webhooks and the stated integration use cases."
+        },
+        "citations": [
+          {
+            "source_id": "S007",
+            "url": "https://developers.pipedrive.com/docs/api/v1",
+            "retrieved_at": "2026-09-24T13:29:36.750607+00:00",
+            "source_sha256": "03e79180f862cd415b1b495f5b78708c7c38316518d95baba3a5e9f64125699b",
+            "quote_sha256": "307ed03c5757b85d0f75fcf8aeace6627c1d093916a4d9c8abb6482a5f5cecbf",
+            "normalized_offset": 192,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S007",
+            "url": "https://developers.pipedrive.com/docs/api/v1",
+            "retrieved_at": "2026-09-24T13:29:36.750607+00:00",
+            "source_sha256": "03e79180f862cd415b1b495f5b78708c7c38316518d95baba3a5e9f64125699b",
+            "quote_sha256": "f332b6a1deb505167ba07897a7185bb4ddc5cb2f2bc1ee932124530f278a0bd7",
+            "normalized_offset": 725,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S006",
+            "url": "https://www.pipedrive.com/en/features/crm-api",
+            "retrieved_at": "2026-09-24T13:29:36.750511+00:00",
+            "source_sha256": "17ae3e072d5520c4f3988d2925c5c672b090cee9968fb3bcdfcd3483937483b4",
+            "quote_sha256": "649915f2021db07c7557c209f27b90db03e4eafdab37c6c949868df41d83a6db",
+            "normalized_offset": 1625,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S006",
+            "url": "https://www.pipedrive.com/en/features/crm-api",
+            "retrieved_at": "2026-09-24T13:29:36.750511+00:00",
+            "source_sha256": "17ae3e072d5520c4f3988d2925c5c672b090cee9968fb3bcdfcd3483937483b4",
+            "quote_sha256": "9afc076085366c389612a746b1de546e0d8dd9327cdc3ac3179ffc6efd7d7bee",
+            "normalized_offset": 2223,
+            "quote_binding_passed": true
+          }
+        ]
+      },
+      "mcp": {
+        "answer": "Pipedrive offers a vendor MCP server for finding deals, updating CRM records and advancing pipeline opportunities through an AI assistant.",
+        "status": "supported",
+        "caveat": "MCP plan eligibility, server URL and tool inventory are not supplied.",
+        "citation_binding_passed": true,
+        "verification": {
+          "id": 3,
+          "field": "mcp",
+          "assessment": "supported",
+          "reason": "S008 advertises vendor MCP deal lookup, record updates and pipeline actions; the record does not extrapolate eligibility or full tool coverage."
+        },
+        "citations": [
+          {
+            "source_id": "S008",
+            "url": "https://www.pipedrive.com/en/features/mcp-server",
+            "retrieved_at": "2026-09-24T13:29:36.750699+00:00",
+            "source_sha256": "a78ded9bc0ab40dbe3997acff1f58ae6a04fc4c4c9310e4afaa7c69571fa30c9",
+            "quote_sha256": "efca7c79b0f42c40c27d887ac789df4d9364d570dd29591be8e304df5793976b",
+            "normalized_offset": 671,
+            "quote_binding_passed": true
+          },
+          {
+            "source_id": "S008",
+            "url": "https://www.pipedrive.com/en/features/mcp-server",
+            "retrieved_at": "2026-09-24T13:29:36.750699+00:00",
+            "source_sha256": "a78ded9bc0ab40dbe3997acff1f58ae6a04fc4c4c9310e4afaa7c69571fa30c9",
+            "quote_sha256": "57034046a36edd5936412abe4cf90d808857fed8287c84de9deb6e54d4725522",
+            "normalized_offset": 243,
+            "quote_binding_passed": true
+          }
+        ]
+      }
+    },
+    "access_class": "Unknown",
+    "verdict": "Review required",
+    "decision_reason": "Plan API inclusion is explicit, but an ungated trial or sandbox API route remains unresolved. Unknown eligibility is not classified as paid. Nothing was tested.",
+    "next_step": "Obtain the Developer Sandbox Account eligibility page; success is explicit confirmation of API inclusion and whether provisioning requires approval."
+  },
+  "human_review": "pending",
+  "authenticated_test": false
+}

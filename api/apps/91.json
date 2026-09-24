@@ -1,0 +1,33 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 91,
+    "category": "AI & Media",
+    "app": "NotebookLM",
+    "url": "https://cloud.google.com/gemini",
+    "description": "Source-grounded notebooks and research summaries",
+    "auth": [
+      "OAuth2",
+      "Token"
+    ],
+    "access": "Admin / paid",
+    "access_detail": "Enterprise Google Cloud project, enabled API, IAM roles and product entitlement required.",
+    "surface": "REST enterprise notebook/source management; consumer API not assumed",
+    "verdict": "Conditional",
+    "blocker": "Admin",
+    "note": "The enterprise API is real; a blanket no-API verdict for all NotebookLM editions would be wrong.",
+    "sources": [
+      "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-notebooklm",
+      "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks"
+    ],
+    "access_group": "Gated",
+    "mcp": null,
+    "workflow": "Read an enterprise notebook resource",
+    "next_action": "Confirm NotebookLM Enterprise tenant eligibility and IAM permissions, then inspect a test notebook/source resource through the enterprise API.",
+    "success_criterion": "Return the enterprise resource identifier and document required project/tenant roles.",
+    "alternative_action": "Do not extrapolate this to consumer NotebookLM; investigate that product separately if consumer automation is required.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

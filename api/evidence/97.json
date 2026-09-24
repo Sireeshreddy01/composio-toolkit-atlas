@@ -1,0 +1,42 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 97,
+  "app": "higgsfield",
+  "sources": [
+    "https://higgsfield.ai/creator-hub/help-center/integrations/how-do-i-access-higgsfield-via-cli",
+    "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-higgsfield-mcp"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 154,
+      "url": "https://higgsfield.ai/creator-hub/help-center/integrations/how-do-i-access-higgsfield-via-cli",
+      "checked_at": "2026-09-24T10:48:51.913668+00:00",
+      "status": 200,
+      "final_url": "https://higgsfield.ai/creator-hub/help-center/integrations/how-do-i-access-higgsfield-via-cli",
+      "sha256": "915de739db9e5666c49caadc53792a2162911c06ac4556a98b020ad81acf51b9",
+      "text_chars": 6495,
+      "auth_guess": "API key",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 155,
+      "url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-higgsfield-mcp",
+      "checked_at": "2026-09-24T10:48:51.920723+00:00",
+      "status": 200,
+      "final_url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-higgsfield-mcp",
+      "sha256": "7e742122380473b715c7f97122136ba1a29e808f836b4f7f2f53cd4f3a9bfb39",
+      "text_chars": 5889,
+      "auth_guess": "OAuth2",
+      "surface_guess": "Unknown",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

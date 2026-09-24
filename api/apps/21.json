@@ -1,0 +1,37 @@
+{
+  "kind": "app_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "app": {
+    "id": 21,
+    "category": "Communications",
+    "app": "Slack",
+    "url": "https://slack.com",
+    "description": "Team messaging and collaboration",
+    "auth": [
+      "OAuth2",
+      "Token"
+    ],
+    "access": "Sandbox",
+    "access_detail": "Developer sandbox available; workspace app approval and scopes can restrict installation.",
+    "surface": "HTTP Web API + events; messages, channels, users and files",
+    "verdict": "Build",
+    "blocker": "Admin",
+    "note": "A token does not grant access to every conversation; scopes and membership still apply.",
+    "sources": [
+      "https://docs.slack.dev/authentication/installing-with-oauth/",
+      "https://docs.slack.dev/reference/methods/admin.apps.approve/"
+    ],
+    "access_group": "Self-serve",
+    "mcp": {
+      "kind": "Official",
+      "scope": "Slack account access; distinct from Slackbot as MCP client",
+      "url": "https://slack.com/help/articles/48855576908307-Guide-to-Model-Context-Protocol-in-Slack"
+    },
+    "workflow": "Read a message in a test channel",
+    "next_action": "Install a Slack app in a sandbox with minimum history scopes and invite it to one test channel before reading a message.",
+    "success_criterion": "Retrieve the seeded message; show that an unjoined or ungranted conversation remains inaccessible.",
+    "alternative_action": "Compare official MCP channel coverage against the required scopes; avoid capturing a personal Slack session as an app credential.",
+    "status": "Proposed; not an authenticated test result"
+  }
+}

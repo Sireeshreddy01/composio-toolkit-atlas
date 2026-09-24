@@ -1,0 +1,294 @@
+{
+  "kind": "category_assessment",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "category": "Marketing & Social",
+  "count": 10,
+  "verdict": {
+    "Conditional": 9,
+    "Build": 1
+  },
+  "development_access": {
+    "Gated": 4,
+    "Self-serve": 1,
+    "Unknown": 5
+  },
+  "apps": [
+    {
+      "id": 31,
+      "category": "Marketing & Social",
+      "app": "Google Ads",
+      "url": "https://developers.google.com/google-ads",
+      "description": "Search advertising campaign management",
+      "auth": [
+        "OAuth2"
+      ],
+      "access": "Approval",
+      "access_detail": "Test access is distinct from production; developer token and access-level review generally apply.",
+      "surface": "REST + gRPC; campaigns, reporting and account resources",
+      "verdict": "Conditional",
+      "blocker": "Approval",
+      "note": "OAuth is necessary but insufficient; verify developer-token access level and current Cloud-managed pilot rules.",
+      "sources": [
+        "https://developers.google.com/google-ads/api/docs/oauth/overview",
+        "https://developers.google.com/google-ads/api/docs/api-policy/access-levels",
+        "https://developers.google.com/google-ads/api/docs/api-policy/developer-token"
+      ],
+      "access_group": "Gated",
+      "mcp": null,
+      "workflow": "Run a Google Ads sandbox report",
+      "next_action": "Apply for the appropriate developer-token access and authorize a test Ads account before running a small reporting query.",
+      "success_criterion": "Return a test report and record developer-token level, OAuth scope and customer context.",
+      "alternative_action": "Begin token approval immediately; a captured Ads UI request does not replace developer-token authorization.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 32,
+      "category": "Marketing & Social",
+      "app": "Meta Ads",
+      "url": "https://developers.facebook.com/docs/marketing-apis",
+      "description": "Advertising on Meta properties",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Approval",
+      "access_detail": "Own-account testing is distinct from managing other customers' accounts; permissions require review.",
+      "surface": "Graph HTTP API; campaigns, audiences, creatives and insights",
+      "verdict": "Conditional",
+      "blocker": "Approval",
+      "note": "Meta Graph API is not GraphQL; recent access-tier naming changes warrant checking the exact product permission.",
+      "sources": [
+        "https://www.postman.com/meta/facebook-marketing-api/documentation/0zr4mes/facebook-marketing-api-mapi",
+        "https://github.com/facebook/facebook-nodejs-business-sdk/blob/main/README.md"
+      ],
+      "access_group": "Gated",
+      "mcp": null,
+      "workflow": "Read an approved Meta ad account",
+      "next_action": "Confirm the exact Marketing API permissions and access tier, then read campaign metadata in an approved test account.",
+      "success_criterion": "Return the seeded campaign and record app permissions, account role and current access tier.",
+      "alternative_action": "Keep this Graph HTTP workflow separate from Threads; request missing permissions through the official review route.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 33,
+      "category": "Marketing & Social",
+      "app": "LinkedIn Ads",
+      "url": "https://learn.microsoft.com/linkedin/marketing",
+      "description": "Professional-audience advertising",
+      "auth": [
+        "OAuth2"
+      ],
+      "access": "Approval",
+      "access_detail": "Advertising API access requires approval; consumer sign-in access does not include Marketing APIs.",
+      "surface": "REST; ad accounts, campaigns, creatives and reporting",
+      "verdict": "Conditional",
+      "blocker": "Approval",
+      "note": "Start outreach and access application before promising a production toolkit.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+        "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access?view=li-lms-2026-03"
+      ],
+      "access_group": "Gated",
+      "mcp": null,
+      "workflow": "Obtain LinkedIn Ads development approval",
+      "next_action": "Prepare a LinkedIn Marketing API access request for a specific read-only campaign-reporting workflow and ask about test accounts.",
+      "success_criterion": "Receive a documented access decision and the scopes needed for campaign reporting.",
+      "alternative_action": "If approval is pending, use an authorized report export as a limited data-ingestion prototype, not an API substitute.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 34,
+      "category": "Marketing & Social",
+      "app": "GoHighLevel",
+      "url": "https://highlevel.stoplight.io",
+      "description": "Agency CRM and marketing automation",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Sandbox",
+      "access_detail": "Private Integration Tokens have a documented sandbox path; paid production capabilities need plan verification.",
+      "surface": "REST; contacts, calendars, opportunities and marketing",
+      "verdict": "Build",
+      "blocker": "Production entitlement",
+      "note": "Use OAuth for customer distribution; PITs suit controlled private integrations.",
+      "sources": [
+        "https://marketplace.gohighlevel.com/docs/Authorization/PrivateIntegrationsToken/",
+        "https://marketplace.gohighlevel.com/docs/oauth/SandboxPIT/"
+      ],
+      "access_group": "Self-serve",
+      "mcp": null,
+      "workflow": "Read a contact in a developer account",
+      "next_action": "Use a GoHighLevel development account and a controlled private integration token to read a seeded contact.",
+      "success_criterion": "Return the contact and location context; document OAuth requirements for customer distribution.",
+      "alternative_action": "Compare the marketplace OAuth path before expanding a private integration to multiple customer locations.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 35,
+      "category": "Marketing & Social",
+      "app": "Mailchimp",
+      "url": "https://mailchimp.com/developer",
+      "description": "Email marketing and audience management",
+      "auth": [
+        "OAuth2",
+        "API key",
+        "Basic"
+      ],
+      "access": "Account check",
+      "access_detail": "Key creation and OAuth paths are self-managed; free-plan eligibility for each target feature needs confirmation.",
+      "surface": "REST; audiences, campaigns, automations and reporting",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "The marketing API is REST; unrelated GraphQL mentions on the landing page are not its protocol.",
+      "sources": [
+        "https://mailchimp.com/developer/marketing/guides/quick-start/",
+        "https://mailchimp.com/developer/marketing/docs/fundamentals/"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Read one audience member",
+      "next_action": "Verify Mailchimp Marketing API access on the intended free or trial plan, then read a seeded audience member using a scoped account credential.",
+      "success_criterion": "Record plan entitlement and return the test member without sending a campaign.",
+      "alternative_action": "If a campaign workflow is missing from the public API, capture that authorized UI read and compare the response schema before proposing a wrapper.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 36,
+      "category": "Marketing & Social",
+      "app": "Klaviyo",
+      "url": "https://developers.klaviyo.com",
+      "description": "Customer marketing and lifecycle messaging",
+      "auth": [
+        "OAuth2",
+        "API key"
+      ],
+      "access": "Account check",
+      "access_detail": "Private scoped keys from account settings; public client keys have limited scope; plan quotas need confirmation.",
+      "surface": "REST; profiles, events, lists, campaigns and flows",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "Do not confuse public tracking keys with privileged server-side API credentials.",
+      "sources": [
+        "https://developers.klaviyo.com/en/reference/api_overview",
+        "https://developers.klaviyo.com/en/v2026-01-15/docs/authenticate_"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Read a test profile",
+      "next_action": "Confirm Klaviyo server-side API eligibility, create a least-privilege private key, and retrieve a seeded profile.",
+      "success_criterion": "Return the test profile using a private server key; demonstrate that a public tracking key cannot authorize it.",
+      "alternative_action": "Check whether official MCP exposes the same profile fields; otherwise use the documented profiles API.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 37,
+      "category": "Marketing & Social",
+      "app": "systeme.io",
+      "url": "https://systeme.io",
+      "description": "Funnels, email and digital-product sales",
+      "auth": [
+        "API key"
+      ],
+      "access": "Account check",
+      "access_detail": "Public API key generated in account settings; pricing entitlement not settled by the setup article.",
+      "surface": "Public HTTP API; contact and sales-workflow integrations",
+      "verdict": "Conditional",
+      "blocker": "Plan check",
+      "note": "Public API means documented interface, not unauthenticated access.",
+      "sources": [
+        "https://help.systeme.io/article/2323-how-to-use-systeme-io-public-api"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Retrieve a funnel contact",
+      "next_action": "Confirm systeme.io account/API eligibility and authenticate a read of a test contact tied to a known funnel.",
+      "success_criterion": "Return the seeded contact and record the supported contact or sales objects.",
+      "alternative_action": "Inspect a specific authorized funnel UI read only when the documented public API lacks a required relationship.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 38,
+      "category": "Marketing & Social",
+      "app": "Pinterest",
+      "url": "https://developers.pinterest.com",
+      "description": "Visual discovery, publishing and ads",
+      "auth": [
+        "OAuth2"
+      ],
+      "access": "Approval",
+      "access_detail": "App approval grants Trial access; broader Standard access requires further review.",
+      "surface": "REST; pins, boards and advertising resources",
+      "verdict": "Conditional",
+      "blocker": "Approval",
+      "note": "A tier named Trial is still approval-gated; it is not necessarily instant self-serve access.",
+      "sources": [
+        "https://developers.pinterest.com/docs/key-concepts/access-tiers/",
+        "https://developers.pinterest.com/docs/developer-tools/sandbox/"
+      ],
+      "access_group": "Gated",
+      "mcp": null,
+      "workflow": "List a test board after access approval",
+      "next_action": "Apply for Pinterest's developer access tier, confirm Trial-tier approval requirements, then list a test board.",
+      "success_criterion": "Document approval status and return the approved board with the granted permissions.",
+      "alternative_action": "Use a user-provided board export for exploratory analysis while approval is pending; do not label it an API integration.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 39,
+      "category": "Marketing & Social",
+      "app": "Threads (Meta)",
+      "url": "https://developers.facebook.com/docs/threads",
+      "description": "Social publishing and engagement",
+      "auth": [
+        "OAuth2",
+        "Token"
+      ],
+      "access": "Account check",
+      "access_detail": "Meta app with Threads use case and authorized user; broader distribution permissions need review.",
+      "surface": "HTTP Graph API; publish, retrieve and manage Threads content",
+      "verdict": "Conditional",
+      "blocker": "Approval",
+      "note": "Threads tokens and permissions differ from Meta Ads; avoid reusing an unrelated Meta token.",
+      "sources": [
+        "https://www.postman.com/meta/threads/collection/dht3nzz/threads-api",
+        "https://www.postman.com/meta/threads/documentation/dht3nzz/threads-api"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Read a test Threads profile",
+      "next_action": "Confirm Threads-specific developer setup and token scopes, then read the authorized test profile or its posts.",
+      "success_criterion": "Return the intended profile and document token expiry and permissions without publishing content.",
+      "alternative_action": "Keep Threads OAuth and Meta Ads credentials separate; investigate browser requests only for authorized read fields missing from the supported API.",
+      "status": "Proposed; not an authenticated test result"
+    },
+    {
+      "id": 40,
+      "category": "Marketing & Social",
+      "app": "SendGrid",
+      "url": "https://sendgrid.com",
+      "description": "Transactional and marketing email delivery",
+      "auth": [
+        "API key"
+      ],
+      "access": "Account check",
+      "access_detail": "Create the first key in SendGrid UI; sender verification and current trial availability need confirmation.",
+      "surface": "REST; mail send, templates, contacts and statistics",
+      "verdict": "Conditional",
+      "blocker": "Customer access",
+      "note": "API authorization and permission to send as a domain are different setup steps.",
+      "sources": [
+        "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+        "https://www.twilio.com/docs/sendgrid/ui/account-and-settings/api-keys"
+      ],
+      "access_group": "Unknown",
+      "mcp": null,
+      "workflow": "Inspect email template metadata",
+      "next_action": "Confirm SendGrid account eligibility and create a restricted key for reading a test template, without enabling mail sends.",
+      "success_criterion": "Return template metadata and distinguish API scopes from domain-sending verification.",
+      "alternative_action": "If sending is later required, add verified-sender setup and separate send authorization as a new test.",
+      "status": "Proposed; not an authenticated test result"
+    }
+  ]
+}

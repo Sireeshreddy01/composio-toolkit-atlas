@@ -1,0 +1,36 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 78,
+  "app": "Coda",
+  "sources": [
+    "https://coda.io/developers/apis/v1",
+    "https://help.coda.io/hc/en-us/articles/39555760015757-Overview-Doc-limits"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 10,
+      "url": "https://coda.io/developers/apis/v1",
+      "checked_at": "2026-09-24T10:48:26.061848+00:00",
+      "status": 200,
+      "final_url": "https://docs.superhuman.com/developers/apis/v1",
+      "sha256": "e2a141c409cb83c640021f909c79caa9f491d41c8d8203a946f7bd34ac9125c2",
+      "text_chars": 141905,
+      "auth_guess": "API key",
+      "surface_guess": "REST",
+      "access_guess": "Gated",
+      "mcp_guess": "Mention found"
+    },
+    {
+      "id": 240,
+      "url": "https://help.coda.io/hc/en-us/articles/39555760015757-Overview-Doc-limits",
+      "checked_at": "2026-09-24T10:56:39.226468+00:00",
+      "status": "unresolved",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

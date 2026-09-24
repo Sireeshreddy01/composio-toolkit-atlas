@@ -1,0 +1,22 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 37,
+  "app": "systeme.io",
+  "sources": [
+    "https://help.systeme.io/article/2323-how-to-use-systeme-io-public-api"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 153,
+      "url": "https://help.systeme.io/article/2323-how-to-use-systeme-io-public-api",
+      "checked_at": "2026-09-24T10:48:51.854261+00:00",
+      "status": "unresolved",
+      "error": "<urlopen error _ssl.c:1112: The handshake operation timed out>"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}

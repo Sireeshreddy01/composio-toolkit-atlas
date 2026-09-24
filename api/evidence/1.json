@@ -1,0 +1,93 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 1,
+  "app": "Salesforce",
+  "sources": [
+    "https://developer.salesforce.com/docs/platform/api-rest/guide/quickstart-dev-org.html",
+    "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/postman.html"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 48,
+      "url": "https://developer.salesforce.com/docs/platform/api-rest/guide/quickstart-dev-org.html",
+      "checked_at": "2026-09-24T10:48:34.306506+00:00",
+      "status": "unresolved",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": 49,
+      "url": "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/postman.html",
+      "checked_at": "2026-09-24T10:48:34.316789+00:00",
+      "status": "unresolved",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ],
+  "additional_run": {
+    "id": 1,
+    "app": "Salesforce",
+    "category": "CRM & Sales",
+    "product_scope": "Salesforce CRM platform",
+    "fields": {
+      "authentication": {
+        "answer": "Authentication requirements are unresolved.",
+        "status": "unresolved",
+        "caveat": "S001 and S002 returned HTTP 403 with no document text.",
+        "citation_binding_passed": false,
+        "verification": {
+          "id": 1,
+          "field": "authentication",
+          "assessment": "unresolved",
+          "reason": "S001 and S002 contain no text; authentication cannot be established."
+        },
+        "citations": []
+      },
+      "development_access": {
+        "answer": "No developer, trial, sandbox or production API entitlement is established.",
+        "status": "unresolved",
+        "caveat": "An inaccessible developer-org URL does not establish a usable development route.",
+        "citation_binding_passed": false,
+        "verification": {
+          "id": 1,
+          "field": "development_access",
+          "assessment": "unresolved",
+          "reason": "The inaccessible developer-org URL establishes neither eligibility nor API entitlement."
+        },
+        "citations": []
+      },
+      "api_surface": {
+        "answer": "API protocols and resource families are unresolved.",
+        "status": "unresolved",
+        "caveat": "No substantive API documentation was collected.",
+        "citation_binding_passed": false,
+        "verification": {
+          "id": 1,
+          "field": "api_surface",
+          "assessment": "unresolved",
+          "reason": "No substantive passages establish protocols or resources."
+        },
+        "citations": []
+      },
+      "mcp": {
+        "answer": "Existing vendor MCP availability is unresolved.",
+        "status": "unresolved",
+        "caveat": "The MCP-related URL returned HTTP 403; its path is not evidence of functionality.",
+        "citation_binding_passed": false,
+        "verification": {
+          "id": 1,
+          "field": "mcp",
+          "assessment": "unresolved",
+          "reason": "An MCP-related URL returning 403 does not establish an available server."
+        },
+        "citations": []
+      }
+    },
+    "access_class": "Unknown",
+    "verdict": "Review required",
+    "decision_reason": "Neither supplied source contains usable documentation. No authentication or API testing occurred.",
+    "next_step": "Obtain readable official developer-org documentation that explicitly states API entitlement; success is a passage identifying eligibility and included API access."
+  },
+  "human_review": "pending",
+  "authenticated_test": false
+}

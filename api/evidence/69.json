@@ -1,0 +1,56 @@
+{
+  "kind": "evidence_record",
+  "as_of": "2026-09-24",
+  "scope": "Published documentation-research snapshot; not a fresh vendor API test.",
+  "id": 69,
+  "app": "Datadog",
+  "sources": [
+    "https://docs.datadoghq.com/api/latest/",
+    "https://docs.datadoghq.com/api/latest/authentication/",
+    "https://docs.datadoghq.com/mcp_server/"
+  ],
+  "retrieval_checks": [
+    {
+      "id": 102,
+      "url": "https://docs.datadoghq.com/api/latest/",
+      "checked_at": "2026-09-24T10:48:43.436758+00:00",
+      "status": 200,
+      "final_url": "https://docs.datadoghq.com/api/latest/",
+      "sha256": "a1c5abd7b58415b5fdd59d11ff8a403d90a0651644194c3f9be7f2460ea179f1",
+      "text_chars": 73871,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 103,
+      "url": "https://docs.datadoghq.com/api/latest/authentication/",
+      "checked_at": "2026-09-24T10:48:43.439317+00:00",
+      "status": 200,
+      "final_url": "https://docs.datadoghq.com/api/latest/authentication/",
+      "sha256": "40da4fe45a18001be206aa9f19c2a76fbcb7a3b0a05b0e6b32cc4f5659839af8",
+      "text_chars": 74914,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    },
+    {
+      "id": 238,
+      "url": "https://docs.datadoghq.com/mcp_server/",
+      "checked_at": "2026-09-24T10:56:39.226213+00:00",
+      "status": 200,
+      "final_url": "https://docs.datadoghq.com/mcp_server/",
+      "sha256": "846f1e96c98bf574f3482359436b82ba5f5f0d9d48fc5a3dabed61bb5dc3282f",
+      "text_chars": 80271,
+      "auth_guess": "Unknown",
+      "surface_guess": "Unknown",
+      "access_guess": "Unknown",
+      "mcp_guess": "Not found in fetched page"
+    }
+  ],
+  "additional_run": null,
+  "human_review": "pending",
+  "authenticated_test": false
+}
