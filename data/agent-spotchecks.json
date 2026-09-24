@@ -1,0 +1,58 @@
+{
+  "checked_at": "2026-09-24T13:38:06.699223+00:00",
+  "reviewer": "Codex AI agent",
+  "human_review": false,
+  "authenticated_calls": 0,
+  "checks": [
+    {
+      "id": 1,
+      "app": "Salesforce",
+      "method": "Fresh official-document retrieval",
+      "sources": [
+        "https://developer.salesforce.com/docs/platform/api-rest/guide/quickstart-dev-org.html"
+      ],
+      "finding": "Free Developer Edition is a development route; the user needs API Enabled permission. This does not establish customer production API entitlement.",
+      "result": "Supports the scoped developer-org claim."
+    },
+    {
+      "id": 46,
+      "app": "Squarespace",
+      "method": "Fresh HTTP packet plus extraction and verification",
+      "sources": [
+        "https://developers.squarespace.com/commerce-apis/authentication-and-permissions"
+      ],
+      "finding": "Custom API-key applications and OAuth Extensions have different plan/access requirements. The restriction must be scoped to the app type; not generalized to every integration.",
+      "result": "Preserve the conditional, app-type-specific conclusion."
+    },
+    {
+      "id": 85,
+      "app": "iPayX",
+      "method": "Rendered browser documentation; HTTP extraction returned a marketing shell",
+      "sources": [
+        "https://www.ipayx.ai/docs/mcp-server"
+      ],
+      "finding": "Rendered MCP docs describe a free quota of 10 FX audits per day per API key, separate paid reporting, and Bearer keys with test/live formats. This check did not exercise an endpoint or resolve the separate REST contract conflict.",
+      "result": "Supports the scoped free MCP route, not unrestricted REST access."
+    },
+    {
+      "id": 94,
+      "app": "Consensus",
+      "method": "Fresh official-document retrieval",
+      "sources": [
+        "https://docs.consensus.app/api-plans-and-access"
+      ],
+      "finding": "All plans have self-serve key access. Free has 30 shared API/MCP calls monthly; x-api-key applies to API keys. Free pagination and result limits remain relevant.",
+      "result": "Supports the bounded free development path."
+    },
+    {
+      "id": 98,
+      "app": "Mermaid CLI",
+      "method": "Fresh official repository documentation retrieval",
+      "sources": [
+        "https://github.com/mermaid-js/mermaid-cli"
+      ],
+      "finding": "The CLI renders Mermaid input into SVG, PNG or PDF. A local wrapper is a valid proposed tool surface; this check did not execute a render.",
+      "result": "Supports a local CLI route, not a hosted REST or confirmed MCP server."
+    }
+  ]
+}

@@ -17,11 +17,12 @@ Select **Try an example** or **Run checks here**. No installation is needed:
 
 1. **Research example:** four steps replay the saved Freshdesk finding from an incorrect access prediction to the reviewed record and proposed implementation test. This does not perform a new source review.
 2. **Run dataset checks:** JavaScript checks all 100 embedded records, category and source coverage, recomputes summary counts, and recalculates the 20-app diagnostic sample from initial predictions and reviewed rows against the saved agent-authored rubric. Results and exact executable code are visible; the result can be downloaded as JSON. This is consistency checking, not independent fact verification.
-3. **Live API request:** an explicit button sends one unauthenticated GET request to GitHub for this public repository. It records HTTP status, elapsed time, selected response fields and schema checks, or the actual failure. No credentials, writes or proxy backend are used. Browser/network restrictions and rate limits can prevent a result. This demo does not change the frozen research or count as an authenticated integration test.
+3. **API console:** prominently linked from the landing page and header. Six real public GitHub endpoints: repository, issues, branches, languages, contributors and README. Edit the repository and JSON query parameters; inspect the actual full response body, browser-exposed headers, HTTP status, byte count, elapsed time and rate limit. Cancel, copy cURL, or download the result. Errors are preserved; empty arrays are valid. No sign-in, API key or local installation.
+4. **Research run:** inspect the recorded automated research execution by app and claim. See source links, retrieval timestamps, citation hashes/binding results, second-pass judgments and remaining uncertainty. Download the full sanitized run. This is explicitly a recorded run, not a simulated new AI invocation.
 
-The first two tools work offline. Fresh research across arbitrary vendor documentation still uses the Python collector below because vendor pages do not universally permit browser cross-origin reads. The browser does not silently proxy requests or simulate live success.
+**The self-contained HTML has the same tools.** Research, replay and dataset checks work offline. Live API requests need internet and a browser that permits GitHub CORS; GitHub rate limits apply. Open the HTML in a browser, not a cloud-drive preview that disables scripts.
 
-Every app includes a `next_action` derived from its research. Conditional apps with an established product identity also include an `alternative_action`: capture and reproduce a read workflow from an authorized account, document the endpoint and schema, and assess session requirements and repeatability. These are proposed endpoint reverse-engineering tasks, not completed tests or a guarantee of access to restricted features. The original classifications are preserved.
+All 100 apps now have a distinct proposed workflow, next action, observable pass condition and alternative/follow-up route in `data/action-plans.json`. These are plans, not completed integration tests. Five feasibility experiments are prioritized: GitHub public reads, Freshdesk trial ticket reads, Linear GraphQL issue queries, Stripe test customers and Mermaid local rendering. Customer demand and engineering cost must still determine commercial priority.
 
 The visual design pairs a warm paper landing page with a charcoal presentation stage, orange accents, embedded Geist / Geist Mono typography and a clickable 100-app integration map. Research references: [Composio’s current homepage](https://composio.dev/) for its technical typography and dark product presentation, and [Y Combinator](https://www.ycombinator.com/) for its restrained orange and warm neutral palette. This is an original assessment presentation, not an official Composio or YC site; their logos and artwork are not reproduced.
 
@@ -40,17 +41,34 @@ python3 -m http.server 8000
 
 Open http://localhost:8000. You can also open `index.html` directly: all case-study data, styling and JavaScript are embedded. Filters and exports work without a backend.
 
-## Run the research collector
+## Run a fresh research and verification pipeline (optional)
+
+Reviewers do not need this setup to examine the submission or send live requests on the page. Reproducing a **new model-backed run** requires Python 3.9+, internet and the [official Codex CLI](https://developers.openai.com/codex/cli/) signed in with a supported account. The runner preserves the user's model configuration and does not embed credentials in the deliverable.
 
 ```sh
-python3 run.py --refresh             # all 100 seed URLs, new timestamped run
-python3 run.py --refresh --limit 5   # small live smoke run
-python3 run.py --check-sources       # refresh cited-source retrieval ledger
+python3 run.py --research --ids 13,46       # two-app semantic smoke run
+python3 run.py --research                  # all 100 apps, batches of five
+python3 run.py --resume runs/<run-directory> # retry incomplete batches
+python3 run.py --refresh --limit 5         # original keyword baseline collector
+python3 run.py --check-sources             # cited-source HTTP metadata only
 ```
 
-Live collection requires internet access. It fetches only public URLs; it never signs into apps, creates accounts or calls authenticated business APIs. Eight workers, a 25-second timeout per URL and a 3 MB response cap keep the collector bounded. Output goes to ignored `runs/`, preserving the baseline and reviewed facts.
+The semantic runner performs the full sequence:
 
-`--refresh` collects new **candidate signals**, not new verified conclusions. The research is a hybrid agent/script workflow: Python performs repeatable collection, and the Codex agent searches and interprets primary evidence. To repeat the semantic stage, use [RESEARCH_PROMPT.md](RESEARCH_PROMPT.md) with a browsing-capable agent and review its changes. No Composio SDK implementation or autonomous fact-validation capability is claimed.
+1. Load the app identities and previously discovered official URLs, **withholding reviewed answers** from model inputs. It does not claim independent source discovery.
+2. Fetch public source pages with eight workers, a 25-second timeout and 3 MB cap. Remove navigation/scripts and select bounded excerpts balanced across auth, development access, API surface and MCP.
+3. Invoke `codex exec` for schema-constrained extraction with exact source citations.
+4. Invoke a separate-context verification pass to challenge the scope and semantic support of every claim.
+5. Bind each citation to the correct app/source and normalized source text. Reject invented quotes, failed sources and missing or duplicate verification fields. Preserve inferred/unresolved/conflicting claims.
+6. Derive conservative decisions and generate `report.json` and `report.html` in a new ignored `runs/` directory. Resume reuses the frozen packet and completed validated batches; it does not silently refresh old evidence.
+
+**Published execution scope:** the expanded run collected 320 public sources for all 100 apps (264 readable HTTP results) and completed semantic verification for 20 apps before packaging. The remaining 80 are not claimed as freshly verified by that run; they retain the separate 100-app documentation-reviewed dataset. The fully completed two-app smoke runs are also preserved. A post-run AI check corrected Close's overly broad self-serve classification; the original decision and reason are retained.
+
+The runner's packet, prompts and model logs remain local because they contain copied source passages. The published `data/research-run.json` retains original summaries, source metadata, hashes, offsets and judgments without republishing the raw documents. Reviewed records are not automatically overwritten by an incomplete HTTP-only pass. The browser viewer exposes differences between the two layers.
+
+A real two-app regression test improved supported fields from **1/8 to 5/8** after fixing source-excerpt selection. `data/retrieval-iteration.json` preserves the before/after outputs. This is retrieval and claim-support improvement, **not an independent accuracy score**.
+
+Dynamic pages, access gates and incomplete source indexes can still require browser investigation. The verifier is the same model in a fresh context; citation binding establishes occurrence, not truth. No Composio SDK or Composio MCP execution is claimed. Composio's brief encourages them but does not require that implementation.
 
 ## What the workflow does
 
@@ -107,7 +125,12 @@ Some development-access judgments combine multiple sources. Linear combines Free
 - `data/source-checks.json`: source retrieval metadata.
 - `data/atlas.json`, `data/atlas.csv`: generated machine-readable data.
 - `data/human-review.json`: pending human review record; never mark complete without a person checking.
-- `scripts/research.py`, `scripts/verify_sources.py`, `scripts/build.py`: collector, source check and offline build.
+- `scripts/research_pipeline.py`, `schemas/`, `prompts/`: end-to-end semantic research runner.
+- `data/research-run.json`: sanitized recorded pipeline output, embedded in the HTML.
+- `data/retrieval-iteration.json`: actual before/after source-selection regression.
+- `data/action-plans.json`: 100 specific workflows, pass criteria and follow-up routes.
+- `data/agent-spotchecks.json`: fresh AI source checks, explicitly distinct from human review.
+- `scripts/research.py`, `scripts/verify_sources.py`, `scripts/build.py`: baseline collector, source check and offline build.
 - `RESEARCH_PROMPT.md`: instructions for repeating the semantic agent pass.
 - `CANDIDATE_GUIDE.md`: plain-language explanation and interview preparation.
 
@@ -119,6 +142,6 @@ Submission requires the live-page URL and this repository URL. The form also ask
 
 ## Interface validation
 
-Run `node tests/reviewer-tools.test.cjs` to check the exact functions embedded in the HTML template. Tests cover corrupted dataset inputs and live-request success, unexpected schema, HTTP failure, network failure and timeout handling. This command uses mocked responses for failure paths; it does not make vendor requests.
+Run `node tests/reviewer-tools.test.cjs` to check the exact functions embedded in the HTML template: corrupted dataset inputs, request/parameter validation, host restriction, full response retention, headers, schema mismatches, empty lists, HTTP/network failures and cancellation. Run `python3 -m unittest discover -s tests -p 'test_*.py'` for fabricated citations, wrong-app sources, failed HTTP evidence, missing/duplicate verification, semantic rejection and the long-index regression. Failure-path unit tests use fixtures, not vendor requests.
 
 The browser demo also made a real public GitHub request during UI verification on 24 September 2026: HTTP 200, expected repository response, 446 ms. The sanitized result is saved in `evidence/github-public-read.json`. This is one unauthenticated public read, separate from the 100-app documentation study and its unchanged authenticated-test count.

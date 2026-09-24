@@ -1,0 +1,522 @@
+{
+  "description": "The first semantic run selected the beginning of a long API index and missed entitlement prose. Topic-balanced excerpts recovered authentication and trial evidence. Same two apps, fresh model calls; this is evidence coverage, not independent accuracy.",
+  "before": {
+    "run_at": "2026-09-24T13:19:30.410907+00:00",
+    "completed_at": "2026-09-24T13:20:53.998137+00:00",
+    "summary": {
+      "requested_apps": 2,
+      "completed_apps": 2,
+      "source_count": 4,
+      "retrieved_sources": 4,
+      "field_statuses": {
+        "supported": 1,
+        "inferred": 1,
+        "unresolved": 5,
+        "needs_review": 1
+      },
+      "failed_batches": 0
+    },
+    "records": [
+      {
+        "id": 13,
+        "app": "Freshdesk",
+        "category": "Support & Helpdesk",
+        "product_scope": "Freshdesk helpdesk API",
+        "fields": {
+          "authentication": {
+            "answer": "The authentication method is unresolved.",
+            "status": "unresolved",
+            "caveat": "The truncated capture includes an Authentication heading but no authentication instructions.",
+            "citation_binding_passed": false,
+            "verification": {
+              "id": 13,
+              "field": "authentication",
+              "assessment": "unresolved",
+              "reason": "S001 shows an Authentication heading but no credential or authentication instructions."
+            },
+            "citations": []
+          },
+          "development_access": {
+            "answer": "Free, trial, sandbox and paid API entitlements are unresolved.",
+            "status": "unresolved",
+            "caveat": "Public documentation alone does not establish developer access or an API plan requirement.",
+            "citation_binding_passed": false,
+            "verification": {
+              "id": 13,
+              "field": "development_access",
+              "assessment": "unresolved",
+              "reason": "S001 supplies no plan eligibility, trial, free-access or sandbox terms."
+            },
+            "citations": []
+          },
+          "api_surface": {
+            "answer": "The API surface is unresolved from substantive documentation in this packet.",
+            "status": "unresolved",
+            "caveat": "S001 contains a truncated API index with resource paths; navigation text is insufficient under the extraction rules.",
+            "citation_binding_passed": false,
+            "verification": {
+              "id": 13,
+              "field": "api_surface",
+              "assessment": "unsupported",
+              "reason": "The index explicitly identifies resources, operations and endpoint paths, supporting a partial API surface. It does not establish protocol details, but treating the entire surface as unresolved is too broad."
+            },
+            "citations": []
+          },
+          "mcp": {
+            "answer": "An existing vendor MCP server is unresolved.",
+            "status": "unresolved",
+            "caveat": "The supplied capture provides no MCP evidence; this does not establish absence.",
+            "citation_binding_passed": false,
+            "verification": {
+              "id": 13,
+              "field": "mcp",
+              "assessment": "unresolved",
+              "reason": "No supplied passage identifies a vendor MCP server; absence is not established."
+            },
+            "citations": []
+          }
+        },
+        "access_class": "Unknown",
+        "verdict": "Review required",
+        "decision_reason": "The packet establishes neither an eligible developer route nor an explicit access gate.",
+        "next_step": "Obtain the complete Freshdesk API getting-started documentation; success is substantive text identifying authentication and API plan eligibility."
+      },
+      {
+        "id": 46,
+        "app": "Squarespace",
+        "category": "Ecommerce",
+        "product_scope": "Squarespace Commerce APIs: custom merchant applications and distributed Extensions",
+        "fields": {
+          "authentication": {
+            "answer": "Use an API key or OAuth token as a Bearer credential, scoped to its merchant website and permissions. Extensions require OAuth.",
+            "status": "supported",
+            "caveat": "Webhook subscriptions require OAuth. Requests also require a User-Agent header.",
+            "citation_binding_passed": true,
+            "verification": {
+              "id": 46,
+              "field": "authentication",
+              "assessment": "supported",
+              "reason": "S003 and S004 explicitly establish Bearer API keys or OAuth tokens, website scope, permissions and mandatory OAuth for Extensions."
+            },
+            "citations": [
+              {
+                "source_id": "S004",
+                "url": "https://developers.squarespace.com/commerce-apis/making-requests",
+                "retrieved_at": "2026-09-24T13:19:12.091947+00:00",
+                "source_sha256": "32063231a2d105f16ba5cd0809b738b7ac253e403e9cfbcf4e9e48a280feefa0",
+                "quote_sha256": "950e6e99ef607449e3ee3d490d137c9f1aa8c099bcf9711d30c8f521d39f9b11",
+                "normalized_offset": 1098,
+                "quote_binding_passed": true
+              },
+              {
+                "source_id": "S003",
+                "url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+                "retrieved_at": "2026-09-24T13:19:12.091827+00:00",
+                "source_sha256": "81a194d61181cdfc8a57d5195b0231b085ca0ddf7873691d3e376a6c878a6ea1",
+                "quote_sha256": "50710796b9bb7ed2d04be556744d9468bc3c5fd69ca176a1f21ec88459ea86a9",
+                "normalized_offset": 560,
+                "quote_binding_passed": true
+              },
+              {
+                "source_id": "S003",
+                "url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+                "retrieved_at": "2026-09-24T13:19:12.091827+00:00",
+                "source_sha256": "81a194d61181cdfc8a57d5195b0231b085ca0ddf7873691d3e376a6c878a6ea1",
+                "quote_sha256": "70395bd448884bc84f27ffb4c8a1597050757db64abc565aa5cd7ed5b3b2af04",
+                "normalized_offset": 2273,
+                "quote_binding_passed": true
+              }
+            ]
+          },
+          "development_access": {
+            "answer": "Custom merchant applications require Commerce Advanced. Distributed Extensions require OAuth client registration; customers may install them on any plan. No free developer entitlement is established.",
+            "status": "inferred",
+            "caveat": "No sandbox, trial API entitlement, or OAuth registration approval criteria are supplied.",
+            "citation_binding_passed": true,
+            "verification": {
+              "id": 46,
+              "field": "development_access",
+              "assessment": "inferred",
+              "reason": "S003 establishes custom development with Commerce Advanced but does not explicitly say that plan is required exclusively. OAuth registration and any-plan Extension customer eligibility are supported; free developer entitlement remains unresolved."
+            },
+            "citations": [
+              {
+                "source_id": "S003",
+                "url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+                "retrieved_at": "2026-09-24T13:19:12.091827+00:00",
+                "source_sha256": "81a194d61181cdfc8a57d5195b0231b085ca0ddf7873691d3e376a6c878a6ea1",
+                "quote_sha256": "50766efece18624fddc9d0fc2339277ab0184e9509eb12e315f5048ee8eaee4c",
+                "normalized_offset": 2343,
+                "quote_binding_passed": true
+              },
+              {
+                "source_id": "S003",
+                "url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+                "retrieved_at": "2026-09-24T13:19:12.091827+00:00",
+                "source_sha256": "81a194d61181cdfc8a57d5195b0231b085ca0ddf7873691d3e376a6c878a6ea1",
+                "quote_sha256": "aebe538fdc501e58f853da789e200a95d068708042e83b6db975f6159672b167",
+                "normalized_offset": 2114,
+                "quote_binding_passed": true
+              },
+              {
+                "source_id": "S003",
+                "url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+                "retrieved_at": "2026-09-24T13:19:12.091827+00:00",
+                "source_sha256": "81a194d61181cdfc8a57d5195b0231b085ca0ddf7873691d3e376a6c878a6ea1",
+                "quote_sha256": "99b3bccbec45d2fdc9155cd2664c34baeee083808ae92ec789b33ff9df136b15",
+                "normalized_offset": 3023,
+                "quote_binding_passed": true
+              }
+            ]
+          },
+          "api_surface": {
+            "answer": "REST Commerce APIs cover orders, products, inventory, contacts, discounts, transactions and webhooks. Transaction writes conflict: the overview says read/write, but permissions specify read-only.",
+            "status": "needs_review",
+            "caveat": "Forms access is Zapier-only; Profiles is in maintenance mode. Transaction write capability remains unresolved.",
+            "citation_binding_passed": true,
+            "verification": {
+              "id": 46,
+              "field": "api_surface",
+              "assessment": "conflicting",
+              "reason": "The listed Commerce resources and REST surface are supported, but S002 describes transaction writes while S003 specifies read-only transaction permissions."
+            },
+            "citations": [
+              {
+                "source_id": "S002",
+                "url": "https://developers.squarespace.com",
+                "retrieved_at": "2026-09-24T13:19:12.091643+00:00",
+                "source_sha256": "15fddc0deacc5e47b8fbd5547995a096b65c7cb3957821fbe85669af0c824219",
+                "quote_sha256": "4c1efcf638021850561111e65c35f360d32d01e822067dd2a797e99a5d4c533c",
+                "normalized_offset": 709,
+                "quote_binding_passed": true
+              },
+              {
+                "source_id": "S003",
+                "url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+                "retrieved_at": "2026-09-24T13:19:12.091827+00:00",
+                "source_sha256": "81a194d61181cdfc8a57d5195b0231b085ca0ddf7873691d3e376a6c878a6ea1",
+                "quote_sha256": "cd5aca9f33500f8d700d8597ed3057aefff28853409cf27904931cd43816f581",
+                "normalized_offset": 1916,
+                "quote_binding_passed": true
+              },
+              {
+                "source_id": "S003",
+                "url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+                "retrieved_at": "2026-09-24T13:19:12.091827+00:00",
+                "source_sha256": "81a194d61181cdfc8a57d5195b0231b085ca0ddf7873691d3e376a6c878a6ea1",
+                "quote_sha256": "c9baf0995e0f67c856375b7b1b11553130a3303ecdb2dc98b23bc1791f7cbe53",
+                "normalized_offset": 1413,
+                "quote_binding_passed": true
+              },
+              {
+                "source_id": "S003",
+                "url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+                "retrieved_at": "2026-09-24T13:19:12.091827+00:00",
+                "source_sha256": "81a194d61181cdfc8a57d5195b0231b085ca0ddf7873691d3e376a6c878a6ea1",
+                "quote_sha256": "2c3b5ebf197ae9d8146406ff6a3a059ba21ea2df4b827882d474387f170b8922",
+                "normalized_offset": 1541,
+                "quote_binding_passed": true
+              },
+              {
+                "source_id": "S003",
+                "url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+                "retrieved_at": "2026-09-24T13:19:12.091827+00:00",
+                "source_sha256": "81a194d61181cdfc8a57d5195b0231b085ca0ddf7873691d3e376a6c878a6ea1",
+                "quote_sha256": "62bce6c68455961eef903ae677f67faffae7b36cd6061ae9843d222f55d5c22e",
+                "normalized_offset": 1620,
+                "quote_binding_passed": true
+              }
+            ]
+          },
+          "mcp": {
+            "answer": "An existing vendor MCP server is unresolved.",
+            "status": "unresolved",
+            "caveat": "The API-doc integration claim for Claude or ChatGPT does not identify an MCP server or establish vendor MCP availability.",
+            "citation_binding_passed": false,
+            "verification": {
+              "id": 46,
+              "field": "mcp",
+              "assessment": "unresolved",
+              "reason": "Integrating API documentation into Claude or ChatGPT does not identify an MCP server or establish vendor MCP availability."
+            },
+            "citations": []
+          }
+        },
+        "access_class": "Unknown",
+        "verdict": "Review required",
+        "decision_reason": "The custom-application route explicitly requires Commerce Advanced. Extension customer eligibility does not establish a free developer route; OAuth developer access terms remain unresolved.",
+        "next_step": "Obtain Squarespace's OAuth client registration requirements; success is explicit documentation of developer eligibility, approval requirements and any free or sandbox API entitlement."
+      }
+    ]
+  },
+  "after": {
+    "run_at": "2026-09-24T13:25:38.498076+00:00",
+    "completed_at": "2026-09-24T13:26:57.801836+00:00",
+    "summary": {
+      "requested_apps": 2,
+      "completed_apps": 2,
+      "source_count": 4,
+      "retrieved_sources": 4,
+      "field_statuses": {
+        "supported": 5,
+        "inferred": 1,
+        "unresolved": 2,
+        "needs_review": 0
+      },
+      "failed_batches": 0
+    },
+    "records": [
+      {
+        "id": 13,
+        "app": "Freshdesk",
+        "category": "Support & Helpdesk",
+        "product_scope": "Freshdesk helpdesk REST API v2",
+        "fields": {
+          "authentication": {
+            "answer": "Authenticate over HTTPS using a personal API key as the Basic-auth username and any dummy password.",
+            "status": "supported",
+            "caveat": "Agent permissions and enabled account features restrict access. Authentication was not tested.",
+            "citation_binding_passed": true,
+            "verification": {
+              "id": 13,
+              "field": "authentication",
+              "assessment": "supported",
+              "reason": "S001 requires HTTPS and shows API-key authentication with curl -u apikey:X, a dummy password and Base64-encoded credentials."
+            },
+            "citations": [
+              {
+                "source_id": "S001",
+                "url": "https://developers.freshdesk.com/api/",
+                "retrieved_at": "2026-09-24T13:25:27.969000+00:00",
+                "source_sha256": "26b96a8e00d44a4c25ecaa2905683065404f2989dbf17dc936dbb6f0a9b33332",
+                "quote_sha256": "ade14c806d6d6f414dff014393ad7ba7fdc8c7d4078cfb42f59400cfbcaff3b6",
+                "normalized_offset": 1800,
+                "quote_binding_passed": true
+              },
+              {
+                "source_id": "S001",
+                "url": "https://developers.freshdesk.com/api/",
+                "retrieved_at": "2026-09-24T13:25:27.969000+00:00",
+                "source_sha256": "26b96a8e00d44a4c25ecaa2905683065404f2989dbf17dc936dbb6f0a9b33332",
+                "quote_sha256": "9c7f65bf04d6d4cd6e1dd2f71dc34aee8690d9dc4097cd9001f2b7f57eb174cc",
+                "normalized_offset": 1855,
+                "quote_binding_passed": true
+              }
+            ]
+          },
+          "development_access": {
+            "answer": "Trial accounts explicitly receive API access with a default limit of 50 calls per minute.",
+            "status": "supported",
+            "caveat": "Trial duration and provisioning are unspecified. WhatsApp template delivery requires paid Pro or Enterprise; other features may require permissions or plans.",
+            "citation_binding_passed": true,
+            "verification": {
+              "id": 13,
+              "field": "development_access",
+              "assessment": "supported",
+              "reason": "S001 explicitly assigns all trial users a default API limit of 50 calls/minute, supporting trial API access with the stated feature restrictions."
+            },
+            "citations": [
+              {
+                "source_id": "S001",
+                "url": "https://developers.freshdesk.com/api/",
+                "retrieved_at": "2026-09-24T13:25:27.969000+00:00",
+                "source_sha256": "26b96a8e00d44a4c25ecaa2905683065404f2989dbf17dc936dbb6f0a9b33332",
+                "quote_sha256": "ea2b34ca188be7b568b914d4860afb3e889bf8d871826fdf2a5d9a06b2294336",
+                "normalized_offset": 1009,
+                "quote_binding_passed": true
+              }
+            ]
+          },
+          "api_surface": {
+            "answer": "REST operations cover tickets, ticket fields/forms, contacts, agents and outbound WhatsApp messages, with resource embedding.",
+            "status": "supported",
+            "caveat": "The reference is truncated, so this resource summary is not exhaustive. Availability varies by feature and permissions.",
+            "citation_binding_passed": true,
+            "verification": {
+              "id": 13,
+              "field": "api_surface",
+              "assessment": "supported",
+              "reason": "S001 identifies REST and documents the listed resources, outbound-message endpoints and resource embedding; the record acknowledges feature and permission limits."
+            },
+            "citations": [
+              {
+                "source_id": "S001",
+                "url": "https://developers.freshdesk.com/api/",
+                "retrieved_at": "2026-09-24T13:25:27.969000+00:00",
+                "source_sha256": "26b96a8e00d44a4c25ecaa2905683065404f2989dbf17dc936dbb6f0a9b33332",
+                "quote_sha256": "09be2cc482a297bf0a7292760f93b280edff81ca28da5c90068ddb7d0b687001",
+                "normalized_offset": 413,
+                "quote_binding_passed": true
+              },
+              {
+                "source_id": "S001",
+                "url": "https://developers.freshdesk.com/api/",
+                "retrieved_at": "2026-09-24T13:25:27.969000+00:00",
+                "source_sha256": "26b96a8e00d44a4c25ecaa2905683065404f2989dbf17dc936dbb6f0a9b33332",
+                "quote_sha256": "f0425252042c6b978a7d4023e44ed39a08dedb80894a5b1f289683f7ca500797",
+                "normalized_offset": 7895,
+                "quote_binding_passed": true
+              },
+              {
+                "source_id": "S001",
+                "url": "https://developers.freshdesk.com/api/",
+                "retrieved_at": "2026-09-24T13:25:27.969000+00:00",
+                "source_sha256": "26b96a8e00d44a4c25ecaa2905683065404f2989dbf17dc936dbb6f0a9b33332",
+                "quote_sha256": "501b91ae0c0af2fd1aac8b06dc75096a438434ef20d202b5d7e6fd292ac6a421",
+                "normalized_offset": 6780,
+                "quote_binding_passed": true
+              }
+            ]
+          },
+          "mcp": {
+            "answer": "An existing vendor MCP server cannot be established from the supplied evidence.",
+            "status": "unresolved",
+            "caveat": "The truncated API reference provides no MCP evidence; this does not establish absence.",
+            "citation_binding_passed": false,
+            "verification": {
+              "id": 13,
+              "field": "mcp",
+              "assessment": "unresolved",
+              "reason": "No supplied passage establishes a vendor MCP server or its connection requirements; absence cannot be concluded."
+            },
+            "citations": []
+          }
+        },
+        "access_class": "Self-serve",
+        "verdict": "Prototype candidate",
+        "decision_reason": "Explicit trial API entitlement supports Self-serve classification, with separate feature restrictions. No account or API was tested.",
+        "next_step": "Review official Freshdesk MCP documentation; resolve MCP support only if it identifies a vendor server and its connection/authentication requirements."
+      },
+      {
+        "id": 46,
+        "app": "Squarespace",
+        "category": "Ecommerce",
+        "product_scope": "Squarespace Commerce APIs for custom merchant applications and distributed Extensions",
+        "fields": {
+          "authentication": {
+            "answer": "Use an API key or OAuth access token as a Bearer credential. Extensions require OAuth; credentials grant access only to their owning website.",
+            "status": "supported",
+            "caveat": "Requests require appropriate permissions. Webhook Subscriptions API is OAuth only. Authentication was not tested.",
+            "citation_binding_passed": true,
+            "verification": {
+              "id": 46,
+              "field": "authentication",
+              "assessment": "supported",
+              "reason": "S004 specifies Bearer credentials; S003 explicitly requires OAuth for Extensions and limits credentials to their owning website."
+            },
+            "citations": [
+              {
+                "source_id": "S004",
+                "url": "https://developers.squarespace.com/commerce-apis/making-requests",
+                "retrieved_at": "2026-09-24T13:25:27.969562+00:00",
+                "source_sha256": "f64bee81d018d56014d4c63d265989b32ee96536dae9b0938c3a952420e17ca8",
+                "quote_sha256": "950e6e99ef607449e3ee3d490d137c9f1aa8c099bcf9711d30c8f521d39f9b11",
+                "normalized_offset": 939,
+                "quote_binding_passed": true
+              },
+              {
+                "source_id": "S003",
+                "url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+                "retrieved_at": "2026-09-24T13:25:27.969470+00:00",
+                "source_sha256": "6488ffcdc6b0c18944792ad3e3573fc5dd29e6e8acd3b51883e12a781dd17365",
+                "quote_sha256": "70395bd448884bc84f27ffb4c8a1597050757db64abc565aa5cd7ed5b3b2af04",
+                "normalized_offset": 1246,
+                "quote_binding_passed": true
+              }
+            ]
+          },
+          "development_access": {
+            "answer": "Custom merchant apps require Commerce Advanced. Distributed Extensions require the OAuth client process; no free, trial or sandbox developer entitlement is established.",
+            "status": "inferred",
+            "caveat": "Any-plan customer use of Extensions does not establish developer entitlement. OAuth approval, fees and test-site access remain unresolved.",
+            "citation_binding_passed": true,
+            "verification": {
+              "id": 46,
+              "field": "development_access",
+              "assessment": "inferred",
+              "reason": "S003 says Commerce Advanced permits custom applications, but does not explicitly establish it as the exclusive required plan. Extension OAuth onboarding is supported; free, trial and sandbox entitlement remain unestablished."
+            },
+            "citations": [
+              {
+                "source_id": "S003",
+                "url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+                "retrieved_at": "2026-09-24T13:25:27.969470+00:00",
+                "source_sha256": "6488ffcdc6b0c18944792ad3e3573fc5dd29e6e8acd3b51883e12a781dd17365",
+                "quote_sha256": "ced0746b82e1b8afc06d5a5c9a7372a71e4c30cbdf815fbd216d9d4dc231185e",
+                "normalized_offset": 1316,
+                "quote_binding_passed": true
+              },
+              {
+                "source_id": "S003",
+                "url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+                "retrieved_at": "2026-09-24T13:25:27.969470+00:00",
+                "source_sha256": "6488ffcdc6b0c18944792ad3e3573fc5dd29e6e8acd3b51883e12a781dd17365",
+                "quote_sha256": "a5fe73ae9dd13fd9cc51d0723aaffcaf884230e758d67c7fa51dabf6eadaf3e8",
+                "normalized_offset": 2061,
+                "quote_binding_passed": true
+              }
+            ]
+          },
+          "api_surface": {
+            "answer": "Commerce REST APIs cover orders, products, inventory, transactions, discounts and contacts, plus webhook subscriptions and JSON responses.",
+            "status": "supported",
+            "caveat": "The packet is truncated. Profiles is in maintenance mode and directs new integrations to Contacts. Reseller APIs are marked coming soon.",
+            "citation_binding_passed": true,
+            "verification": {
+              "id": 46,
+              "field": "api_surface",
+              "assessment": "supported",
+              "reason": "S002 explicitly identifies Commerce REST endpoints and core resources; S003\u2013S004 support discounts, contacts, webhook subscriptions and JSON responses."
+            },
+            "citations": [
+              {
+                "source_id": "S002",
+                "url": "https://developers.squarespace.com",
+                "retrieved_at": "2026-09-24T13:25:27.969353+00:00",
+                "source_sha256": "15fddc0deacc5e47b8fbd5547995a096b65c7cb3957821fbe85669af0c824219",
+                "quote_sha256": "47491ccf8cffa88768d268c1701606dcc918f4b11dd66a588b1bb11f801b7859",
+                "normalized_offset": 422,
+                "quote_binding_passed": true
+              },
+              {
+                "source_id": "S004",
+                "url": "https://developers.squarespace.com/commerce-apis/making-requests",
+                "retrieved_at": "2026-09-24T13:25:27.969562+00:00",
+                "source_sha256": "f64bee81d018d56014d4c63d265989b32ee96536dae9b0938c3a952420e17ca8",
+                "quote_sha256": "374a46f644cae37ef446ae3cfb6587bfd4c2cb126ea6c20d3493328ae595265b",
+                "normalized_offset": 243,
+                "quote_binding_passed": true
+              },
+              {
+                "source_id": "S004",
+                "url": "https://developers.squarespace.com/commerce-apis/making-requests",
+                "retrieved_at": "2026-09-24T13:25:27.969562+00:00",
+                "source_sha256": "f64bee81d018d56014d4c63d265989b32ee96536dae9b0938c3a952420e17ca8",
+                "quote_sha256": "6470b5e35bec8de8e54e676f5526451938eb284a8a6fe6f0f5a70d092d340865",
+                "normalized_offset": 1492,
+                "quote_binding_passed": true
+              }
+            ]
+          },
+          "mcp": {
+            "answer": "An existing vendor MCP server cannot be established from the supplied evidence.",
+            "status": "unresolved",
+            "caveat": "The supplied Commerce documentation provides no MCP evidence; this does not establish absence.",
+            "citation_binding_passed": false,
+            "verification": {
+              "id": 46,
+              "field": "mcp",
+              "assessment": "unresolved",
+              "reason": "The supplied Commerce passages contain no evidence establishing vendor MCP availability or connection requirements."
+            },
+            "citations": []
+          }
+        },
+        "access_class": "Unknown",
+        "verdict": "Review required",
+        "decision_reason": "The custom-app route explicitly requires Commerce Advanced. This classification does not establish paid or approval requirements for Extension developers.",
+        "next_step": "Review the OAuth client onboarding documentation; resolve distributed development access when it explicitly states credential issuance requirements and test-site API entitlement."
+      }
+    ]
+  }
+}

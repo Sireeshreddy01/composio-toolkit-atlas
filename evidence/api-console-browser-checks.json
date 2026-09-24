@@ -1,0 +1,52 @@
+{
+  "checked_at": "2026-09-24T13:44:38.895489+00:00",
+  "method": "Actual browser UI: choose endpoint and send request; inspect response body and metadata.",
+  "repository": "Sireeshreddy01/composio-toolkit-atlas",
+  "origin": "http://127.0.0.1:8765",
+  "authentication": "None",
+  "checks": [
+    {
+      "preset": "repo",
+      "status": 200,
+      "elapsed_ms": 612,
+      "response_bytes": 6471
+    },
+    {
+      "preset": "issues",
+      "status": 200,
+      "elapsed_ms": 621,
+      "response_bytes": 5,
+      "result": "Empty list accepted as valid."
+    },
+    {
+      "preset": "branches",
+      "status": 200,
+      "elapsed_ms": 478,
+      "response_bytes": 266
+    },
+    {
+      "preset": "languages",
+      "status": 200,
+      "elapsed_ms": 341,
+      "response_bytes": 62
+    },
+    {
+      "preset": "contributors",
+      "status": 200,
+      "elapsed_ms": 656,
+      "response_bytes": 1147
+    },
+    {
+      "preset": "readme",
+      "status": 200,
+      "elapsed_ms": 541,
+      "response_bytes": 17399
+    }
+  ],
+  "additional_checks": [
+    "Editing query JSON updates the request URL.",
+    "per_page=101 blocks Send and displays a validation message.",
+    "Response header tab displays actual browser-exposed headers."
+  ],
+  "standalone_html": "All code, CSS, fonts and data are embedded. Tested by serving this single file. Direct file:// opening was blocked by the browser automation URL policy and was not bypassed."
+}

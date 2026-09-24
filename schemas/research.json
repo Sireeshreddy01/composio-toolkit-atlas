@@ -1,0 +1,249 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "product_scope": {
+            "type": "string"
+          },
+          "authentication": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "answer": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "supported",
+                  "inferred",
+                  "unresolved",
+                  "conflicting"
+                ]
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "source_id": {
+                      "type": "string"
+                    },
+                    "quote": {
+                      "type": "string"
+                    },
+                    "explanation": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "source_id",
+                    "quote",
+                    "explanation"
+                  ]
+                }
+              },
+              "caveat": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "answer",
+              "status",
+              "evidence",
+              "caveat"
+            ]
+          },
+          "development_access": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "answer": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "supported",
+                  "inferred",
+                  "unresolved",
+                  "conflicting"
+                ]
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "source_id": {
+                      "type": "string"
+                    },
+                    "quote": {
+                      "type": "string"
+                    },
+                    "explanation": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "source_id",
+                    "quote",
+                    "explanation"
+                  ]
+                }
+              },
+              "caveat": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "answer",
+              "status",
+              "evidence",
+              "caveat"
+            ]
+          },
+          "api_surface": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "answer": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "supported",
+                  "inferred",
+                  "unresolved",
+                  "conflicting"
+                ]
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "source_id": {
+                      "type": "string"
+                    },
+                    "quote": {
+                      "type": "string"
+                    },
+                    "explanation": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "source_id",
+                    "quote",
+                    "explanation"
+                  ]
+                }
+              },
+              "caveat": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "answer",
+              "status",
+              "evidence",
+              "caveat"
+            ]
+          },
+          "mcp": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "answer": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "supported",
+                  "inferred",
+                  "unresolved",
+                  "conflicting"
+                ]
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "source_id": {
+                      "type": "string"
+                    },
+                    "quote": {
+                      "type": "string"
+                    },
+                    "explanation": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "source_id",
+                    "quote",
+                    "explanation"
+                  ]
+                }
+              },
+              "caveat": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "answer",
+              "status",
+              "evidence",
+              "caveat"
+            ]
+          },
+          "access_class": {
+            "type": "string",
+            "enum": [
+              "Self-serve",
+              "Gated",
+              "Unknown"
+            ]
+          },
+          "decision_reason": {
+            "type": "string"
+          },
+          "next_step": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "product_scope",
+          "authentication",
+          "development_access",
+          "api_surface",
+          "mcp",
+          "access_class",
+          "decision_reason",
+          "next_step"
+        ]
+      }
+    }
+  },
+  "required": [
+    "records"
+  ]
+}

@@ -1,0 +1,802 @@
+[
+  {
+    "id": 1,
+    "workflow": "Read CRM accounts in a developer org",
+    "next_action": "Create a Salesforce developer org, authorize a scoped client, and query a small Account sample before requesting access to customer production data.",
+    "success_criterion": "Return Account identifiers and selected fields; prove the client cannot access unrelated objects.",
+    "alternative_action": "Confirm production API entitlement separately from developer-org access.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 2,
+    "workflow": "Read a test contact",
+    "next_action": "Use a HubSpot developer test account and a private-app token to read a seeded contact; design OAuth separately for customer installations.",
+    "success_criterion": "Return the seeded contact and its chosen properties; demonstrate a denied ungranted scope.",
+    "alternative_action": "For a multi-customer product, validate OAuth installation and app-review requirements instead of sharing private tokens.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 3,
+    "workflow": "List deals in a trial account",
+    "next_action": "Seed two Pipedrive deals in a trial, list them with a personal token, then document the OAuth scopes required for a distributed app.",
+    "success_criterion": "Retrieve the seeded deals and correctly follow pagination without exposing other users' tokens.",
+    "alternative_action": "Compare the official MCP deal tools with the required custom fields before building a REST wrapper.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 4,
+    "workflow": "Find a company record",
+    "next_action": "Connect Attio's official MCP to a test workspace and check whether company lookup and required attributes are exposed.",
+    "success_criterion": "Find one seeded company and return the requested attributes with its record ID.",
+    "alternative_action": "Use the REST records API when the MCP omits a needed custom attribute; verify field-level permissions.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 5,
+    "workflow": "Query a local CRM object",
+    "next_action": "Run a local Twenty workspace, create a test object, and compare its generated REST and GraphQL representations.",
+    "success_criterion": "Read the same seeded object through the selected interface and document its schema.",
+    "alternative_action": "Wrap the local API; do not introduce browser-session dependencies where a generated API exists.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 6,
+    "workflow": "Read an item in a test workspace",
+    "next_action": "Create a Podio app with a test item and use app authentication or OAuth to retrieve its fields.",
+    "success_criterion": "Return the test item with stable field identifiers and the intended workspace scope.",
+    "alternative_action": "Validate the app-auth path for a single app before selecting broader user OAuth.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 7,
+    "workflow": "Read a CRM module in the correct region",
+    "next_action": "Confirm the Zoho CRM edition's API allowance, then authorize the correct regional organization and read a test module record.",
+    "success_criterion": "Record the region, organization, allowed API credits and one successful scoped read.",
+    "alternative_action": "If entitlement is unclear, ask support about the exact edition and module; a web-session capture is not proof of API entitlement.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 8,
+    "workflow": "Retrieve a lead and its contacts",
+    "next_action": "Confirm whether Close trial accounts include the API, then use a test key to retrieve a lead with associated contacts.",
+    "success_criterion": "Record the trial entitlement source and retrieve the seeded lead using the documented Basic-key format.",
+    "alternative_action": "For an existing authorized tenant, inspect lead-detail reads to map missing UI fields; prefer the documented API when it covers them.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 9,
+    "workflow": "Read an opportunity in a trial",
+    "next_action": "Create a Copper trial opportunity and read it using the required API token and user-email context.",
+    "success_criterion": "Return the opportunity ID and stage, and document which user's permissions apply.",
+    "alternative_action": "Request partner OAuth details only when customer distribution is required; a trial key is a separate development route.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 10,
+    "workflow": "Inspect a DealCloud entity schema",
+    "next_action": "Ask an authorized DealCloud administrator for a test instance and the client-credentials setup, then read one entity schema.",
+    "success_criterion": "Obtain a test token and return schema metadata for the approved entity.",
+    "alternative_action": "If direct test access is unavailable, request a sanitized schema export and documented token flow from the vendor.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 11,
+    "workflow": "Read a Zendesk test ticket using OAuth",
+    "next_action": "Configure OAuth for a test Zendesk account and read a seeded ticket; avoid new integration instructions that require deprecated API tokens.",
+    "success_criterion": "Retrieve the ticket and document granted scopes plus the account's OAuth setup permissions.",
+    "alternative_action": "For an older customer installation, inventory token dependencies and create an OAuth migration checklist.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 12,
+    "workflow": "Retrieve a development conversation",
+    "next_action": "Use an Intercom development workspace to read a test conversation, noting any production-only functionality it omits.",
+    "success_criterion": "Return conversation and contact identifiers; list unavailable development-workspace features.",
+    "alternative_action": "Compare the official MCP conversation tools with the required read fields before adding REST tools.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 13,
+    "workflow": "Read one trial support ticket",
+    "next_action": "Use an authorized Freshdesk trial, seed a ticket, and read it with API-key Basic authentication while recording rate-limit headers.",
+    "success_criterion": "Return the seeded ticket and confirm the applicable trial rate limit from the account response or current docs.",
+    "alternative_action": "If the UI exposes a needed field missing from the public ticket schema, capture that specific authorized read and assess session dependence.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 14,
+    "workflow": "Read an inbox conversation",
+    "next_action": "Obtain Front administrator approval and compare its official MCP beta with a scoped conversation read in a test inbox.",
+    "success_criterion": "Return the selected conversation without access to unapproved inboxes; record beta limitations.",
+    "alternative_action": "Use Front's REST conversation endpoint family if the beta MCP lacks required inbox or message fields.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 15,
+    "workflow": "Read an issue and its account",
+    "next_action": "Ask a Pylon administrator for scoped test credentials and retrieve one seeded issue with its account relationship.",
+    "success_criterion": "Return the issue/account identifiers and record the quota for the chosen operation.",
+    "alternative_action": "Inspect the authorized issue-detail UI only to identify fields absent from the public issue schema.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 16,
+    "workflow": "Retrieve a support ticket with v3 credentials",
+    "next_action": "Confirm the LiveAgent subscription and create a v3-specific test key before implementing a ticket read.",
+    "success_criterion": "Read the seeded ticket with v3 credentials and demonstrate a clear error for the wrong API version.",
+    "alternative_action": "Avoid adapting a captured v1 session into a v3 integration; obtain the correct version's key and contract.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 17,
+    "workflow": "Query a customer support thread",
+    "next_action": "Use a Plain trial workspace to execute a minimal GraphQL thread query with only the required fields.",
+    "success_criterion": "Return a seeded thread and customer reference; handle GraphQL errors separately from HTTP status.",
+    "alternative_action": "Compare Plain's MCP thread operations with the same query rather than building a REST-shaped adapter.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 18,
+    "workflow": "Read an inbox conversation",
+    "next_action": "Confirm Help Scout plan eligibility, then choose client credentials for one internal account or authorization code for customer installations.",
+    "success_criterion": "Read one approved inbox conversation and record which integration model was used.",
+    "alternative_action": "Ask for trial API access if the paid plan is unavailable; do not substitute mailbox login credentials for API authorization.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 19,
+    "workflow": "Read a Gorgias ticket privately",
+    "next_action": "Confirm private-key API access on the intended Gorgias plan and read a test ticket before considering public-app distribution.",
+    "success_criterion": "Record plan eligibility, retrieve the ticket, and separate private-key rights from public OAuth approval.",
+    "alternative_action": "For a missing ticket field, capture its authorized UI read and compare it with the public ticket response before proposing an alternative endpoint.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 20,
+    "workflow": "Retrieve a customer conversation",
+    "next_action": "Obtain an authorized Gladly test tenant and verify token-based Basic authentication against one customer conversation.",
+    "success_criterion": "Return only the approved customer's conversation and document tenant-access requirements.",
+    "alternative_action": "Request a vendor-provided sample payload if no test tenant is available; tenant access remains a prerequisite.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 21,
+    "workflow": "Read a message in a test channel",
+    "next_action": "Install a Slack app in a sandbox with minimum history scopes and invite it to one test channel before reading a message.",
+    "success_criterion": "Retrieve the seeded message; show that an unjoined or ungranted conversation remains inaccessible.",
+    "alternative_action": "Compare official MCP channel coverage against the required scopes; avoid capturing a personal Slack session as an app credential.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 22,
+    "workflow": "Read a trial messaging record",
+    "next_action": "Use Twilio trial credentials to inspect a test messaging record and document trial restrictions separately from future send costs.",
+    "success_criterion": "Return the approved message's status without sending messages or changing phone-number settings.",
+    "alternative_action": "Choose a messaging-specific auth path first; add voice or verification only after their separate requirements are checked.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 23,
+    "workflow": "Read a channel with regional OAuth",
+    "next_action": "Confirm Zoho Cliq plan access and authorize a test channel using the correct regional token endpoint and header.",
+    "success_criterion": "Retrieve the approved channel data and record the region, scopes and edition allowance.",
+    "alternative_action": "Inspect an authorized channel's network read only if the public API lacks the required field; document the session dependency.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 24,
+    "workflow": "Read an authorized Lark document",
+    "next_action": "Obtain tenant approval, choose user or tenant token mode, and read one document explicitly shared with the integration.",
+    "success_criterion": "Read the selected document while an unshared document remains inaccessible.",
+    "alternative_action": "Use official MCP if its permission model and document tools match; otherwise scope a direct document API client.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 25,
+    "workflow": "Read a Pumble test channel",
+    "next_action": "Connect Pumble using its documented token headers and retrieve one approved channel or message through API or MCP.",
+    "success_criterion": "Return the seeded channel/message using the documented headers and account limits.",
+    "alternative_action": "Check MCP tool coverage before writing a wrapper; do not guess a generic bearer authorization scheme.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 26,
+    "workflow": "Read bot-visible Discord channel metadata",
+    "next_action": "Create a test bot, verify developer-account eligibility and grant it access to one test guild and channel.",
+    "success_criterion": "Read bot-visible metadata and demonstrate denial for an ungranted channel.",
+    "alternative_action": "Use the bot API and Gateway as appropriate; do not reverse engineer a personal user session into a self-bot.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 27,
+    "workflow": "Read a test bot update",
+    "next_action": "Create a Telegram test bot and retrieve an update generated by a test chat, with explicit Bot API scope.",
+    "success_criterion": "Return the test chat/update identifiers and prevent unrelated update data from being logged.",
+    "alternative_action": "Keep user-account automation outside this toolkit; the Bot API and user-account APIs have different capabilities.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 28,
+    "workflow": "Inspect WhatsApp test-number setup",
+    "next_action": "Use Meta's WhatsApp sandbox to inspect the test-number configuration and document token expiry and production prerequisites.",
+    "success_criterion": "Record the test phone-number ID, required permissions and the difference between test and production access.",
+    "alternative_action": "Plan system-user authorization and business approval separately; a temporary token is not a production solution.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 29,
+    "workflow": "Read a test call record",
+    "next_action": "Confirm Aircall account entitlement, then read one test call with Basic credentials or a scoped OAuth installation.",
+    "success_criterion": "Return the approved call identifier and metadata while documenting customer-account prerequisites.",
+    "alternative_action": "Capture the authorized call-detail UI only to investigate a required metadata field absent from the public response.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 30,
+    "workflow": "Inspect a Vonage application resource",
+    "next_action": "Select the specific Vonage product, identify whether it uses key/secret or application JWT authentication, and read a test resource.",
+    "success_criterion": "Record the product-specific auth scheme and retrieve the chosen resource without sending messages or calls.",
+    "alternative_action": "Keep separate adapters for messaging and voice when their credential flows differ.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 31,
+    "workflow": "Run a Google Ads sandbox report",
+    "next_action": "Apply for the appropriate developer-token access and authorize a test Ads account before running a small reporting query.",
+    "success_criterion": "Return a test report and record developer-token level, OAuth scope and customer context.",
+    "alternative_action": "Begin token approval immediately; a captured Ads UI request does not replace developer-token authorization.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 32,
+    "workflow": "Read an approved Meta ad account",
+    "next_action": "Confirm the exact Marketing API permissions and access tier, then read campaign metadata in an approved test account.",
+    "success_criterion": "Return the seeded campaign and record app permissions, account role and current access tier.",
+    "alternative_action": "Keep this Graph HTTP workflow separate from Threads; request missing permissions through the official review route.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 33,
+    "workflow": "Obtain LinkedIn Ads development approval",
+    "next_action": "Prepare a LinkedIn Marketing API access request for a specific read-only campaign-reporting workflow and ask about test accounts.",
+    "success_criterion": "Receive a documented access decision and the scopes needed for campaign reporting.",
+    "alternative_action": "If approval is pending, use an authorized report export as a limited data-ingestion prototype, not an API substitute.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 34,
+    "workflow": "Read a contact in a developer account",
+    "next_action": "Use a GoHighLevel development account and a controlled private integration token to read a seeded contact.",
+    "success_criterion": "Return the contact and location context; document OAuth requirements for customer distribution.",
+    "alternative_action": "Compare the marketplace OAuth path before expanding a private integration to multiple customer locations.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 35,
+    "workflow": "Read one audience member",
+    "next_action": "Verify Mailchimp Marketing API access on the intended free or trial plan, then read a seeded audience member using a scoped account credential.",
+    "success_criterion": "Record plan entitlement and return the test member without sending a campaign.",
+    "alternative_action": "If a campaign workflow is missing from the public API, capture that authorized UI read and compare the response schema before proposing a wrapper.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 36,
+    "workflow": "Read a test profile",
+    "next_action": "Confirm Klaviyo server-side API eligibility, create a least-privilege private key, and retrieve a seeded profile.",
+    "success_criterion": "Return the test profile using a private server key; demonstrate that a public tracking key cannot authorize it.",
+    "alternative_action": "Check whether official MCP exposes the same profile fields; otherwise use the documented profiles API.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 37,
+    "workflow": "Retrieve a funnel contact",
+    "next_action": "Confirm systeme.io account/API eligibility and authenticate a read of a test contact tied to a known funnel.",
+    "success_criterion": "Return the seeded contact and record the supported contact or sales objects.",
+    "alternative_action": "Inspect a specific authorized funnel UI read only when the documented public API lacks a required relationship.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 38,
+    "workflow": "List a test board after access approval",
+    "next_action": "Apply for Pinterest's developer access tier, confirm Trial-tier approval requirements, then list a test board.",
+    "success_criterion": "Document approval status and return the approved board with the granted permissions.",
+    "alternative_action": "Use a user-provided board export for exploratory analysis while approval is pending; do not label it an API integration.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 39,
+    "workflow": "Read a test Threads profile",
+    "next_action": "Confirm Threads-specific developer setup and token scopes, then read the authorized test profile or its posts.",
+    "success_criterion": "Return the intended profile and document token expiry and permissions without publishing content.",
+    "alternative_action": "Keep Threads OAuth and Meta Ads credentials separate; investigate browser requests only for authorized read fields missing from the supported API.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 40,
+    "workflow": "Inspect email template metadata",
+    "next_action": "Confirm SendGrid account eligibility and create a restricted key for reading a test template, without enabling mail sends.",
+    "success_criterion": "Return template metadata and distinguish API scopes from domain-sending verification.",
+    "alternative_action": "If sending is later required, add verified-sender setup and separate send authorization as a new test.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 41,
+    "workflow": "Query a development-store product",
+    "next_action": "Create a Shopify development store and query a seeded product through the GraphQL Admin API using the current app authorization flow.",
+    "success_criterion": "Return product ID and inventory-related fields with documented Admin scopes and query-cost handling.",
+    "alternative_action": "Evaluate storefront MCP only for shopper workflows; do not use it as evidence of full Admin coverage.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 42,
+    "workflow": "Read a local WooCommerce product",
+    "next_action": "Run a test WordPress/WooCommerce store, create a read-only consumer key, and retrieve a seeded product over HTTPS.",
+    "success_criterion": "Return the product while a write attempt is excluded by the key's permissions.",
+    "alternative_action": "Prefer the public REST API; inspect plugin-specific UI calls only if a required extension field is not exposed.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 43,
+    "workflow": "Separate storefront and merchant catalog access",
+    "next_action": "Confirm BigCommerce developer-store eligibility and choose whether the workflow needs storefront GraphQL or merchant REST catalog data.",
+    "success_criterion": "Read the test product through the chosen surface and document why storefront MCP does or does not cover it.",
+    "alternative_action": "Use merchant API scopes for back-office fields instead of assuming storefront MCP has administrator access.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 44,
+    "workflow": "Read shopper or admin commerce data",
+    "next_action": "Obtain a Salesforce Commerce Cloud test instance and choose either shopper SLAS or Admin authorization for a concrete catalog workflow.",
+    "success_criterion": "Return the test resource using the correct token type; document instance and role prerequisites.",
+    "alternative_action": "Request a sandbox and scoped sample catalog from the account team when no customer test instance is available.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 45,
+    "workflow": "Query a local product catalog",
+    "next_action": "Choose self-hosted Magento or Adobe Commerce SaaS explicitly, then read a seeded product through its appropriate REST or GraphQL interface.",
+    "success_criterion": "Return the product and document whether installation tokens or Adobe IMS authorization apply.",
+    "alternative_action": "Do not mix self-hosted integration credentials with the SaaS auth flow when designing the toolkit.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 46,
+    "workflow": "Read an order through the selected app model",
+    "next_action": "Choose custom API-key app or OAuth Extension first; confirm that route's plan requirements, then read a test order with minimum permissions.",
+    "success_criterion": "Record the chosen route, applicable plan restriction and a successful scoped test-order read.",
+    "alternative_action": "If a needed order field appears only in an authorized UI workflow, capture that read and assess session stability; do not treat it as a way around plan eligibility.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 47,
+    "workflow": "Read a store catalog product",
+    "next_action": "Confirm Ecwid custom-app eligibility on the intended plan and read a seeded catalog product with a store-specific token.",
+    "success_criterion": "Return product and store identifiers; record the permission set and distribution restrictions.",
+    "alternative_action": "Ask for partner-app access if the tool must serve multiple stores rather than reusing a private store token.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 48,
+    "workflow": "Retrieve a seller product",
+    "next_action": "Confirm Gumroad seller API eligibility and read a test product using the documented OAuth scope or official CLI.",
+    "success_criterion": "Return the product ID and selected fields; keep license verification separate from seller-data authorization.",
+    "alternative_action": "Evaluate the official CLI before inspecting browser endpoints; use network capture only for a specific missing seller workflow.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 49,
+    "workflow": "Read sandbox selling-partner order data",
+    "next_action": "Complete Amazon Selling Partner developer onboarding, choose the required role, and run a documented sandbox order read.",
+    "success_criterion": "Record onboarding status, role authorization and the sandbox response; identify restricted-data requirements separately.",
+    "alternative_action": "Request an authorized seller test account where sandbox fixtures cannot represent the required order workflow.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 50,
+    "workflow": "Read a seller checkout record",
+    "next_action": "Ask fanbasis to confirm merchant API eligibility and required key scope, then retrieve a test checkout or transaction record.",
+    "success_criterion": "Record the eligibility answer and retrieve the approved test record without creating a charge.",
+    "alternative_action": "If merchant access is available but the contract is incomplete, capture one checkout-detail read and ask the vendor to confirm the endpoint schema.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 51,
+    "workflow": "Retrieve an SEO task result",
+    "next_action": "Confirm DataForSEO trial credits and choose one low-cost task type; inspect a pre-created task result using Basic authentication.",
+    "success_criterion": "Return a result with its task status and documented credit cost; distinguish submission from polling.",
+    "alternative_action": "Define a per-run credit budget before enabling task creation, rather than treating credentials as unlimited execution access.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 52,
+    "workflow": "Inspect Project API quota and a project",
+    "next_action": "Confirm whether the SE Ranking workflow uses Project API subscriptions or Data API credits, then read a permitted project resource.",
+    "success_criterion": "Record the product, quota model and one authorized project response.",
+    "alternative_action": "Request the exact endpoint's allowance from support when pricing does not distinguish the two API products.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 53,
+    "workflow": "Read one permitted SEO report",
+    "next_action": "Check Ahrefs access for the exact endpoint and subscription, then retrieve a small authorized backlink or keyword report.",
+    "success_criterion": "Record the endpoint's entitlement and unit usage with the returned report.",
+    "alternative_action": "Evaluate the official MCP allowance separately; do not rely on an old blanket Enterprise-only rule.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 54,
+    "workflow": "Read an existing scrape job result",
+    "next_action": "Confirm MrScraper account credits and inspect a previously created test job through its API or official MCP.",
+    "success_criterion": "Return job status and result metadata, and record how credits are charged.",
+    "alternative_action": "Compare CLI/MCP job operations with the required output format before creating a custom REST wrapper.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 55,
+    "workflow": "Read an Actor dataset",
+    "next_action": "Confirm Apify free/trial platform allowance and read a small existing test dataset before enabling Actor execution.",
+    "success_criterion": "Return dataset items with pagination and record the platform/Actor cost distinction.",
+    "alternative_action": "A working Actor invocation does not prove access to its target site; validate target-specific restrictions separately.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 56,
+    "workflow": "Inspect a bounded crawl result",
+    "next_action": "Use Firecrawl's documented free allowance for a small owned or permitted site, with an explicit page and credit limit.",
+    "success_criterion": "Record the crawl job ID, poll to a terminal status and return only the allowed page count.",
+    "alternative_action": "Compare official MCP crawl controls with direct API limits before exposing an unconstrained crawl tool.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 57,
+    "workflow": "Read a result through the free MCP path",
+    "next_action": "Select a Bright Data tool explicitly included in the documented free MCP allowance and inspect its permitted read workflow.",
+    "success_criterion": "Record tool identity, quota and result scope; distinguish it from paid datasets and proxy products.",
+    "alternative_action": "Request separate entitlement for a paid dataset rather than extrapolating from free MCP access.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 58,
+    "workflow": "Run a bounded local username lookup",
+    "next_action": "Wrap Sherlock as a local subprocess with an allowlisted test username, timeout and output directory, then inspect known positive and negative cases.",
+    "success_criterion": "Record exit status, tested sites and false-positive handling; never equate a match with verified identity.",
+    "alternative_action": "Keep this as a CLI tool and limit the site set; a hosted REST service is unnecessary for the first prototype.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 59,
+    "workflow": "Read an authorized enrichment result",
+    "next_action": "Ask Waterfall.io to confirm the intended enrichment endpoint, account allowance and correct API-key header before coding.",
+    "success_criterion": "Obtain a consistent request example and validate the documented response fields on authorized test data.",
+    "alternative_action": "Capture the matching authorized enrichment UI request only to resolve header/schema ambiguity, then seek vendor confirmation.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 60,
+    "workflow": "Trigger or inspect one defined Clay workflow",
+    "next_action": "Identify the specific Clay inbound workflow or routine contract and confirm account entitlement before claiming general CRUD coverage.",
+    "success_criterion": "Document the exact input, output and auth contract for one workflow with a test record.",
+    "alternative_action": "Use a documented webhook or export when available; do not mistake Clay's outbound HTTP action for an inbound Clay API.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 61,
+    "workflow": "Read a public repository, then scoped issues",
+    "next_action": "Use the existing public-repository demo as a smoke test, then authorize a least-privilege GitHub App to read issues in one test repository.",
+    "success_criterion": "Keep the public HTTP-200 result separate from a new authenticated issue-read test and record granted repository permissions.",
+    "alternative_action": "Compare official MCP issue tools with required fields and installation boundaries before adding custom REST tools.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 62,
+    "workflow": "Read one deployment's metadata",
+    "next_action": "Confirm Vercel API access on the selected plan and use a team-scoped token to inspect a test deployment.",
+    "success_criterion": "Return deployment and project identifiers within the selected team; record account limits.",
+    "alternative_action": "Inspect an authorized deployment UI request only for a required field absent from the public API; hosting MCP servers is not native MCP coverage.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 63,
+    "workflow": "Read a test site's deployment status",
+    "next_action": "Confirm Netlify API eligibility and use a scoped account token to read one test site's deployment metadata.",
+    "success_criterion": "Return the site/deploy identifiers and distinguish API access from build/runtime credit usage.",
+    "alternative_action": "Use deployment webhooks for status updates if polling is unnecessary; verify the webhook contract and plan allowance.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 64,
+    "workflow": "Read a permitted DNS zone",
+    "next_action": "Confirm Cloudflare API eligibility for the chosen product and create a read-only token limited to one test zone.",
+    "success_criterion": "List the approved zone's records and verify access is denied outside its scope.",
+    "alternative_action": "Compare the relevant official MCP server with this zone-scoped workflow instead of using a broad global key.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 65,
+    "workflow": "Read rows protected by row-level security",
+    "next_action": "Create a free Supabase test project, seed two differently owned rows, and query through the project API with the intended user context.",
+    "success_criterion": "Return only permitted rows; record RLS behavior and keep management tokens out of the data-plane test.",
+    "alternative_action": "Use the project REST or GraphQL surface for records; reserve management MCP for project administration.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 66,
+    "workflow": "Run a read-only local Cypher query",
+    "next_action": "Use a local Neo4j database and a read-only query identity to retrieve a small seeded graph through the Query API or MCP.",
+    "success_criterion": "Return the expected nodes and relationships; document database auth separately from Aura management OAuth.",
+    "alternative_action": "Keep graph query execution separate from infrastructure provisioning and constrain query/time limits.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 67,
+    "workflow": "Execute a bounded Snowflake read query",
+    "next_action": "Confirm trial/API eligibility and role/network policies, then run a small read-only SQL API query with one supported credential type.",
+    "success_criterion": "Record the role, warehouse/cost limit, query ID and result; verify the chosen auth scheme.",
+    "alternative_action": "Use official MCP only after checking role and query-execution boundaries; do not imply an API token bypasses network policy.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 68,
+    "workflow": "Read Atlas project configuration",
+    "next_action": "Obtain a MongoDB Atlas project role and management credential, then read a test cluster's configuration through the Admin API.",
+    "success_criterion": "Return cluster/project metadata and confirm least-privilege access; do not query application data through the retired Data API.",
+    "alternative_action": "For application records, choose a supported database driver path separately from management MCP or Admin REST.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 69,
+    "workflow": "Read one monitor's definition",
+    "next_action": "Confirm Datadog account/API allowance and provision the required API plus application-key or OAuth permissions for a test monitor.",
+    "success_criterion": "Return the monitor definition and document why an API key alone is insufficient for the chosen read.",
+    "alternative_action": "Compare the official MCP monitor tool and its scopes before implementing a parallel wrapper.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 70,
+    "workflow": "Read a seeded Sentry issue",
+    "next_action": "Confirm Sentry plan/API access and authorize an issue read in one test project using a management token or OAuth.",
+    "success_criterion": "Return the seeded issue and project context; demonstrate that an ingest DSN is not a management credential.",
+    "alternative_action": "Check official MCP issue coverage first; use direct REST only for fields or operations it omits.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 71,
+    "workflow": "Read a specifically shared Notion page",
+    "next_action": "Confirm Notion integration availability on the intended plan, share one test page with the integration, and retrieve its blocks.",
+    "success_criterion": "Read the shared page while an unshared page remains inaccessible; record data-source versus page scope.",
+    "alternative_action": "Compare user-authorized MCP access with integration-token sharing rules rather than assuming workspace-wide visibility.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 72,
+    "workflow": "Read records in one Airtable base",
+    "next_action": "Create a free test base and a PAT limited to that base, then list seeded records within the documented request allowance.",
+    "success_criterion": "Return record IDs and fields with pagination; verify the token cannot read another base.",
+    "alternative_action": "Use OAuth for customer-installed access; do not document retired legacy API keys as a new setup path.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 73,
+    "workflow": "Query issues in one Linear team",
+    "next_action": "Confirm API-key permissions in the intended Linear workspace and execute a minimal GraphQL query for a test team's issues.",
+    "success_criterion": "Return issue ID/title/status and document pagination, scope and applicable workspace controls.",
+    "alternative_action": "Compare official MCP issue tools with the needed GraphQL fields before choosing an adapter.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 74,
+    "workflow": "Read a Jira Cloud test issue",
+    "next_action": "Confirm Jira Cloud free/trial API entitlement and read a seeded issue with an API token or scoped OAuth application.",
+    "success_criterion": "Return issue key and selected fields while documenting Cloud-specific auth and project permissions.",
+    "alternative_action": "Keep Data Center out of this test; inspect its API and deployment separately if a customer requires it.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 75,
+    "workflow": "Read a test Asana task",
+    "next_action": "Create a free Asana test project and retrieve a seeded task with a PAT limited by the test user's permissions.",
+    "success_criterion": "Return the task and project identifiers and document fields unavailable on the selected plan.",
+    "alternative_action": "Use the official OAuth-based MCP for user-delegated workflows if it covers the required task fields.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 76,
+    "workflow": "Query board items in a developer sandbox",
+    "next_action": "Use a Monday.com developer sandbox to run a small GraphQL board/items query and record complexity usage.",
+    "success_criterion": "Return seeded item/column values and demonstrate cursor handling within the complexity budget.",
+    "alternative_action": "Compare official MCP operations with the exact columns required before adding custom GraphQL tools.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 77,
+    "workflow": "Read a task in a free workspace",
+    "next_action": "Create a ClickUp free test workspace and read a seeded task using a personal token with the test user's access.",
+    "success_criterion": "Return the task/list identifiers and record the applicable rate limit and feature restrictions.",
+    "alternative_action": "Use OAuth for customer distribution; keep unsupported paid features outside the initial task-read workflow.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 78,
+    "workflow": "Read rows in a small Coda document",
+    "next_action": "Use a small free Coda document and API token to list a seeded table's rows, then verify current size and request limits.",
+    "success_criterion": "Return row IDs/values and document the free-plan inference plus any document-size constraint.",
+    "alternative_action": "Use documented table APIs for the prototype; do not include admin-only workspace operations in the same access claim.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 79,
+    "workflow": "Read a sheet after confirming entitlement",
+    "next_action": "Confirm Smartsheet Business/Enterprise API eligibility and authorize a read of one test sheet.",
+    "success_criterion": "Return sheet/row identifiers and record plan entitlement; verify the user can access that sheet.",
+    "alternative_action": "Compare MCP availability under its own plan requirements rather than assuming it matches all REST plans.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 80,
+    "workflow": "Read an approved time entry",
+    "next_action": "Use a free Harvest account and v2 OAuth/PAT with explicit account context to read a test time entry.",
+    "success_criterion": "Return the entry and account identifier; avoid legacy Basic-auth instructions.",
+    "alternative_action": "Use a read-only reporting workflow first, keeping invoice creation and time-entry mutation outside the initial tool.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 81,
+    "workflow": "Read sandbox customer data",
+    "next_action": "Use a restricted Stripe test key to retrieve a seeded test customer; keep payment/refund actions outside the initial prototype.",
+    "success_criterion": "Return the test-mode customer and verify the key's read scope; make no live financial mutations.",
+    "alternative_action": "Compare Stripe's official MCP read tools with the required billing fields before introducing custom mutation tools.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 82,
+    "workflow": "Read sandbox transaction fixtures",
+    "next_action": "Create a Plaid sandbox Item and use client_id/secret plus the sandbox access token to retrieve fixture transactions.",
+    "success_criterion": "Return sandbox account/transaction data and document each credential's purpose without connecting a real bank.",
+    "alternative_action": "Treat institution OAuth and developer authentication separately; production product approval is a later prerequisite.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 83,
+    "workflow": "Read public market data",
+    "next_action": "Start with Binance's documented unsigned market-data read and separately verify regional/account eligibility for any private API scope.",
+    "success_criterion": "Return a public price/order-book response; record that no signed account or trading action was tested.",
+    "alternative_action": "Exclude trading from the assessment prototype; signed private operations require a separate credential and authorization review.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 84,
+    "workflow": "Resolve the exact Paygent product",
+    "next_action": "Ask for the Paygent Connect vendor URL, API documentation and technical contact before selecting an auth method or endpoint.",
+    "success_criterion": "Obtain an unambiguous product identity and a primary API source tied to that vendor.",
+    "alternative_action": "An NMI-powered label alone is insufficient; request confirmation before using an NMI gateway contract.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 85,
+    "workflow": "Validate the documented MCP route",
+    "next_action": "Use iPayX's published MCP setup and ask the vendor to reconcile REST base-URL and payload conflicts before implementing REST calls.",
+    "success_criterion": "Record the MCP tool list and allowance; obtain one confirmed REST request example if REST is required.",
+    "alternative_action": "Prefer the separately documented MCP path for evaluation, without assuming it resolves the conflicting REST contract.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 86,
+    "workflow": "Read a sandbox invoice",
+    "next_action": "Create an Intuit developer sandbox company, authorize the Accounting API and retrieve a seeded invoice.",
+    "success_criterion": "Return the invoice and realm ID; document token refresh and sandbox scope without touching Payments APIs.",
+    "alternative_action": "Use a sandbox accounting workflow first; production customer authorization and app review remain separate.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 87,
+    "workflow": "Read a demo-company contact",
+    "next_action": "Use Xero's developer/demo-company path to read a contact and verify current connection and data-egress allowances.",
+    "success_criterion": "Return the contact with tenant context and record the applicable developer pricing limits.",
+    "alternative_action": "Check the official MCP's authorization and connection model before assuming it avoids developer-platform limits.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 88,
+    "workflow": "Read approved expense metadata",
+    "next_action": "Confirm Brex customer/developer eligibility and read one test expense using an authorized token with documented expiry behavior.",
+    "success_criterion": "Return the approved expense and token-lifetime constraints without enabling payment or card mutations.",
+    "alternative_action": "Use partner OAuth for multi-customer access; request a test tenant rather than borrowing a personal customer token.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 89,
+    "workflow": "Read a developer-sandbox transaction",
+    "next_action": "Obtain Ramp sandbox access and read a fixture transaction with appropriate OAuth or token permissions.",
+    "success_criterion": "Return the sandbox transaction and record the chosen credential path; do not perform financial actions.",
+    "alternative_action": "Distinguish Ramp's documentation MCP from its account-data MCP before choosing which one can serve the workflow.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 90,
+    "workflow": "Obtain the licensed API contract",
+    "next_action": "Request PitchBook's Data API licensing terms, authentication documentation, permitted datasets and a test-access option for a named research workflow.",
+    "success_criterion": "Obtain a vendor-confirmed contract and sample schema; identify redistribution and usage restrictions.",
+    "alternative_action": "Evaluate the Essential Connector only for its documented limited scope; do not present it as full Data API access.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 91,
+    "workflow": "Read an enterprise notebook resource",
+    "next_action": "Confirm NotebookLM Enterprise tenant eligibility and IAM permissions, then inspect a test notebook/source resource through the enterprise API.",
+    "success_criterion": "Return the enterprise resource identifier and document required project/tenant roles.",
+    "alternative_action": "Do not extrapolate this to consumer NotebookLM; investigate that product separately if consumer automation is required.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 92,
+    "workflow": "Retrieve an authorized meeting transcript",
+    "next_action": "Confirm Otter REST API entitlement and MCP entitlement separately, then retrieve a meeting explicitly available to the test user.",
+    "success_criterion": "Return the authorized transcript and record which plan/interface provided access.",
+    "alternative_action": "Choose MCP only if its plan and meeting permissions cover the workflow; otherwise request the REST API enterprise route.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 93,
+    "workflow": "Read a test meeting summary",
+    "next_action": "Confirm Fathom meeting-product API access and retrieve one authorized test meeting's summary or transcript.",
+    "success_criterion": "Return the meeting ID and permitted summary fields; record plan eligibility and webhook availability.",
+    "alternative_action": "Use the documented meeting webhook to avoid polling when available; do not use Fathom Analytics documentation.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 94,
+    "workflow": "Run one scholarly search within the shared quota",
+    "next_action": "Use Consensus's documented free API/MCP allowance for one narrow scholarly search with the required key header.",
+    "success_criterion": "Return paper identifiers and evidence fields while recording remaining shared API/MCP quota.",
+    "alternative_action": "Compare MCP search output with REST fields; do not assume separate free quotas for each interface.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 95,
+    "workflow": "Inspect a small document-parsing job",
+    "next_action": "Confirm Reducto trial credits and submit an owned, non-sensitive test document to a bounded parse workflow after establishing the page cost.",
+    "success_criterion": "Record job status and parsed fields against a small expected-output fixture, including any extraction errors.",
+    "alternative_action": "Compare hosted MCP parsing controls with REST job options; page cost and parsing accuracy are separate acceptance checks.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 96,
+    "workflow": "Inspect an existing Devin test session",
+    "next_action": "Confirm Devin account/API allowance and use a current supported credential to inspect an existing test session without launching autonomous work.",
+    "success_criterion": "Return session metadata and document credential prefix, scope and execution-cost boundaries.",
+    "alternative_action": "Keep new session creation disabled until a separate repository, permission and spending scope is agreed.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 97,
+    "workflow": "Inspect creative assets through the documented CLI",
+    "next_action": "Confirm higgsfield account credits and CLI sign-in requirements, then inspect existing authorized asset metadata before generating content.",
+    "success_criterion": "Record the actual CLI/MCP operation and account entitlement; avoid inventing a broad REST contract.",
+    "alternative_action": "Use the official CLI/MCP flow first; capture an authorized asset-detail request only if a required read is missing.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 98,
+    "workflow": "Render a local diagram file",
+    "next_action": "Wrap Mermaid CLI with a fixed input directory, timeout and SVG output path, then render a small known diagram locally.",
+    "success_criterion": "Produce a valid SVG and record the exit code; reject unexpected file paths and bound runtime.",
+    "alternative_action": "Expose the subprocess directly as an agent tool; add an MCP wrapper only if the consuming agent requires that transport.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 99,
+    "workflow": "Retrieve a transcript from TranscriptAPI",
+    "next_action": "Confirm TranscriptAPI account allowance and retrieve one permitted test video's transcript using its documented key flow.",
+    "success_criterion": "Return timed transcript segments and identify TranscriptAPI as the provider rather than Google.",
+    "alternative_action": "Evaluate the vendor MCP for the same transcript workflow and document coverage/language limitations.",
+    "status": "Proposed; not an authenticated test result"
+  },
+  {
+    "id": 100,
+    "workflow": "Read an authorized meeting recording",
+    "next_action": "Use a Grain trial and confirm API versus basic/advanced MCP entitlement before retrieving one authorized test recording's metadata.",
+    "success_criterion": "Return the recording ID and permitted transcript/notes fields; record trial and meeting-access limitations.",
+    "alternative_action": "Choose the MCP tier only after comparing required transcript and workspace operations with its documented tool list.",
+    "status": "Proposed; not an authenticated test result"
+  }
+]

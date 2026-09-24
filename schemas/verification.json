@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "field": {
+            "type": "string",
+            "enum": [
+              "authentication",
+              "development_access",
+              "api_surface",
+              "mcp"
+            ]
+          },
+          "assessment": {
+            "type": "string",
+            "enum": [
+              "supported",
+              "inferred",
+              "unsupported",
+              "conflicting",
+              "unresolved"
+            ]
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "field",
+          "assessment",
+          "reason"
+        ]
+      }
+    }
+  },
+  "required": [
+    "checks"
+  ]
+}
